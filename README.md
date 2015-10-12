@@ -6,7 +6,7 @@ A system for role-playing game story/campaign/epic management. This repository i
 
 The project is currently split in three parts - [backend](https://github.com/mikron-ia/rpg-hub-backend) and two variants of the frontend - this and [AngularJS, undeveloped yet, version](https://github.com/mikron-ia/rpg-hub-frontend). Reason for twofold version of frontend is simple: I need a functional page ASAP, and have too little time to write AngularJS code with any decency. 
 
-This version of frontend is being written in PHP with Silex, based on / inspired by [Silex-Skeleton boilerplate](https://github.com/silexphp/Silex-Skeleton). Data to fuel the frontend will be retrieved from API provided by backend.
+This version of frontend is being written in PHP with Silex. Data to fuel the frontend will be retrieved from API provided by backend.
 
 ## Development
 MVP is character data presentation.
