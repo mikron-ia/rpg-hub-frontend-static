@@ -1,0 +1,17 @@
+language: php
+php:
+  - 5.5
+  - 5.6
+  - 7.0
+
+before_script:
+  - composer self-update
+  - composer install --prefer-source --no-interaction
+
+script:
+  - composer test
+  - CODECLIMATE_REPO_TOKEN=d4d0d8fafdb27367c1607cbe3e28befa54e79f3b318b54c878b6181e55fc18d1 ./vendor/bin/test-reporter
+
+matrix:
+  allow_failures:
+    - php: 7.0
