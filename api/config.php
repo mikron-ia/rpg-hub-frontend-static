@@ -26,9 +26,3 @@ if (isset($app['config.epic']['system'])) {
 if (file_exists($configPath . 'deployment.php')) {
     require_once $configPath . 'deployment.php';
 }
-
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/../visuals'
-));
-
-$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
