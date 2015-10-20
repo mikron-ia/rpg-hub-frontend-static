@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ interface.title }}</title>
+        <meta charset="utf-8">
+        {% block stylesheets %}
+            <link href="{{ app.request.basepath }}/css/main.css" rel="stylesheet" media="all" />
+        {% endblock %}
+    </head>
+    <body>
+        <h1>{{ interface.title }}</h1>
+        {% block content %}{% endblock %}
+    </body>
+</html>
