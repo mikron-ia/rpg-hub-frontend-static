@@ -5,6 +5,7 @@ $app->get('/', function (Silex\Application $app) {
         'index.twig',
         [
             'interface' => $app['config.main']['interface'],
+            'layout' => $app['config.deploy']['layout'],
         ]
     );
 });
