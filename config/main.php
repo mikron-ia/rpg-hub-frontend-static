@@ -5,5 +5,10 @@ $app['config.main'] = [
     "interface" => [
         "title" => "Central Hub",
         "welcome" => "Welcome to the central hub",
+        "copyright" => [
+            "start" => 2015,
+            "end" => date('Y'),
+            "name" => "Mikron",
+        ],
     ]
 ];
