@@ -14,3 +14,10 @@ h1 {
     font-weight: bold;
     padding: 9px;
 }
+
+.menu a {
+    color: white;
+    font-weight: bold;
+    padding: 9px;
+    text-decoration: none;
+}
