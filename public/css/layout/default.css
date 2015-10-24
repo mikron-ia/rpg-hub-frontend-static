@@ -1,0 +1,23 @@
+h1 {
+    color: gray;
+}
+
+.logo {
+    color: darkslategray;
+    font-size: 200%;
+    padding: 9px;
+}
+
+.menu {
+    background-color: navy;
+    color: white;
+    font-weight: bold;
+    padding: 9px;
+}
+
+.menu a {
+    color: white;
+    font-weight: bold;
+    padding: 9px;
+    text-decoration: none;
+}

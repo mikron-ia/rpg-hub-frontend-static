@@ -26,4 +26,3 @@ if (isset($app['config.epic']['system'])) {
 if (file_exists($configPath . 'deployment.php')) {
     require_once $configPath . 'deployment.php';
 }
-

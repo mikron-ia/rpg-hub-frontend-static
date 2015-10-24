@@ -1,5 +1,11 @@
 <?php
 
 $app->get('/', function (Silex\Application $app) {
-    return "This is basic front page. Please choose a functionality you wish to access from 'content' area";
+    return $app['twig']->render(
+        'index.twig',
+        [
+            'interface' => $app['config.main']['interface'],
+            'layout' => $app['config.deploy']['layout'],
+        ]
+    );
 });
