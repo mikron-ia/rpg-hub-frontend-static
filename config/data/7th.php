@@ -9,6 +9,7 @@ $app['config.system'] = [
     'reputations' => [],
     "interface" => [
         "titleSuffix" => "The Tavern",
+        "welcome" => "Welcome to The Tavern!",
         "copyright" => [
             "start" => 2015,
             "end" => date('Y'),

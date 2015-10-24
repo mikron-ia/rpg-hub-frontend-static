@@ -8,7 +8,8 @@ $app->get('/character/', function (Silex\Application $app) {
     return $app['twig']->render(
         'characters.twig',
         [
-            'display' => $app['display']
+            'title' => 'Character list',
+            'display' => $app['display'],
         ]
     );
 });
@@ -20,7 +21,8 @@ $app->get('/party/', function (Silex\Application $app) {
     return $app['twig']->render(
         'characters.twig',
         [
-            'display' => $app['display']
+            'title' => 'Party roster',
+            'display' => $app['display'],
         ]
     );
 });
@@ -32,7 +34,8 @@ $app->get('/character/{id}', function (Silex\Application $app, $id) {
     return $app['twig']->render(
         'character.twig',
         [
-            'display' => $app['display']
+            'title' => 'Character statistics',
+            'display' => $app['display'],
         ]
     );
 });
