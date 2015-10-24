@@ -3,5 +3,6 @@
 $app['config.deploy'] = [
     'debug' => false,
     'source' => '',
+    'interface' => [],
     'layout' => 'default',
 ];

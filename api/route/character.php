@@ -8,8 +8,7 @@ $app->get('/character/', function (Silex\Application $app) {
     return $app['twig']->render(
         'characters.twig',
         [
-            'interface' => $app['config.main']['interface'],
-            'layout' => $app['config.deploy']['layout'],
+            'display' => $app['display']
         ]
     );
 });
@@ -21,8 +20,7 @@ $app->get('/party/', function (Silex\Application $app) {
     return $app['twig']->render(
         'characters.twig',
         [
-            'interface' => $app['config.main']['interface'],
-            'layout' => $app['config.deploy']['layout'],
+            'display' => $app['display']
         ]
     );
 });
@@ -34,8 +32,7 @@ $app->get('/character/{id}', function (Silex\Application $app, $id) {
     return $app['twig']->render(
         'character.twig',
         [
-            'interface' => $app['config.main']['interface'],
-            'layout' => $app['config.deploy']['layout'],
+            'display' => $app['display']
         ]
     );
 });

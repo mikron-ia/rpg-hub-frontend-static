@@ -6,7 +6,11 @@
  * Data used in accord with http://creativecommons.org/licenses/by-nc-sa/3.0/us/
  */
 
-$app['config.system.reputations'] = [
+$app['config.system'] = [];
+
+$app['config.system']['interface'] = [];
+
+$app['config.system']['reputations'] = [
     "@" => [
         "name" => "@-list",
         "description" => "Autonomists: anarchists, Barsoomians, Extropians, Titanian, scum",
