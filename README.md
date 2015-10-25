@@ -12,40 +12,5 @@ The project is currently split in three parts - [backend](https://github.com/mik
 
 This version of frontend is being written in PHP with Silex. Data to fuel the frontend will be retrieved from API provided by backend.
 
-## Development
-MVP is character data presentation.
-
-### Required for v0.1
-This could have been done from a boilerplate, and has inspired creation of one. 
-
-* Working skeleton
-* HTML basic layout + controllers to serve it
-* Landing page with some explanation why there is nothing here
-
-### Required for v0.2 - MVP / VP-0
-This is a version designed for immediate use without any real security except obfuscation. The general idea is to  be 
-able to provide a hash-based link to a player; player would be able to see their character sheet under the link - 
-and not much more.
-
-Required scenario: GM is able to put a JSON file containing character description in a server directory and then send
-a link to the player, who in turn is going to be able to view their character in formatted and readable way. 
-
-* Simple character data presentation - not navigable
-* Reading from pre-generated JSON files
-* Controller for hash-link
-
-### Required for v0.3
-* Ability to connect to backend API and pull data
-* Authorisation - own system or using backend
-
-### Required for v0.4 - VP-1
-* Navigation system - ability to visit something else than hash-link
-
-Required scenario: character data presented to correct person in expected manners. If person is not authorised, they
-  should receive an error message.
-
-### Required for v0.5
-* Complete character data presentation, as backend data allows
-
 ## Installation guide
 ... will be created once the project does anything useful.
