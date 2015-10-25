@@ -2,3 +2,38 @@ body {
     margin: auto;
     width: 1024px;
 }
+
+.clear {
+    clear: both;
+}
+
+.block {
+    display: block;
+    float: left;
+    overflow: visible;
+}
+
+div.twosplit {
+    width: 48%;
+    margin: auto;
+}
+
+div.threesplit {
+    width: 33%;
+}
+
+div.foursplit {
+    width: 24.25%;
+}
+
+div.fivesplit {
+    width: 19.5%;
+}
+
+div.sixsplit {
+    width: 16.5%;
+}
+
+div.sevensplit {
+    width: 14.15%;
+}
