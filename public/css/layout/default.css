@@ -21,3 +21,14 @@ h1 {
     padding: 9px;
     text-decoration: none;
 }
+
+table {
+    border-collapse: collapse;
+    margin: 1em auto 1em auto;
+    border: 1px solid;
+}
+
+td {
+    border: 1px solid;
+    padding: 1em;
+}
