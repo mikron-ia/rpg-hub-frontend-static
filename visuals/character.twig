@@ -1,24 +1,105 @@
 {% extends "layout/page.twig" %}
 {% block content %}
-    <h1>Character chart</h1>
-    
-    <div class="block">
-        <h2>Attributes</h2>
-        <div></div>
+    <h1>Character chart - {{ characterData.name }}</h1>
+
+    <div class="block padded foursplit">
+        <h2 class="center">Attributes</h2>
+        <table>
+            <tbody>
+            {% for attribute in characterData.attributes %}
+                <tr>
+                    <td class="left">{{ attribute.name }}</td>
+                    <td class="center">{{ attribute.value }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
 
-    <div class="block">
-        <h2>Advantages</h2>
-        <div></div>
+    <div class="block padded threesplit">
+        <h2 class="center">Advantages</h2>
+        <table>
+            <tbody>
+            {% for advantage in characterData.advantages %}
+                <tr title="{{ advantage.description }}">
+                    <td class="left">{{ advantage.name }}</td>
+                    <td class="center">{{ advantage.level }}</td>
+                    <td class="left">{{ advantage.details }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="block padded threesplit">
+        <h2 class="center">Basic rolls</h2>
+        <p class="note center">Not implemented yet</p>
     </div>
 
     <div class="clear"></div>
 
-    <div class="block">
+    <div>
         <h2>Abilities</h2>
-        <div></div>
+            {% for skill in characterData.skillGroups %}
+                <div class="block foursplit">
+                    <h3>{{ skill.name }}</h3>
+                    <table>
+                        <tbody>
+                        {% for knack in skill.skills %}
+                            <tr class="{{ knack.class }}">
+                                <td class="left">{{ knack.name }}</td>
+                                <td class="center">{{ knack.value }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endfor %}
     </div>
 
     <div class="clear"></div>
+
+    <div class="block padded twosplit">
+        <h2 class="center">Reputation</h2>
+        <table>
+            <tbody>
+            {% for reputation in characterData.reputations %}
+                <tr title="{{ reputation.description }}">
+                    <td class="left">{{ reputation.name }}</td>
+                    <td class="center">{{ reputation.negative }} / {{ reputation.negativeMin }}</td>
+                    <td class="center">{{ reputation.positive }} / {{ reputation.positiveMax }}</td>
+                    <td class="center">{{ reputation.balance }}</td>
+                    <td class="center">{{ reputation.dice }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="block padded threesplit">
+        <h2 class="center">Contacts</h2>
+        <table>
+            <tbody>
+            {% for contact in characterData.contacts %}
+                <tr>
+                    <td class="left">{{ contact.name }}</td>
+                    <td class="center">{{ contact.details }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="block padded threesplit">
+        <h2 class="center">Money</h2>
+        <p class="note center">Not implemented yet</p>
+    </div>
+
+    <div class="block padded threesplit">
+        <h2 class="center">Equipment</h2>
+        <p class="note center">Not implemented yet</p>
+    </div>
 
 {% endblock %}
