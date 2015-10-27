@@ -42,20 +42,15 @@ $app->get('/character/{id}', function (Silex\Application $app, $id) {
         throw new \Exception("Character not found", 404);
     }
 
+    $character = new \Mikron\HubFront\Domain\Entity\Character($data);
+
     return $app['twig']->render(
         'character.twig',
         [
             'title' => 'Character statistics',
             'display' => $app['display'],
             'list' => false,
-            'characterData' => [
-                'name' => isset($data['name']) ? $data['name'] : "name not given",
-                'attributes' => isset($data['attributes']) ? $data['attributes'] : [],
-                'advantages' => isset($data['advantages']) ? $data['advantages'] : [],
-                'skillGroups' => isset($data['skillGroups']) ? $data['skillGroups'] : [],
-                'reputations' => isset($data['reputations']) ? $data['reputations'] : [],
-                'contacts' => isset($data['contacts']) ? $data['contacts'] : [],
-            ]
+            'characterData' => $character->getData()
         ]
     );
 });
