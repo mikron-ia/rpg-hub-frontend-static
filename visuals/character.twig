@@ -2,6 +2,9 @@
 {% block content %}
     <h1>Character chart - {{ characterData.name }}</h1>
 
+    <p class="note">This is a very primitive form of character sheet, intended only for base display. In case any errors
+        are encountered, please report them to the GM.</p>
+
     <div class="block padded foursplit">
         <h2 class="center">Attributes</h2>
         <table>
@@ -33,6 +36,7 @@
 
     <div class="block padded threesplit">
         <h2 class="center">Basic rolls</h2>
+
         <p class="note center">Not implemented yet</p>
     </div>
 
@@ -40,21 +44,21 @@
 
     <div>
         <h2>Abilities</h2>
-            {% for skill in characterData.skillGroups %}
-                <div class="block foursplit">
-                    <h3>{{ skill.name }}</h3>
-                    <table>
-                        <tbody>
-                        {% for knack in skill.skills %}
-                            <tr class="{{ knack.class }}">
-                                <td class="left">{{ knack.name }}</td>
-                                <td class="center">{{ knack.value }}</td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            {% endfor %}
+        {% for skill in characterData.skillGroups %}
+            <div class="block foursplit">
+                <h3>{{ skill.name }}</h3>
+                <table>
+                    <tbody>
+                    {% for knack in skill.skills %}
+                        <tr class="{{ knack.class }}">
+                            <td class="left">{{ knack.name }}</td>
+                            <td class="center">{{ knack.value }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
     </div>
 
     <div class="clear"></div>
@@ -94,11 +98,13 @@
 
     <div class="block padded threesplit">
         <h2 class="center">Money</h2>
+
         <p class="note center">Not implemented yet</p>
     </div>
 
     <div class="block padded threesplit">
         <h2 class="center">Equipment</h2>
+
         <p class="note center">Not implemented yet</p>
     </div>
 

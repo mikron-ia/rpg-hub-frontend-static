@@ -52,6 +52,7 @@ $app->get('/character/{id}', function (Silex\Application $app, $id) {
                 'name' => isset($data['name']) ? $data['name'] : "name not given",
                 'attributes' => isset($data['attributes']) ? $data['attributes'] : [],
                 'advantages' => isset($data['advantages']) ? $data['advantages'] : [],
+                'skillGroups' => isset($data['skillGroups']) ? $data['skillGroups'] : [],
                 'reputations' => isset($data['reputations']) ? $data['reputations'] : [],
                 'contacts' => isset($data['contacts']) ? $data['contacts'] : [],
             ]
