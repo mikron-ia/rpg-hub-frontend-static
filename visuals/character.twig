@@ -36,8 +36,12 @@
 
     <div class="block padded threesplit">
         <h2 class="center">Basic rolls</h2>
-
-        <p class="note center">Not implemented yet</p>
+        {% for roll in characterData.rolls %}
+            <tr>
+                <td class="left">{{ roll.label }}</td>
+                <td class="center">{{ roll.value }}</td>
+            </tr>
+        {% endfor %}
     </div>
 
     <div class="clear"></div>
@@ -98,6 +102,12 @@
 
     <div class="block padded threesplit">
         <h2 class="center">Money</h2>
+
+        <p class="note center">Not implemented yet</p>
+    </div>
+
+    <div class="block padded threesplit">
+        <h2 class="center">Income</h2>
 
         <p class="note center">Not implemented yet</p>
     </div>

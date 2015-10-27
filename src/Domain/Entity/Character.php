@@ -2,6 +2,10 @@
 
 namespace Mikron\HubFront\Domain\Entity;
 
+/**
+ * Class Character - contains basic data regarding the character
+ * @package Mikron\HubFront\Domain\Entity
+ */
 class Character
 {
     protected $name;
@@ -13,6 +17,7 @@ class Character
     protected $equipment;
     protected $money;
     protected $rolls;
+    protected $income;
 
     /**
      * Character constructor.
@@ -27,6 +32,7 @@ class Character
         $this->reputations = isset($data['reputations']) ? $data['reputations'] : [];
         $this->contacts = isset($data['contacts']) ? $data['contacts'] : [];
         $this->equipment = isset($data['equipment']) ? $data['equipment'] : [];
+        $this->income = isset($data['income']) ? $data['income'] : [];
         $this->money = isset($data['money']) ? $data['money'] : [];
         $this->rolls = isset($data['rolls']) ? $data['rolls'] : [];
     }
@@ -41,6 +47,7 @@ class Character
             'reputations' => $this->reputations,
             'contacts' => $this->contacts,
             'equipment' => $this->equipment,
+            'income' => $this->income,
             'money' => $this->money,
             'rolls' => $this->rolls
         ];
