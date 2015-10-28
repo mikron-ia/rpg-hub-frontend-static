@@ -36,12 +36,16 @@
 
     <div class="block padded threesplit">
         <h2 class="center">Basic rolls</h2>
-        {% for roll in characterData.rolls %}
-            <tr>
-                <td class="left">{{ roll.label }}</td>
-                <td class="center">{{ roll.value }}</td>
-            </tr>
-        {% endfor %}
+        <table>
+            <tbody>
+            {% for roll in characterData.rolls %}
+                <tr>
+                    <td class="left">{{ roll.label }}</td>
+                    <td class="center">{{ roll.value }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
 
     <div class="clear"></div>
@@ -50,7 +54,7 @@
         <h2>Abilities</h2>
         {% for skill in characterData.skillGroups %}
             <div class="block foursplit">
-                <h3>{{ skill.name }}</h3>
+                <h3 class="center">{{ skill.name }}</h3>
                 <table>
                     <tbody>
                     {% for knack in skill.skills %}
@@ -103,19 +107,51 @@
     <div class="block padded threesplit">
         <h2 class="center">Money</h2>
 
-        <p class="note center">Not implemented yet</p>
+        <table>
+            <tbody>
+            {% for moneyRow in characterData.money %}
+                <tr>
+                    <td class="left">{{ moneyRow.currency }}</td>
+                    <td class="center">{{ moneyRow.count }}</td>
+                    <td class="center">{{ moneyRow.location }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
 
     <div class="block padded threesplit">
         <h2 class="center">Income</h2>
 
-        <p class="note center">Not implemented yet</p>
+        <table>
+            <tbody>
+            {% for incomeSource in characterData.income %}
+            <tr>
+                <td class="left">{{ income.name }}</td>
+                <td class="center">{{ income.frequency }}</td>
+                <td class="center">{{ income.value }}</td>
+                <td class="center">{{ income.currency }}</td>
+                <td class="left{{ income.details }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
 
-    <div class="block padded threesplit">
-        <h2 class="center">Equipment</h2>
+    <div class=" block padded threesplit
+                ">
+                <h2 class="center">Equipment</h2>
 
-        <p class="note center">Not implemented yet</p>
+                <table>
+                    <tbody>
+                    {% for equipmentItem in characterData.equipment %}
+                        <tr>
+                            <td class="left">{{ equipmentItem.name }}</td>
+                            <td class="left">{{ equipmentItem.details }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
     </div>
 
 {% endblock %}
