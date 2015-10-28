@@ -29,7 +29,11 @@ table {
     border: 1px solid;
 }
 
-td {
+th,td {
     border: 1px solid;
     padding: 1em;
+}
+
+.note {
+    font-style: italic;
 }
