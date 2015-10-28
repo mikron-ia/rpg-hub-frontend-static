@@ -103,6 +103,11 @@
 
     <div class="block padded">
         <h2 class="center">Reputation</h2>
+
+        <p>N / M format in Negative and Positive columns signify <def>current value (N)</def> and
+            <def>most extreme value that happened to this reputation(M)</def>. Balance is calculated as sum of N
+            values of the reputation, M values are used for auxiliary calculations.
+        </p>
         <table>
             <thead>
             <tr>
@@ -135,15 +140,15 @@
         <h2 class="center">Contacts</h2>
         <table>
             <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Who is this?</th>
-                    <th>Who is this to you?</th>
-                    <th>Attitude towards you</th>
-                    <th>Usefulness</th>
-                    <th>Your knowledge</th>
-                    <th>Details</th>
-                </tr>
+            <tr>
+                <th>Name</th>
+                <th>Who is this?</th>
+                <th>Who is this to you?</th>
+                <th>Attitude towards you</th>
+                <th>Usefulness</th>
+                <th>Your knowledge</th>
+                <th>Details</th>
+            </tr>
             </thead>
             <tbody>
             {% for contact in characterData.contacts %}
@@ -206,7 +211,9 @@
         </table>
     </div>
 
-    <div class=" block padded threesplit">
+    <div class="clear"></div>
+
+    <div class=" block padded">
         <h2 class="center">Equipment</h2>
 
         <table>
@@ -221,6 +228,8 @@
             </tbody>
         </table>
     </div>
+
+    <div class="clear"></div>
 
     <div class="block padded threesplit">
         <h2 class="center">Defences</h2>
