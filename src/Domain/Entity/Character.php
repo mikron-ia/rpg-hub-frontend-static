@@ -10,6 +10,7 @@ class Character
 {
     protected $advantages;
     protected $attributes;
+    protected $basics;
     protected $contacts;
     protected $defences;
     protected $equipment;
@@ -29,6 +30,7 @@ class Character
     {
         $this->advantages = isset($data['advantages']) ? $data['advantages'] : [];
         $this->attributes = isset($data['attributes']) ? $data['attributes'] : [];
+        $this->basics = isset($data['basics']) ? $data['basics'] : [];
         $this->contacts = isset($data['contacts']) ? $data['contacts'] : [];
         $this->defences = isset($data['defences']) ? $data['defences'] : [];
         $this->equipment = isset($data['equipment']) ? $data['equipment'] : [];
@@ -46,6 +48,7 @@ class Character
         return [
             'advantages' => $this->advantages,
             'attributes' => $this->attributes,
+            'basics' => $this->basics,
             'defences' => $this->defences,
             'contacts' => $this->contacts,
             'equipment' => $this->equipment,

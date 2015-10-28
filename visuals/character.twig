@@ -5,6 +5,20 @@
     <p class="note">This is a very primitive form of character sheet, intended only for base display. In case any errors
         are encountered, please report them to the GM.</p>
 
+    <div class="block padded threesplit">
+        <h2 class="center">Basics</h2>
+        <table>
+            <tbody>
+            {% for basic in characterData.basics %}
+                <tr title="{{ basic.description }}">
+                    <td class="left">{{ basic.name }}</td>
+                    <td class="center">{{ basic.value }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
     <div class="block padded foursplit">
         <h2 class="center">Attributes</h2>
         <table>
@@ -87,9 +101,19 @@
 
     <div class="clear"></div>
 
-    <div class="block padded twosplit">
+    <div class="block padded">
         <h2 class="center">Reputation</h2>
         <table>
+            <thead>
+            <tr>
+                <th>Reputation</th>
+                <th>Negative</th>
+                <th>Positive</th>
+                <th>Balance</th>
+                <th>Dice</th>
+                <th>Details</th>
+            </tr>
+            </thead>
             <tbody>
             {% for reputation in characterData.reputations %}
                 <tr title="{{ reputation.description }}">
@@ -98,19 +122,38 @@
                     <td class="center">{{ reputation.positive }} / {{ reputation.positiveMax }}</td>
                     <td class="center">{{ reputation.balance }}</td>
                     <td class="center">{{ reputation.dice }}</td>
+                    <td class="center">{{ reputation.details }}</td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
     </div>
 
-    <div class="block padded twosplit">
+    <div class="clear"></div>
+
+    <div class="block padded">
         <h2 class="center">Contacts</h2>
         <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Who is this?</th>
+                    <th>Who is this to you?</th>
+                    <th>Attitude towards you</th>
+                    <th>Usefulness</th>
+                    <th>Your knowledge</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
             <tbody>
             {% for contact in characterData.contacts %}
                 <tr>
                     <td class="left">{{ contact.name }}</td>
+                    <td class="left">{{ contact.whoGenerally }}</td>
+                    <td class="left">{{ contact.whoToPerson }}</td>
+                    <td class="center">{{ contact.like }}</td>
+                    <td class="center">{{ contact.usefulness }}</td>
+                    <td class="center">{{ contact.knowledge }}</td>
                     <td class="center">{{ contact.details }}</td>
                 </tr>
             {% endfor %}
@@ -128,7 +171,7 @@
             {% for moneyRow in characterData.money %}
                 <tr>
                     <td class="left">{{ moneyRow.currency }}</td>
-                    <td class="center">{{ moneyRow.count }}</td>
+                    <td class="center">{{ moneyRow.value }}</td>
                     <td class="center">{{ moneyRow.location }}</td>
                 </tr>
             {% endfor %}
@@ -136,19 +179,27 @@
         </table>
     </div>
 
-    <div class="block padded threesplit">
+    <div class="block padded twosplit">
         <h2 class="center">Income</h2>
 
         <table>
+            <thead>
+            <tr>
+                <th>Source</th>
+                <th>Frequency</th>
+                <th>Value</th>
+                <th>Currency</th>
+                <th>Details</th>
+            </tr>
+            </thead>
             <tbody>
             {% for incomeSource in characterData.income %}
                 <tr>
-                    <td class="left">{{ income.name }}</td>
-                    <td class="center">{{ income.frequency }}</td>
-                    <td class="center">{{ income.value }}</td>
-                    <td class="center">{{ income.currency }}</td>
-                    <td class="left"
-                    {{ income.details }}</td>
+                    <td class="left">{{ incomeSource.name }}</td>
+                    <td class="center">{{ incomeSource.frequency }}</td>
+                    <td class="center">{{ incomeSource.value }}</td>
+                    <td class="center">{{ incomeSource.currency }}</td>
+                    <td class="left">{{ incomeSource.details }}</td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -163,6 +214,7 @@
             {% for equipmentItem in characterData.equipment %}
                 <tr>
                     <td class="left">{{ equipmentItem.name }}</td>
+                    <td class="center">{{ equipmentItem.count }}</td>
                     <td class="left">{{ equipmentItem.details }}</td>
                 </tr>
             {% endfor %}
