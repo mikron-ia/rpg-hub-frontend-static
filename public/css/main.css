@@ -19,7 +19,10 @@ body {
 
 div.twosplit {
     width: 48%;
-    margin: auto;
+}
+
+div.twothirdsplit {
+    width: 64%;
 }
 
 div.threesplit {

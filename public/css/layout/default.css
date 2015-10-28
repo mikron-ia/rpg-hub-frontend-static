@@ -3,13 +3,14 @@ h1 {
 }
 
 .logo {
-    color: darkslategray;
+    color: saddlebrown;
     font-size: 200%;
     padding: 9px;
+    font-weight: bold;
 }
 
 .menu {
-    background-color: navy;
+    background-color: saddlebrown;
     color: white;
     font-weight: bold;
     padding: 9px;
@@ -28,7 +29,11 @@ table {
     border: 1px solid;
 }
 
-td {
+th,td {
     border: 1px solid;
     padding: 1em;
+}
+
+.note {
+    font-style: italic;
 }
