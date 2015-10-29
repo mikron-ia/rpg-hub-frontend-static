@@ -8,25 +8,25 @@ namespace Mikron\HubFront\Domain\Entity;
  */
 class Character
 {
-    protected $advantages;
-    protected $attributes;
-    protected $basics;
-    protected $catches;
-    protected $contacts;
-    protected $damage;
-    protected $defences;
-    protected $descriptions;
-    protected $equipment;
-    protected $expenses;
-    protected $income;
-    protected $languages;
-    protected $money;
-    protected $name;
-    protected $reputations;
-    protected $rolls;
-    protected $skillGroups;
-    protected $spells;
-    protected $xp;
+    protected $advantages; // traits - advantages & disadvantages
+    protected $attributes; // basic attributes
+    protected $basics; // names, descriptions, etc.
+    protected $catches; // catches: backgrounds, motivations...
+    protected $contacts; // friends & allies
+    protected $damage; // more permanent damage
+    protected $defences; // hit difficulties
+    protected $descriptions; // descriptions detailed
+    protected $equipment; // items on person
+    protected $expenses; // regular expenses
+    protected $income; // regular income
+    protected $languages; // languages known
+    protected $money; // cash at hand
+    protected $name; // used name
+    protected $reputations; // reputation values
+    protected $rolls; // most commonly used rolls
+    protected $skillGroups; // skill groups with skills
+    protected $stunts; // one-of kind tricks
+    protected $xp; // experience
 
     /**
      * Character constructor.
