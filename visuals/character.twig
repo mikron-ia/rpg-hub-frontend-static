@@ -253,4 +253,21 @@
         </table>
     </div>
 
+    <div class="block padded twosplit">
+        <h2 class="center">Backgrounds</h2>
+        <table>
+            <tbody>
+            {% for catch in characterData.catches %}
+                <tr title="{{ catch.description }}">
+                    <td class="left">{{ catch.name }}</td>
+                    <td class="center">{{ catch.level }}</td>
+                    <td class="left">{{ catch.details }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="clear"></div>
+
 {% endblock %}

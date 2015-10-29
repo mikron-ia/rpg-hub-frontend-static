@@ -11,9 +11,13 @@ class Character
     protected $advantages;
     protected $attributes;
     protected $basics;
+    protected $catches;
     protected $contacts;
+    protected $damage;
     protected $defences;
+    protected $descriptions;
     protected $equipment;
+    protected $expenses;
     protected $income;
     protected $languages;
     protected $money;
@@ -21,6 +25,8 @@ class Character
     protected $reputations;
     protected $rolls;
     protected $skillGroups;
+    protected $spells;
+    protected $xp;
 
     /**
      * Character constructor.
@@ -28,37 +34,37 @@ class Character
      */
     public function __construct($data)
     {
-        $this->advantages = isset($data['advantages']) ? $data['advantages'] : [];
-        $this->attributes = isset($data['attributes']) ? $data['attributes'] : [];
-        $this->basics = isset($data['basics']) ? $data['basics'] : [];
-        $this->contacts = isset($data['contacts']) ? $data['contacts'] : [];
-        $this->defences = isset($data['defences']) ? $data['defences'] : [];
-        $this->equipment = isset($data['equipment']) ? $data['equipment'] : [];
-        $this->income = isset($data['income']) ? $data['income'] : [];
-        $this->languages = isset($data['languages']) ? $data['languages'] : [];
-        $this->money = isset($data['money']) ? $data['money'] : [];
-        $this->name = isset($data['name']) ? $data['name'] : "name not given";
-        $this->reputations = isset($data['reputations']) ? $data['reputations'] : [];
-        $this->rolls = isset($data['rolls']) ? $data['rolls'] : [];
-        $this->skillGroups = isset($data['skillGroups']) ? $data['skillGroups'] : [];
+        $attributeNamesList = $this->getProperties();
+
+        foreach($attributeNamesList as $attributeName) {
+            $this->$attributeName = isset($data[$attributeName]) ? $data[$attributeName] : [];
+        }
     }
 
     public function getData()
     {
-        return [
-            'advantages' => $this->advantages,
-            'attributes' => $this->attributes,
-            'basics' => $this->basics,
-            'defences' => $this->defences,
-            'contacts' => $this->contacts,
-            'equipment' => $this->equipment,
-            'income' => $this->income,
-            'languages' => $this->languages,
-            'money' => $this->money,
-            'name' => $this->name,
-            'reputations' => $this->reputations,
-            'rolls' => $this->rolls,
-            'skillGroups' => $this->skillGroups,
-        ];
+        $attributeNamesList = $this->getProperties();
+
+        $attributes = [];
+
+        foreach($attributeNamesList as $attributeName) {
+            $attributes[$attributeName] = $this->$attributeName;
+        }
+
+        return $attributes;
+    }
+
+    private function getProperties()
+    {
+        $reflector = new \ReflectionClass($this);
+        $characterAttributes = $reflector->getProperties(\ReflectionProperty::IS_PROTECTED);
+
+        $attributeNamesList = [];
+
+        foreach ($characterAttributes as $characterAttribute) {
+            $attributeNamesList[] = $characterAttribute->getName();
+        }
+
+        return $attributeNamesList;
     }
 }
