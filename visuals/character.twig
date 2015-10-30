@@ -104,8 +104,11 @@
     <div class="block padded">
         <h2 class="center">Reputation</h2>
 
-        <p>N / M format in Negative and Positive columns signify <def>current value (N)</def> and
-            <def>most extreme value that happened to this reputation(M)</def>. Balance is calculated as sum of N
+        <p>N / M format in Negative and Positive columns signify
+            <def>current value (N)</def>
+            and
+            <def>most extreme value that happened to this reputation(M)</def>
+            . Balance is calculated as sum of N
             values of the reputation, M values are used for auxiliary calculations.
         </p>
         <table>
@@ -168,25 +171,8 @@
 
     <div class="clear"></div>
 
-    <div class="block padded threesplit">
-        <h2 class="center">Money</h2>
-
-        <table>
-            <tbody>
-            {% for moneyRow in characterData.money %}
-                <tr>
-                    <td class="left">{{ moneyRow.currency }}</td>
-                    <td class="center">{{ moneyRow.value }}</td>
-                    <td class="center">{{ moneyRow.location }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
-
     <div class="block padded twosplit">
         <h2 class="center">Income</h2>
-
         <table>
             <thead>
             <tr>
@@ -211,11 +197,36 @@
         </table>
     </div>
 
+    <div class="block padded twosplit">
+        <h2 class="center">Expenses</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Source</th>
+                <th>Frequency</th>
+                <th>Value</th>
+                <th>Currency</th>
+                <th>Details</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for expenseGoal in characterData.expenses %}
+                <tr>
+                    <td class="left">{{ expenseGoal.name }}</td>
+                    <td class="center">{{ expenseGoal.frequency }}</td>
+                    <td class="center">{{ expenseGoal.value }}</td>
+                    <td class="center">{{ expenseGoal.currency }}</td>
+                    <td class="left">{{ expenseGoal.details }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
     <div class="clear"></div>
 
     <div class=" block padded">
         <h2 class="center">Equipment</h2>
-
         <table>
             <tbody>
             {% for equipmentItem in characterData.equipment %}
@@ -262,6 +273,21 @@
                     <td class="left">{{ catch.name }}</td>
                     <td class="center">{{ catch.level }}</td>
                     <td class="left">{{ catch.details }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="block padded threesplit">
+        <h2 class="center">Money</h2>
+        <table>
+            <tbody>
+            {% for moneyRow in characterData.money %}
+                <tr>
+                    <td class="left">{{ moneyRow.currency }}</td>
+                    <td class="center">{{ moneyRow.value }}</td>
+                    <td class="center">{{ moneyRow.location }}</td>
                 </tr>
             {% endfor %}
             </tbody>
