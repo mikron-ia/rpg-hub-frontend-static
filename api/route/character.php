@@ -31,7 +31,7 @@ $app->get('/party/', function (Silex\Application $app) {
 /**
  * Display specific character
  */
-$app->get('/character/{id}', function (Silex\Application $app, $id) {
+$app->get('/character/{id}/', function (Silex\Application $app, $id) {
     $uri = $app['config.deploy']['dataSource'] . '?id=' . $id . '&key=' . $app['config.deploy']['key'];
 
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
@@ -48,6 +48,33 @@ $app->get('/character/{id}', function (Silex\Application $app, $id) {
         'character.twig',
         [
             'title' => 'Character statistics',
+            'display' => $app['display'],
+            'list' => false,
+            'characterData' => $character->getData()
+        ]
+    );
+});
+
+/**
+ * Display specific character
+ */
+$app->get('/character/{id}/current/', function (Silex\Application $app, $id) {
+    $uri = $app['config.deploy']['dataSource'] . '?id=' . $id . '&key=' . $app['config.deploy']['key'];
+
+    $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
+
+    $data = $retriever->getDataAsArray();
+
+    if ($data === null) {
+        throw new \Exception("Character not found", 404);
+    }
+
+    $character = new \Mikron\HubFront\Domain\Entity\Character($data);
+
+    return $app['twig']->render(
+        'character_current.twig',
+        [
+            'title' => 'Character current data',
             'display' => $app['display'],
             'list' => false,
             'characterData' => $character->getData()
