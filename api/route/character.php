@@ -16,20 +16,7 @@ $app->get('/character/', function (Silex\Application $app) {
 });
 
 /**
- * Display entire party roster
- */
-$app->get('/party/', function (Silex\Application $app) {
-    return $app['twig']->render(
-        'characters.twig',
-        [
-            'title' => 'Party roster',
-            'display' => $app['display'],
-        ]
-    );
-});
-
-/**
- * Display specific character
+ * Display character with given ID
  */
 $app->get('/character/{id}/', function (Silex\Application $app, $id) {
     $uri = $app['config.deploy']['dataSource'] . '?id=' . $id . '&key=' . $app['config.deploy']['key'];
@@ -56,7 +43,7 @@ $app->get('/character/{id}/', function (Silex\Application $app, $id) {
 });
 
 /**
- * Display specific character
+ * Display current state data for character with given ID
  */
 $app->get('/character/{id}/current/', function (Silex\Application $app, $id) {
     $uri = $app['config.deploy']['dataSource'] . '?id=' . $id . '&key=' . $app['config.deploy']['key'];

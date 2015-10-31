@@ -1,20 +1,93 @@
 {% extends "layout/page.twig" %}
 {% block content %}
-    <h1>Party roster</h1>
-    <table>
-        <thead>
+    <h1>Party</h1>
+
+    <div class="block padded">
+        <h2 class="center">Party roster</h2>
+        <table>
+            <thead>
             <tr>
                 <th>Name</th>
-                <th>Nationality</th>
+                <th title="Apparent nationality">Nationality</th>
+                <th title="Profession or trade they work in">Vocation</th>
                 <th>Appearance</th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
+            {% if partyData.members %}
+                {% for member in partyData.members %}
+                    <tr title="{{ member.description }}">
+                        <td class="left">{{ member.name }}</td>
+                        <td class="center">{{ member.nationality }}</td>
+                        <td class="center">{{ member.vocation }}</td>
+                        <td class="left">{{ member.appearance }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="4" class="center note">No data available</td>
+                </tr>
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="block padded">
+        <h2 class="center">Party reputation</h2>
+        <table>
+            <thead>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <th title="Name of the reputation">Reputation</th>
+                <th>Negative</th>
+                <th>Positive</th>
+                <th title="Influence from party members">Influence</th>
+                <th>Balance</th>
+                <th>Dice</th>
+                <th>Details</th>
             </tr>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% if partyData.reputation %}
+                {% for reputation in partyData.reputation %}
+                    <tr title="{{ reputation.description }}">
+                        <td class="left">{{ reputation.name }}</td>
+                        <td class="center">{{ reputation.negative }} / {{ reputation.negativeMin }}</td>
+                        <td class="center">{{ reputation.positive }} / {{ reputation.positiveMax }}</td>
+                        <td class="center">{{ reputation.influence }}</td>
+                        <td class="center">{{ reputation.balance }}</td>
+                        <td class="center">{{ reputation.dice }}</td>
+                        <td class="left">{{ reputation.details }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="7" class="center note">No data available</td>
+                </tr>
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="block padded">
+        <h2 class="center">Personal reputation of party members</h2>
+
+        <p>
+            Due to potential loss of legibility due to large amount of data, only values presented are: minimums,
+            maximums, balance, and dice.
+        </p>
+        {% if partyData.reputation %}
+            <p>Unable to process data provided</p>
+        {% else %}
+            <p class="note">
+                No data lists found - please contact the GM or verify data source
+            </p>
+        {% endif %}
+    </div>
+
+    <div class="clear"></div>
+
 {% endblock %}
