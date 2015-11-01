@@ -2,9 +2,21 @@
 
 namespace Mikron\HubFront\Domain\Service;
 
+/**
+ * Class Retriever - retrieves data from a given source
+ * @package Mikron\HubFront\Domain\Service
+ * @todo Exception handling
+ */
 class Retriever
 {
+    /**
+     * @var string Data source
+     */
     private $uri;
+
+    /**
+     * @var string Retrieved data in JSON
+     */
     private $data;
 
     /**
@@ -17,6 +29,9 @@ class Retriever
         $this->data = $this->retrieve();
     }
 
+    /**
+     * @return string JSON from the source
+     */
     private function retrieve()
     {
         $curl = curl_init($this->uri);
@@ -27,7 +42,7 @@ class Retriever
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getDataAsJSON()
     {
@@ -35,7 +50,7 @@ class Retriever
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getDataAsArray()
     {
