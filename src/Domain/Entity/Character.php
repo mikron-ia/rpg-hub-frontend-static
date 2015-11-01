@@ -5,6 +5,7 @@ namespace Mikron\HubFront\Domain\Entity;
 /**
  * Class Character - contains basic data regarding the character
  * @package Mikron\HubFront\Domain\Entity
+ * @todo Split it into correct and neat universal domain
  */
 class Character
 {

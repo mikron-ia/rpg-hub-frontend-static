@@ -6,4 +6,5 @@ $app['config.deploy'] = [
     'interface' => [],
     'layout' => 'default',
     'dataSource' => '',
+    'key' => ''
 ];
