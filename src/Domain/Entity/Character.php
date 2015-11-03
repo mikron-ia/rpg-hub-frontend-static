@@ -17,6 +17,7 @@ class Character
     protected $damage; // more permanent damage
     protected $defences; // hit difficulties
     protected $descriptions; // descriptions detailed
+    protected $development; // development history
     protected $equipment; // items on person
     protected $expenses; // regular expenses
     protected $income; // regular income
@@ -27,6 +28,7 @@ class Character
     protected $rolls; // most commonly used rolls
     protected $skillGroups; // skill groups with skills
     protected $stunts; // one-of kind tricks
+    protected $variables; // often changing values, like counters
     protected $xp; // experience
 
     /**

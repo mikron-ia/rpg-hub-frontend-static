@@ -1,0 +1,34 @@
+{% extends "layout/page.twig" %}
+{% block content %}
+    <h1>Character data - {{ characterData.name }} - development history</h1>
+<div class="block padded">
+    <h2 class="center">Developments</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Change</th>
+                <th>New value</th>
+                <th>PD cost</th>
+                <th>When</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% if characterData.development %}
+            {% for developmentItem in characterData.development %}
+                <tr>
+                    <td class="left">{{ developmentItem.name }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="7" class="center note">No data available</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+    </div>
+
+    <div class="clear"></div>
+{% endblock %}

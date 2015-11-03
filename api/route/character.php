@@ -68,3 +68,30 @@ $app->get('/character/{id}/current/', function (Silex\Application $app, $id) {
         ]
     );
 });
+
+/**
+ * Display current state data for character with given ID
+ */
+$app->get('/character/{id}/development/', function (Silex\Application $app, $id) {
+    $uri = $app['config.deploy']['dataSource'] . '?id=' . $id . '&key=' . $app['config.deploy']['key'];
+
+    $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
+
+    $data = $retriever->getDataAsArray();
+
+    if ($data === null) {
+        throw new \Exception("Character not found", 404);
+    }
+
+    $character = new \Mikron\HubFront\Domain\Entity\Character($data);
+
+    return $app['twig']->render(
+        'character_development.twig',
+        [
+            'title' => 'Character development history',
+            'display' => $app['display'],
+            'list' => false,
+            'characterData' => $character->getData()
+        ]
+    );
+});

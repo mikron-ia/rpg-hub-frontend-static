@@ -3,13 +3,13 @@
 <h1>Character data - {{ characterData.name }} - current information</h1>
 
     <div class="block padded threesplit">
-        <h2 class="center">Basics</h2>
+        <h2 class="center">Variable basics</h2>
         <table>
             <tbody>
-            {% for basic in characterData.basics %}
-                <tr title="{{ basic.description }}">
-                    <td class="left">{{ basic.name }}</td>
-                    <td class="center">{{ basic.value }}</td>
+            {% for variable in characterData.variables %}
+                <tr title="{{ variable.description }}">
+                    <td class="left">{{ variable.name }}</td>
+                    <td class="center">{{ variable.value }}</td>
                 </tr>
             {% endfor %}
             </tbody>
