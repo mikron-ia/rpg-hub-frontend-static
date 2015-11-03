@@ -64,3 +64,28 @@ div.sevensplit {
 .advanced {
     font-style: italic;
 }
+
+.linkbox li
+{
+    list-style: none;
+    float: left;
+    position: relative;
+    top: 0;
+    margin: 1em 1em 0 0;
+    padding: 0;
+    white-space: nowrap;
+    background-color:lightgray;
+    border:4px solid gray;
+    border-radius:15px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align:center;
+    cursor: pointer;
+}
+
+.linkbox a:focus,a:hover,a
+{
+    color:gray;
+    text-decoration: none;
+    padding: 1em;
+}
