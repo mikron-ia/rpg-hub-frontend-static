@@ -50,9 +50,22 @@
 
     <div class="block padded threesplit">
         <h2 class="center">Basic description</h2>
+
         <div>
             {{ characterData.description }}
         </div>
     </div>
+
+    <div class="clear"></div>
+
+    {% if characterData.descriptions %}
+        <h2 class="center">Descriptions</h2>
+        {% for description in characterData.descriptions %}
+            <div class="block padded twosplit">
+                <h3 class="center">{{ description.title }}</h3>
+                {{ description.text }}
+            </div>
+        {% endfor %}
+    {% endif %}
 
 {% endblock %}
