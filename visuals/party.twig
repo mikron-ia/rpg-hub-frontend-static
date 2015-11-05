@@ -52,8 +52,8 @@
                 {% for reputation in partyData.reputation %}
                     <tr title="{{ reputation.description }}">
                         <td class="left">{{ reputation.name }}</td>
-                        <td class="center">{{ reputation.negative }} / {{ reputation.negativeMin }}</td>
-                        <td class="center">{{ reputation.positive }} / {{ reputation.positiveMax }}</td>
+                        <td class="center" title="Lowest ever: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
+                        <td class="center" title="Highest ever: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
                         <td class="center">{{ reputation.influence }}</td>
                         <td class="center">{{ reputation.balance }}</td>
                         <td class="center">{{ reputation.dice }}</td>
@@ -97,8 +97,8 @@
                             {% for reputation in memberReputation.reputations %}
                                 <tr title="{{ reputation.description }}">
                                     <td class="left">{{ reputation.name }}</td>
-                                    <td class="center">{{ reputation.negative }} / {{ reputation.negativeMin }}</td>
-                                    <td class="center">{{ reputation.positive }} / {{ reputation.positiveMax }}</td>
+                                    <td class="center" title="Lowest ever: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
+                                    <td class="center" title="Highest ever: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
                                     <td class="center">{{ reputation.balance }}</td>
                                     <td class="center">{{ reputation.dice }}</td>
                                 </tr>
