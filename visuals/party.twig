@@ -79,7 +79,7 @@
             positives, balance, and dice.
         </p>
         {% if partyData.membersReputations %}
-            {%  for memberReputation in partyData.membersReputations %}
+            {% for memberReputation in partyData.membersReputations %}
                 <div class="block padded twosplit">
                     <table>
                         <caption>{{ memberReputation.name }}</caption>
@@ -111,7 +111,7 @@
                         </tbody>
                     </table>
                 </div>
-            {%  endfor %}
+            {% endfor %}
             <div class="clear"></div>
         {% else %}
             <p class="note">
