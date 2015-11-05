@@ -13,4 +13,13 @@ The project is currently split in three parts - [backend](https://github.com/mik
 This version of frontend is being written in PHP with Silex. Data to fuel the frontend will be retrieved from API provided by backend.
 
 ## Installation guide
-... will be created once the project does anything useful.
+1. Clone the project via `git clone` with correct address to a desired directory of a web server
+2. Run `composer install` in the project directory
+3. Copy or rename the `deployment.php.example` file into `deployment.php`
+4. Copy or rename the `epic.php.example` file into `epic.php`
+5. Enter desired configuration, ie.:
+    * Data source in `deployment.php`
+    * System code and basic interface in `epic.php`
+6. Ensure there is a correct `config/data/{system code}.php` file - it currently matters mainly for system-customized interface messages
+7. Set document root to `public/` or redirect requests there 
+8. Access via web server's URL
