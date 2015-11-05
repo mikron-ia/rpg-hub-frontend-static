@@ -1,31 +1,6 @@
-{% extends "layout/page.twig" %}
+{% extends "layout/print.twig" %}
 {% block content %}
-    <h1>Character chart - {{ characterData.name }}</h1>
-
-    <div>
-        <ul class="linkbox">
-            <li>
-                <a href="current" title="Money, Drama, reputation, ...">
-                    Current data
-                </a>
-            </li>
-            <li>
-                <a href="development" title="Experience expenditures, changes in the card">
-                    Development history
-                </a>
-            </li>
-            <li>
-                <a href="reputation">
-                    Deeds and misdeeds
-                </a>
-            </li>
-            <li>
-                <a href="print">
-                    Printable
-                </a>
-            </li>
-        </ul>
-    </div>
+    <h1 class="center">{{ characterData.name }}</h1>
 
     <div class="clear"></div>
 
@@ -65,6 +40,20 @@
                 <tr>
                     <td class="left">{{ roll.label }}</td>
                     <td class="center">{{ roll.value }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="block padded threesplit">
+        <h2 class="center">Variables</h2>
+        <table>
+            <tbody>
+            {% for variable in characterData.variables %}
+                <tr title="{{ variable.description }}">
+                    <td class="left">{{ variable.name }}</td>
+                    <td class="center">{{ variable.value }}</td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -259,6 +248,32 @@
                     <td class="left">{{ catch.name }}</td>
                     <td class="center">{{ catch.level }}</td>
                     <td class="left">{{ catch.details }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="block padded twosplit">
+        <h2 class="center">Reputation table</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Reputation</th>
+                <th>Negative</th>
+                <th>Positive</th>
+                <th>Balance</th>
+                <th>Dice</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for reputation in characterData.reputations %}
+                <tr title="{{ reputation.description }}">
+                    <td class="left">{{ reputation.name }}</td>
+                    <td class="center" title="Lowest ever: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
+                    <td class="center" title="Highest ever: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
+                    <td class="center">{{ reputation.balance }}</td>
+                    <td class="center">{{ reputation.dice }}</td>
                 </tr>
             {% endfor %}
             </tbody>

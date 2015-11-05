@@ -9,8 +9,7 @@
     {% endblock %}
 </head>
 <body>
-{% include "layout/header.twig" %}
-{% block content %}{% endblock %}
-{% include "layout/footer.twig" %}
+    {% block content %}{% endblock %}
+    <p class="note right">Printed from {{ display.interface.titleSuffix }}</p>
 </body>
 </html>

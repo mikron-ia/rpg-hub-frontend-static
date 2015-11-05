@@ -122,3 +122,30 @@ $app->get('/character/{id}/reputation/', function (Silex\Application $app, $id) 
         ]
     );
 });
+
+/**
+ * Display character with given ID
+ */
+$app->get('/character/{id}/print/', function (Silex\Application $app, $id) {
+    $uri = $app['config.deploy']['dataSource'] . '?id=' . $id . '&key=' . $app['config.deploy']['key'];
+
+    $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
+
+    $data = $retriever->getDataAsArray();
+
+    if ($data === null) {
+        throw new \Exception("Character not found", 404);
+    }
+
+    $character = new \Mikron\HubFront\Domain\Entity\Character($data);
+
+    return $app['twig']->render(
+        'character_print.twig',
+        [
+            'title' => 'Character printable sheet',
+            'display' => $app['display'],
+            'list' => false,
+            'characterData' => $character->getData()
+        ]
+    );
+});

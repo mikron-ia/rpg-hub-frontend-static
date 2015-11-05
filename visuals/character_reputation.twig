@@ -6,7 +6,7 @@
         <ul class="linkbox">
             <li>
                 <a href="../" title="Money, Drama, reputation, ...">
-                    Main card
+                    Main
                 </a>
             </li>
             <li>
@@ -19,45 +19,43 @@
                     Development history
                 </a>
             </li>
+            <li>
+                <a href="../print">
+                    Printable
+                </a>
+            </li>
         </ul>
     </div>
 
-    <div class="clear"></div><div class="block padded">
+    <div class="clear"></div>
 
-    <h2 class="center">Reputation table</h2>
-
-    <p>N / M format in Negative and Positive columns signify
-        <def>current value (N)</def>
-        and
-        <def>most extreme value that happened to this reputation(M)</def>
-        . Balance is calculated as sum of N
-        values of the reputation, M values are used for auxiliary calculations.
-    </p>
-    <table>
-        <thead>
-        <tr>
-            <th>Reputation</th>
-            <th>Negative</th>
-            <th>Positive</th>
-            <th>Balance</th>
-            <th>Dice</th>
-            <th>Details</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for reputation in characterData.reputations %}
-            <tr title="{{ reputation.description }}">
-                <td class="left">{{ reputation.name }}</td>
-                <td class="center" title="Lowest ever: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
-                <td class="center" title="Highest ever: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
-                <td class="center">{{ reputation.balance }}</td>
-                <td class="center">{{ reputation.dice }}</td>
-                <td class="center">{{ reputation.details }}</td>
+    <div class="block padded">
+        <h2 class="center">Reputation table</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Reputation</th>
+                <th>Negative</th>
+                <th>Positive</th>
+                <th>Balance</th>
+                <th>Dice</th>
+                <th>Details</th>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+            {% for reputation in characterData.reputations %}
+                <tr title="{{ reputation.description }}">
+                    <td class="left">{{ reputation.name }}</td>
+                    <td class="center" title="Lowest ever: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
+                    <td class="center" title="Highest ever: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
+                    <td class="center">{{ reputation.balance }}</td>
+                    <td class="center">{{ reputation.dice }}</td>
+                    <td class="center">{{ reputation.details }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
     <div class="clear"></div>
 
