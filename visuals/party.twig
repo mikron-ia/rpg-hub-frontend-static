@@ -1,7 +1,6 @@
 {% extends "layout/page.twig" %}
 {% block content %}
-    <h1>Party</h1>
-
+    <h1>Party data</h1>
     <div class="block padded">
         <h2 class="center">Party roster</h2>
         <table>
@@ -16,7 +15,7 @@
             <tbody>
             {% if partyData.members %}
                 {% for member in partyData.members %}
-                    <tr title="{{ member.description }}">
+                    <tr title="{{ member.comment }}">
                         <td class="left">{{ member.name }}</td>
                         <td class="center">{{ member.nationality }}</td>
                         <td class="center">{{ member.vocation }}</td>
@@ -53,8 +52,8 @@
                 {% for reputation in partyData.reputation %}
                     <tr title="{{ reputation.description }}">
                         <td class="left">{{ reputation.name }}</td>
-                        <td class="center">{{ reputation.negative }} / {{ reputation.negativeMin }}</td>
-                        <td class="center">{{ reputation.positive }} / {{ reputation.positiveMax }}</td>
+                        <td class="center" title="Lowest ever: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
+                        <td class="center" title="Highest ever: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
                         <td class="center">{{ reputation.influence }}</td>
                         <td class="center">{{ reputation.balance }}</td>
                         <td class="center">{{ reputation.dice }}</td>
@@ -76,11 +75,44 @@
         <h2 class="center">Personal reputation of party members</h2>
 
         <p>
-            Due to potential loss of legibility due to large amount of data, only values presented are: minimums,
-            maximums, balance, and dice.
+            Due to potential loss of legibility due to large amount of data, only values presented are: negatives,
+            positives, balance, and dice.
         </p>
-        {% if partyData.reputation %}
-            <p>Unable to process data provided</p>
+        {% if partyData.membersReputations %}
+            {% for memberReputation in partyData.membersReputations %}
+                <div class="block padded twosplit">
+                    <table>
+                        <caption>{{ memberReputation.name }}</caption>
+                        <thead>
+                        <tr>
+                            <th title="Name of the reputation">Reputation</th>
+                            <th>Negative</th>
+                            <th>Positive</th>
+                            <th>Balance</th>
+                            <th>Dice</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% if memberReputation.reputations %}
+                            {% for reputation in memberReputation.reputations %}
+                                <tr title="{{ reputation.description }}">
+                                    <td class="left">{{ reputation.name }}</td>
+                                    <td class="center" title="Lowest ever: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
+                                    <td class="center" title="Highest ever: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
+                                    <td class="center">{{ reputation.balance }}</td>
+                                    <td class="center">{{ reputation.dice }}</td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="5" class="center note">No data for the person given</td>
+                            </tr>
+                        {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endfor %}
+            <div class="clear"></div>
         {% else %}
             <p class="note">
                 No data lists found - please contact the GM or verify data source
