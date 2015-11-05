@@ -19,6 +19,7 @@ class Character extends BagOfAttributes
             'contacts' => [], // friends & allies
             'damage' => [], // more permanent damage
             'defences' => [], // hit difficulties
+            'description' => "", // basic description
             'descriptions' => [], // descriptions detailed
             'development' => [], // development history
             'equipment' => [], // items on person
@@ -27,6 +28,7 @@ class Character extends BagOfAttributes
             'languages' => [], // languages known
             'money' => [], // cash at hand
             'name' => "", // used name
+            'public' => [], // public information
             'reputations' => [], // reputation values
             'rolls' => [], // most commonly used rolls
             'skillGroups' => [], // skill groups with skills
