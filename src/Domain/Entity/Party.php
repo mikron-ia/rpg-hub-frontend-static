@@ -10,6 +10,7 @@ class Party extends BagOfAttributes
             'members' => [], // list of party members
             'reputation' => [], // listing of party reputation
             'membersReputations' => [], // list of party members' reputation
+            'help' => [],
         ];
     }
 }

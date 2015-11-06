@@ -4,6 +4,9 @@
     <h1>Party data</h1>
     <div class="block padded">
         <h2 class="center">Party roster</h2>
+        {% if partyData.help.members %}
+            <p class="help">{{ partyData.help.members }}</p>
+        {% endif %}
         <table>
             <thead>
             <tr>
@@ -36,6 +39,9 @@
 
     <div class="block padded">
         <h2 class="center">Party reputation</h2>
+        {% if partyData.help.reputation %}
+            <p class="help">{{ partyData.help.reputation }}</p>
+        {% endif %}
         <table>
             <thead>
             <tr>
@@ -74,6 +80,9 @@
 
     <div class="block padded">
         <h2 class="center">Personal reputation of party members</h2>
+        {% if partyData.help.membersReputations %}
+            <p class="help">{{ partyData.help.membersReputations }}</p>
+        {% endif %}
         {% if partyData.membersReputations %}
             {% for memberReputation in partyData.membersReputations %}
                 <div class="block padded twosplit">

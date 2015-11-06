@@ -90,3 +90,8 @@ div.sevensplit {
     text-decoration: none;
     padding: 1em;
 }
+
+.help {
+    font-style: italic;
+    color: dimgray;
+}

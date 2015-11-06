@@ -26,6 +26,7 @@ class PartyTest extends PHPUnit_Framework_TestCase
             ],
             'reputation' => [],
             'membersReputations' => [],
+            'help' => [],
         ];
 
         $this->assertEquals($expectation, $result);
