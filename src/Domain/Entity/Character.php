@@ -24,6 +24,7 @@ class Character extends BagOfAttributes
             'development' => [], // development history
             'equipment' => [], // items on person
             'expenses' => [], // regular expenses
+            'help' => [], // helpful information to display on page
             'income' => [], // regular income
             'languages' => [], // languages known
             'money' => [], // cash at hand

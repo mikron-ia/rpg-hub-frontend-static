@@ -2,6 +2,11 @@
 
 namespace Mikron\HubFront\Domain\Entity;
 
+/**
+ * Class BagOfAttributes - base class for all bag-like resources that are extras for model
+ * This should not be used for things that have their own entity models
+ * @package Mikron\HubFront\Domain\Entity
+ */
 abstract class BagOfAttributes
 {
     protected $data;
@@ -23,6 +28,9 @@ abstract class BagOfAttributes
         }
     }
 
+    /**
+     * @return array
+     */
     public function getData()
     {
         $attributeNamesList = $this->getProperties();
@@ -36,6 +44,9 @@ abstract class BagOfAttributes
         return $attributes;
     }
 
+    /**
+     * @return string[]
+     */
     private function getProperties()
     {
         return array_keys($this->data);

@@ -28,6 +28,7 @@ class CharacterTest extends PHPUnit_Framework_TestCase
             'development' => [],
             'equipment' => [],
             'expenses' => [],
+            'help' => [],
             'income' => [],
             'languages' => [],
             'money' => [],
