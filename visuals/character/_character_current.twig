@@ -1,0 +1,49 @@
+<div class="block padded threesplit">
+    <h2 class="center">Basics</h2>
+    {% if characterData.basics %}
+        <table>
+            <tbody>
+            {% for basic in characterData.basics %}
+                <tr title="{{ basic.description }}">
+                    <td class="left">{{ basic.name }}</td>
+                    <td class="center">{{ basic.value }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="center note">No basic data found. This is an error.</p>
+    {% endif %}
+</div>
+
+<div class="block padded threesplit">
+    <h2 class="center">Public knowledge</h2>
+    <table>
+        <tbody>
+        {% for public in characterData.public %}
+            <tr title="{{ public.description }}">
+                <td class="left">{{ public.name }}</td>
+                <td class="center">{{ public.value }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="block padded threesplit">
+    <ul>
+        <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/print/">Printable sheet</a></li>
+    </ul>
+</div>
+
+<div class="clear"></div>
+
+<div class="block padded">
+    <h2 class="center">Basic description</h2>
+
+    <div>
+        {{ characterData.description }}
+    </div>
+</div>
+
+<div class="clear"></div>

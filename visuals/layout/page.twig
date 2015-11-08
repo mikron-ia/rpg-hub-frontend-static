@@ -7,6 +7,10 @@
         <link href="{{ app.request.basepath }}/css/main.css" rel="stylesheet" media="all"/>
         <link href="{{ app.request.basepath }}/css/layout/{{ display.layout }}.css" rel="stylesheet" media="all"/>
     {% endblock %}
+    {% block scripts %}
+        <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    {% endblock %}
 </head>
 <body>
 {% include "layout/header.twig" %}

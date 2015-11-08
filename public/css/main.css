@@ -65,30 +65,72 @@ div.sevensplit {
     font-style: italic;
 }
 
-.linkbox li
-{
+/* jQuery classes */
+.ui-tabs {
+    position: relative;
+    padding: .2em;
+}
+
+.ui-tabs .ui-tabs-nav {
+    margin: 0;
+    padding-bottom: 5em;
+}
+
+.ui-tabs .ui-tabs-nav li {
     list-style: none;
     float: left;
     position: relative;
     top: 0;
-    margin: 1em 1em 0 0;
-    padding: 1%;
+    margin: 1px .2em 0 0;
+    padding: 10px;
     white-space: nowrap;
-    background-color:lightgray;
-    border:4px solid gray;
-    border-radius:15px;
-    font-size: 1em;
+    background-color: lightgray;
+    border: 4px solid gray;
+    border-radius: 15px;
+    font-size: 1.2em;
     font-weight: bold;
-    text-align:center;
+    text-align: center;
     cursor: pointer;
     width: 15%;
 }
 
-.linkbox a:focus,a:hover,a
-{
-    color:gray;
+.ui-tabs a:focus, a:hover, a {
+    color: gray;
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
     text-decoration: none;
-    padding: 1em;
+    text-align: center;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+    background-color: white;
+}
+
+.ui-tabs .ui-tabs-panel {
+    display: block;
+    border-width: 0;
+    padding: 1em 1.4em;
+    background: none;
+}
+
+.linkbox {
+    list-style: none;
+    float: left;
+    position: relative;
+    top: 0;
+    margin: 1px .2em 0 0;
+    padding: 10px;
+    white-space: nowrap;
+    background-color: lightgray;
+    border: 4px solid gray;
+    border-radius: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    width: 90%;
 }
 
 .help {

@@ -1,71 +1,47 @@
 {% extends "layout/page.twig" %}
 {% block content %}
-    <h1>Character chart - {{ characterData.name }}</h1>
+    <h1 class="center">Character chart - {{ characterData.name }}</h1>
 
-    <div>
-        <ul class="linkbox">
-            <li>
-                <a href="main">
-                    Main
-                </a>
-            </li>
-            <li>
-                <a href="current" title="Money, Drama, reputation, ...">
-                    Current data
-                </a>
-            </li>
-            <li>
-                <a href="development" title="Experience expenditures, changes in the card">
-                    Development
-                </a>
-            </li>
-            <li>
-                <a href="reputation">
-                    Reputation
-                </a>
-            </li>
-            <li>
-                <a href="print">
-                    Printable
-                </a>
-            </li>
+    <div id="character-display">
+
+        <ul>
+            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#current">Current state</a></li>
+            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#main">Main sheet</a></li>
+            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#reputation">Reputation</a></li>
+            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#development">Development</a></li>
+            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#descriptions">Descriptions</a></li>
         </ul>
-    </div>
 
-    <div class="clear"></div>
+        <div class="clear"></div>
 
-    <div class="block padded threesplit">
-        <h2 class="center">Public knowledge</h2>
-        <table>
-            <tbody>
-            {% for public in characterData.public %}
-                <tr title="{{ public.description }}">
-                    <td class="left">{{ public.name }}</td>
-                    <td class="center">{{ public.value }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
-
-    <div class="block padded threesplit">
-        <h2 class="center">Basic description</h2>
-
-        <div>
-            {{ characterData.description }}
+        <div id="current">
+            {% include "character/_character_current.twig" %}
         </div>
+
+        <div id="main">
+            {% include "character/_character_main.twig" %}
+        </div>
+
+        <div id="reputation">
+            {% include "character/_character_rep.twig" %}
+        </div>
+
+        <div id="development">
+            {% include "character/_character_develop.twig" %}
+        </div>
+
+        <div id="descriptions">
+            {% include "character/_character_descr.twig" %}
+        </div>
+
     </div>
 
-    <div class="clear"></div>
-
-    {% if characterData.descriptions %}
-        <h2 class="center">Descriptions</h2>
-        {% for description in characterData.descriptions %}
-            <div class="block padded twosplit">
-                <h3 class="center">{{ description.title }}</h3>
-                {{ description.text }}
-            </div>
-        {% endfor %}
-    {% endif %}
+    <script>
+        $(function () {
+            $("#character-display").tabs({
+                active: 0
+            });
+        });
+    </script>
 
 {% endblock %}

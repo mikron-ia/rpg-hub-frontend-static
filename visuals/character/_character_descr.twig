@@ -1,0 +1,9 @@
+{% if characterData.descriptions %}
+    <h2 class="center">Descriptions</h2>
+    {% for description in characterData.descriptions %}
+        <div class="block padded twosplit">
+            <h3 class="center">{{ description.title }}</h3>
+            {{ description.text }}
+        </div>
+    {% endfor %}
+{% endif %}

@@ -36,6 +36,7 @@ $app->get('/character/{id}/', function (Silex\Application $app, $id) {
         [
             'title' => 'Character statistics',
             'display' => $app['display'],
+            'characterKey' => $id,
             'list' => false,
             'characterData' => $character->getData()
         ]
