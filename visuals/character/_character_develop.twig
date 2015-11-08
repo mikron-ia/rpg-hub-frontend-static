@@ -26,3 +26,36 @@
         </tbody>
     </table>
 </div>
+
+<div class="clear"></div>
+
+<div class="block padded">
+    <h2 class="center">Reputation events</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Event</th>
+            <th>Reputation</th>
+            <th>Change</th>
+            <th>New value</th>
+            <th>When</th>
+            <th>Notes</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.reputationHistory %}
+            {% for reputationEvent in characterData.reputationHistory %}
+                <tr>
+                    <td class="left">{{ reputationEvent.name }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="7" class="center note">No data available</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="clear"></div>

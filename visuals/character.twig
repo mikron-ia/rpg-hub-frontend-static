@@ -6,8 +6,8 @@
 
         <ul>
             <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#current">Current state</a></li>
-            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#main">Main sheet</a></li>
-            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#reputation">Reputation</a></li>
+            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#numbers">Numbers</a></li>
+            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#interactions">Interactions</a></li>
             <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#development">Development</a></li>
             <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#descriptions">Descriptions</a></li>
         </ul>
@@ -18,11 +18,11 @@
             {% include "character/_character_current.twig" %}
         </div>
 
-        <div id="main">
+        <div id="numbers">
             {% include "character/_character_main.twig" %}
         </div>
 
-        <div id="reputation">
+        <div id="interactions">
             {% include "character/_character_rep.twig" %}
         </div>
 
