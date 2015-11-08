@@ -95,3 +95,7 @@ div.sevensplit {
     font-style: italic;
     color: dimgray;
 }
+
+.total {
+    font-weight: bold;
+}
