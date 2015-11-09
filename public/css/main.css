@@ -141,3 +141,8 @@ div.sevensplit {
 .total {
     font-weight: bold;
 }
+
+.bigdot {
+    font-size: 1.5em;
+    padding: 0.2em;
+}

@@ -26,7 +26,7 @@
                 {% for attribute in characterData.attributes %}
                     <tr>
                         <td class="left">{{ attribute.name }}</td>
-                        <td class="center">{{ attribute.value }}</td>
+                        <td class="center bigdot">{% for i in 1..attribute.value %}&#9679;{% endfor %}{% for i in 1..(5-attribute.value) %}&#9675;{% endfor %}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -120,19 +120,24 @@
     <div>
         <h2 class="center">Abilities</h2>
         {% for skill in characterData.skillGroups %}
-            <div class="block foursplit">
+            <div class="block threesplit">
                 <h3 class="center">{{ skill.name }}</h3>
                 <table>
                     <tbody>
                     {% for knack in skill.skills %}
                         <tr class="{{ knack.class }}">
                             <td class="left">{{ knack.name }}</td>
-                            <td class="center">{{ knack.value }}</td>
+                            <td class="center bigdot">
+                                {% if knack.value > 0 %}{% for i in 1..knack.value %}&#9679;{% endfor %}{% endif %}{% for i in 1..(5-knack.value) %}&#9675;{% endfor %}
+                            </td>
                         </tr>
                     {% endfor %}
                     </tbody>
                 </table>
             </div>
+            {% if (loop.index%3) == 0 %}
+                <div class="clear"></div>
+            {% endif %}
         {% endfor %}
     </div>
 
@@ -270,8 +275,6 @@
         </table>
     </div>
 
-    <div class="clear"></div>
-
     <div class="block padded threesplit">
         <h2 class="center">Defences</h2>
         <table>
@@ -294,6 +297,8 @@
         </table>
     </div>
 
+    <div class="clear"></div>
+
     <div class="block padded">
         <h2 class="center">Backgrounds</h2>
         <table>
@@ -311,32 +316,6 @@
                     <td colspan="3" class="center note">No backgrounds found</td>
                 </tr>
             {% endif %}
-            </tbody>
-        </table>
-    </div>
-
-    <div class="block padded twosplit">
-        <h2 class="center">Reputation table</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>Reputation</th>
-                <th>Negative</th>
-                <th>Positive</th>
-                <th>Balance</th>
-                <th>Dice</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for reputation in characterData.reputations %}
-                <tr title="{{ reputation.description }}">
-                    <td class="left">{{ reputation.name }}</td>
-                    <td class="center" title="Lowest ever: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
-                    <td class="center" title="Highest ever: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
-                    <td class="center">{{ reputation.balance }}</td>
-                    <td class="center">{{ reputation.dice }}</td>
-                </tr>
-            {% endfor %}
             </tbody>
         </table>
     </div>
