@@ -12,6 +12,9 @@ The project is currently split in three parts - [backend](https://github.com/mik
 
 This version of frontend is being written in PHP with Silex. Data to fuel the frontend will be retrieved from API provided by backend.
 
+Due to current need that is driving this development, architecture is heavily biased towards 7th Sea system (a creation of John Wick, originally published by Alderac Entertainment Group). No copyrighted terms are in use, though.
+The styling and architecture will be made more universal with future development.
+
 ## Installation guide
 1. Clone the project via `git clone` with correct address to a desired directory of a web server
 2. Run `composer install` in the project directory
