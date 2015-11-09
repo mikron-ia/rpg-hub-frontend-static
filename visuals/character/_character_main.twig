@@ -1,22 +1,4 @@
 <div class="block padded threesplit">
-    <h2 class="center">Basics</h2>
-    {% if characterData.basics %}
-        <table>
-            <tbody>
-            {% for basic in characterData.basics %}
-                <tr title="{{ basic.description }}">
-                    <td class="left">{{ basic.name }}</td>
-                    <td class="center">{{ basic.value }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    {% else %}
-        <p class="center note">No basic data found. This is an error.</p>
-    {% endif %}
-</div>
-
-<div class="block padded foursplit">
     <h2 class="center">Attributes</h2>
     {% if characterData.attributes %}
         <table>
@@ -40,9 +22,7 @@
     {% else %}
         <p class="center note">No attributes found. This is an error.</p>
     {% endif %}
-</div>
 
-<div class="block padded threesplit">
     <h2 class="center">Auxiliary stats</h2>
     {% if characterData.rolls %}
         <table>
@@ -60,30 +40,28 @@
     {% endif %}
 </div>
 
-<div class="clear"></div>
-
-<div class="block padded twothirdsplit">
-    <h2 class="center">Advantages</h2>
+<div class="block padded threesplit">
+    <h2 class="center">Defences</h2>
     <table>
         <thead>
         <tr>
-            <th>Advantage</th>
-            <th>Level</th>
-            <th>Details</th>
+            <th>Situation</th>
+            <th>Passive</th>
+            <th>Active</th>
         </tr>
         </thead>
         <tbody>
-        {% if characterData.advantages %}
-            {% for advantage in characterData.advantages %}
-                <tr title="{{ advantage.description }}">
-                    <td class="left">{{ advantage.name }}</td>
-                    <td class="center">{{ advantage.level }}</td>
-                    <td class="left">{{ advantage.details }}</td>
+        {% if characterData.defences %}
+            {% for defence in characterData.defences %}
+                <tr>
+                    <td class="left">{{ defence.label }}</td>
+                    <td class="center">{{ defence.value }}</td>
+                    <td class="center">{{ defence.roll }}</td>
                 </tr>
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="3" class="center note">No advantages found</td>
+                <td colspan="3" class="center note">No defences list found. This is an error.</td>
             </tr>
         {% endif %}
         </tbody>
@@ -118,10 +96,41 @@
 
 <div class="clear"></div>
 
+<div class="block padded">
+    <h2 class="center">Advantages</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Advantage</th>
+            <th>Level</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.advantages %}
+            {% for advantage in characterData.advantages %}
+                <tr title="{{ advantage.description }}">
+                    <td class="left">{{ advantage.name }}</td>
+                    <td class="center">{{ advantage.level }}</td>
+                    <td class="left">{{ advantage.details }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3" class="center note">No advantages found</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+
+<div class="clear"></div>
+
 <div>
     <h2 class="center">Abilities</h2>
     {% for skill in characterData.skillGroups %}
-        <div class="block foursplit">
+        <div class="block threesplit">
             <h3 class="center">{{ skill.name }}</h3>
             <table>
                 <tbody>
@@ -134,66 +143,10 @@
                 </tbody>
             </table>
         </div>
+        {% if (loop.index%3) == 0 %}
+            <div class="clear"></div>
+        {% endif %}
     {% endfor %}
 </div>
 
 <div class="clear"></div>
-
-
-<div class=" block padded">
-    <h2 class="center">Equipment</h2>
-    <table>
-        <thead>
-        <tr>
-            <th>Name / type</th>
-            <th>Count</th>
-            <th>Details</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% if characterData.equipment %}
-            {% for equipmentItem in characterData.equipment %}
-                <tr>
-                    <td class="left">{{ equipmentItem.name }}</td>
-                    <td class="center">{{ equipmentItem.count }}</td>
-                    <td class="left">{{ equipmentItem.details }}</td>
-                </tr>
-            {% endfor %}
-        {% else %}
-            <tr>
-                <td colspan="3" class="center note">No equipment found. This is likely an error.</td>
-            </tr>
-        {% endif %}
-        </tbody>
-    </table>
-</div>
-
-<div class="clear"></div>
-
-<div class="block padded threesplit">
-    <h2 class="center">Defences</h2>
-    <table>
-        <thead>
-        <tr>
-            <th>Situation</th>
-            <th>Passive</th>
-            <th>Active</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% if characterData.defences %}
-            {% for defence in characterData.defences %}
-                <tr>
-                    <td class="left">{{ defence.label }}</td>
-                    <td class="center">{{ defence.value }}</td>
-                    <td class="center">{{ defence.roll }}</td>
-                </tr>
-            {% endfor %}
-        {% else %}
-            <tr>
-                <td colspan="3" class="center note">No defences list found. This is an error.</td>
-            </tr>
-        {% endif %}
-        </tbody>
-    </table>
-</div>

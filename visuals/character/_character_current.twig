@@ -31,20 +31,28 @@
 </div>
 
 <div class="block padded threesplit">
+    <h2 class="center">Variables</h2>
+    {% if characterData.variables %}
+        <table>
+            <tbody>
+            {% for variable in characterData.variables %}
+                <tr title="{{ variable.description }}">
+                    <td class="left">{{ variable.name }}</td>
+                    <td class="center">{{ variable.value }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="center note">No variables found.</p>
+    {% endif %}
+</div>
+
+<div class="block padded threesplit">
     <h2 class="center">Useful links</h2>
     <p class="center">
         <a href="{{ app.request.basepath }}/character/{{ characterKey }}/print/">Printable sheet</a>
     </p>
-</div>
-
-<div class="clear"></div>
-
-<div class="block padded">
-    <h2 class="center">Basic description</h2>
-
-    <div>
-        {{ characterData.description }}
-    </div>
 </div>
 
 <div class="clear"></div>

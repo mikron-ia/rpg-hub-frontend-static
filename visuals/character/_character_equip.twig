@@ -1,0 +1,125 @@
+<div class="block padded twothirdsplit">
+    <h2 class="center">Equipment</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Name / type</th>
+            <th>Count</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.equipment %}
+            {% for equipmentItem in characterData.equipment %}
+                <tr>
+                    <td class="left">{{ equipmentItem.name }}</td>
+                    <td class="center">{{ equipmentItem.count }}</td>
+                    <td class="left">{{ equipmentItem.details }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3" class="center note">No equipment found. This is likely an error.</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="clear"></div>
+
+<div class="block padded twosplit">
+    <h2 class="center">Income</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Source</th>
+            <th>Frequency</th>
+            <th>Value</th>
+            <th>Currency</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.income %}
+            {% for incomeSource in characterData.income %}
+                <tr>
+                    <td class="left">{{ incomeSource.name }}</td>
+                    <td class="center">{{ incomeSource.frequency }}</td>
+                    <td class="center">{{ incomeSource.value }}</td>
+                    <td class="center">{{ incomeSource.currency }}</td>
+                    <td class="left">{{ incomeSource.details }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="5" class="center note">No income found</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="block padded twosplit">
+    <h2 class="center">Expenses</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Source</th>
+            <th>Frequency</th>
+            <th>Value</th>
+            <th>Currency</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.expenses %}
+            {% for expenseGoal in characterData.expenses %}
+                <tr>
+                    <td class="left">{{ expenseGoal.name }}</td>
+                    <td class="center">{{ expenseGoal.frequency }}</td>
+                    <td class="center">{{ expenseGoal.value }}</td>
+                    <td class="center">{{ expenseGoal.currency }}</td>
+                    <td class="left">{{ expenseGoal.details }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="5" class="center note">No expenses found. This is likely an error.</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="clear"></div>
+
+<div class="block threesplit">
+    <h2 class="center">Money</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Currency</th>
+            <th>Count</th>
+            <th>Location</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.money %}
+            {% for moneyItem in characterData.money %}
+                <tr>
+                    <td class="left">{{ moneyItem.currency }}</td>
+                    <td class="center">{{ moneyItem.count }}</td>
+                    <td class="left">{{ moneyItem.location }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3" class="center note">No money found. This is likely an error, or the character has a big problem.</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="clear"></div>

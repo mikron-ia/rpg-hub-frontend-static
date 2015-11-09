@@ -54,24 +54,6 @@
         {% endif %}
     </div>
 
-    <div class="block padded threesplit">
-        <h2 class="center">Variables</h2>
-        {% if characterData.variables %}
-            <table>
-                <tbody>
-                {% for variable in characterData.variables %}
-                    <tr title="{{ variable.description }}">
-                        <td class="left">{{ variable.name }}</td>
-                        <td class="center">{{ variable.value }}</td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        {% else %}
-            <p class="center note">No variables found.</p>
-        {% endif %}
-    </div>
-
     <div class="clear"></div>
 
     <div class="block padded twothirdsplit">
@@ -143,22 +125,22 @@
 
     <div class="clear"></div>
 
-    <div class="block padded">
-        <h2 class="center">Contacts</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Who is this?</th>
-                <th>Who is this to you?</th>
-                <th>Attitude towards you</th>
-                <th>Usefulness</th>
-                <th>Your knowledge</th>
-                <th>Details</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% if characterData.contacts %}
+    {% if characterData.contacts %}
+        <div class="block padded">
+            <h2 class="center">Contacts</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Who is this?</th>
+                    <th>Who is this to you?</th>
+                    <th>Attitude towards you</th>
+                    <th>Usefulness</th>
+                    <th>Your knowledge</th>
+                    <th>Details</th>
+                </tr>
+                </thead>
+                <tbody>
                 {% for contact in characterData.contacts %}
                     <tr>
                         <td class="left">{{ contact.name }}</td>
@@ -170,14 +152,10 @@
                         <td class="center">{{ contact.details }}</td>
                     </tr>
                 {% endfor %}
-            {% else %}
-                <tr>
-                    <td colspan="7" class="center note">No contacts found</td>
-                </tr>
-            {% endif %}
-            </tbody>
-        </table>
-    </div>
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
 
     <div class="clear"></div>
 
@@ -247,7 +225,7 @@
 
     <div class="clear"></div>
 
-    <div class=" block padded">
+    <div class=" block padded twothirdsplit">
         <h2 class="center">Equipment</h2>
         <table>
             <thead>

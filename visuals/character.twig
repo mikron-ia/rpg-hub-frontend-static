@@ -7,8 +7,9 @@
         <ul>
             <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#current">Current state</a></li>
             <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#numbers">Numbers</a></li>
+            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#equipment">Equipment &amp; money</a></li>
             <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#interactions">Interactions</a></li>
-            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#development">Development</a></li>
+            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#history">History</a></li>
             <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#descriptions">Descriptions</a></li>
         </ul>
 
@@ -22,11 +23,15 @@
             {% include "character/_character_main.twig" %}
         </div>
 
+        <div id="equipment">
+            {% include "character/_character_equip.twig" %}
+        </div>
+
         <div id="interactions">
             {% include "character/_character_rep.twig" %}
         </div>
 
-        <div id="development">
+        <div id="history">
             {% include "character/_character_develop.twig" %}
         </div>
 
