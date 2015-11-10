@@ -69,9 +69,11 @@
         <tr>
             <th>Weapon</th>
             <th>Count</th>
-            <th>Knack</th>
-            <th>Damage</th>
+            <th title="Knack usually used to attack">Knack</th>
+            <th title="Attack roll">Roll</th>
+            <th title="Brawn included">Damage</th>
             <th>Range</th>
+            <th title="Knacks included, optional tricks not included">Reload</th>
             <th>Details</th>
         </tr>
         </thead>
@@ -81,11 +83,11 @@
                 <tr>
                     <td class="left">{{ weapon.name }}</td>
                     <td class="center">{{ weapon.count }}</td>
-                    <td class="center">{{ weapon.count }}</td>
                     <td class="center">{{ weapon.knack }}</td>
                     <td class="center">{{ weapon.roll }}</td>
                     <td class="center">{{ weapon.damage }}</td>
                     <td class="center">{{ weapon.range }}</td>
+                    <td class="center">{{ weapon.reload }}</td>
                     <td class="left">{{ weapon.details }}</td>
                 </tr>
             {% endfor %}

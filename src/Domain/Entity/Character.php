@@ -34,6 +34,7 @@ class Character extends BagOfAttributes
             'rolls' => [], // most commonly used rolls
             'skillGroups' => [], // skill groups with skills
             'stunts' => [], // one-of kind tricks
+            'weapons' => [], // specific catergory of equipment - tools for combat
             'variables' => [], // often changing values, like counters
             'xp' => [], // experience
         ];

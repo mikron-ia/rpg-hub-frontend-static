@@ -38,6 +38,7 @@ class CharacterTest extends PHPUnit_Framework_TestCase
             'rolls' => [],
             'skillGroups' => [],
             'stunts' => [],
+            'weapons' => [],
             'variables' => [],
             'xp' => [],
         ];
