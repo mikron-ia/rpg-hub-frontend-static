@@ -1,3 +1,9 @@
+{% if characterData.help.current %}
+    <p class="help">{{ characterData.help.current }}</p>
+{% endif %}
+
+<div class="clear"></div>
+
 <div class="block padded threesplit">
     <h2 class="center">Basics</h2>
     {% if characterData.basics %}

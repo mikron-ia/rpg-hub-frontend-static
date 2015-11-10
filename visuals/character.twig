@@ -2,6 +2,10 @@
 {% block content %}
     <h1 class="center">Character chart - {{ characterData.name }}</h1>
 
+    {% if characterData.help.top %}
+        <p class="help">{{ characterData.help.top }}</p>
+    {% endif %}
+
     <div id="character-display">
 
         <ul>

@@ -1,5 +1,11 @@
 <h2 class="center">Descriptions</h2>
 
+{% if characterData.help.descriptions %}
+    <p class="help">{{ characterData.help.descriptions }}</p>
+{% endif %}
+
+<div class="clear"></div>
+
 <div class="block padded twosplit">
     <h3 class="center">Basic description</h3>
     <div>
