@@ -32,6 +32,72 @@
     </table>
 </div>
 
+<div class="block threesplit">
+    <h2 class="center">Money</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Currency</th>
+            <th>Count</th>
+            <th>Location</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.money %}
+            {% for moneyItem in characterData.money %}
+                <tr>
+                    <td class="left">{{ moneyItem.currency }}</td>
+                    <td class="center">{{ moneyItem.count }}</td>
+                    <td class="left">{{ moneyItem.location }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3" class="center note">No money found. This is likely an error, or the character has a big problem.</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="clear"></div>
+
+<div class="block padded twosplit">
+    <h2 class="center">Weapons</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Weapon</th>
+            <th>Count</th>
+            <th>Knack</th>
+            <th>Damage</th>
+            <th>Range</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.weapons %}
+            {% for weapon in characterData.weapons %}
+                <tr>
+                    <td class="left">{{ weapon.name }}</td>
+                    <td class="center">{{ weapon.count }}</td>
+                    <td class="center">{{ weapon.count }}</td>
+                    <td class="center">{{ weapon.knack }}</td>
+                    <td class="center">{{ weapon.roll }}</td>
+                    <td class="center">{{ weapon.damage }}</td>
+                    <td class="center">{{ weapon.range }}</td>
+                    <td class="left">{{ weapon.details }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="6" class="center note">No weapons found</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
 <div class="clear"></div>
 
 <div class="block padded twosplit">
@@ -92,36 +158,6 @@
         {% else %}
             <tr>
                 <td colspan="5" class="center note">No expenses found. This is likely an error.</td>
-            </tr>
-        {% endif %}
-        </tbody>
-    </table>
-</div>
-
-<div class="clear"></div>
-
-<div class="block threesplit">
-    <h2 class="center">Money</h2>
-    <table>
-        <thead>
-        <tr>
-            <th>Currency</th>
-            <th>Count</th>
-            <th>Location</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% if characterData.money %}
-            {% for moneyItem in characterData.money %}
-                <tr>
-                    <td class="left">{{ moneyItem.currency }}</td>
-                    <td class="center">{{ moneyItem.count }}</td>
-                    <td class="left">{{ moneyItem.location }}</td>
-                </tr>
-            {% endfor %}
-        {% else %}
-            <tr>
-                <td colspan="3" class="center note">No money found. This is likely an error, or the character has a big problem.</td>
             </tr>
         {% endif %}
         </tbody>
