@@ -1,0 +1,64 @@
+{% extends "layout/page.twig" %}
+{% block content %}
+
+    <h1>{{ title }}</h1>
+    <div class="block padded">
+        {% if campaignData.help.stories %}
+            <p class="help">{{ campaignData.help.stories }}</p>
+        {% endif %}
+        <div id="story-list">
+            {% if campaignData.stories %}
+                {% for story in campaignData.stories %}
+                    <div id="story-{{ loop.index }}">
+                        <h2 class="center">{{ story.name }}</h2>
+
+                        <div class="block padded twothirdsplit">
+                            <h3>Recap</h3>
+                            {% if story.short %}
+                                <p>{{ story.short }}</p>
+                            {% else %}
+                                <p class="center note">No recap found.</p>
+                            {% endif %}
+                        </div>
+                        <div class="block padded threesplit">
+                            {% if story.parameters %}
+                                <table>
+                                    <tbody>
+                                    {% for parameter in story.parameters %}
+                                        <tr title="{{ parameter.description }}">
+                                            <td class="left">{{ parameter.name }}</td>
+                                            <td class="center">{{ parameter.value }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% else %}
+                                <p class="center note">No story parameters found. This is an error.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <div class="block padded">
+                        <h3>Complete history</h3>
+                        {% if story.long %}
+                            <div id="story-long-{{ loop.index }}">
+                                {{ story.long|raw }}
+                            </div>
+                        {% else %}
+                            <p class="center note">No long version found.</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="center note">
+                    No story data available. This is likely an error, unless the campaign has not started yet.
+                </p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+{% endblock %}
