@@ -35,6 +35,7 @@ class CharacterTest extends PHPUnit_Framework_TestCase
             'public' => [],
             'name' => "Tress",
             'reputations' => [],
+            'reputationHistory' => [],
             'rolls' => [],
             'skillGroups' => [],
             'stunts' => [],

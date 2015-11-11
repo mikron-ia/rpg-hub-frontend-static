@@ -21,12 +21,17 @@
         {% if characterData.development %}
             {% for developmentItem in characterData.development %}
                 <tr>
-                    <td class="left">{{ developmentItem.name }}</td>
+                    <td class="left">{{ developmentItem.subject }}</td>
+                    <td class="center">{{ developmentItem.change }}</td>
+                    <td class="center">{{ developmentItem.newValue }}</td>
+                    <td class="center">{{ developmentItem.cost }}</td>
+                    <td class="center">{{ developmentItem.when }}</td>
+                    <td class="left">{{ developmentItem.notes }}</td>
                 </tr>
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="7" class="center note">No data available</td>
+                <td colspan="6" class="center note">No data available</td>
             </tr>
         {% endif %}
         </tbody>
@@ -53,11 +58,16 @@
             {% for reputationEvent in characterData.reputationHistory %}
                 <tr>
                     <td class="left">{{ reputationEvent.name }}</td>
+                    <td class="center">{{ reputationEvent.reputation }}</td>
+                    <td class="center">{{ reputationEvent.change }}</td>
+                    <td class="center">{{ reputationEvent.newValue }}</td>
+                    <td class="center">{{ reputationEvent.when }}</td>
+                    <td class="left">{{ reputationEvent.notes }}</td>
                 </tr>
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="7" class="center note">No data available</td>
+                <td colspan="6" class="center note">No data available</td>
             </tr>
         {% endif %}
         </tbody>

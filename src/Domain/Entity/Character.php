@@ -31,6 +31,7 @@ class Character extends BagOfAttributes
             'name' => "", // used name
             'public' => [], // public information
             'reputations' => [], // reputation values
+            'reputationHistory' => [], // reputation history
             'rolls' => [], // most commonly used rolls
             'skillGroups' => [], // skill groups with skills
             'stunts' => [], // one-of kind tricks
