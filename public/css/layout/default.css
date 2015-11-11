@@ -49,3 +49,24 @@ th, td {
 .negative {
     color: red;
 }
+
+.note-typed {
+    border-radius: 15px;
+    padding: 1em;
+    margin: 1em;
+}
+
+.note-negative {
+    background-color: pink;
+    border: 4px solid red;
+}
+
+.note-neutral {
+    background-color: lightyellow;
+    border: 4px solid gold;
+}
+
+.note-positive {
+    background-color: palegreen;
+    border: 4px solid green;
+}
