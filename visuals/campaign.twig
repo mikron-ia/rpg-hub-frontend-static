@@ -4,36 +4,60 @@
     <h1>Campaign data</h1>
     <div class="block padded">
         <h2 class="center">Stories</h2>
-        {% if campaignData.help.stories%}
+        {% if campaignData.help.stories %}
             <p class="help">{{ campaignData.help.stories }}</p>
         {% endif %}
-        <table>
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th title="Number in chapter">#</th>
-                <th title="Time and location of the start">Began</th>
-                <th title="Time and location of the end">Ended</th>
-                <th>Notes</th>
-            </tr>
-            </thead>
-            <tbody>
+        <div id="story-list">
             {% if campaignData.stories %}
                 {% for story in campaignData.stories %}
-                    <tr title="{{ story.comment }}">
-                        <td class="left">{{ story.name }}</td>
-                        <td class="left">{{ story.number }}</td>
-                        <td class="left">{{ story.start }}</td>
-                        <td class="left">{{ story.end }}</td>
-                    </tr>
+                    <div id="story-{{ loop.index }}">
+                        <h3 class="center">{{ story.name }}</h3>
+
+                        <div class="block padded twothirdsplit">
+                            <h4>Recap</h4>
+                            {% if story.short %}
+                                <p>{{ story.short }}</p>
+                            {% else %}
+                                <p class="center note">No recap found.</p>
+                            {% endif %}
+                        </div>
+                        <div class="block padded threesplit">
+                            {% if story.parameters %}
+                                <table>
+                                    <tbody>
+                                    {% for parameter in story.parameters %}
+                                        <tr title="{{ parameter.description }}">
+                                            <td class="left">{{ parameter.name }}</td>
+                                            <td class="center">{{ parameter.value }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% else %}
+                                <p class="center note">No story parameters found. This is an error.</p>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <div class="block padded">
+                        <h4>Complete history</h4>
+                        {% if story.long %}
+                            <div id="story-long-{{ loop.index }}">
+                                {{ story.long|raw }}
+                            </div>
+                        {% else %}
+                            <p class="center note">No long version found.</p>
+                        {% endif %}
+                    </div>
                 {% endfor %}
             {% else %}
-                <tr>
-                    <td colspan="5" class="center note">No story data available. This is likely an error</td>
-                </tr>
+                <p class="center note">
+                    No story data available. This is likely an error, unless the campaign has not started yet.
+                </p>
             {% endif %}
-            </tbody>
-        </table>
+        </div>
     </div>
 
     <div class="clear"></div>
