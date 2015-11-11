@@ -1,9 +1,8 @@
 {% extends "layout/page.twig" %}
 {% block content %}
 
-    <h1>Campaign data</h1>
+    <h1>{{ title }}</h1>
     <div class="block padded">
-        <h2 class="center">Stories</h2>
         {% if campaignData.help.stories %}
             <p class="help">{{ campaignData.help.stories }}</p>
         {% endif %}
@@ -11,10 +10,10 @@
             {% if campaignData.stories %}
                 {% for story in campaignData.stories %}
                     <div id="story-{{ loop.index }}">
-                        <h3 class="center">{{ story.name }}</h3>
+                        <h2 class="center">{{ story.name }}</h2>
 
                         <div class="block padded twothirdsplit">
-                            <h4>Recap</h4>
+                            <h3>Recap</h3>
                             {% if story.short %}
                                 <p>{{ story.short }}</p>
                             {% else %}
@@ -42,7 +41,7 @@
                     <div class="clear"></div>
 
                     <div class="block padded">
-                        <h4>Complete history</h4>
+                        <h3>Complete history</h3>
                         {% if story.long %}
                             <div id="story-long-{{ loop.index }}">
                                 {{ story.long|raw }}
