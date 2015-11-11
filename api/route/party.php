@@ -2,7 +2,6 @@
 
 /**
  * Display party
- * @todo Acquisition of party data from external source
  */
 $app->get('/party/', function (Silex\Application $app) {
     $uri = $app['config.deploy']['dataSource'] . '?id=party&key=' . $app['config.deploy']['key'];
@@ -20,7 +19,7 @@ $app->get('/party/', function (Silex\Application $app) {
     return $app['twig']->render(
         'party.twig',
         [
-            'title' => 'Party roster',
+            'title' => 'Party',
             'display' => $app['display'],
             'partyData' => $party->getData(),
         ]
