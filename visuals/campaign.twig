@@ -1,0 +1,41 @@
+{% extends "layout/page.twig" %}
+{% block content %}
+
+    <h1>Campaign data</h1>
+    <div class="block padded">
+        <h2 class="center">Stories</h2>
+        {% if campaignData.help.stories%}
+            <p class="help">{{ campaignData.help.stories }}</p>
+        {% endif %}
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th title="Number in chapter">#</th>
+                <th title="Time and location of the start">Began</th>
+                <th title="Time and location of the end">Ended</th>
+                <th>Notes</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if campaignData.stories %}
+                {% for story in campaignData.stories %}
+                    <tr title="{{ story.comment }}">
+                        <td class="left">{{ story.name }}</td>
+                        <td class="left">{{ story.number }}</td>
+                        <td class="left">{{ story.start }}</td>
+                        <td class="left">{{ story.end }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="5" class="center note">No story data available. This is likely an error</td>
+                </tr>
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="clear"></div>
+
+{% endblock %}
