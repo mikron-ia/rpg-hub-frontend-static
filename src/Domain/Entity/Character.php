@@ -30,10 +30,12 @@ class Character extends BagOfAttributes
             'money' => [], // cash at hand
             'name' => "", // used name
             'public' => [], // public information
+            'professions' => [], // used together skill groups with skills
             'reputations' => [], // reputation values
             'reputationHistory' => [], // reputation history
             'rolls' => [], // most commonly used rolls
-            'skillGroups' => [], // skill groups with skills
+            'skillGroups' => [], // thematic skill groups
+            'skills' => [], // skills
             'stunts' => [], // one-of kind tricks
             'weapons' => [], // specific catergory of equipment - tools for combat
             'variables' => [], // often changing values, like counters

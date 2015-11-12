@@ -101,16 +101,16 @@
 
     <div>
         <h2 class="center">Abilities</h2>
-        {% for skill in characterData.skillGroups %}
+        {% for profession in characterData.professions %}
             <div class="block threesplit">
-                <h3 class="center">{{ skill.name }}</h3>
+                <h3 class="center">{{ profession.name }}</h3>
                 <table>
                     <tbody>
-                    {% for knack in skill.skills %}
-                        <tr class="{{ knack.class }}">
-                            <td class="left">{{ knack.name }}</td>
+                    {% for skill in profession.skills %}
+                        <tr class="{{ skill.class }}">
+                            <td class="left">{{ skill.name }}</td>
                             <td class="center bigdot">
-                                {% if knack.value > 0 %}{% for i in 1..knack.value %}&#9679;{% endfor %}{% endif %}{% for i in 1..(5-knack.value) %}&#9675;{% endfor %}
+                                {% if skill.value > 0 %}{% for i in 1..skill.value %}&#9679;{% endfor %}{% endif %}{% for i in 1..(5-skill.value) %}&#9675;{% endfor %}
                             </td>
                         </tr>
                     {% endfor %}
