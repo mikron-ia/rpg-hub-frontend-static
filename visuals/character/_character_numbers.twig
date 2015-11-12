@@ -11,7 +11,9 @@
             <thead>
             <tr>
                 <th>Attribute</th>
-                <th class="This is the level on which development cost is based on + bonuses from schools, magic, advantages, etc.">Rank&nbsp+ Bonus</th>
+                <th class="This is the level on which development cost is based on + bonuses from schools, magic, advantages, etc.">
+                    Rank&nbsp+ Bonus
+                </th>
                 <th class="This is the level used for rolls">Total</th>
             </tr>
             </thead>
@@ -19,7 +21,8 @@
             {% for attribute in characterData.attributes %}
                 <tr>
                     <td class="left">{{ attribute.name }}</td>
-                    <td class="center">{% if attribute.rank %}{{ attribute.rank }}{% else %}{{ attribute.value }}{% endif %} + {% if attribute.bonus %}{{ attribute.bonus }}{% else %}0{% endif %}</td>
+                    <td class="center">{% if attribute.rank %}{{ attribute.rank }}{% else %}{{ attribute.value }}{% endif %}
+                        + {% if attribute.bonus %}{{ attribute.bonus }}{% else %}0{% endif %}</td>
                     <td class="center total">{{ attribute.value }}</td>
                 </tr>
             {% endfor %}
@@ -130,29 +133,32 @@
     </table>
 </div>
 
-
 <div class="clear"></div>
 
 <div>
     <h2 class="center">Abilities</h2>
-    {% for profession in characterData.professions %}
-        <div class="block threesplit">
-            <h3 class="center">{{ profession.name }}</h3>
-            <table>
-                <tbody>
-                {% for skill in profession.skills %}
-                    <tr class="{{ skill.class }}">
-                        <td class="left">{{ skill.name }}</td>
-                        <td class="center">{{ skill.value }}</td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        {% if (loop.index%3) == 0 %}
-            <div class="clear"></div>
-        {% endif %}
-    {% endfor %}
+    {% if characterData.professions %}
+        {% for profession in characterData.professions %}
+            <div class="block threesplit">
+                <h3 class="center">{{ profession.name }}</h3>
+                <table>
+                    <tbody>
+                    {% for skill in profession.skills %}
+                        <tr class="{{ skill.class }}">
+                            <td class="left">{{ skill.name }}</td>
+                            <td class="center">{{ skill.value }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% if (loop.index%3) == 0 %}
+                <div class="clear"></div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p class="center note">No abilities found. This is an error.</p>
+    {% endif %}
 </div>
 
 <div class="clear"></div>

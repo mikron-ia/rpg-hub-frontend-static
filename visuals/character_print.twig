@@ -101,26 +101,30 @@
 
     <div>
         <h2 class="center">Abilities</h2>
-        {% for profession in characterData.professions %}
-            <div class="block threesplit">
-                <h3 class="center">{{ profession.name }}</h3>
-                <table>
-                    <tbody>
-                    {% for skill in profession.skills %}
-                        <tr class="{{ skill.class }}">
-                            <td class="left">{{ skill.name }}</td>
-                            <td class="center bigdot">
-                                {% if skill.value > 0 %}{% for i in 1..skill.value %}&#9679;{% endfor %}{% endif %}{% for i in 1..(5-skill.value) %}&#9675;{% endfor %}
-                            </td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-            {% if (loop.index%3) == 0 %}
-                <div class="clear"></div>
-            {% endif %}
-        {% endfor %}
+        {% if characterData.professions %}
+            {% for profession in characterData.professions %}
+                <div class="block threesplit">
+                    <h3 class="center">{{ profession.name }}</h3>
+                    <table>
+                        <tbody>
+                        {% for skill in profession.skills %}
+                            <tr class="{{ skill.class }}">
+                                <td class="left">{{ skill.name }}</td>
+                                <td class="center bigdot">
+                                    {% if skill.value > 0 %}{% for i in 1..skill.value %}&#9679;{% endfor %}{% endif %}{% for i in 1..(5-skill.value) %}&#9675;{% endfor %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% if (loop.index%3) == 0 %}
+                    <div class="clear"></div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p class="center note">No abilities found. This is an error.</p>
+        {% endif %}
     </div>
 
     <div class="clear"></div>
