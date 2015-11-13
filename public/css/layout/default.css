@@ -79,21 +79,3 @@ th, td {
     width: 25%;
     text-align: center;
 }
-
-@media print {
-    table {
-        page-break-inside: auto
-    }
-
-    div {
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group
-    }
-
-    tfoot {
-        display: table-footer-group
-    }
-}
