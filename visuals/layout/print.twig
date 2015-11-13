@@ -10,7 +10,9 @@
     {% endblock %}
 </head>
 <body>
-    {% block content %}{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}
     <p class="note right">Printed from {{ display.interface.titleSuffix }}</p>
+{% endblock %}
 </body>
 </html>
