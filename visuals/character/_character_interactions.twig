@@ -25,7 +25,6 @@
                 <td class="center" title="Highest ever: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
                 <td class="center">{{ reputation.balance }}</td>
                 <td class="center">{{ reputation.dice }}</td>
-                <td class="left">{{ reputation.details }}</td>
             </tr>
         {% endfor %}
         </tbody>
@@ -58,7 +57,7 @@
                     <td class="center">{{ contact.like }}</td>
                     <td class="center">{{ contact.usefulness }}</td>
                     <td class="center">{{ contact.knowledge }}</td>
-                    <td class="center">{{ contact.details }}</td>
+                    <td class="justified">{{ contact.details }}</td>
                 </tr>
             {% endfor %}
         {% else %}
@@ -88,7 +87,7 @@
                 <tr title="{{ catch.description }}">
                     <td class="left">{{ catch.name }}</td>
                     <td class="center">{{ catch.level }}</td>
-                    <td class="left">{{ catch.details }}</td>
+                    <td class="justified">{{ catch.details }}</td>
                 </tr>
             {% endfor %}
         {% else %}

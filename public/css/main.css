@@ -53,6 +53,10 @@ div.sevensplit {
     text-align: center;
 }
 
+.justified {
+    text-align: justify;
+}
+
 .right {
     text-align: right;
 }

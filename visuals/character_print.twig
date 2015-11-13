@@ -153,7 +153,7 @@
                         <td class="center">{{ contact.like }}</td>
                         <td class="center">{{ contact.usefulness }}</td>
                         <td class="center">{{ contact.knowledge }}</td>
-                        <td class="center">{{ contact.details }}</td>
+                        <td class="justified">{{ contact.details }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -163,7 +163,7 @@
 
     <div class="clear"></div>
 
-    <div class="block padded twosplit">
+    <div class="block padded">
         <h2 class="center">Income</h2>
         <table>
             <thead>
@@ -183,7 +183,7 @@
                         <td class="center">{{ incomeSource.frequency }}</td>
                         <td class="center">{{ incomeSource.value }}</td>
                         <td class="center">{{ incomeSource.currency }}</td>
-                        <td class="left">{{ incomeSource.details }}</td>
+                        <td class="justified">{{ incomeSource.details }}</td>
                     </tr>
                 {% endfor %}
             {% else %}
@@ -195,7 +195,7 @@
         </table>
     </div>
 
-    <div class="block padded twosplit">
+    <div class="block padded">
         <h2 class="center">Expenses</h2>
         <table>
             <thead>
@@ -215,7 +215,7 @@
                         <td class="center">{{ expenseGoal.frequency }}</td>
                         <td class="center">{{ expenseGoal.value }}</td>
                         <td class="center">{{ expenseGoal.currency }}</td>
-                        <td class="left">{{ expenseGoal.details }}</td>
+                        <td class="justified">{{ expenseGoal.details }}</td>
                     </tr>
                 {% endfor %}
             {% else %}
@@ -245,7 +245,7 @@
                     <tr>
                         <td class="left">{{ equipmentItem.name }}</td>
                         <td class="center">{{ equipmentItem.count }}</td>
-                        <td class="left">{{ equipmentItem.details }}</td>
+                        <td class="justified">{{ equipmentItem.details }}</td>
                     </tr>
                 {% endfor %}
             {% else %}
@@ -290,7 +290,7 @@
                     <tr title="{{ catch.description }}">
                         <td class="left">{{ catch.name }}</td>
                         <td class="center">{{ catch.level }}</td>
-                        <td class="left">{{ catch.details }}</td>
+                        <td class="justified">{{ catch.details }}</td>
                     </tr>
                 {% endfor %}
             {% else %}
