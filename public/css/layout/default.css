@@ -70,3 +70,21 @@ th, td {
     background-color: palegreen;
     border: 4px solid green;
 }
+
+@media print {
+    table {
+        page-break-inside: auto
+    }
+
+    div {
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group
+    }
+
+    tfoot {
+        display: table-footer-group
+    }
+}
