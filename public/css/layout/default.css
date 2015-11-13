@@ -71,6 +71,15 @@ th, td {
     border: 4px solid green;
 }
 
+.printable-top {
+    width: 100%;
+}
+
+.printable-top>div {
+    width: 25%;
+    text-align: center;
+}
+
 @media print {
     table {
         page-break-inside: auto
