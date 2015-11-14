@@ -112,7 +112,7 @@
         <tr>
             <th>Advantage</th>
             <th>Level</th>
-            <th>Details</th>
+            <th>Description &amp; details</th>
         </tr>
         </thead>
         <tbody>
@@ -121,7 +121,7 @@
                 <tr title="{{ advantage.description }}">
                     <td class="left">{{ advantage.name }}</td>
                     <td class="center">{{ advantage.level }}</td>
-                    <td class="justified">{{ advantage.details }}</td>
+                    <td class="justified">{{ advantage.description }}{% if advantage.details %} <span class="note">{{ advantage.details }}</span>{% endif %}</td>
                 </tr>
             {% endfor %}
         {% else %}

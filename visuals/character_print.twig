@@ -99,8 +99,7 @@
                     <tr>
                         <td class="left">{{ advantage.name }}</td>
                         <td class="center">{{ advantage.level }}</td>
-                        <td class="justified">{{ advantage.details }}</td>
-                        <td class="justified">{{ advantage.description }}</td>
+                        <td class="justified">{{ advantage.description }}{% if advantage.details %} <span class="note">{{ advantage.details }}</span>{% endif %}</td>
                     </tr>
                 {% endfor %}
             {% else %}
@@ -254,6 +253,42 @@
             {% else %}
                 <tr>
                     <td colspan="3" class="center note">No equipment found. This is likely an error.</td>
+                </tr>
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="block padded">
+        <h2 class="center">Weapons</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Weapon</th>
+                <th title="Knack usually used to attack">Knack</th>
+                <th title="Attack roll">Roll</th>
+                <th title="Brawn included">Dmg</th>
+                <th>Range</th>
+                <th title="Knacks included, optional tricks not included">Reload</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if characterData.weapons %}
+                {% for weapon in characterData.weapons %}
+                    <tr>
+                        <td class="left">{{ weapon.name }} &#215;{{ weapon.count }}</td>
+                        <td class="center">{{ weapon.knack }}</td>
+                        <td class="center">{{ weapon.roll }}</td>
+                        <td class="center">{{ weapon.damage }}</td>
+                        <td class="center">{{ weapon.range }}</td>
+                        <td class="center">{{ weapon.reload }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="8" class="center note">No weapons found</td>
                 </tr>
             {% endif %}
             </tbody>
