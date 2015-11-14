@@ -1,0 +1,26 @@
+.printable-top {
+    width: 100%;
+}
+
+.printable-top>div {
+    width: 25%;
+    text-align: center;
+}
+
+@media print {
+    table {
+        page-break-inside: auto;
+    }
+
+    div {
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tfoot {
+        display: table-footer-group;
+    }
+}

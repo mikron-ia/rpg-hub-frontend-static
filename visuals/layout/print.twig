@@ -5,11 +5,14 @@
     <meta charset="utf-8">
     {% block stylesheets %}
         <link href="{{ app.request.basepath }}/css/main.css" rel="stylesheet" media="all"/>
+        <link href="{{ app.request.basepath }}/css/print.css" rel="stylesheet" media="all"/>
         <link href="{{ app.request.basepath }}/css/layout/{{ display.layout }}.css" rel="stylesheet" media="all"/>
     {% endblock %}
 </head>
 <body>
-    {% block content %}{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}
     <p class="note right">Printed from {{ display.interface.titleSuffix }}</p>
+{% endblock %}
 </body>
 </html>
