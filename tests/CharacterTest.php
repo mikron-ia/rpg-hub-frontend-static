@@ -23,7 +23,6 @@ class CharacterTest extends PHPUnit_Framework_TestCase
             'contacts' => [],
             'damage' => [],
             'defences' => [],
-            'description' => "",
             'descriptions' => [],
             'development' => [],
             'equipment' => [],

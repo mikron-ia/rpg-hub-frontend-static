@@ -19,7 +19,6 @@ class Character extends BagOfAttributes
             'contacts' => [], // friends & allies
             'damage' => [], // more permanent damage
             'defences' => [], // hit difficulties
-            'description' => "", // basic description
             'descriptions' => [], // descriptions detailed
             'development' => [], // development history
             'equipment' => [], // items on person
