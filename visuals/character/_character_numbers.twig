@@ -121,7 +121,8 @@
                 <tr title="{{ advantage.description }}">
                     <td class="left">{{ advantage.name }}</td>
                     <td class="center">{{ advantage.level }}</td>
-                    <td class="justified">{{ advantage.description }}{% if advantage.details %} <span class="note">{{ advantage.details }}</span>{% endif %}</td>
+                    <td class="justified">{{ advantage.description }}{% if advantage.details %} <span
+                                class="note">{{ advantage.details }}</span>{% endif %}</td>
                 </tr>
             {% endfor %}
         {% else %}
@@ -135,13 +136,39 @@
 
 <div class="clear"></div>
 
+{% if characterData.stunts %}
+    <div class="block padded">
+        <h2 class="center">Techniques</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Technique</th>
+                <th>Description &amp; details</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for stunt in characterData.stunts %}
+                <tr title="{{ stunt.description }}">
+                    <td class="left">{{ stunt.name }}</td>
+                    <td class="justified">{{ stunt.description }}{% if stunt.details %} <span
+                                class="note">{{ stunt.details }}</span>{% endif %}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="clear"></div>
+
+{% endif %}
+
 <div>
     <h2 class="center">Abilities</h2>
     {% if characterData.professions %}
         {% for profession in characterData.professions %}
             <div class="block threesplit">
-                <h3 class="center">{{ profession.name }}</h3>
                 <table>
+                    <caption class="center">{{ profession.name }}</caption>
                     <tbody>
                     {% for skill in profession.skills %}
                         <tr class="{{ skill.class }}">

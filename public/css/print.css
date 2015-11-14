@@ -13,6 +13,10 @@
     }
 
     div {
+        page-break-inside: auto;
+    }
+
+    .unbreakable {
         page-break-inside: avoid;
     }
 
