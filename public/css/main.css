@@ -17,6 +17,10 @@ body {
     padding: 1%;
 }
 
+div.full-width {
+    width: 100%;
+}
+
 div.twosplit {
     width: 48%;
 }

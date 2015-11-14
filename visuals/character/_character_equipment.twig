@@ -4,7 +4,7 @@
 
 <div class="clear"></div>
 
-<div class="block padded twothirdsplit">
+<div class="block padded full-width">
     <h2 class="center">Equipment</h2>
     <table>
         <thead>
@@ -20,7 +20,10 @@
                 <tr>
                     <td class="left">{{ equipmentItem.name }}</td>
                     <td class="center">{{ equipmentItem.count }}</td>
-                    <td class="left">{{ equipmentItem.details }}</td>
+                    <td class="justified">
+                        {{ equipmentItem.details }}{% if equipmentItem.value %}
+                            <br><span class="note">Approximate value: {{ equipmentItem.value }}</span>{% endif %}
+                    </td>
                 </tr>
             {% endfor %}
         {% else %}
