@@ -46,26 +46,6 @@
         {% endif %}
     </div>
 
-    <div class="block padded foursplit">
-        <h2 class="center">Languages</h2>
-        <table>
-            <tbody>
-            {% if characterData.languages %}
-                {% for language in characterData.languages %}
-                    <tr title="{{ language.description }}">
-                        <td class="left">{{ language.name }}</td>
-                        <td class="center">{{ language.level }}</td>
-                    </tr>
-                {% endfor %}
-            {% else %}
-                <tr>
-                    <td colspan="2" class="center note">No languages found. This is likely an error.</td>
-                </tr>
-            {% endif %}
-            </tbody>
-        </table>
-    </div>
-
     <div class="block padded threesplit">
         <h2 class="center">Defences</h2>
         <table>
@@ -84,6 +64,26 @@
                     <td class="center">{{ defence.roll }}</td>
                 </tr>
             {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="block padded threesplit">
+        <h2 class="center">Languages</h2>
+        <table>
+            <tbody>
+            {% if characterData.languages %}
+                {% for language in characterData.languages %}
+                    <tr title="{{ language.description }}">
+                        <td class="left">{{ language.name }}</td>
+                        <td class="center">{{ language.level }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="2" class="center note">No languages found. This is likely an error.</td>
+                </tr>
+            {% endif %}
             </tbody>
         </table>
     </div>

@@ -5,6 +5,7 @@
 .printable-top>div {
     width: 25%;
     text-align: center;
+    padding-bottom: 1em;
 }
 
 @media print {
