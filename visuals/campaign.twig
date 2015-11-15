@@ -15,7 +15,7 @@
                         <div class="block padded twothirdsplit">
                             <h3>Recap</h3>
                             {% if story.short %}
-                                <p>{{ story.short }}</p>
+                                <p class="justified">{{ story.short }}</p>
                             {% else %}
                                 <p class="center note">No recap found.</p>
                             {% endif %}
@@ -43,7 +43,7 @@
                     <div class="block padded">
                         <h3>Complete history</h3>
                         {% if story.long %}
-                            <div id="story-long-{{ loop.index }}">
+                            <div id="story-long-{{ loop.index }}" class="justified">
                                 {{ story.long|raw }}
                             </div>
                         {% else %}

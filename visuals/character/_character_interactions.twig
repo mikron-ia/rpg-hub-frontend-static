@@ -83,10 +83,13 @@
         <tbody>
         {% if characterData.catches %}
             {% for catch in characterData.catches %}
-                <tr title="{{ catch.description }}">
+                <tr>
                     <td class="left">{{ catch.name }}</td>
                     <td class="center">{{ catch.level }}</td>
-                    <td class="justified">{{ catch.details }}</td>
+                    <td class="justified">
+                        {{ catch.description }}
+                        {% if catch.details %} <span class="note">{{ catch.details }}</span>{% endif %}
+                    </td>
                 </tr>
             {% endfor %}
         {% else %}

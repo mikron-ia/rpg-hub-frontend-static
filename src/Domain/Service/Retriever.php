@@ -65,7 +65,7 @@ class Retriever
             throw new InvalidSourceException("cURL error: " . $error);
         }
 
-        return $result;
+        return $this->formatInput($result);
     }
 
     /**
@@ -82,5 +82,10 @@ class Retriever
     public function getDataAsArray()
     {
         return $this->data;
+    }
+
+    private function formatInput($input)
+    {
+        return str_replace("\\n", "<br>", $input);
     }
 }
