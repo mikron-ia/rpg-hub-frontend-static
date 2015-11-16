@@ -10,7 +10,7 @@ A system for role-playing game story/campaign/epic management. This repository i
 
 The project is currently split in three parts - [backend](https://github.com/mikron-ia/rpg-hub-backend) and two variants of the frontend - this and [AngularJS, undeveloped yet, version](https://github.com/mikron-ia/rpg-hub-frontend). Reason for twofold version of frontend is simple: I need a functional page ASAP, and have too little time to write AngularJS code with any decency. 
 
-This version of frontend is being written in PHP with Silex. Data to fuel the frontend will be retrieved from API provided by backend.
+This version of frontend is being written in PHP with Silex. Data to display in the frontend is retrieved from API provided by backend.
 
 Due to current need that is driving this development, architecture is heavily biased towards 7th Sea system (a creation of John Wick, originally published by Alderac Entertainment Group). No copyrighted terms are in use, though.
 The styling and architecture will be made more universal with future development.
