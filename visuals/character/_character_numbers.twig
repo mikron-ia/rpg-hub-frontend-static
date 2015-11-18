@@ -166,8 +166,8 @@
     <h2 class="center">Abilities</h2>
     {% if characterData.professions %}
         {% for profession in characterData.professions %}
-            <div class="block threesplit">
-                <table>
+            <div class="block foursplit">
+                <table class="profession-table">
                     <caption class="center">{{ profession.name }}</caption>
                     <tbody>
                     {% for skill in profession.skills %}
@@ -179,7 +179,7 @@
                     </tbody>
                 </table>
             </div>
-            {% if (loop.index%3) == 0 %}
+            {% if (loop.index%4) == 0 %}
                 <div class="clear"></div>
             {% endif %}
         {% endfor %}
