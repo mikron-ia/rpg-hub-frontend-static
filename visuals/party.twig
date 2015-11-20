@@ -8,7 +8,8 @@
         <div class="ui-tabs-container">
             <ul>
                 <li><a href="{{ app.request.basepath }}/party/#state">Current state</a></li>
-                <li><a href="{{ app.request.basepath }}/party/#reputation">Numbers</a></li>
+                <li><a href="{{ app.request.basepath }}/party/#reputation">Reputation</a></li>
+                <li><a href="{{ app.request.basepath }}/party/#history">History</a></li>
             </ul>
         </div>
 
@@ -20,6 +21,10 @@
 
         <div id="reputation">
             {% include "party/_party_reputation.twig" %}
+        </div>
+
+        <div id="history">
+            {% include "party/_party_history.twig" %}
         </div>
 
     </div>

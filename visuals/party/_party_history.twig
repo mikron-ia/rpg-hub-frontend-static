@@ -1,0 +1,35 @@
+<div id="reputation">
+    <div class="block padded full-width">
+        <h2 class="center">Reputation events</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Event</th>
+                <th>Reputation</th>
+                <th>Change</th>
+                <th>New<br>value</th>
+                <th>When</th>
+                <th>Notes</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if partyData.reputationHistory %}
+                {% for reputationEvent in partyData.reputationHistory %}
+                    <tr>
+                        <td class="left">{{ reputationEvent.name }}</td>
+                        <td class="center">{{ reputationEvent.reputation }}</td>
+                        <td class="center">{{ reputationEvent.change }}</td>
+                        <td class="center">{{ reputationEvent.newValue }}</td>
+                        <td class="center">{{ reputationEvent.when }}</td>
+                        <td class="justified">{{ reputationEvent.notes }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="6" class="center note">No data available</td>
+                </tr>
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
