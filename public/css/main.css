@@ -74,6 +74,10 @@ body {
     font-style: italic;
 }
 
+.ui-tabs-container {
+    text-align: center;
+}
+
 /* jQuery classes */
 .ui-tabs {
     position: relative;
@@ -83,13 +87,14 @@ body {
 .ui-tabs .ui-tabs-nav {
     margin: 0;
     padding-bottom: 1em;
+    text-align: center;
+    display: inline-block;
 }
 
 .ui-tabs .ui-tabs-nav li {
     list-style: none;
     float: left;
     position: relative;
-    top: 0;
     margin: 1px .2em 0 0;
     padding: 5px;
     white-space: nowrap;

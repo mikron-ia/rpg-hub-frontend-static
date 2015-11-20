@@ -1,0 +1,146 @@
+{% extends "layout/page.twig" %}
+{% block content %}
+    <h1 class="center">Character history - {{ characterData.name }}</h1>
+
+    {% if characterData.help.top %}
+        <p class="help">{{ characterData.help.history }}</p>
+    {% endif %}
+
+    <div id="character-display">
+
+        <div class="ui-tabs-container">
+            <ul>
+                <li>
+                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/history/#experience">
+                        Experience
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/history/#reputation">
+                        Reputation
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/history/#developments">
+                        Developments
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="clear"></div>
+
+        <div id="experience">
+            <div class="block padded full-width">
+                <h2 class="center">Experience</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Story</th>
+                        <th>Type</th>
+                        <th>XP</th>
+                        <th>Notes</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if characterData.xp %}
+                        {% for xpItem in characterData.xp %}
+                            <tr>
+                                <td class="left">{{ xpItem.story }}</td>
+                                <td class="center">{{ xpItem.type }}</td>
+                                <td class="center">{{ xpItem.value }}</td>
+                                <td class="justified">{{ xpItem.notes }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="4" class="center note">No data available</td>
+                        </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="reputation">
+            <div class="block padded full-width">
+                <h2 class="center">Reputation events</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Event</th>
+                        <th>Reputation</th>
+                        <th>Change</th>
+                        <th>New<br>value</th>
+                        <th>When</th>
+                        <th>Notes</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if characterData.reputationHistory %}
+                        {% for reputationEvent in characterData.reputationHistory %}
+                            <tr>
+                                <td class="left">{{ reputationEvent.name }}</td>
+                                <td class="center">{{ reputationEvent.reputation }}</td>
+                                <td class="center">{{ reputationEvent.change }}</td>
+                                <td class="center">{{ reputationEvent.newValue }}</td>
+                                <td class="center">{{ reputationEvent.when }}</td>
+                                <td class="justified">{{ reputationEvent.notes }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="6" class="center note">No data available</td>
+                        </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="developments">
+            <div class="block padded full-width">
+                <h2 class="center">Developments</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Change</th>
+                        <th>New<br>value</th>
+                        <th>XP<br>cost</th>
+                        <th>When</th>
+                        <th>Notes</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if characterData.development %}
+                        {% for developmentItem in characterData.development %}
+                            <tr>
+                                <td class="left">{{ developmentItem.subject }}</td>
+                                <td class="center">{{ developmentItem.change }}</td>
+                                <td class="center">{{ developmentItem.newValue }}</td>
+                                <td class="center">{{ developmentItem.cost }}</td>
+                                <td class="center">{{ developmentItem.when }}</td>
+                                <td class="justified">{{ developmentItem.notes }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="6" class="center note">No data available</td>
+                        </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $("#character-display").tabs({
+                active: 0
+            });
+        });
+    </script>
+
+{% endblock %}

@@ -8,14 +8,35 @@
 
     <div id="character-display">
 
-        <ul>
-            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#current">Current state</a></li>
-            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#numbers">Numbers</a></li>
-            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#equipment">Equipment &amp; money</a></li>
-            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#interactions">Interactions</a></li>
-            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#history">History</a></li>
-            <li><a href="{{ app.request.basepath }}/character/{{ characterKey }}/#descriptions">Descriptions</a></li>
-        </ul>
+        <div class="ui-tabs-container">
+            <ul>
+                <li>
+                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/#current">
+                        Current state
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/#numbers">
+                        Numbers
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/#equipment">
+                        Equipment &amp; money
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/#interactions">
+                        Interactions
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/#descriptions">
+                        Descriptions
+                    </a>
+                </li>
+            </ul>
+        </div>
 
         <div class="clear"></div>
 
@@ -33,10 +54,6 @@
 
         <div id="interactions">
             {% include "character/_character_interactions.twig" %}
-        </div>
-
-        <div id="history">
-            {% include "character/_character_history.twig" %}
         </div>
 
         <div id="descriptions">
