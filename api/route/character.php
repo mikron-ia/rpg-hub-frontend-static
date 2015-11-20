@@ -19,7 +19,7 @@ $app->get('/character/', function (Silex\Application $app) {
  * Display character with given ID
  */
 $app->get('/character/{id}/', function (Silex\Application $app, $id) {
-    $uri = $app['config.deploy']['dataSource'] . '?id=' . $id . '&key=' . $app['config.deploy']['key'];
+    $uri = $app['config']['dataSource'] . '?id=' . $id . '&key=' . $app['config']['key'];
 
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 
@@ -47,7 +47,7 @@ $app->get('/character/{id}/', function (Silex\Application $app, $id) {
  * Display character with given ID
  */
 $app->get('/character/{id}/print/', function (Silex\Application $app, $id) {
-    $uri = $app['config.deploy']['dataSource'] . '?id=' . $id . '&key=' . $app['config.deploy']['key'];
+    $uri = $app['config']['dataSource'] . '?id=' . $id . '&key=' . $app['config']['key'];
 
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 

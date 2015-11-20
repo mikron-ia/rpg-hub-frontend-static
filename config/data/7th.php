@@ -5,7 +5,7 @@
  * @todo Complete with proper copyright data
  */
 
-$app['config.system'] = [
+return [
     'reputations' => [],
     "interface" => [
         "titleSuffix" => "The Tavern",

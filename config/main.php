@@ -1,7 +1,7 @@
 <?php
 
-$app['config.main'] = [
-    "version" => "0.1-dev",
+return [
+    "version" => "0.6-dev",
     "interface" => [
         "titleSuffix" => "Campaign Information Centre",
         "welcome" => "Welcome to Campaign Information Centre",

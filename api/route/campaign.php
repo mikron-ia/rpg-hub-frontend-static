@@ -4,7 +4,7 @@
  * Display story data
  */
 $app->get('/campaign/', function (Silex\Application $app) {
-    $uri = $app['config.deploy']['dataSource'] . '?id=campaign&key=' . $app['config.deploy']['key'];
+    $uri = $app['config']['dataSource'] . '?id=campaign&key=' . $app['config']['key'];
 
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 

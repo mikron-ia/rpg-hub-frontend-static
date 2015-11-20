@@ -4,7 +4,7 @@
  * Display party
  */
 $app->get('/party/', function (Silex\Application $app) {
-    $uri = $app['config.deploy']['dataSource'] . '?id=party&key=' . $app['config.deploy']['key'];
+    $uri = $app['config']['dataSource'] . '?id=party&key=' . $app['config']['key'];
 
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 
