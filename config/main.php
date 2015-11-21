@@ -12,5 +12,5 @@ return [
         ],
     ],
     'lang' => 'en',
-    'availableTranslations' => ['pl']
+    'availableTranslations' => ['en','pl'],
 ];

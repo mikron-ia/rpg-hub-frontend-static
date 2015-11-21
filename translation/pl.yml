@@ -1,28 +1,50 @@
-# Party page headers
+# Labels
+LABEL_BALANCE: Suma
+LABEL_CURRENT_STATE: Stan bieżący
+LABEL_DEVELOPMENT: Rozwój
+LABEL_DEVELOPMENTS: Rozwoje
+LABEL_DICE: Kości
+LABEL_DIE: Kość
+LABEL_DESCRIPTION: Opis
+LABEL_DESCRIPTIONS: Opisy
+LABEL_EXPERIENCE: Doświadczenie
+LABEL_HISTORY: Historia
+LABEL_INFLUENCE: Wpływ
+LABEL_INTERACTION: Interakcja
+LABEL_INTERACTIONS: Interakcje
+LABEL_NEGATIVE_M: Negatywny
+LABEL_NEGATIVE_F: Negatywna
+LABEL_NEGATIVE_N: Negatywne
+LABEL_NUMBER: Liczba
+LABEL_NUMBERS: Liczby
+LABEL_POSITIVE_M: Pozytywny
+LABEL_POSITIVE_F: Pozytywna
+LABEL_POSITIVE_N: Pozytywne
+LABEL_REPUTATION: Reputacja
+LABEL_RESOURCE: Zasób
+LABEL_RESOURCES: Zasoby
+
+# Reputation
+REPUTATION_NAME: Nazwa reputacji
+REPUTATION_PARTY: Reputacja drużynowa
+
+# Party
 Party members: Członkowie drużyny
 Absent members: Nieobecni członkowie drużyny
-Party reputation: Reputacja drużynowa
 
 # Party page table headers
 Name: Imię
 Who is this?: Kim jest postać?
 Appearance: Wygląd zewnętrzny
 Reason for absence: Przyczyny nieobecności
+Lowest ever: Najniższa w historii
+Highest ever: Najwyższa w historii
+Name of the reputation: Nazwa reputacji
+PARTY_INFLUENCE_EXPLANATION: Wpływ na reputację drużynową wywierany przez członków drużyny
 
 # Menu labels
-Main: Strona główna
-Party: Drużyna
-Campaign: Kampania
-Login: Zaloguj
-Logout: Wyloguj
-
-# Box menu labels
-Current state: Stan obecny
-Reputation: Reputacja
-History: Historia
-Developments: Rozwoje
-Experience: Doświadczenie
-Numbers: Liczby
-Equipment & money: Ekwipunek i pieniądze
-Interaction: Interakcje
-Descriptions: Opisy
+MENU_MAIN: Główna
+MENU_PARTY: Drużyna
+MENU_CAMPAIGN: Kampania
+MENU_LOGIN: Zaloguj
+MENU_LOGOUT: Wyloguj

@@ -1,0 +1,56 @@
+# Labels
+LABEL_BALANCE: Balance
+LABEL_CURRENT_STATE: Current state
+LABEL_DEVELOPMENT: Development
+LABEL_DEVELOPMENTS: Developments
+LABEL_DICE: Dice
+LABEL_DIE: Die
+LABEL_DESCRIPTION: Description
+LABEL_DESCRIPTIONS: Descriptions
+LABLE_EQUIPMENT: Equipment
+LABEL_EXPERIENCE: Experience
+LABEL_HISTORY: History
+LABEL_INFLUENCE: Influence
+LABEL_INTERACTION: Interaction: Interakcja
+LABEL_INTERACTIONS: Interactions: Interakcje
+LABEL_MONEY: Money
+LABEL_NEGATIVE_M: Negative
+LABEL_NEGATIVE_F: Negative
+LABEL_NEGATIVE_N: Negative
+LABEL_NUMBER: Number
+LABEL_NUMBERS: Numbers
+LABEL_POSITIVE_M: Positive
+LABEL_POSITIVE_F: Positive
+LABEL_POSITIVE_N: Positive
+LABEL_REPUTATION: Reputation
+LABEL_RESOURCE: Resource
+LABEL_RESOURCES: Resources
+
+# Reputation
+REPUTATION_NAME: Name of the reputation
+REPUTATION_PARTY: Party reputation
+
+# Party page headers
+PARTY_MEMBER: Party member
+PARTY_MEMBERS: Party members
+PARTY_MEMBERS_ABSENT: Absent members: Absent members
+PARTY_MEMBERS_REPUTATION: Party reputation
+
+# Party page table headers
+Name: Imię
+Who is this?: Kim jest postać?
+Appearance: Wygląd zewnętrzny
+Reason for absence: Przyczyny nieobecności
+Lowest ever: Najniższa w historii
+Highest ever: Najwyższa w historii
+Name of the reputation: Nazwa reputacji
+PARTY_INFLUENCE_EXPLANATION: Influence from party members
+
+# Menu labels
+MENU_MAIN: Main
+MENU_PARTY: Party
+MENU_CAMPAIGN: Campaign
+MENU_LOGIN: Login
+MENU_LOGOUT: Logout
+
+# Box menu labels
