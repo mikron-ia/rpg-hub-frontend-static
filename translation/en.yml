@@ -7,7 +7,8 @@ LABEL_DICE: Dice
 LABEL_DIE: Die
 LABEL_DESCRIPTION: Description
 LABEL_DESCRIPTIONS: Descriptions
-LABLE_EQUIPMENT: Equipment
+LABEL_EQUIPMENT: Equipment
+LABEL_EVENT: Event
 LABEL_EXPERIENCE: Experience
 LABEL_HISTORY: History
 LABEL_INFLUENCE: Influence
@@ -44,6 +45,7 @@ CHARACTER_NAME: Character name
 CHARACTER_WHO: Who is this?
 CHARACTER_APPEARANCE: Appearance
 CHARACTER_REASON_ABSENCE: Reason for absence
+CHARACTER_WHO_EXPLANATION: Apparent nationality and profession or trade they work in
 
 # Menu labels
 MENU_MAIN: Main
@@ -51,3 +53,9 @@ MENU_PARTY: Party
 MENU_CAMPAIGN: Campaign
 MENU_LOGIN: Login
 MENU_LOGOUT: Logout
+
+# No data messages
+NO_DATA: No data available
+NO_DATA_FOR_PERSON: No data for the person given
+NO_DATA_LIST: No data lists found
+NO_DATA_LIST_FULL: No data lists found - please contact the GM or verify data source

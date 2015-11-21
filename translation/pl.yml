@@ -7,8 +7,9 @@ LABEL_DICE: Kości
 LABEL_DIE: Kość
 LABEL_DESCRIPTION: Opis
 LABEL_DESCRIPTIONS: Opisy
+LABEL_EQUIPMENT: Ekwipunek
+LABEL_EVENT: Wydarzenie
 LABEL_EXPERIENCE: Doświadczenie
-LABLE_EQUIPMENT: Ekwipunek
 LABEL_HISTORY: Historia
 LABEL_INFLUENCE: Wpływ
 LABEL_INTERACTION: Interakcja
@@ -44,6 +45,7 @@ CHARACTER_NAME: Imię postaci
 CHARACTER_WHO: Kim jest postać?
 CHARACTER_APPEARANCE: Wygląd zewnętrzny
 CHARACTER_REASON_ABSENCE: Przyczyny nieobecności
+CHARACTER_WHO_EXPLANATION: Narodowość którą postać przedstawia oraz zawód ktory wykonuje
 
 # Menu labels
 MENU_MAIN: Główna
@@ -51,3 +53,9 @@ MENU_PARTY: Drużyna
 MENU_CAMPAIGN: Kampania
 MENU_LOGIN: Zaloguj
 MENU_LOGOUT: Wyloguj
+
+# No data messages
+NO_DATA: Brak danych
+NO_DATA_FOR_PERSON: Brak danych dla osoby
+NO_DATA_LIST: Brak list danych
+NO_DATA_LIST_FULL: Brak list danych - prosimy skontaktować się z MG lub sprawdzić źródło danych

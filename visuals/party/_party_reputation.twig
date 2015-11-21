@@ -6,10 +6,10 @@
     <table>
         <thead>
         <tr>
-            <th title="">{{ 'LABEL_REPUTATION'|trans }}</th>
+            <th title="{{ 'REPUTATION_NAME'|trans }}">{{ 'LABEL_REPUTATION'|trans }}</th>
             <th>{{ 'LABEL_NEGATIVE_F'|trans }}</th>
             <th>{{ 'LABEL_POSITIVE_F'|trans }}</th>
-            <th title="{{ 'PARTY_INFLUENCE_EXPLANATION'|trans }}">{{ 'LABEL_INFLUENCE'|trans }}</th>
+            <th title="{{ 'REPUTATION_PARTY_INFLUENCE_EXPLANATION'|trans }}">{{ 'LABEL_INFLUENCE'|trans }}</th>
             <th>{{ 'LABEL_BALANCE'|trans }}</th>
             <th>{{ 'LABEL_DICE'|trans }}</th>
         </tr>
@@ -19,8 +19,8 @@
             {% for reputation in partyData.reputation %}
                 <tr title="{{ reputation.description }}">
                     <td class="left">{{ reputation.name }}</td>
-                    <td class="center" title="{{ 'Lowest ever'|trans }}: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
-                    <td class="center" title="{{ 'Highest ever'|trans }}: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
+                    <td class="center" title="{{ 'REPUTATION_LOWEST'|trans }}: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
+                    <td class="center" title="{{ 'REPUTATION_HIGHEST'|trans }}: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
                     <td class="center">{{ reputation.influence }}</td>
                     <td class="center">{{ reputation.balance }}</td>
                     <td class="center">{{ reputation.dice }}</td>
@@ -28,7 +28,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="6" class="center note">{{ 'No data available'|trans }}</td>
+                <td colspan="6" class="center note">{{ 'NO_DATA'|trans }}</td>
             </tr>
         {% endif %}
         </tbody>
@@ -49,7 +49,7 @@
                     <caption>{{ memberReputation.name }}</caption>
                     <thead>
                     <tr>
-                        <th title="{{ 'Name of the reputation'|trans }}">{{ 'LABEL_REPUTATION'|trans }}</th>
+                        <th title="{{ 'REPUTATION_NAME'|trans }}">{{ 'LABEL_REPUTATION'|trans }}</th>
                         <th>{{ 'LABEL_NEGATIVE_F'|trans }}</th>
                         <th>{{ 'LABEL_POSITIVE_F'|trans }}</th>
                         <th>{{ 'LABEL_BALANCE'|trans }}</th>
@@ -61,15 +61,15 @@
                         {% for reputation in memberReputation.reputations %}
                             <tr title="{{ reputation.description }}">
                                 <td class="left">{{ reputation.name }}</td>
-                                <td class="center" title="{{ 'Lowest ever'|trans }}: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
-                                <td class="center" title="{{ 'Highest ever'|trans }}: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
+                                <td class="center" title="{{ 'REPUTATION_LOWEST'|trans }}: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
+                                <td class="center" title="{{ 'REPUTATION_HIGHEST'|trans }}: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
                                 <td class="center">{{ reputation.balance }}</td>
                                 <td class="center">{{ reputation.dice }}</td>
                             </tr>
                         {% endfor %}
                     {% else %}
                         <tr>
-                            <td colspan="5" class="center note">{{ "No data for the person given"|trans }}</td>
+                            <td colspan="5" class="center note">{{ "NO_DATA_FOR_PERSON"|trans }}</td>
                         </tr>
                     {% endif %}
                     </tbody>
@@ -79,7 +79,7 @@
         <div class="clear"></div>
     {% else %}
         <p class="note">
-            {{ 'No data lists found - please contact the GM or verify data source'|trans }}
+            {{ 'NO_DATA_LIST_FULL'|trans }}
         </p>
     {% endif %}
 </div>
