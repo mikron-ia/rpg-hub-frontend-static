@@ -11,8 +11,7 @@
         <thead>
         <tr>
             <th>Name</th>
-            <th title="Apparent nationality">Nationality</th>
-            <th title="Profession or trade they work in">Vocation</th>
+            <th title="Apparent nationality and profession or trade they work in">Who is this?</th>
             <th>Appearance</th>
         </tr>
         </thead>
@@ -21,14 +20,13 @@
             {% for member in partyData.members %}
                 <tr title="{{ member.comment }}">
                     <td class="left">{{ member.name }}</td>
-                    <td class="center">{{ member.nationality }}</td>
-                    <td class="center">{{ member.vocation }}</td>
+                    <td class="center">{{ member.short }}</td>
                     <td class="justified">{{ member.appearance }}</td>
                 </tr>
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="4" class="center note">No data available</td>
+                <td colspan="3" class="center note">No data available</td>
             </tr>
         {% endif %}
         </tbody>
@@ -47,8 +45,7 @@
             <thead>
             <tr>
                 <th>Name</th>
-                <th title="Apparent nationality">Nationality</th>
-                <th title="Profession or trade they work in">Vocation</th>
+                <th title="Apparent nationality and profession or trade they work in">Who is this?</th>
                 <th>Reason for absence</th>
             </tr>
             </thead>
@@ -56,8 +53,7 @@
             {% for member in partyData.pastMembers %}
                 <tr title="{{ member.comment }}">
                     <td class="left">{{ member.name }}</td>
-                    <td class="center">{{ member.nationality }}</td>
-                    <td class="center">{{ member.vocation }}</td>
+                    <td class="center">{{ member.short }}</td>
                     <td class="justified">{{ member.reason }}</td>
                 </tr>
             {% endfor %}
