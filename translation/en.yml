@@ -11,8 +11,8 @@ LABLE_EQUIPMENT: Equipment
 LABEL_EXPERIENCE: Experience
 LABEL_HISTORY: History
 LABEL_INFLUENCE: Influence
-LABEL_INTERACTION: Interaction: Interakcja
-LABEL_INTERACTIONS: Interactions: Interakcje
+LABEL_INTERACTION: Interaction
+LABEL_INTERACTIONS: Interactions
 LABEL_MONEY: Money
 LABEL_NEGATIVE_M: Negative
 LABEL_NEGATIVE_F: Negative
@@ -29,22 +29,21 @@ LABEL_RESOURCES: Resources
 # Reputation
 REPUTATION_NAME: Name of the reputation
 REPUTATION_PARTY: Party reputation
+REPUTATION_PARTY_MEMBERS: Reputation of party members
+REPUTATION_LOWEST: Lowest ever
+REPUTATION_HIGHEST: Highest ever
+REPUTATION_PARTY_INFLUENCE_EXPLANATION: Influence from party members
 
 # Party page headers
 PARTY_MEMBER: Party member
 PARTY_MEMBERS: Party members
-PARTY_MEMBERS_ABSENT: Absent members: Absent members
-PARTY_MEMBERS_REPUTATION: Party reputation
+PARTY_MEMBERS_ABSENT: Absent members
 
 # Party page table headers
-Name: Imię
-Who is this?: Kim jest postać?
-Appearance: Wygląd zewnętrzny
-Reason for absence: Przyczyny nieobecności
-Lowest ever: Najniższa w historii
-Highest ever: Najwyższa w historii
-Name of the reputation: Nazwa reputacji
-PARTY_INFLUENCE_EXPLANATION: Influence from party members
+CHARACTER_NAME: Character name
+CHARACTER_WHO: Who is this?
+CHARACTER_APPEARANCE: Appearance
+CHARACTER_REASON_ABSENCE: Reason for absence
 
 # Menu labels
 MENU_MAIN: Main
@@ -52,5 +51,3 @@ MENU_PARTY: Party
 MENU_CAMPAIGN: Campaign
 MENU_LOGIN: Login
 MENU_LOGOUT: Logout
-
-# Box menu labels

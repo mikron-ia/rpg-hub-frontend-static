@@ -8,10 +8,12 @@ LABEL_DIE: Kość
 LABEL_DESCRIPTION: Opis
 LABEL_DESCRIPTIONS: Opisy
 LABEL_EXPERIENCE: Doświadczenie
+LABLE_EQUIPMENT: Ekwipunek
 LABEL_HISTORY: Historia
 LABEL_INFLUENCE: Wpływ
 LABEL_INTERACTION: Interakcja
 LABEL_INTERACTIONS: Interakcje
+LABEL_MONEY: Money
 LABEL_NEGATIVE_M: Negatywny
 LABEL_NEGATIVE_F: Negatywna
 LABEL_NEGATIVE_N: Negatywne
@@ -27,20 +29,21 @@ LABEL_RESOURCES: Zasoby
 # Reputation
 REPUTATION_NAME: Nazwa reputacji
 REPUTATION_PARTY: Reputacja drużynowa
+REPUTATION_PARTY_MEMBERS: Reputacja członków drużyny
+REPUTATION_LOWEST: Najniższa w historii
+REPUTATION_HIGHEST: Najwyższa w historii
+REPUTATION_PARTY_INFLUENCE_EXPLANATION: Wpływ na reputację drużynową wywierany przez członków drużyny
 
 # Party
-Party members: Członkowie drużyny
-Absent members: Nieobecni członkowie drużyny
+PARTY_MEMBER: Członek drużyny
+PARTY_MEMBERS: Członkowie drużyny
+PARTY_MEMBERS_ABSENT: Nieobecni członkowie drużyny
 
-# Party page table headers
-Name: Imię
-Who is this?: Kim jest postać?
-Appearance: Wygląd zewnętrzny
-Reason for absence: Przyczyny nieobecności
-Lowest ever: Najniższa w historii
-Highest ever: Najwyższa w historii
-Name of the reputation: Nazwa reputacji
-PARTY_INFLUENCE_EXPLANATION: Wpływ na reputację drużynową wywierany przez członków drużyny
+# Character on party page
+CHARACTER_NAME: Imię postaci
+CHARACTER_WHO: Kim jest postać?
+CHARACTER_APPEARANCE: Wygląd zewnętrzny
+CHARACTER_REASON_ABSENCE: Przyczyny nieobecności
 
 # Menu labels
 MENU_MAIN: Główna
