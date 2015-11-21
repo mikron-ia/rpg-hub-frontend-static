@@ -3,4 +3,5 @@
 return [
     'interface' => [],
     'system' => "",
+    'lang' => 'en',
 ];

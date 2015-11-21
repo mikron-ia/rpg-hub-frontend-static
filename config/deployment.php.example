@@ -6,5 +6,6 @@ return [
     'interface' => [],
     'layout' => 'default',
     'dataSource' => '',
-    'key' => ''
+    'key' => '',
+    'lang' => 'en',
 ];
