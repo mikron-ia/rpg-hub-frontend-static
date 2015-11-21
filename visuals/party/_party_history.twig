@@ -33,3 +33,38 @@
         </table>
     </div>
 </div>
+
+<div class="clear"></div>
+
+{% if partyData.pastMembers %}
+    <div class="block">
+        <h2 class="center">Past members</h2>
+        {% if partyData.help.pastMembers %}
+            <p class="help">{{ partyData.help.pastMembers }}</p>
+        {% endif %}
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th title="Apparent nationality">Nationality</th>
+                <th title="Profession or trade they work in">Vocation</th>
+                <th>Time of departure</th>
+                <th>Reason of departure</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for member in partyData.pastMembers %}
+                <tr title="{{ member.comment }}">
+                    <td class="left">{{ member.name }}</td>
+                    <td class="center">{{ member.nationality }}</td>
+                    <td class="center">{{ member.vocation }}</td>
+                    <td class="center">{{ member.when }}</td>
+                    <td class="justified">{{ member.reason }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="clear"></div>
+{% endif %}
