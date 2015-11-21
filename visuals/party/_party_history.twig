@@ -4,12 +4,12 @@
         <table>
             <thead>
             <tr>
-                <th>Event</th>
-                <th>Reputation</th>
-                <th>Change</th>
-                <th>New<br>value</th>
-                <th>When</th>
-                <th>Notes</th>
+                <th>{{ 'Event'|trans }}</th>
+                <th>{{ 'Reputation'|trans }}</th>
+                <th>{{ 'Change'|trans }}</th>
+                <th>{{ 'New<br>value'|trans }}</th>
+                <th>{{ 'When'|trans }}</th>
+                <th>{{ 'Notes'|trans }}</th>
             </tr>
             </thead>
             <tbody>
@@ -26,7 +26,7 @@
                 {% endfor %}
             {% else %}
                 <tr>
-                    <td colspan="6" class="center note">No data available</td>
+                    <td colspan="6" class="center note">{{ 'No data available'|trans }}</td>
                 </tr>
             {% endif %}
             </tbody>
@@ -38,24 +38,24 @@
 
 {% if partyData.pastMembers %}
     <div class="block">
-        <h2 class="center">Past members</h2>
+        <h2 class="center">{{ 'Past members'|trans }}</h2>
         {% if partyData.help.pastMembers %}
             <p class="help">{{ partyData.help.pastMembers }}</p>
         {% endif %}
         <table>
             <thead>
             <tr>
-                <th>Name</th>
-                <th title="Apparent nationality and profession or trade they work in">Who is this?</th>
-                <th>Time of departure</th>
-                <th>Reason of departure</th>
+                <th>{{ 'Name'|trans }}</th>
+                <th title="{{ 'Apparent nationality and profession or trade they work in'|trans }}">{{ 'Who is this?'|trans }}</th>
+                <th>{{ 'Time of departure'|trans }}</th>
+                <th>{{ 'Reason of departure'|trans }}</th>
             </tr>
             </thead>
             <tbody>
             {% for member in partyData.pastMembers %}
                 <tr title="{{ member.comment }}">
                     <td class="left">{{ member.name }}</td>
-                    <th title="Apparent nationality and profession or trade they work in">Who is this?</th>
+                    <td class="center">{{ member.short }}</td>
                     <td class="center">{{ member.when }}</td>
                     <td class="justified">{{ member.reason }}</td>
                 </tr>

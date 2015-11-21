@@ -26,7 +26,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="3" class="center note">No data available</td>
+                <td colspan="3" class="center note">{{ 'No data available'|trans }}</td>
             </tr>
         {% endif %}
         </tbody>
@@ -37,7 +37,7 @@
 
 {% if partyData.absentMembers %}
     <div class="block">
-        <h2 class="center">Absent members</h2>
+        <h2 class="center">{{ 'Absent members'|trans }}</h2>
         {% if partyData.help.absentMembers %}
             <p class="help">{{ partyData.help.absentMembers }}</p>
         {% endif %}
@@ -45,7 +45,7 @@
             <thead>
             <tr>
                 <th>{{ 'Name'|trans }}</th>
-                <th title="Apparent nationality and profession or trade they work in">{{ 'Who is this?'|trans }}</th>
+                <th title="{{ 'Apparent nationality and profession or trade they work in'|trans }}">{{ 'Who is this?'|trans }}</th>
                 <th>{{ 'Reason for absence'|trans }}</th>
             </tr>
             </thead>
