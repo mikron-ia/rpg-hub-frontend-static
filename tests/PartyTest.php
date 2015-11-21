@@ -25,7 +25,10 @@ class PartyTest extends PHPUnit_Framework_TestCase
                 ]
             ],
             'reputation' => [],
+            'reputationHistory' => [],
             'membersReputations' => [],
+            'pastMembers' => [],
+            'absentMembers' => [],
             'help' => [],
         ];
 

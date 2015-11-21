@@ -14,7 +14,10 @@ class Party extends BagOfAttributes
         return [
             'members' => [], // list of party members
             'reputation' => [], // listing of party reputation
+            'reputationHistory' => [], // listing of party reputation history
             'membersReputations' => [], // list of party members' reputation
+            'pastMembers' => [], // retired or dead members
+            'absentMembers' => [], // suspended or currently absent members
             'help' => [], // helpful information to display on page
         ];
     }

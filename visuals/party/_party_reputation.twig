@@ -1,0 +1,87 @@
+<div class="block full-width">
+    <h2 class="center">Party reputation</h2>
+    {% if partyData.help.reputation %}
+        <p class="help">{{ partyData.help.reputation }}</p>
+    {% endif %}
+    <table>
+        <thead>
+        <tr>
+            <th title="Name of the reputation">Reputation</th>
+            <th>Negative</th>
+            <th>Positive</th>
+            <th title="Influence from party members">Influence</th>
+            <th>Balance</th>
+            <th>Dice</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if partyData.reputation %}
+            {% for reputation in partyData.reputation %}
+                <tr title="{{ reputation.description }}">
+                    <td class="left">{{ reputation.name }}</td>
+                    <td class="center" title="Lowest ever: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
+                    <td class="center" title="Highest ever: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
+                    <td class="center">{{ reputation.influence }}</td>
+                    <td class="center">{{ reputation.balance }}</td>
+                    <td class="center">{{ reputation.dice }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="7" class="center note">No data available</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="clear"></div>
+
+<div class="block full-width">
+    <h2 class="center">Personal reputation of party members</h2>
+    {% if partyData.help.membersReputations %}
+        <p class="help">{{ partyData.help.membersReputations }}</p>
+    {% endif %}
+    {% if partyData.membersReputations %}
+        {% for memberReputation in partyData.membersReputations %}
+            <div class="block padded twosplit">
+                <table>
+                    <caption>{{ memberReputation.name }}</caption>
+                    <thead>
+                    <tr>
+                        <th title="Name of the reputation">Reputation</th>
+                        <th>Negative</th>
+                        <th>Positive</th>
+                        <th>Balance</th>
+                        <th>Dice</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if memberReputation.reputations %}
+                        {% for reputation in memberReputation.reputations %}
+                            <tr title="{{ reputation.description }}">
+                                <td class="left">{{ reputation.name }}</td>
+                                <td class="center" title="Lowest ever: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
+                                <td class="center" title="Highest ever: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
+                                <td class="center">{{ reputation.balance }}</td>
+                                <td class="center">{{ reputation.dice }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="5" class="center note">No data for the person given</td>
+                        </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
+        <div class="clear"></div>
+    {% else %}
+        <p class="note">
+            No data lists found - please contact the GM or verify data source
+        </p>
+    {% endif %}
+</div>
+
+<div class="clear"></div>

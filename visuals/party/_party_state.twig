@@ -1,0 +1,69 @@
+{% if partyData.help.state %}
+    <p class="help">{{ partyData.help.state }}</p>
+{% endif %}
+
+<div class="block">
+    <h2 class="center">Party members</h2>
+    {% if partyData.help.members %}
+        <p class="help">{{ partyData.help.members }}</p>
+    {% endif %}
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th title="Apparent nationality">Nationality</th>
+            <th title="Profession or trade they work in">Vocation</th>
+            <th>Appearance</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if partyData.members %}
+            {% for member in partyData.members %}
+                <tr title="{{ member.comment }}">
+                    <td class="left">{{ member.name }}</td>
+                    <td class="center">{{ member.nationality }}</td>
+                    <td class="center">{{ member.vocation }}</td>
+                    <td class="justified">{{ member.appearance }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="4" class="center note">No data available</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="clear"></div>
+
+{% if partyData.absentMembers %}
+    <div class="block">
+        <h2 class="center">Absent members</h2>
+        {% if partyData.help.absentMembers %}
+            <p class="help">{{ partyData.help.absentMembers }}</p>
+        {% endif %}
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th title="Apparent nationality">Nationality</th>
+                <th title="Profession or trade they work in">Vocation</th>
+                <th>Reason for absence</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for member in partyData.pastMembers %}
+                <tr title="{{ member.comment }}">
+                    <td class="left">{{ member.name }}</td>
+                    <td class="center">{{ member.nationality }}</td>
+                    <td class="center">{{ member.vocation }}</td>
+                    <td class="justified">{{ member.reason }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="clear"></div>
+{% endif %}
