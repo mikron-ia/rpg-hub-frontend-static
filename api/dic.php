@@ -18,14 +18,18 @@ $app['display'] = [
 
 /* Translation system */
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(
-    'lang' => $app['config']['lang'],
+    'locale' => $app['config']['lang'],
     'locale_fallbacks' => ['en'],
 ));
 
 $app['translator'] = $app->share($app->extend('translator', function ($translator) use ($app) {
     $translator->addLoader('yaml', new \Symfony\Component\Translation\Loader\YamlFileLoader());
     foreach ($app['config']['availableTranslations'] as $lang) {
+		echo $lang.'<br>';
         $translator->addResource('yaml', __DIR__ . '/../translation/' . $lang . '.yml', $lang);
     }
     return $translator;
 }));
+
+//echo $app['config']['lang'];
+//echo $app['translator']->getLocale(); die;
