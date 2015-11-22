@@ -1,6 +1,6 @@
 {% extends "layout/page.twig" %}
 {% block content %}
-    <h1 class="center">Character history - {{ characterData.name }}</h1>
+    <h1 class="center">{{ 'CHARACTER_CHART_TITLE_HISTORY'|trans }} - {{ characterData.name }}</h1>
 
     {% if characterData.help.top %}
         <p class="help">{{ characterData.help.history }}</p>
@@ -36,10 +36,10 @@
                 <table>
                     <thead>
                     <tr>
-                        <th>Story</th>
-                        <th>Type</th>
-                        <th>XP</th>
-                        <th>Notes</th>
+                        <th>{{ 'LABEL_STORY'|trans }}</th>
+                        <th>{{ 'LABEL_TYPE'|trans }}</th>
+                        <th>{{ 'LABEL_XP'|trans }}</th>
+                        <th>{{ 'LABEL_NOTES'|trans }}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -68,12 +68,12 @@
                 <table>
                     <thead>
                     <tr>
-                        <th>Event</th>
-                        <th>Reputation</th>
-                        <th>Change</th>
-                        <th>New<br>value</th>
-                        <th>When</th>
-                        <th>Notes</th>
+                        <th>{{ 'LABEL_EVENT'|trans }}</th>
+                        <th title="{{ 'REPUTATION_NAME'|trans }}">{{ 'LABEL_REPUTATION'|trans }}</th>
+                        <th>{{ 'LABEL_CHANGE'|trans }}</th>
+                        <th>{{ 'LABEL_NEW_VALUE'|trans }}</th>
+                        <th>{{ 'LABEL_WHEN'|trans }}</th>
+                        <th>{{ 'LABEL_NOTES'|trans }}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -104,12 +104,12 @@
                 <table>
                     <thead>
                     <tr>
-                        <th>Subject</th>
-                        <th>Change</th>
-                        <th>New<br>value</th>
-                        <th>XP<br>cost</th>
-                        <th>When</th>
-                        <th>Notes</th>
+                        <th>{{ 'LABEL_SUBJECT'|trans }}</th>
+                        <th>{{ 'LABEL_CHANGE'|trans }}</th>
+                        <th>{{ 'LABEL_NEW_VALUE'|trans }}</th>
+                        <th>{{ 'LABEL_COST'|trans }}<br>[{{ 'LABEL_XP'|trans }}]</th>
+                        <th>{{ 'LABEL_WHEN'|trans }}</th>
+                        <th>{{ 'LABEL_NOTES'|trans }}</th>
                     </tr>
                     </thead>
                     <tbody>

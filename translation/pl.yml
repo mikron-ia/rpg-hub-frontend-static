@@ -18,8 +18,9 @@ LABEL_BASICS: Podstawy
 LABEL_CHANGE: Zmiana
 LABEL_CONTACT: Kontakt
 LABEL_CONTACTS: Kontakt
+LABEL_COST: Koszt
+LABEL_COSTS: Koszty
 LABEL_COUNT: Liczba
-LABEL_CHANGE: Zmiana
 LABEL_CURRENCY: Waluta
 LABEL_CURRENCIES: Waluty
 LABEL_CURRENT_STATE: Stan bieżący
@@ -87,6 +88,10 @@ LABEL_SKILL: Umiejętność
 LABEL_SKILLS: Umiejętności
 LABEL_SOURCE: Źródło
 LABEL_SOURCES: Źródła
+LABEL_STORY: Historia
+LABEL_STORIES: Historie
+LABEL_SUBJECT: Podmiot
+LABEL_SUBJECTS: Podmioty
 LABEL_TECHNIQUE: Technika
 LABEL_TECHNIQUES: Techniki
 LABEL_TYPE: Typ
@@ -103,7 +108,8 @@ LABEL_WHEN: Kiedy?
 LABEL_WHERE: Gdzie?
 LABEL_WHERE_TO: Dokąd?
 LABEL_WHO: Kto?
-LABEL_WHY: Dlaczegp?
+LABEL_WHY: Dlaczego?
+LABEL_XP: PD
 
 # Reputation
 REPUTATION_NAME: Nazwa reputacji
