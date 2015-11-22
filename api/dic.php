@@ -10,17 +10,14 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 /* URL management system */
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
-/* Dispay data */
+/* Display data */
 $app['display'] = [
     'interface' => $app['config']['interface'],
     'layout' => $app['config']['layout'],
 ];
 
 /* Translation system */
-$app->register(new Silex\Provider\TranslationServiceProvider(), array(
-    'locale' => $app['config']['lang'],
-    'locale_fallbacks' => ['en'],
-));
+$app->register(new Silex\Provider\TranslationServiceProvider(), ['locale_fallbacks' => ['en']]);
 
 $app['translator'] = $app->share($app->extend('translator', function ($translator) use ($app) {
     $translator->addLoader('yaml', new \Symfony\Component\Translation\Loader\YamlFileLoader());
@@ -29,3 +26,6 @@ $app['translator'] = $app->share($app->extend('translator', function ($translato
     }
     return $translator;
 }));
+
+/* Set locale; for unknown reason, contrary to documentation, 'locale' in register() method fails to work */
+$app['translator']->setLocale($app['config']['lang']);
