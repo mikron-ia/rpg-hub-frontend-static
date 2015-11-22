@@ -1,7 +1,7 @@
 {% extends "layout/page.twig" %}
 {% block content %}
 
-    <h1>{{ title }}</h1>
+    <h1>{{ 'CAMPAING_TITLE'|trans }}</h1>
     <div class="block padded">
         {% if campaignData.help.stories %}
             <p class="help">{{ campaignData.help.stories }}</p>
@@ -13,7 +13,7 @@
                         <h2 class="center">{{ story.name }}</h2>
 
                         <div class="block padded twothirdsplit">
-                            <h3>Recap</h3>
+                            <h3>{{ 'CAMPAING_RECAP'|trans }}</h3>
                             {% if story.short %}
                                 <p class="justified">{{ story.short }}</p>
                             {% else %}
@@ -41,19 +41,19 @@
                     <div class="clear"></div>
 
                     <div class="block padded">
-                        <h3>Complete history</h3>
+                        <h3>{{ 'CAMPAING_COMPLETE_HISTORY'|trans }}</h3>
                         {% if story.long %}
                             <div id="story-long-{{ loop.index }}" class="justified">
                                 {{ story.long|raw }}
                             </div>
                         {% else %}
-                            <p class="center note">No long version found.</p>
+                            <p class="center note">{{ 'NO_DATA'|trans }}</p>
                         {% endif %}
                     </div>
                 {% endfor %}
             {% else %}
                 <p class="center note">
-                    No story data available. This is likely an error, unless the campaign has not started yet.
+                    {{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR_LIKELY'|trans }}.
                 </p>
             {% endif %}
         </div>

@@ -122,6 +122,7 @@ REPUTATION_EVENTS: Wydarzenia wpływające na reputację
 REPUTATION_TABLE: Tabela reputacji
 
 # Party
+PARTY_TITLE: Drużyna
 PARTY_MEMBER: Członek drużyny
 PARTY_MEMBERS: Członkowie drużyny
 PARTY_MEMBERS_ABSENT: Nieobecni członkowie drużyny
@@ -177,6 +178,11 @@ CHARACTER_SPEC_RELOAD: Ładowanie
 CHARACTER_WEAPONS_BRAWN_INCLUDED: Uwzględniono Krzepę
 CHARACTER_WEAPONS_KNACK_INCLUDED: Uwzględniono Biegłości, nie uwzględniono opcjonalnych rozwiązań (mogą być ujęte osobno)
 CHARACTER_MAY_CONTAIN_SECRETS: Może zawierać dane niejawne
+
+# Campaign
+CAMPAING_TITLE: Historia kampanii
+CAMPAING_RECAP: Podsumowanie
+CAMPAING_COMPLETE_HISTORY: Pełna historia
 
 # Menu labels
 MENU_MAIN: Główna

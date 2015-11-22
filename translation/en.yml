@@ -122,6 +122,7 @@ REPUTATION_EVENTS: Reputation events
 REPUTATION_TABLE: Reputation table
 
 # Party page headers
+PARTY_TITLE: Party
 PARTY_MEMBER: Party member
 PARTY_MEMBERS: Party members
 PARTY_MEMBERS_ABSENT: Absent members
@@ -178,6 +179,11 @@ CHARACTER_WEAPONS_BRAWN_INCLUDED: Brawn included
 CHARACTER_WEAPONS_KNACK_INCLUDED: Knacks included, optional tricks not included (may be included separately)
 CHARACTER_MAY_CONTAIN_SECRETS: May contain secrets
 
+# Campaign
+CAMPAING_TITLE: Campaign history
+CAMPAING_RECAP: Recap
+CAMPAING_COMPLETE_HISTORY: Complete history
+
 # Menu labels
 MENU_MAIN: Main
 MENU_PARTY: Party
@@ -192,4 +198,4 @@ NO_DATA_LIST: No data lists found
 NO_DATA_LIST_FULL: No data lists found - please contact the GM or verify data source
 NO_DATA_ERROR: This is an error
 NO_DATA_ERROR_LIKELY: This is likely an error
-NO_DATA_ERROR_LIKELY_PROBLEM: This is likely an error, or the character has a problem.
+NO_DATA_ERROR_LIKELY_PROBLEM: This is likely an error, or the character has a problem
