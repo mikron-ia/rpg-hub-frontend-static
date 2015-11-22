@@ -5,23 +5,23 @@
 <div class="clear"></div>
 
 <div class="block padded full-width">
-    <h2 class="center">Reputation table</h2>
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_REPUTATION_TABLE'|trans }}</h2>
     <table>
         <thead>
         <tr>
-            <th>Reputation</th>
-            <th>Negative</th>
-            <th>Positive</th>
-            <th>Balance</th>
-            <th>Dice</th>
+            <th title="{{ 'REPUTATION_NAME'|trans }}">{{ 'LABEL_REPUTATION'|trans }}</th>
+            <th>{{ 'LABEL_NEGATIVE_F'|trans }}</th>
+            <th>{{ 'LABEL_POSITIVE_F'|trans }}</th>
+            <th>{{ 'LABEL_BALANCE'|trans }}</th>
+            <th>{{ 'LABEL_DICE'|trans }}</th>
         </tr>
         </thead>
         <tbody>
         {% for reputation in characterData.reputations %}
             <tr title="{{ reputation.description }}">
                 <td class="left">{{ reputation.name }}</td>
-                <td class="center" title="Lowest ever: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
-                <td class="center" title="Highest ever: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
+                <td class="center" title="{{ 'REPUTATION_LOWEST'|trans }}: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
+                <td class="center" title="{{ 'REPUTATION_HIGHEST'|trans }}: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
                 <td class="center">{{ reputation.balance }}</td>
                 <td class="center">{{ reputation.dice }}</td>
             </tr>
@@ -33,17 +33,17 @@
 <div class="clear"></div>
 
 <div class="block padded full-width">
-    <h2 class="center">Contacts</h2>
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_CONTACTS'|trans }}</h2>
     <table>
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Who is this?</th>
-            <th>Who is this to you?</th>
-            <th>Attitude towards you</th>
-            <th>Usefulness</th>
-            <th>Your knowledge</th>
-            <th>Details</th>
+            <th>{{ 'CHARACTER_NAME'|trans }}</th>
+            <th>{{ 'CHARACTER_WHO'|trans }}</th>
+            <th>{{ 'CHARACTER_WHO_TO_YOU'|trans }}</th>
+            <th>{{ 'CHARACTER_ATTITUDE_TO_YOU'|trans }}</th>
+            <th>{{ 'LABEL_USEFULNESS'|trans }}</th>
+            <th>{{ 'CHARACTER_KNOWLEDGE'|trans }}</th>
+            <th>{{ 'LABEL_DETAILS'|trans }}</th>
         </tr>
         </thead>
         <tbody>
@@ -61,7 +61,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="7" class="center note">No contacts found</td>
+                <td colspan="7" class="center note">{{ 'NO_DATA'|trans }}</td>
             </tr>
         {% endif %}
         </tbody>
@@ -71,13 +71,13 @@
 <div class="clear"></div>
 
 <div class="block padded">
-    <h2 class="center">Backgrounds</h2>
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_BACKGROUNDS'|trans }}</h2>
     <table>
         <thead>
         <tr>
-            <th>Type</th>
-            <th>Level</th>
-            <th>Details</th>
+            <th>{{ 'LABEL_BACKGROUND'|trans }}</th>
+            <th>{{ 'LABEL_LEVEL'|trans }}</th>
+            <th>{{ 'LABEL_DETAILS'|trans }}</th>
         </tr>
         </thead>
         <tbody>
@@ -94,7 +94,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="3" class="center note">No backgrounds found</td>
+                <td colspan="3" class="center note">{{ 'NO_DATA'|trans }}</td>
             </tr>
         {% endif %}
         </tbody>

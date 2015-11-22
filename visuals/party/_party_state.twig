@@ -3,16 +3,16 @@
 {% endif %}
 
 <div class="block">
-    <h2 class="center">Party members</h2>
+    <h2 class="center">{{ 'PARTY_MEMBERS'|trans }}</h2>
     {% if partyData.help.members %}
         <p class="help">{{ partyData.help.members }}</p>
     {% endif %}
     <table>
         <thead>
         <tr>
-            <th>Name</th>
-            <th title="Apparent nationality and profession or trade they work in">Who is this?</th>
-            <th>Appearance</th>
+            <th>{{ 'CHARACTER_NAME'|trans }}</th>
+            <th title="{{ 'CHARACTER_WHO_EXPLANATION'|trans }}">{{ 'CHARACTER_WHO'|trans }}</th>
+            <th>{{ 'CHARACTER_APPEARANCE'|trans }}</th>
         </tr>
         </thead>
         <tbody>
@@ -26,7 +26,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="3" class="center note">No data available</td>
+                <td colspan="3" class="center note">{{ 'NO_DATA'|trans }}</td>
             </tr>
         {% endif %}
         </tbody>
@@ -37,16 +37,16 @@
 
 {% if partyData.absentMembers %}
     <div class="block">
-        <h2 class="center">Absent members</h2>
+        <h2 class="center">{{ 'Absent members'|trans }}</h2>
         {% if partyData.help.absentMembers %}
             <p class="help">{{ partyData.help.absentMembers }}</p>
         {% endif %}
         <table>
             <thead>
             <tr>
-                <th>Name</th>
-                <th title="Apparent nationality and profession or trade they work in">Who is this?</th>
-                <th>Reason for absence</th>
+                <th>{{ 'CHARACTER_NAME'|trans }}</th>
+                <th title="{{ 'CHARACTER_WHO_EXPLANATION'|trans }}">{{ 'CHARACTER_WHO'|trans }}</th>
+                <th>{{ 'CHARACTER_REASON_ABSENCE'|trans }}</th>
             </tr>
             </thead>
             <tbody>

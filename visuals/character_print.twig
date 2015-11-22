@@ -13,7 +13,7 @@
     <div class="clear"></div>
 
     <div class="block padded threesplit">
-        <h2 class="center">Attributes</h2>
+        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_ATTRIBUTES'|trans }}</h2>
         {% if characterData.attributes %}
             <table>
                 <tbody>
@@ -29,7 +29,7 @@
             <p class="center note">No attributes found. This is an error.</p>
         {% endif %}
 
-        <h2 class="center">Auxiliary stats</h2>
+        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_AUXILIARY'|trans }}</h2>
         {% if characterData.rolls %}
             <table>
                 <tbody>
@@ -47,7 +47,7 @@
     </div>
 
     <div class="block padded threesplit">
-        <h2 class="center">Defences</h2>
+        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_DEFENCES'|trans }}</h2>
         <table>
             <thead>
             <tr>
@@ -69,7 +69,7 @@
     </div>
 
     <div class="block padded threesplit">
-        <h2 class="center">Languages</h2>
+        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_LANGUAGES'|trans }}</h2>
         <table>
             <tbody>
             {% if characterData.languages %}
@@ -91,7 +91,7 @@
     <div class="clear"></div>
 
     <div class="block padded unbreakable">
-        <h2 class="center">Advantages &amp; disadvantages</h2>
+        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_ADVANTAGES_AND_DISADVANTAGES'|trans }}</h2>
         <table>
             <tbody>
             {% if characterData.advantages %}
@@ -101,7 +101,7 @@
                         <td class="center">{{ advantage.level }}</td>
                         <td class="justified">
                             {{ advantage.description }}
-                            {% if advantage.details %} <span class="note">{{ advantage.details }}</span>{% endif %}
+                            {% if advantage.details %}<br><span class="note">{{ advantage.details }}</span>{% endif %}
                         </td>
                     </tr>
                 {% endfor %}
@@ -118,20 +118,16 @@
 
     {% if characterData.stunts %}
         <div class="block padded unbreakable">
-            <h2 class="center">Techniques</h2>
+            <h2 class="center">{{ 'CHARACTER_CHART_HEADER_TECHNIQUES'|trans }}</h2>
             <table>
-                <thead>
-                <tr>
-                    <th>Technique</th>
-                    <th>Description &amp; details</th>
-                </tr>
-                </thead>
                 <tbody>
                 {% for stunt in characterData.stunts %}
                     <tr title="{{ stunt.description }}">
                         <td class="left">{{ stunt.name }}</td>
-                        <td class="justified">{{ stunt.description }}{% if stunt.details %} <span
-                                    class="note">{{ stunt.details }}</span>{% endif %}</td>
+                        <td class="justified">
+                            {{ stunt.description }}
+                            {% if stunt.details %}<br><span class="note">{{ stunt.details }}</span>{% endif %}
+                        </td>
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -139,11 +135,10 @@
         </div>
 
         <div class="clear"></div>
-
     {% endif %}
 
     <div class="block padded full-width">
-        <h2 class="center">Abilities</h2>
+        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_ABILITIES'|trans }}</h2>
         {% if characterData.professions %}
             {% for profession in characterData.professions %}
                 <div class="block threesplit unbreakable">
@@ -174,7 +169,7 @@
 
     {% if characterData.contacts %}
         <div class="block padded unbreakable">
-            <h2 class="center">Contacts</h2>
+            <h2 class="center">{{ 'CHARACTER_CHART_HEADER_CONTACTS'|trans }}</h2>
             <table>
                 <thead>
                 <tr>
@@ -261,7 +256,7 @@
     <div class="clear"></div>
 
     <div class="block padded unbreakable">
-        <h2 class="center">Equipment</h2>
+        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_EQUIPMENT'|trans }}</h2>
         <table>
             <thead>
             <tr>
@@ -291,17 +286,17 @@
     <div class="clear"></div>
 
     <div class="block padded unbreakable">
-        <h2 class="center">Weapons</h2>
+        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_EQUIPMENT'|trans }}</h2>
         <table>
             <thead>
             <tr>
-                <th>Weapon</th>
-                <th title="Knack usually used to attack">Knack</th>
-                <th title="Attack roll">Roll</th>
-                <th title="Brawn included">Damage</th>
-                <th>Range<br>[m]</th>
-                <th title="Knacks included, optional tricks not included">Reload<br>[actions]</th>
-                <th>Details</th>
+                <th>{{ 'LABEL_WEAPON'|trans }}</th>
+                <th>{{ 'LABEL_KNACK'|trans }}</th>
+                <th title="{{ 'LABEL_ROLL_ATTACK'|trans }}">{{ 'LABEL_ROLL'|trans }}</th>
+                <th title="Brawn included">{{ 'LABEL_DAMAGE'|trans }}</th>
+                <th>{{ 'LABEL_RANGE'|trans }}<br>[m]</th>
+                <th title="Knacks included, optional tricks not included">{{ 'CHARACTER_SPEC_RELOAD'|trans }}<br>[{{ 'LABEL_ACTIONS'|trans|lower }}]</th>
+                <th>{{ 'LABEL_DETAILS'|trans }}</th>
             </tr>
             </thead>
             <tbody>
@@ -329,7 +324,7 @@
     <div class="clear"></div>
 
     <div class="block padded unbreakable">
-        <h2 class="center">Backgrounds</h2>
+        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_BACKGROUNDS'|trans }}</h2>
         <table>
             <tbody>
             {% if characterData.catches %}
@@ -355,7 +350,7 @@
     <div class="clear"></div>
 
     <div class="block padded twosplit">
-        <h2 class="center">Basics (may contain secrets)</h2>
+        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_BASICS'|trans }} ({{ 'CHARACTER_MAY_CONTAIN_SECRETS'|trans|lower }})</h2>
         <table>
             <tbody>
             {% for basic in characterData.basics %}
@@ -369,7 +364,7 @@
     </div>
 
     <div class="block padded twosplit">
-        <h2 class="center">Variables (for your own use)</h2>
+        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_VARIABLES'|trans }}</h2>
         {% if characterData.variables %}
             <table>
                 <tbody>

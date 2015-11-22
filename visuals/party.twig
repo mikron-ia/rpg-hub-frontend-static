@@ -1,15 +1,15 @@
 {% extends "layout/page.twig" %}
 {% block content %}
 
-    <h1>{{ title }}</h1>
+    <h1>{{ 'PARTY_TITLE'|trans }}</h1>
 
     <div id="party-display">
 
         <div class="ui-tabs-container">
             <ul>
-                <li><a href="{{ app.request.basepath }}/party/#state">Current state</a></li>
-                <li><a href="{{ app.request.basepath }}/party/#reputation">Reputation</a></li>
-                <li><a href="{{ app.request.basepath }}/party/#history">History</a></li>
+                <li><a href="{{ app.request.basepath }}/party/#state">{{ 'LABEL_CURRENT_STATE'|trans }}</a></li>
+                <li><a href="{{ app.request.basepath }}/party/#reputation">{{ 'LABEL_REPUTATION'|trans }}</a></li>
+                <li><a href="{{ app.request.basepath }}/party/#history">{{ 'LABEL_HISTORY'|trans }}</a></li>
             </ul>
         </div>
 

@@ -5,7 +5,7 @@
 <div class="clear"></div>
 
 <div class="block padded threesplit">
-    <h2 class="center">Basics</h2>
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_BASICS'|trans }}</h2>
     {% if characterData.basics %}
         <table>
             <tbody>
@@ -18,12 +18,12 @@
             </tbody>
         </table>
     {% else %}
-        <p class="center note">No basic data found. This is an error.</p>
+        <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
     {% endif %}
 </div>
 
 <div class="block padded threesplit">
-    <h2 class="center">Public knowledge</h2>
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_PUBLIC'|trans }}</h2>
     <table>
         <tbody>
         {% for public in characterData.public %}
@@ -37,7 +37,7 @@
 </div>
 
 <div class="block padded threesplit">
-    <h2 class="center">Variables</h2>
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_VARIABLES'|trans }}</h2>
     {% if characterData.variables %}
         <table>
             <tbody>
@@ -50,20 +50,20 @@
             </tbody>
         </table>
     {% else %}
-        <p class="center note">No variables found.</p>
+        <p class="center note">{{ 'NO_DATA'|trans }}</p>
     {% endif %}
 </div>
 
 <div class="block padded threesplit">
-    <h2 class="center">Useful links</h2>
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_USEFUL_LINKS'|trans }}</h2>
     <p class="center">
         <a href="{{ app.request.basepath }}/character/{{ characterKey }}/print/">
-            Printable sheet
+            {{ 'CHARACTER_LINK_PRINTABLE'|trans }}
         </a>
     </p>
     <p class="center">
         <a href="{{ app.request.basepath }}/character/{{ characterKey }}/history/">
-            XP, developments &amp; reputation history
+            {{ 'CHARACTER_LINK_HISTORY'|trans }}
         </a>
     </p>
 </div>

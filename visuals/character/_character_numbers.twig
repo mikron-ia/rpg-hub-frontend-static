@@ -5,12 +5,12 @@
 <div class="clear"></div>
 
 <div class="block padded threesplit">
-    <h2 class="center">Attributes</h2>
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_ATTRIBUTES'|trans }}</h2>
     {% if characterData.attributes %}
         <table>
             <thead>
             <tr>
-                <th>Attribute</th>
+                <th>{{ 'LABEL_ATTRIBUTE'|trans }}</th>
                 <th class="This is the level on which development cost is based on + bonuses from schools, magic, advantages, etc.">
                     Rank&nbsp+ Bonus
                 </th>
@@ -29,10 +29,10 @@
             </tbody>
         </table>
     {% else %}
-        <p class="center note">No attributes found. This is an error.</p>
+        <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
     {% endif %}
 
-    <h2 class="center">Auxiliary stats</h2>
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_AUXILIARY'|trans }}</h2>
     {% if characterData.rolls %}
         <table>
             <tbody>
@@ -45,18 +45,18 @@
             </tbody>
         </table>
     {% else %}
-        <p class="center note">No auxiliary stats found.</p>
+        <p class="center note">{{ 'NO_DATA'|trans }}.</p>
     {% endif %}
 </div>
 
 <div class="block padded threesplit">
-    <h2 class="center">Defences</h2>
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_DEFENCES'|trans }}</h2>
     <table>
         <thead>
         <tr>
-            <th>Situation</th>
-            <th>Passive</th>
-            <th>Active</th>
+            <th>{{ 'LABEL_SITUATION'|trans }}</th>
+            <th>{{ 'LABEL_PASSIVE_F'|trans }}</th>
+            <th>{{ 'LABEL_ACTIVE_F'|trans }}</th>
         </tr>
         </thead>
         <tbody>
@@ -70,7 +70,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="3" class="center note">No defences list found. This is an error.</td>
+                <td colspan="3" class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</td>
             </tr>
         {% endif %}
         </tbody>
@@ -78,12 +78,12 @@
 </div>
 
 <div class="block padded foursplit">
-    <h2 class="center">Languages</h2>
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_LANGUAGES'|trans }}</h2>
     <table>
         <thead>
         <tr>
-            <th>Language</th>
-            <th>Proficiency</th>
+            <th>{{ 'LABEL_LANGUAGE'|trans }}</th>
+            <th>{{ 'LABEL_PROFICIENCY'|trans }}</th>
         </tr>
         </thead>
         <tbody>
@@ -96,7 +96,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="2" class="center note">No languages found. This is likely an error.</td>
+                <td colspan="2" class="center note">{{ 'NO_DATA'|trans }}. This is likely an error.</td>
             </tr>
         {% endif %}
         </tbody>
@@ -106,13 +106,13 @@
 <div class="clear"></div>
 
 <div class="block padded">
-    <h2 class="center">Advantages</h2>
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_ADVANTAGES_AND_DISADVANTAGES'|trans }}</h2>
     <table>
         <thead>
         <tr>
-            <th>Advantage</th>
-            <th>Level</th>
-            <th>Description &amp; details</th>
+            <th>{{ 'LABEL_ADVANTAGE'|trans }} / {{ 'LABEL_DISADVANTAGE'|trans }}</th>
+            <th>{{ 'LABEL_LEVEL'|trans }}</th>
+            <th>{{ 'LABEL_DESCRIPTION'|trans }} / <span class="note">{{ 'LABEL_DETAILS'|trans }}</span></th>
         </tr>
         </thead>
         <tbody>
@@ -121,13 +121,14 @@
                 <tr title="{{ advantage.description }}">
                     <td class="left">{{ advantage.name }}</td>
                     <td class="center">{{ advantage.level }}</td>
-                    <td class="justified">{{ advantage.description }}{% if advantage.details %} <span
-                                class="note">{{ advantage.details }}</span>{% endif %}</td>
+                    <td class="justified">
+                        {{ advantage.description }}{% if advantage.details %} <span class="note">{{ advantage.details }}</span>{% endif %}
+                    </td>
                 </tr>
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="3" class="center note">No advantages found</td>
+                <td colspan="3" class="center note">{{ 'NO_DATA'|trans }}</td>
             </tr>
         {% endif %}
         </tbody>
@@ -138,20 +139,21 @@
 
 {% if characterData.stunts %}
     <div class="block padded">
-        <h2 class="center">Techniques</h2>
+        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_TECHNIQUES'|trans }}</h2>
         <table>
             <thead>
             <tr>
-                <th>Technique</th>
-                <th>Description &amp; details</th>
+                <th>{{ 'LABEL_TECHNIQUE'|trans }}</th>
+                <th>{{ 'LABEL_DESCRIPTION'|trans }} / <span class="note">{{ 'LABEL_DETAILS'|trans }}</span></th>
             </tr>
             </thead>
             <tbody>
             {% for stunt in characterData.stunts %}
                 <tr title="{{ stunt.description }}">
                     <td class="left">{{ stunt.name }}</td>
-                    <td class="justified">{{ stunt.description }}{% if stunt.details %} <span
-                                class="note">{{ stunt.details }}</span>{% endif %}</td>
+                    <td class="justified">
+                        {{ stunt.description }}{% if stunt.details %} <span class="note">{{ stunt.details }}</span>{% endif %}
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -163,7 +165,7 @@
 {% endif %}
 
 <div>
-    <h2 class="center">Abilities</h2>
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_ABILITIES'|trans }}</h2>
     {% if characterData.professions %}
         {% for profession in characterData.professions %}
             <div class="block foursplit">
@@ -184,7 +186,7 @@
             {% endif %}
         {% endfor %}
     {% else %}
-        <p class="center note">No abilities found. This is an error.</p>
+        <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
     {% endif %}
 </div>
 

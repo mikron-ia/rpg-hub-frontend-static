@@ -1,0 +1,201 @@
+# Labels
+LABEL_ABILITY: Zdolność
+LABEL_ABILITIES: Zdolności
+LABEL_ACTION: Akcja
+LABEL_ACTIONS: Akcje
+LABEL_ADVANTAGE: Zaleta
+LABEL_ADVANTAGES: Zalety
+LABEL_ACTIVE_M: Aktywny
+LABEL_ACTIVE_F: Aktywna
+LABEL_ACTIVE_N: Aktywne
+LABEL_ATTRIBUTE: Cecha
+LABEL_ATTRIBUTES: Cechy
+LABEL_AUXILIARY_STATS: Atrybuty pomocniczne
+LABEL_BACKGROUND: Zaszłość
+LABEL_BACKGROUNDS: Zaszłości
+LABEL_BALANCE: Suma
+LABEL_BASICS: Podstawy
+LABEL_CHANGE: Zmiana
+LABEL_CONTACT: Kontakt
+LABEL_CONTACTS: Kontakt
+LABEL_COST: Koszt
+LABEL_COSTS: Koszty
+LABEL_COUNT: Liczba
+LABEL_CURRENCY: Waluta
+LABEL_CURRENCIES: Waluty
+LABEL_CURRENT_STATE: Stan bieżący
+LABEL_DAMAGE: Obrażenia
+LABEL_DESCRIPTION: Opis
+LABEL_DESCRIPTIONS: Opisy
+LABEL_DETAIL: Szczegół
+LABEL_DETAILS: Szczegóły
+LABEL_DEVELOPMENT: Rozwój
+LABEL_DEVELOPMENTS: Rozwoje
+LABEL_DICE: Kości
+LABEL_DIE: Kość
+LABEL_DISADVANTAGE: Wada
+LABEL_DISADVANTAGES: Wady
+LABEL_EQUIPMENT: Ekwipunek
+LABEL_EVENT: Wydarzenie
+LABEL_EXPENSE: Koszt
+LABEL_EXPENSES: Koszty
+LABEL_EXPERIENCE: Doświadczenie
+LABEL_FREQUENCY: Częstotliwość
+LABEL_FREQUENCIES: Częstotliwości
+LABEL_HISTORY: Historia
+LABEL_INCOME_S: Dochód
+LABEL_INCOME_P: Dochody
+LABEL_INFLUENCE: Wpływ
+LABEL_INTERACTION: Interakcja
+LABEL_INTERACTIONS: Interakcje
+LABEL_KNACK: Biegłość
+LABEL_KNACKS: Biegłości
+LABEL_LANGUAGE: Język
+LABEL_LANGUAGES: Języki
+LABEL_LEVEL: Poziom
+LABEL_LEVELS: Poziomy
+LABEL_MONEY: Pieniądze
+LABEL_NEW_VALUE: Nowa wartość
+LABEL_NEW_M: Nowy
+LABEL_NEW_F: Nowa
+LABEL_NEW_M: Nowe
+LABEL_NEGATIVE_M: Negatywny
+LABEL_NEGATIVE_F: Negatywna
+LABEL_NEGATIVE_N: Negatywne
+LABEL_NOTE: Uwaga
+LABEL_NOTES: Uwagi
+LABEL_NUMBER: Liczba
+LABEL_NUMBERS: Liczby
+LABEL_PASSIVE_M: Pasywny
+LABEL_PASSIVE_F: Pasywna
+LABEL_PASSIVE_N: Pasywne
+LABEL_POSITIVE_M: Pozytywny
+LABEL_POSITIVE_F: Pozytywna
+LABEL_POSITIVE_N: Pozytywne
+LABEL_PROFICIENCY: Biegłość
+LABEL_PUBLIC_KNOWLEDGE: Wiedza publiczna
+LABEL_RANGE: Zasięg
+LABEL_REPUTATION: Reputacja
+LABEL_RESOURCE: Zasób
+LABEL_RESOURCES: Zasoby
+LABEL_ROLL: Rzut
+LABEL_ROLL_ATTACK: Rzut na atak
+LABEL_ROLLS: Rzuty
+LABEL_ROLLS_ATTACK: Rzuty na atak
+LABEL_SITUATION: Situation
+LABEL_SITUATIONS: Situations
+LABEL_SKILL: Umiejętność
+LABEL_SKILLS: Umiejętności
+LABEL_SOURCE: Źródło
+LABEL_SOURCES: Źródła
+LABEL_STORY: Historia
+LABEL_STORIES: Historie
+LABEL_SUBJECT: Podmiot
+LABEL_SUBJECTS: Podmioty
+LABEL_TECHNIQUE: Technika
+LABEL_TECHNIQUES: Techniki
+LABEL_TYPE: Typ
+LABEL_TYPES: Typy
+LABEL_USEFULNESS: Użyteczność
+LABEL_VALUE: Wartość
+LABEL_VALUES: Wartości
+LABEL_VARIABLE: Zmienna
+LABEL_VARIABLES: Zmienne
+LABEL_WEAPON: Broń
+LABEL_WEAPONS: Uzbrojenie
+LABEL_WHAT: Co?
+LABEL_WHEN: Kiedy?
+LABEL_WHERE: Gdzie?
+LABEL_WHERE_TO: Dokąd?
+LABEL_WHO: Kto?
+LABEL_WHY: Dlaczego?
+LABEL_XP: PD
+
+# Reputation
+REPUTATION_NAME: Nazwa reputacji
+REPUTATION_PARTY: Reputacja drużynowa
+REPUTATION_PARTY_MEMBERS: Osobista reputacja członków drużyny
+REPUTATION_LOWEST: Najniższa w historii
+REPUTATION_HIGHEST: Najwyższa w historii
+REPUTATION_PARTY_INFLUENCE_EXPLANATION: Wpływ na reputację drużynową wywierany przez członków drużyny
+REPUTATION_EVENTS: Wydarzenia wpływające na reputację
+REPUTATION_TABLE: Tabela reputacji
+
+# Party
+PARTY_TITLE: Drużyna
+PARTY_MEMBER: Członek drużyny
+PARTY_MEMBERS: Członkowie drużyny
+PARTY_MEMBERS_ABSENT: Nieobecni członkowie drużyny
+PARTY_REPUTATION: Reputacja drużynowa
+
+# Character on party page
+CHARACTER_NAME: Imię postaci
+CHARACTER_WHO: Kim jest?
+CHARACTER_WHO_TO_YOU: Kim jest dla postaci?
+CHARACTER_APPEARANCE: Wygląd zewnętrzny
+CHARACTER_REASON_ABSENCE: Przyczyny nieobecności
+CHARACTER_WHO_EXPLANATION: Narodowość którą postać przedstawia oraz zawód ktory wykonuje
+CHARACTER_TIME_OF_DEPARTURE: Moment opuszczenia drużyny
+CHARACTER_REASON_OF_DEPARTURE: Przyczyna opuszczenia drużyny
+CHARACTER_ATTITUDE_TO_YOU: Nastawienie dla postaci
+CHARACTER_KNOWLEDGE: Wiedza postaci
+
+# Character sheet
+CHARACTER_CHART_TITLE: Karta postaci
+CHARACTER_CHART_HEADER_BASICS: Podstawy
+CHARACTER_CHART_HEADER_PUBLIC: Wiedza publiczna
+CHARACTER_CHART_HEADER_VARIABLES: Zmienne
+CHARACTER_CHART_HEADER_USEFUL_LINKS: Użyteczne linki
+CHARACTER_CHART_HEADER_ATTRIBUTES: Atrybuty
+CHARACTER_CHART_HEADER_AUXILIARY: Wartości pomocnicze
+CHARACTER_CHART_HEADER_DEFENCES: Obrony
+CHARACTER_CHART_HEADER_LANGUAGES: Języki
+CHARACTER_CHART_HEADER_ADVANTAGES: Zalety
+CHARACTER_CHART_HEADER_DISADVANTAGES: Wady
+CHARACTER_CHART_HEADER_ADVANTAGES_AND_DISADVANTAGES: Wady i Zalety
+CHARACTER_CHART_HEADER_TECHNIQUES: Techniki
+CHARACTER_CHART_HEADER_ABILITIES: Zdolności
+CHARACTER_CHART_HEADER_EQUIPMENT: Ekwipunek
+CHARACTER_CHART_HEADER_WEAPONS: Uzbrojenie
+CHARACTER_CHART_HEADER_INCOME: Dochody
+CHARACTER_CHART_HEADER_EXPENSES: Koszty
+CHARACTER_CHART_HEADER_MONEY: Pieniądze
+CHARACTER_CHART_HEADER_REPUTATION_TABLE: Tablica reputacji
+CHARACTER_CHART_HEADER_CONTACTS: Kontakty
+CHARACTER_CHART_HEADER_BACKGROUNDS: Zaszłości
+CHARACTER_CHART_HEADER_DESCRIPTIONS: Opisy
+CHARACTER_CHART_TITLE_HISTORY: Historia postaci
+CHARACTER_CHART_HEADER_EXPERIENCE_HISTORY: Historia doświadczenia
+CHARACTER_CHART_HEADER_REPUTATION_EVENTS: Historia wydarzeń wpływających na reputację
+CHARACTER_CHART_HEADER_DEVELOPMENTS: Historia rozwojów
+
+# Character links
+CHARACTER_LINK_PRINTABLE: Karta do druku
+CHARACTER_LINK_HISTORY: Doświadczenie, rozwoje i historia reputacji
+
+# Character sheet specifics not covered by labels
+CHARACTER_SPEC_RELOAD: Ładowanie
+CHARACTER_WEAPONS_BRAWN_INCLUDED: Uwzględniono Krzepę
+CHARACTER_WEAPONS_KNACK_INCLUDED: Uwzględniono Biegłości, nie uwzględniono opcjonalnych rozwiązań (mogą być ujęte osobno)
+CHARACTER_MAY_CONTAIN_SECRETS: Może zawierać dane niejawne
+
+# Campaign
+CAMPAING_TITLE: Historia kampanii
+CAMPAING_RECAP: Podsumowanie
+CAMPAING_COMPLETE_HISTORY: Pełna historia
+
+# Menu labels
+MENU_MAIN: Główna
+MENU_PARTY: Drużyna
+MENU_CAMPAIGN: Kampania
+MENU_LOGIN: Zaloguj
+MENU_LOGOUT: Wyloguj
+
+# No data messages
+NO_DATA: Brak danych
+NO_DATA_FOR_PERSON: Brak danych dla osoby
+NO_DATA_LIST: Brak list danych
+NO_DATA_LIST_FULL: Brak list danych - prosimy skontaktować się z MG lub sprawdzić źródło danych
+NO_DATA_ERROR: Jest to błąd systemu
+NO_DATA_ERROR_LIKELY: Jest to prawdopodobnie błąd systemu
+NO_DATA_ERROR_LIKELY_PROBLEM: Jest to prawdopodobnie błąd systemu, lub postać ma problem
