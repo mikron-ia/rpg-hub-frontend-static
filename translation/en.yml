@@ -21,10 +21,10 @@ LABEL_CONTACTS: Contacts
 LABEL_COST: Cost
 LABEL_COSTS: Costs
 LABEL_COUNT: Count
-LABEL_CURRENCY: Waluta
-LABEL_CURRENCIES: Waluty
+LABEL_CURRENCY: Currency
+LABEL_CURRENCIES: Currencies
 LABEL_CURRENT_STATE: Current state
-LABEL_DAMAGE: Obrażenia
+LABEL_DAMAGE: Damage
 LABEL_DESCRIPTION: Description
 LABEL_DESCRIPTIONS: Descriptions
 LABEL_DETAIL: Detail
@@ -183,6 +183,13 @@ CHARACTER_MAY_CONTAIN_SECRETS: May contain secrets
 CAMPAING_TITLE: Campaign history
 CAMPAING_RECAP: Recap
 CAMPAING_COMPLETE_HISTORY: Complete history
+
+# Front page
+FRONT_TITLE: Main hall
+FRONT_WELCOME: Welcome to our tavern! Main hall is mostly empty for now, please visit other rooms!
+FRONT_EXPLANATION: >
+  Due character sheets being handed out as individual links, they cannot be linked on the website.
+  Please use your access link to view your character. For all other purposes, please use the top menu.
 
 # Menu labels
 MENU_MAIN: Main

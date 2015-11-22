@@ -176,13 +176,21 @@ CHARACTER_LINK_HISTORY: Doświadczenie, rozwoje i historia reputacji
 # Character sheet specifics not covered by labels
 CHARACTER_SPEC_RELOAD: Ładowanie
 CHARACTER_WEAPONS_BRAWN_INCLUDED: Uwzględniono Krzepę
-CHARACTER_WEAPONS_KNACK_INCLUDED: Uwzględniono Biegłości, nie uwzględniono opcjonalnych rozwiązań (mogą być ujęte osobno)
+CHARACTER_WEAPONS_KNACK_INCLUDED: >
+  Uwzględniono Biegłości, nie uwzględniono opcjonalnych rozwiązań (mogą być ujęte osobno)
 CHARACTER_MAY_CONTAIN_SECRETS: Może zawierać dane niejawne
 
 # Campaign
 CAMPAING_TITLE: Historia kampanii
 CAMPAING_RECAP: Podsumowanie
 CAMPAING_COMPLETE_HISTORY: Pełna historia
+
+# Front page
+FRONT_TITLE: Główna sala
+FRONT_WELCOME: Witamy w naszej tawernie! Sala główna wymaga jeszcze dekoracji, zapraszam zatem do sal bocznych.
+FRONT_EXPLANATION: >
+  Ze względu na fakt iż karty postaci są obecnie wystawiane jako indywidualne linki, nie mogą one być linkowane
+  na stronie. Karta postaci jest dostępna jedynie przez link. Do wszelkich innych stron można wejść przez menu.
 
 # Menu labels
 MENU_MAIN: Główna
