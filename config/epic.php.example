@@ -1,7 +1,10 @@
 <?php
 
 return [
-    'interface' => [],
+    'interface' => [
+        'titleSuffix' => '',
+        'GMdBy' => '',
+    ],
     'system' => "",
     'lang' => 'en',
 ];

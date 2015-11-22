@@ -9,6 +9,7 @@ return [
             'start' => 2015,
             'end' => date('Y'),
             'name' => 'Mikron',
+            'license' => 'GNU GPL v2'
         ],
     ],
     'lang' => 'en',
