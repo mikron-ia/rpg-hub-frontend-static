@@ -28,7 +28,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="3" class="center note">No equipment found. This is likely an error.</td>
+                <td colspan="3" class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR_LIKELY'|trans }}.</td>
             </tr>
         {% endif %}
         </tbody>
@@ -68,7 +68,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="8" class="center note">No weapons found</td>
+                <td colspan="8" class="center note">{{ 'NO_DATA'|trans }}</td>
             </tr>
         {% endif %}
         </tbody>
@@ -102,7 +102,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="5" class="center note">No income found</td>
+                <td colspan="5" class="center note">{{ 'NO_DATA'|trans }}</td>
             </tr>
         {% endif %}
         </tbody>
@@ -134,7 +134,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="5" class="center note">No expenses found. This is likely an error.</td>
+                <td colspan="5" class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR_LIKELY'|trans }}.</td>
             </tr>
         {% endif %}
         </tbody>

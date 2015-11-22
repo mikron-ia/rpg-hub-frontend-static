@@ -5,7 +5,7 @@
 <div class="clear"></div>
 
 <div class="block padded full-width">
-    <h2 class="center">Reputation table</h2>
+    <h2 class="center">{{ 'REPUTATION_TABLE'|trans }}</h2>
     <table>
         <thead>
         <tr>
@@ -33,11 +33,11 @@
 <div class="clear"></div>
 
 <div class="block padded full-width">
-    <h2 class="center">Contacts</h2>
+    <h2 class="center">{{ 'LABEL_CONTACTS'|trans }}</h2>
     <table>
         <thead>
         <tr>
-            <th>Name</th>
+            <th>{{ 'CHARACTER_NAME'|trans }}</th>
             <th>Who is this?</th>
             <th>Who is this to you?</th>
             <th>Attitude towards you</th>
@@ -61,7 +61,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="7" class="center note">No contacts found</td>
+                <td colspan="7" class="center note">{{ 'NO_DATA'|trans }}</td>
             </tr>
         {% endif %}
         </tbody>
@@ -94,7 +94,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="3" class="center note">No backgrounds found</td>
+                <td colspan="3" class="center note">{{ 'NO_DATA'|trans }}</td>
             </tr>
         {% endif %}
         </tbody>

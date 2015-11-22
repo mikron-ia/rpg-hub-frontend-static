@@ -29,10 +29,10 @@
             </tbody>
         </table>
     {% else %}
-        <p class="center note">No attributes found. This is an error.</p>
+        <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
     {% endif %}
 
-    <h2 class="center">Auxiliary stats</h2>
+    <h2 class="center">{{ 'LABEL_AUXILIARY_STATS'|trans }}</h2>
     {% if characterData.rolls %}
         <table>
             <tbody>
@@ -45,7 +45,7 @@
             </tbody>
         </table>
     {% else %}
-        <p class="center note">No auxiliary stats found.</p>
+        <p class="center note">{{ 'NO_DATA'|trans }}.</p>
     {% endif %}
 </div>
 
@@ -70,7 +70,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="3" class="center note">No defences list found. This is an error.</td>
+                <td colspan="3" class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</td>
             </tr>
         {% endif %}
         </tbody>
@@ -96,7 +96,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="2" class="center note">No languages found. This is likely an error.</td>
+                <td colspan="2" class="center note">{{ 'NO_DATA'|trans }}. This is likely an error.</td>
             </tr>
         {% endif %}
         </tbody>
@@ -127,7 +127,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="3" class="center note">No advantages found</td>
+                <td colspan="3" class="center note">{{ 'NO_DATA'|trans }}</td>
             </tr>
         {% endif %}
         </tbody>
@@ -184,7 +184,7 @@
             {% endif %}
         {% endfor %}
     {% else %}
-        <p class="center note">No abilities found. This is an error.</p>
+        <p class="center note">No abilities found. {{ 'NO_DATA_ERROR'|trans }}.</p>
     {% endif %}
 </div>
 

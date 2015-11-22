@@ -5,7 +5,7 @@
 <div class="clear"></div>
 
 <div class="block padded threesplit">
-    <h2 class="center">Basics</h2>
+    <h2 class="center">{{ 'LABEL_BASICS'|trans }}</h2>
     {% if characterData.basics %}
         <table>
             <tbody>
@@ -18,12 +18,12 @@
             </tbody>
         </table>
     {% else %}
-        <p class="center note">No basic data found. This is an error.</p>
+        <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
     {% endif %}
 </div>
 
 <div class="block padded threesplit">
-    <h2 class="center">Public knowledge</h2>
+    <h2 class="center">{{ 'LABEL_PUBLIC_KNOWLEDGE'|trans }}</h2>
     <table>
         <tbody>
         {% for public in characterData.public %}
@@ -37,7 +37,7 @@
 </div>
 
 <div class="block padded threesplit">
-    <h2 class="center">Variables</h2>
+    <h2 class="center">{{ 'LABEL_VARIABLES'|trans }}</h2>
     {% if characterData.variables %}
         <table>
             <tbody>
@@ -50,12 +50,12 @@
             </tbody>
         </table>
     {% else %}
-        <p class="center note">No variables found.</p>
+        <p class="center note">{{ 'NO_DATA'|trans }}</p>
     {% endif %}
 </div>
 
 <div class="block padded threesplit">
-    <h2 class="center">Useful links</h2>
+    <h2 class="center">{{ 'LABEL_USEFUL_LINKS'|trans }}</h2>
     <p class="center">
         <a href="{{ app.request.basepath }}/character/{{ characterKey }}/print/">
             Printable sheet

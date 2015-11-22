@@ -1,6 +1,6 @@
 {% extends "layout/page.twig" %}
 {% block content %}
-    <h1 class="center">Character chart - {{ characterData.name }}</h1>
+    <h1 class="center">{{ 'CHARACTER_CHART_TITLE'|trans }} - {{ characterData.name }}</h1>
 
     {% if characterData.help.top %}
         <p class="help">{{ characterData.help.top }}</p>
@@ -12,27 +12,27 @@
             <ul>
                 <li>
                     <a href="{{ app.request.basepath }}/character/{{ characterKey }}/#current">
-                        Current state
+                        {{ 'LABEL_CURRENT_STATE'|trans }}
                     </a>
                 </li>
                 <li>
                     <a href="{{ app.request.basepath }}/character/{{ characterKey }}/#numbers">
-                        Numbers
+                        {{ 'LABEL_NUMBERS'|trans }}
                     </a>
                 </li>
                 <li>
                     <a href="{{ app.request.basepath }}/character/{{ characterKey }}/#equipment">
-                        Equipment &amp; money
+                        {{ 'LABEL_EQUIPMENT'|trans }}
                     </a>
                 </li>
                 <li>
                     <a href="{{ app.request.basepath }}/character/{{ characterKey }}/#interactions">
-                        Interactions
+                        {{ 'LABEL_INTERACTIONS'|trans }}
                     </a>
                 </li>
                 <li>
                     <a href="{{ app.request.basepath }}/character/{{ characterKey }}/#descriptions">
-                        Descriptions
+                        {{ 'LABEL_DESCRIPTIONS'|trans }}
                     </a>
                 </li>
             </ul>

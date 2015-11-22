@@ -1,5 +1,13 @@
 # Labels
+LABEL_AUXILIARY_STATS: Auxiliary stats
+LABEL_BACKGROUND: Background
+LABEL_BACKGROUNDS: Backgrounds
 LABEL_BALANCE: Balance
+LABEL_BASICS: Basics
+LABEL_CHANGE: Zmiana
+LABEL_CONTACT: Contact
+LABEL_CONTACTS: Contacts
+LABEL_CHANGE: Change
 LABEL_CURRENT_STATE: Current state
 LABEL_DEVELOPMENT: Development
 LABEL_DEVELOPMENTS: Developments
@@ -11,34 +19,54 @@ LABEL_EQUIPMENT: Equipment
 LABEL_EVENT: Event
 LABEL_EXPERIENCE: Experience
 LABEL_HISTORY: History
+LABEL_INCOME_S: Income
+LABEL_INCOME_P: Income
 LABEL_INFLUENCE: Influence
 LABEL_INTERACTION: Interaction
 LABEL_INTERACTIONS: Interactions
 LABEL_MONEY: Money
+LABEL_NEW_VALUE: New value
+LABEL_NEW_M: New
+LABEL_NEW_F: New
+LABEL_NEW_M: New
 LABEL_NEGATIVE_M: Negative
 LABEL_NEGATIVE_F: Negative
 LABEL_NEGATIVE_N: Negative
+LABEL_NOTE: Note
+LABEL_NOTES: Notes
 LABEL_NUMBER: Number
 LABEL_NUMBERS: Numbers
 LABEL_POSITIVE_M: Positive
 LABEL_POSITIVE_F: Positive
 LABEL_POSITIVE_N: Positive
+LABEL_PUBLIC_KNOWLEDGE: Public knowledge
 LABEL_REPUTATION: Reputation
 LABEL_RESOURCE: Resource
 LABEL_RESOURCES: Resources
+LABEL_USEFUL_LINK: Useful link
+LABEL_USEFUL_LINKS: Useful links
+LABEL_VALUE: Value
+LABEL_VARIABLE: Variable
+LABEL_VARIABLES: Variables
+LABEL_WEAPON: Weapon
+LABEL_WEAPONS: Weapons
+LABEL_WHEN: When?
 
 # Reputation
 REPUTATION_NAME: Name of the reputation
 REPUTATION_PARTY: Party reputation
-REPUTATION_PARTY_MEMBERS: Reputation of party members
+REPUTATION_PARTY_MEMBERS: Personal reputation of party members
 REPUTATION_LOWEST: Lowest ever
 REPUTATION_HIGHEST: Highest ever
 REPUTATION_PARTY_INFLUENCE_EXPLANATION: Influence from party members
+REPUTATION_EVENTS: Reputation events
+REPUTATION_TABLE: Reputation table
 
 # Party page headers
 PARTY_MEMBER: Party member
 PARTY_MEMBERS: Party members
 PARTY_MEMBERS_ABSENT: Absent members
+PARTY_REPUTATION: Party reputation
 
 # Party page table headers
 CHARACTER_NAME: Character name
@@ -46,6 +74,20 @@ CHARACTER_WHO: Who is this?
 CHARACTER_APPEARANCE: Appearance
 CHARACTER_REASON_ABSENCE: Reason for absence
 CHARACTER_WHO_EXPLANATION: Apparent nationality and profession or trade they work in
+CHARACTER_TIME_OF_DEPARTURE: Time of departure
+CHARACTER_REASON_OF_DEPARTURE: Reason of departure
+
+# Character sheet
+CHARACTER_CHART_TITLE: Character chart
+CHARACTER_CHART_HEADER_ATTRIBUTES: Attributes
+CHARACTER_CHART_HEADER_AUXILIARY: Auxiliary stats
+CHARACTER_CHART_HEADER_DEFENCES: Defences
+CHARACTER_CHART_HEADER_LANGUAGES: Languages
+CHARACTER_CHART_HEADER_ADVANTAGES: Advantages
+CHARACTER_CHART_HEADER_DISADVANTAGES: Disadvantages
+CHARACTER_CHART_HEADER_ADVANTAGES_AND_DISADVANTAGES: Advantages and Disadvantages
+CHARACTER_CHART_HEADER_TECHNIQUES: Techniques
+CHARACTER_CHART_HEADER_ABILITIES: Abilities
 
 # Menu labels
 MENU_MAIN: Main
@@ -59,3 +101,5 @@ NO_DATA: No data available
 NO_DATA_FOR_PERSON: No data for the person given
 NO_DATA_LIST: No data lists found
 NO_DATA_LIST_FULL: No data lists found - please contact the GM or verify data source
+NO_DATA_ERROR: This is an error
+NO_DATA_ERROR_LIKELY: This is likely an error

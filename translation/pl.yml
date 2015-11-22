@@ -1,5 +1,12 @@
 # Labels
+LABEL_AUXILIARY_STATS: Atrybuty pomocniczne
+LABEL_BACKGROUND: Zaszłość
+LABEL_BACKGROUNDS: Zaszłości
 LABEL_BALANCE: Suma
+LABEL_BASICS: Podstawy
+LABEL_CHANGE: Zmiana
+LABEL_CONTACT: Kontakt
+LABEL_CONTACTS: Kontakt
 LABEL_CURRENT_STATE: Stan bieżący
 LABEL_DEVELOPMENT: Rozwój
 LABEL_DEVELOPMENTS: Rozwoje
@@ -11,34 +18,54 @@ LABEL_EQUIPMENT: Ekwipunek
 LABEL_EVENT: Wydarzenie
 LABEL_EXPERIENCE: Doświadczenie
 LABEL_HISTORY: Historia
+LABEL_INCOME_S: Dochód
+LABEL_INCOME_P: Dochody
 LABEL_INFLUENCE: Wpływ
 LABEL_INTERACTION: Interakcja
 LABEL_INTERACTIONS: Interakcje
-LABEL_MONEY: Money
+LABEL_MONEY: Pieniądze
+LABEL_NEW_VALUE: Nowa wartość
+LABEL_NEW_M: Nowy
+LABEL_NEW_F: Nowa
+LABEL_NEW_M: Nowe
 LABEL_NEGATIVE_M: Negatywny
 LABEL_NEGATIVE_F: Negatywna
 LABEL_NEGATIVE_N: Negatywne
+LABEL_NOTE: Uwaga
+LABEL_NOTES: Uwagi
 LABEL_NUMBER: Liczba
 LABEL_NUMBERS: Liczby
 LABEL_POSITIVE_M: Pozytywny
 LABEL_POSITIVE_F: Pozytywna
 LABEL_POSITIVE_N: Pozytywne
+LABEL_PUBLIC_KNOWLEDGE: Wiedza publiczna
 LABEL_REPUTATION: Reputacja
 LABEL_RESOURCE: Zasób
 LABEL_RESOURCES: Zasoby
+LABEL_USEFUL_LINK: Użyteczny link
+LABEL_USEFUL_LINKS: Użyteczne linki
+LABEL_VALUE: Wartość
+LABEL_VARIABLE: Zmienna
+LABEL_VARIABLES: Zmienne
+LABEL_WEAPON: Broń
+LABEL_WEAPONS: Uzbrojenie
+LABEL_WHEN: Kiedy?
 
 # Reputation
 REPUTATION_NAME: Nazwa reputacji
 REPUTATION_PARTY: Reputacja drużynowa
-REPUTATION_PARTY_MEMBERS: Reputacja członków drużyny
+REPUTATION_PARTY_MEMBERS: Osobista reputacja członków drużyny
 REPUTATION_LOWEST: Najniższa w historii
 REPUTATION_HIGHEST: Najwyższa w historii
 REPUTATION_PARTY_INFLUENCE_EXPLANATION: Wpływ na reputację drużynową wywierany przez członków drużyny
+REPUTATION_EVENTS: Wydarzenia wpływające na reputację
+REPUTATION_TABLE: Tabela reputacji
 
 # Party
 PARTY_MEMBER: Członek drużyny
 PARTY_MEMBERS: Członkowie drużyny
 PARTY_MEMBERS_ABSENT: Nieobecni członkowie drużyny
+PARTY_REPUTATION: Reputacja drużynowa
 
 # Character on party page
 CHARACTER_NAME: Imię postaci
@@ -46,6 +73,20 @@ CHARACTER_WHO: Kim jest postać?
 CHARACTER_APPEARANCE: Wygląd zewnętrzny
 CHARACTER_REASON_ABSENCE: Przyczyny nieobecności
 CHARACTER_WHO_EXPLANATION: Narodowość którą postać przedstawia oraz zawód ktory wykonuje
+CHARACTER_TIME_OF_DEPARTURE: Moment opuszczenia drużyny
+CHARACTER_REASON_OF_DEPARTURE: Przyczyna opuszczenia drużyny
+
+# Character sheet
+CHARACTER_CHART_TITLE: Karta postaci
+CHARACTER_CHART_HEADER_ATTRIBUTES: Atrybuty
+CHARACTER_CHART_HEADER_AUXILIARY: Wartości pomocnicze
+CHARACTER_CHART_HEADER_DEFENCES: Obrony
+CHARACTER_CHART_HEADER_LANGUAGES: Języki
+CHARACTER_CHART_HEADER_ADVANTAGES: Zalety
+CHARACTER_CHART_HEADER_DISADVANTAGES: Wady
+CHARACTER_CHART_HEADER_ADVANTAGES_AND_DISADVANTAGES: Wady i Zalety
+CHARACTER_CHART_HEADER_TECHNIQUES: Techniki
+CHARACTER_CHART_HEADER_ABILITIES: Zdolności
 
 # Menu labels
 MENU_MAIN: Główna
@@ -59,3 +100,5 @@ NO_DATA: Brak danych
 NO_DATA_FOR_PERSON: Brak danych dla osoby
 NO_DATA_LIST: Brak list danych
 NO_DATA_LIST_FULL: Brak list danych - prosimy skontaktować się z MG lub sprawdzić źródło danych
+NO_DATA_ERROR: Jest to błąd systemu
+NO_DATA_ERROR_LIKELY: Jest to prawdopodobnie błąd systemu
