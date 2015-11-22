@@ -184,6 +184,7 @@ CHARACTER_MAY_CONTAIN_SECRETS: Może zawierać dane niejawne
 CAMPAING_TITLE: Historia kampanii
 CAMPAING_RECAP: Podsumowanie
 CAMPAING_COMPLETE_HISTORY: Pełna historia
+CAMPAIGN_STORY_PARTICIPANTS: Skład drużyny w czasie Historii
 
 # Front page
 FRONT_TITLE: Główna sala

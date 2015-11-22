@@ -183,6 +183,7 @@ CHARACTER_MAY_CONTAIN_SECRETS: May contain secrets
 CAMPAING_TITLE: Campaign history
 CAMPAING_RECAP: Recap
 CAMPAING_COMPLETE_HISTORY: Complete history
+CAMPAIGN_STORY_PARTICIPANTS: Composition of the party during the Story
 
 # Front page
 FRONT_TITLE: Main hall

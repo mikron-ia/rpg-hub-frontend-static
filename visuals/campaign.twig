@@ -17,8 +17,16 @@
                             {% if story.short %}
                                 <p class="justified">{{ story.short }}</p>
                             {% else %}
-                                <p class="center note">No recap found.</p>
+                                <p class="center note">{{ 'NO_DATA'|trans }}.</p>
                             {% endif %}
+                            <p>
+                                <strong>{{ 'CAMPAIGN_STORY_PARTICIPANTS'|trans }}: </strong>
+                                {% if story.participants %}
+                                    {{ story.participants|join(', ') }}
+                                {% else %}
+                                    <span class="note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</span>
+                                {% endif %}
+                            </p>
                         </div>
                         <div class="block padded threesplit">
                             {% if story.parameters %}
@@ -33,7 +41,7 @@
                                     </tbody>
                                 </table>
                             {% else %}
-                                <p class="center note">No story parameters found. This is an error.</p>
+                                <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
                             {% endif %}
                         </div>
                     </div>
