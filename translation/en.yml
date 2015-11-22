@@ -1,6 +1,8 @@
 # Labels
 LABEL_ABILITY: Ability
 LABEL_ABILITIES: Abilities
+LABEL_ACTION: Action
+LABEL_ACTIONS: Actions
 LABEL_ADVANTAGE: Advantage
 LABEL_ADVANTAGES: Advantages
 LABEL_ACTIVE_M: Active
@@ -18,7 +20,10 @@ LABEL_CONTACT: Contact
 LABEL_CONTACTS: Contacts
 LABEL_COUNT: Count
 LABEL_CHANGE: Change
+LABEL_CURRENCY: Waluta
+LABEL_CURRENCIES: Waluty
 LABEL_CURRENT_STATE: Current state
+LABEL_DAMAGE: Obrażenia
 LABEL_DESCRIPTION: Description
 LABEL_DESCRIPTIONS: Descriptions
 LABEL_DETAIL: Detail
@@ -34,6 +39,8 @@ LABEL_EVENT: Event
 LABEL_EXPENSE: Expense
 LABEL_EXPENSES: Expenses
 LABEL_EXPERIENCE: Experience
+LABEL_FREQUENCY: Frequency
+LABEL_FREQUENCIES: Frequencies
 LABEL_HISTORY: History
 LABEL_INCOME_S: Income
 LABEL_INCOME_P: Income
@@ -66,6 +73,7 @@ LABEL_POSITIVE_F: Positive
 LABEL_POSITIVE_N: Positive
 LABEL_PROFICIENCY: Proficiency
 LABEL_PUBLIC_KNOWLEDGE: Public knowledge
+LABEL_RANGE: Range
 LABEL_REPUTATION: Reputation
 LABEL_RESOURCE: Resource
 LABEL_RESOURCES: Resources
@@ -77,17 +85,25 @@ LABEL_SITUATION: Situation
 LABEL_SITUATIONS: Situations
 LABEL_SKILL: Skill
 LABEL_SKILLS: Skills
+LABEL_SOURCE: Source
+LABEL_SOURCES: Sources
 LABEL_TECHNIQUE: Technique
 LABEL_TECHNIQUES: Techniques
 LABEL_TYPE: Type
 LABEL_TYPES: Types
 LABEL_USEFULNESS: Usefulness
 LABEL_VALUE: Value
+LABEL_VALUES: Values
 LABEL_VARIABLE: Variable
 LABEL_VARIABLES: Variables
 LABEL_WEAPON: Weapon
 LABEL_WEAPONS: Weapons
+LABEL_WHAT: What?
 LABEL_WHEN: When?
+LABEL_WHERE: Where?
+LABEL_WHERE_TO: Where to?
+LABEL_WHO: Who?
+LABEL_WHY: Why?
 
 # Reputation
 REPUTATION_NAME: Name of the reputation
@@ -150,6 +166,11 @@ CHARACTER_CHART_HEADER_DEVELOPMENTS: Development history
 CHARACTER_LINK_PRINTABLE: Printable sheet
 CHARACTER_LINK_HISTORY: XP, developments & reputation history
 
+# Character sheet specifics not covered by labels
+CHARACTER_SPEC_RELOAD: Reload time
+CHARACTER_WEAPONS_BRAWN_INCLUDED: Brawn included
+CHARACTER_WEAPONS_KNACK_INCLUDED: Knacks included, optional tricks not included (may be included separately)
+
 # Menu labels
 MENU_MAIN: Main
 MENU_PARTY: Party
@@ -164,3 +185,4 @@ NO_DATA_LIST: No data lists found
 NO_DATA_LIST_FULL: No data lists found - please contact the GM or verify data source
 NO_DATA_ERROR: This is an error
 NO_DATA_ERROR_LIKELY: This is likely an error
+NO_DATA_ERROR_LIKELY_PROBLEM: This is likely an error, or the character has a problem.

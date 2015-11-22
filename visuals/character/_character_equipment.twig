@@ -44,12 +44,12 @@
         <tr>
             <th>{{ 'LABEL_WEAPON'|trans }}</th>
             <th>{{ 'LABEL_COUNT'|trans }}</th>
-            <th title="Knack usually used to attack">Knack</th>
+            <th>{{ 'LABEL_KNACK'|trans }}</th>
             <th title="{{ 'LABEL_ROLL_ATTACK'|trans }}">{{ 'LABEL_ROLL'|trans }}</th>
-            <th title="Brawn included">Damage</th>
-            <th>Range<br>[m]</th>
-            <th title="Knacks included, optional tricks not included">Reload<br>[actions]</th>
-            <th>Details</th>
+            <th title="Brawn included">{{ 'LABEL_DAMAGE'|trans }}</th>
+            <th>{{ 'LABEL_RANGE'|trans }}<br>[m]</th>
+            <th title="Knacks included, optional tricks not included">{{ 'CHARACTER_SPEC_RELOAD'|trans }}<br>[{{ 'LABEL_ACTIONS'|trans|lower }}]</th>
+            <th>{{ 'LABEL_DETAILS'|trans }}</th>
         </tr>
         </thead>
         <tbody>
@@ -82,11 +82,11 @@
     <table>
         <thead>
         <tr>
-            <th>Source</th>
-            <th>Frequency</th>
-            <th>Value</th>
-            <th>Currency</th>
-            <th>Details</th>
+            <th>{{ 'LABEL_SOURCE'|trans }}</th>
+            <th>{{ 'LABEL_FREQUENCY'|trans }}</th>
+            <th>{{ 'LABEL_VALUE'|trans }}</th>
+            <th>{{ 'LABEL_CURRENCY'|trans }}</th>
+            <th>{{ 'LABEL_DETAILS'|trans }}</th>
         </tr>
         </thead>
         <tbody>
@@ -114,11 +114,11 @@
     <table>
         <thead>
         <tr>
-            <th>Source</th>
-            <th>Frequency</th>
-            <th>Value</th>
-            <th>Currency</th>
-            <th>Details</th>
+            <th>{{ 'LABEL_SOURCE'|trans }}</th>
+            <th>{{ 'LABEL_FREQUENCY'|trans }}</th>
+            <th>{{ 'LABEL_VALUE'|trans }}</th>
+            <th>{{ 'LABEL_CURRENCY'|trans }}</th>
+            <th>{{ 'LABEL_DETAILS'|trans }}</th>
         </tr>
         </thead>
         <tbody>
@@ -146,9 +146,9 @@
     <table>
         <thead>
         <tr>
-            <th>Currency</th>
+            <th>{{ 'LABEL_CURRENCY'|trans }}</th>
             <th>{{ 'LABEL_COUNT'|trans }}</th>
-            <th>Location</th>
+            <th>{{ 'LABEL_WHERE'|trans }}</th>
         </tr>
         </thead>
         <tbody>
@@ -163,7 +163,7 @@
         {% else %}
             <tr>
                 <td colspan="3" class="center note">
-                    No money found. This is likely an error, or the character has a problem.
+                    {{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR_LIKELY_PROBLEM'|trans }}.
                 </td>
             </tr>
         {% endif %}

@@ -1,6 +1,8 @@
 # Labels
 LABEL_ABILITY: Zdolność
 LABEL_ABILITIES: Zdolności
+LABEL_ACTION: Akcja
+LABEL_ACTIONS: Akcje
 LABEL_ADVANTAGE: Zaleta
 LABEL_ADVANTAGES: Zalety
 LABEL_ACTIVE_M: Aktywny
@@ -18,7 +20,10 @@ LABEL_CONTACT: Kontakt
 LABEL_CONTACTS: Kontakt
 LABEL_COUNT: Liczba
 LABEL_CHANGE: Zmiana
+LABEL_CURRENCY: Waluta
+LABEL_CURRENCIES: Waluty
 LABEL_CURRENT_STATE: Stan bieżący
+LABEL_DAMAGE: Obrażenia
 LABEL_DESCRIPTION: Opis
 LABEL_DESCRIPTIONS: Opisy
 LABEL_DETAIL: Szczegół
@@ -34,6 +39,8 @@ LABEL_EVENT: Wydarzenie
 LABEL_EXPENSE: Koszt
 LABEL_EXPENSES: Koszty
 LABEL_EXPERIENCE: Doświadczenie
+LABEL_FREQUENCY: Częstotliwość
+LABEL_FREQUENCIES: Częstotliwości
 LABEL_HISTORY: Historia
 LABEL_INCOME_S: Dochód
 LABEL_INCOME_P: Dochody
@@ -66,6 +73,7 @@ LABEL_POSITIVE_F: Pozytywna
 LABEL_POSITIVE_N: Pozytywne
 LABEL_PROFICIENCY: Biegłość
 LABEL_PUBLIC_KNOWLEDGE: Wiedza publiczna
+LABEL_RANGE: Zasięg
 LABEL_REPUTATION: Reputacja
 LABEL_RESOURCE: Zasób
 LABEL_RESOURCES: Zasoby
@@ -77,17 +85,25 @@ LABEL_SITUATION: Situation
 LABEL_SITUATIONS: Situations
 LABEL_SKILL: Umiejętność
 LABEL_SKILLS: Umiejętności
+LABEL_SOURCE: Źródło
+LABEL_SOURCES: Źródła
 LABEL_TECHNIQUE: Technika
 LABEL_TECHNIQUES: Techniki
 LABEL_TYPE: Typ
 LABEL_TYPES: Typy
 LABEL_USEFULNESS: Użyteczność
 LABEL_VALUE: Wartość
+LABEL_VALUES: Wartości
 LABEL_VARIABLE: Zmienna
 LABEL_VARIABLES: Zmienne
 LABEL_WEAPON: Broń
 LABEL_WEAPONS: Uzbrojenie
+LABEL_WHAT: Co?
 LABEL_WHEN: Kiedy?
+LABEL_WHERE: Gdzie?
+LABEL_WHERE_TO: Dokąd?
+LABEL_WHO: Kto?
+LABEL_WHY: Dlaczegp?
 
 # Reputation
 REPUTATION_NAME: Nazwa reputacji
@@ -150,6 +166,11 @@ CHARACTER_CHART_HEADER_DEVELOPMENTS: Historia rozwojów
 CHARACTER_LINK_PRINTABLE: Karta do druku
 CHARACTER_LINK_HISTORY: Doświadczenie, rozwoje i historia reputacji
 
+# Character sheet specifics not covered by labels
+CHARACTER_SPEC_RELOAD: Czas ładowania
+CHARACTER_WEAPONS_BRAWN_INCLUDED: Uwzględniono Krzepę
+CHARACTER_WEAPONS_KNACK_INCLUDED: Uwzględniono Biegłości, nie uwzględniono opcjonalnych rozwiązań (mogą być ujęte osobno)
+
 # Menu labels
 MENU_MAIN: Główna
 MENU_PARTY: Drużyna
@@ -164,3 +185,4 @@ NO_DATA_LIST: Brak list danych
 NO_DATA_LIST_FULL: Brak list danych - prosimy skontaktować się z MG lub sprawdzić źródło danych
 NO_DATA_ERROR: Jest to błąd systemu
 NO_DATA_ERROR_LIKELY: Jest to prawdopodobnie błąd systemu
+NO_DATA_ERROR_LIKELY_PROBLEM: Jest to prawdopodobnie błąd systemu, lub postać ma problem
