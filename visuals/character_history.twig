@@ -12,17 +12,17 @@
             <ul>
                 <li>
                     <a href="{{ app.request.basepath }}/character/{{ characterKey }}/history/#experience">
-                        Experience
+                        {{ 'LABEL_EXPERIENCE'|trans }}
                     </a>
                 </li>
                 <li>
                     <a href="{{ app.request.basepath }}/character/{{ characterKey }}/history/#reputation">
-                        Reputation
+                        {{ 'LABEL_REPUTATION'|trans }}
                     </a>
                 </li>
                 <li>
                     <a href="{{ app.request.basepath }}/character/{{ characterKey }}/history/#developments">
-                        Developments
+                        {{ 'LABEL_DEVELOPMENTS'|trans }}
                     </a>
                 </li>
             </ul>
@@ -32,7 +32,7 @@
 
         <div id="experience">
             <div class="block padded full-width">
-                <h2 class="center">Experience</h2>
+                <h2 class="center">{{ 'CHARACTER_CHART_HEADER_EXPERIENCE_HISTORY'|trans }}</h2>
                 <table>
                     <thead>
                     <tr>
@@ -54,7 +54,7 @@
                         {% endfor %}
                     {% else %}
                         <tr>
-                            <td colspan="4" class="center note">No data available</td>
+                            <td colspan="4" class="center note">{{ 'NO_DATA'|trans }}</td>
                         </tr>
                     {% endif %}
                     </tbody>
@@ -64,7 +64,7 @@
 
         <div id="reputation">
             <div class="block padded full-width">
-                <h2 class="center">{{ 'REPUTATION_EVENTS'|trans }}</h2>
+                <h2 class="center">{{ 'CHARACTER_CHART_HEADER_REPUTATION_EVENTS'|trans }}</h2>
                 <table>
                     <thead>
                     <tr>
@@ -90,7 +90,7 @@
                         {% endfor %}
                     {% else %}
                         <tr>
-                            <td colspan="6" class="center note">No data available</td>
+                            <td colspan="6" class="center note">{{ 'NO_DATA'|trans }}</td>
                         </tr>
                     {% endif %}
                     </tbody>
@@ -100,7 +100,7 @@
 
         <div id="developments">
             <div class="block padded full-width">
-                <h2 class="center">Developments</h2>
+                <h2 class="center">{{ 'CHARACTER_CHART_HEADER_DEVELOPMENTS'|trans }}</h2>
                 <table>
                     <thead>
                     <tr>
@@ -126,7 +126,7 @@
                         {% endfor %}
                     {% else %}
                         <tr>
-                            <td colspan="6" class="center note">No data available</td>
+                            <td colspan="6" class="center note">{{ 'NO_DATA'|trans }}</td>
                         </tr>
                     {% endif %}
                     </tbody>
