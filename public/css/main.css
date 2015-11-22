@@ -164,3 +164,9 @@ body {
 .profession-table {
     min-width: 90%;
 }
+
+.treason {
+    text-align: right;
+    font-size: 0.5em;
+    font-family: "Courier New", Courier, monospace;
+}
