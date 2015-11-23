@@ -71,7 +71,8 @@ th, td {
 }
 
 .footer {
-    font-style: italic;
+    display: none;
     text-align: center;
     font-size: 0.8em;
+    font-style: italic;
 }
