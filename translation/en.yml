@@ -183,7 +183,9 @@ CHARACTER_MAY_CONTAIN_SECRETS: May contain secrets
 CAMPAING_TITLE: Campaign history
 CAMPAING_RECAP: Recap
 CAMPAING_COMPLETE_HISTORY: Complete history
-CAMPAIGN_STORY_PARTICIPANTS: Composition of the party during the Story
+CAMPAIGN_STORY_PARTICIPANTS: Numbers of the party during the story
+CAMPAIGN_STORY_PARTICIPANTS_PCS: Number of PCs - this is the base value for Drama calculations
+CAMPAIGN_STORY_PARTICIPANTS_COUNT: Number of all characters - this is the value other NPCs will be reacting to
 
 # Front page
 FRONT_TITLE: Main hall

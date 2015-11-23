@@ -9,6 +9,7 @@
         <div id="story-list">
             {% if campaignData.stories %}
                 {% for story in campaignData.stories %}
+
                     <div id="story-{{ loop.index }}">
                         <h2 class="center">{{ story.name }}</h2>
 
@@ -22,12 +23,14 @@
                             <p>
                                 <strong>{{ 'CAMPAIGN_STORY_PARTICIPANTS'|trans }}: </strong>
                                 {% if story.participants %}
-                                    {{ story.participants|join(', ') }}
+                                    <span title="{{ 'CAMPAIGN_STORY_PARTICIPANTS_PCS'|trans }}">{{ story.participants.countPC }}</span>
+                                    <span title="{{ 'CAMPAIGN_STORY_PARTICIPANTS_COUNT'|trans }}">({{ story.participants.countTotal }})</span>
                                 {% else %}
                                     <span class="note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</span>
                                 {% endif %}
                             </p>
                         </div>
+
                         <div class="block padded threesplit">
                             {% if story.parameters %}
                                 <table>
@@ -44,11 +47,13 @@
                                 <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
                             {% endif %}
                         </div>
+
                     </div>
 
                     <div class="clear"></div>
 
                     <div class="block padded">
+
                         <h3>{{ 'CAMPAING_COMPLETE_HISTORY'|trans }}</h3>
                         {% if story.long %}
                             <div id="story-long-{{ loop.index }}" class="justified">
@@ -57,7 +62,9 @@
                         {% else %}
                             <p class="center note">{{ 'NO_DATA'|trans }}</p>
                         {% endif %}
+
                     </div>
+
                 {% endfor %}
             {% else %}
                 <p class="center note">
