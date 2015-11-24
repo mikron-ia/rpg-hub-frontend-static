@@ -22,7 +22,7 @@
                     <td class="center">{{ equipmentItem.count }}</td>
                     <td class="justified">
                         {{ equipmentItem.details }}{% if equipmentItem.value %}
-                            <br><span class="note">Approximate value: {{ equipmentItem.value }}</span>{% endif %}
+                            <br><span class="note">{{ 'CHARACTER_APPROXIMATE_VALUE'|trans }}: {{ equipmentItem.value }}</span>{% endif %}
                     </td>
                 </tr>
             {% endfor %}

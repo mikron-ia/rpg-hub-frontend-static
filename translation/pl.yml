@@ -15,6 +15,8 @@ LABEL_BACKGROUND: Zaszłość
 LABEL_BACKGROUNDS: Zaszłości
 LABEL_BALANCE: Suma
 LABEL_BASICS: Podstawy
+LABEL_BONUS: Bonus
+LABEL_BONUSES: Bonusy
 LABEL_CHANGE: Zmiana
 LABEL_CONTACT: Kontakt
 LABEL_CONTACTS: Kontakt
@@ -82,8 +84,8 @@ LABEL_ROLL: Rzut
 LABEL_ROLL_ATTACK: Rzut na atak
 LABEL_ROLLS: Rzuty
 LABEL_ROLLS_ATTACK: Rzuty na atak
-LABEL_SITUATION: Situation
-LABEL_SITUATIONS: Situations
+LABEL_SITUATION: Sytuacja
+LABEL_SITUATIONS: Sytuacje
 LABEL_SKILL: Umiejętność
 LABEL_SKILLS: Umiejętności
 LABEL_SOURCE: Źródło
@@ -179,6 +181,7 @@ CHARACTER_WEAPONS_BRAWN_INCLUDED: Uwzględniono Krzepę
 CHARACTER_WEAPONS_KNACK_INCLUDED: >
   Uwzględniono Biegłości, nie uwzględniono opcjonalnych rozwiązań (mogą być ujęte osobno)
 CHARACTER_MAY_CONTAIN_SECRETS: Może zawierać dane niejawne
+CHARACTER_APPROXIMATE_VALUE: Przybliżona wartość
 
 # Campaign
 CAMPAING_TITLE: Historia kampanii
@@ -210,3 +213,6 @@ NO_DATA_LIST_FULL: Brak list danych - prosimy skontaktować się z MG lub sprawd
 NO_DATA_ERROR: Jest to błąd systemu
 NO_DATA_ERROR_LIKELY: Jest to prawdopodobnie błąd systemu
 NO_DATA_ERROR_LIKELY_PROBLEM: Jest to prawdopodobnie błąd systemu, lub postać ma problem
+
+# Printable
+PRINT_PRINTED_FROM: Wydrukowano z

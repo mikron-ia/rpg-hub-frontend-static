@@ -12,7 +12,7 @@
 <body>
 {% block content %}{% endblock %}
 {% block footer %}
-    <p class="note right">Printed from {{ display.interface.titleSuffix }}</p>
+    <p class="note right">{{ 'PRINT_PRINTED_FROM'|trans }} {{ display.interface.titleSuffix }}</p>
 {% endblock %}
 </body>
 </html>

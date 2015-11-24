@@ -12,7 +12,7 @@
             <tr>
                 <th>{{ 'LABEL_ATTRIBUTE'|trans }}</th>
                 <th class="This is the level on which development cost is based on + bonuses from schools, magic, advantages, etc.">
-                    Rank&nbsp+ Bonus
+                    {{ 'LABEL_LEVEL'|trans }}&nbsp+ {{ 'LABEL_BONUS'|trans|lower }}
                 </th>
                 <th class="This is the level used for rolls">Total</th>
             </tr>
@@ -110,9 +110,9 @@
     <table>
         <thead>
         <tr>
-            <th>{{ 'LABEL_ADVANTAGE'|trans }} / {{ 'LABEL_DISADVANTAGE'|trans }}</th>
+            <th>{{ 'LABEL_ADVANTAGE'|trans }} / {{ 'LABEL_DISADVANTAGE'|trans|lower }}</th>
             <th>{{ 'LABEL_LEVEL'|trans }}</th>
-            <th>{{ 'LABEL_DESCRIPTION'|trans }} / <span class="note">{{ 'LABEL_DETAILS'|trans }}</span></th>
+            <th>{{ 'LABEL_DESCRIPTION'|trans }} / <span class="note">{{ 'LABEL_DETAILS'|trans|lower }}</span></th>
         </tr>
         </thead>
         <tbody>

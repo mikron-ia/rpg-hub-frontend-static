@@ -15,6 +15,8 @@ LABEL_BACKGROUND: Background
 LABEL_BACKGROUNDS: Backgrounds
 LABEL_BALANCE: Balance
 LABEL_BASICS: Basics
+LABEL_BONUS: Bonus
+LABEL_BONUSES: Bonuses
 LABEL_CHANGE: Change
 LABEL_CONTACT: Contact
 LABEL_CONTACTS: Contacts
@@ -178,6 +180,7 @@ CHARACTER_SPEC_RELOAD: Reload
 CHARACTER_WEAPONS_BRAWN_INCLUDED: Brawn included
 CHARACTER_WEAPONS_KNACK_INCLUDED: Knacks included, optional tricks not included (may be included separately)
 CHARACTER_MAY_CONTAIN_SECRETS: May contain secrets
+CHARACTER_APPROXIMATE_VALUE: Approximate value
 
 # Campaign
 CAMPAING_TITLE: Campaign history
@@ -209,3 +212,6 @@ NO_DATA_LIST_FULL: No data lists found - please contact the GM or verify data so
 NO_DATA_ERROR: This is an error
 NO_DATA_ERROR_LIKELY: This is likely an error
 NO_DATA_ERROR_LIKELY_PROBLEM: This is likely an error, or the character has a problem
+
+# Printable
+PRINT_PRINTED_FROM: Printed from
