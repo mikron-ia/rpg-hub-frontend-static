@@ -1,19 +1,14 @@
 <?php
 
 /**
- * Data file for 7th Sea RPG system
- * @todo Complete with proper copyright data
+ * Data file for 7th Sea RPG system, a creation of John Wick, originally published by Alderac Entertainment Group
+ * http://www.alderac.com/7thsea/
+ * No copyright infringement intended, no copyrighted content used
  */
 
 return [
-    'reputations' => [],
-    "interface" => [
-        "titleSuffix" => "The Tavern",
-        "welcome" => "Welcome to The Tavern!",
-        "copyright" => [
-            "start" => 2015,
-            "end" => date('Y'),
-            "name" => "Mikron",
-        ],
+    'interface' => [
+        'titleSuffix' => 'The Tavern',
+        'welcome' => 'Welcome to The Tavern!',
     ]
 ];

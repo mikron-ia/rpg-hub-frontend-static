@@ -7,5 +7,8 @@
  */
 
 return [
-    'interface' => [],
+    'interface' => [
+        "titleSuffix" => "Data Hub",
+        "welcome" => "Welcome to The Data Hub!",
+    ]
 ];
