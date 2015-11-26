@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Display the front page
+ */
 $app->get('/', function (Silex\Application $app) {
     return $app['twig']->render(
         'index.twig',

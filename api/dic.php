@@ -1,14 +1,8 @@
 <?php
 
-/* Inter-application dependency injections */
-
-/* Registration of external tools */
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__ . '/../visuals'
-));
-
-/* URL management system */
-$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+/**
+ * Inter-application dependency injections
+ */
 
 /* Display data */
 $app['display'] = [
@@ -16,9 +10,20 @@ $app['display'] = [
     'layout' => $app['config']['layout'],
 ];
 
-/* Translation system */
+/**
+ * Registration of external tools
+ */
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => __DIR__ . '/../visuals'
+));
+
+/* URL management system */
+$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+
+/* Translation system registration */
 $app->register(new Silex\Provider\TranslationServiceProvider(), ['locale_fallbacks' => ['en']]);
 
+/* Translation system configuration */
 $app['translator'] = $app->share($app->extend('translator', function ($translator) use ($app) {
     $translator->addLoader('yaml', new \Symfony\Component\Translation\Loader\YamlFileLoader());
     foreach ($app['config']['availableTranslations'] as $lang) {
