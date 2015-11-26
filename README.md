@@ -3,7 +3,7 @@
 [![Code Climate](https://codeclimate.com/github/mikron-ia/rpg-hub-frontend-static/badges/gpa.svg)](https://codeclimate.com/github/mikron-ia/rpg-hub-frontend-static)
 [![Test Coverage](https://codeclimate.com/github/mikron-ia/rpg-hub-frontend-static/badges/coverage.svg)](https://codeclimate.com/github/mikron-ia/rpg-hub-frontend-static/coverage)
 
-A system for role-playing game story/campaign/epic management. This repository contains the frontend in a simplistic PHP version.
+A system for role-playing game story/campaign/epic management. This repository contains the frontend in a PHP version.
 
 ## Background
 [Role-playing games](https://en.wikipedia.org/wiki/Role-playing_game) are a very wide category, ranging from very simplistic systems to extremely complex mechanical solutions. What they do have in common, though, is the story - you can play a game without mechanics, but even a primitive dungeon crawl is going to have some story. Managing this story, its cast, threads, and - if present - mechanical components - is the role of this project.
@@ -12,8 +12,7 @@ This project is a part of a larger whole. It is supposed to draw data from [back
 
 This version of frontend is being written in PHP with Silex. Data to display in the frontend is retrieved from API provided by backend.
 
-Due to current need that is driving this development, architecture is heavily biased towards 7th Sea system (a creation of John Wick, originally published by Alderac Entertainment Group). No copyrighted terms are in use, though.
-The styling and architecture will be made more universal with future development.
+Due to current need that is driving this development, architecture is heavily biased towards one system. The styling and architecture will be made more universal with future development.
 
 ## Installation guide
 1. Clone the project via `git clone` with correct address to a desired directory of a web server
