@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'version' => '0.6.0',
+    'version' => '0.7-dev',
     'interface' => [
         'titleSuffix' => 'Campaign Information Centre',
         'welcome' => 'Welcome to Campaign Information Centre',
