@@ -16,19 +16,21 @@
                         <div class="block padded twothirdsplit">
                             <h3>{{ 'CAMPAING_RECAP'|trans }}</h3>
                             {% if story.short %}
-                                <p class="justified">{{ story.short }}</p>
+                                <p class="justified">{{ story.short|raw }}</p>
                             {% else %}
                                 <p class="center note">{{ 'NO_DATA'|trans }}.</p>
                             {% endif %}
-                            <p>
-                                <strong>{{ 'CAMPAIGN_STORY_PARTICIPANTS'|trans }}: </strong>
-                                {% if story.participants %}
-                                    <span title="{{ 'CAMPAIGN_STORY_PARTICIPANTS_PCS'|trans }}">{{ story.participants.countPC }}</span>
-                                    <span title="{{ 'CAMPAIGN_STORY_PARTICIPANTS_COUNT'|trans }}">({{ story.participants.countTotal }})</span>
-                                {% else %}
-                                    <span class="note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</span>
-                                {% endif %}
-                            </p>
+                            {% if story.participants %}
+                                <p>
+                                    <strong>{{ 'CAMPAIGN_STORY_PARTICIPANTS'|trans }}: </strong>
+                                    <span title="{{ 'CAMPAIGN_STORY_PARTICIPANTS_PCS'|trans }}">
+                                        {{ story.participants.countPC }}
+                                    </span>
+                                    <span title="{{ 'CAMPAIGN_STORY_PARTICIPANTS_COUNT'|trans }}">
+                                        ({{ story.participants.countTotal }})
+                                    </span>
+                                </p>
+                            {% endif %}
                         </div>
 
                         <div class="block padded threesplit">

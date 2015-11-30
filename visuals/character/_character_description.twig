@@ -11,7 +11,7 @@
         <div class="block padded twosplit">
             <h3 class="center">{{ description.title }}</h3>
             <div class="justified">
-                {{ description.text }}
+                {{ description.text|raw }}
             </div>
         </div>
     {% endfor %}

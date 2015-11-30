@@ -59,11 +59,11 @@
                     <td class="left">{{ weapon.name }}</td>
                     <td class="center">{{ weapon.count }}</td>
                     <td class="center">{{ weapon.knack }}</td>
-                    <td class="center">{{ weapon.roll|raw }}</td>
-                    <td class="center">{{ weapon.damage|raw }}</td>
-                    <td class="center">{{ weapon.range|raw }}</td>
-                    <td class="center">{{ weapon.reload|raw }}</td>
-                    <td class="justified">{{ weapon.details|raw }}</td>
+                    <td class="center">{{ weapon.roll|nl2br }}</td>
+                    <td class="center">{{ weapon.damage|nl2br }}</td>
+                    <td class="center">{{ weapon.range|nl2br }}</td>
+                    <td class="center">{{ weapon.reload|nl2br }}</td>
+                    <td class="justified">{{ weapon.details|nl2br }}</td>
                 </tr>
             {% endfor %}
         {% else %}
@@ -94,10 +94,10 @@
             {% for incomeSource in characterData.income %}
                 <tr>
                     <td class="left">{{ incomeSource.name }}</td>
-                    <td class="center">{{ incomeSource.frequency }}</td>
-                    <td class="center">{{ incomeSource.value }}</td>
-                    <td class="center">{{ incomeSource.currency }}</td>
-                    <td class="justified">{{ incomeSource.details }}</td>
+                    <td class="center">{{ incomeSource.frequency|nl2br }}</td>
+                    <td class="center">{{ incomeSource.value|nl2br }}</td>
+                    <td class="center">{{ incomeSource.currency|nl2br }}</td>
+                    <td class="justified">{{ incomeSource.details|nl2br }}</td>
                 </tr>
             {% endfor %}
         {% else %}

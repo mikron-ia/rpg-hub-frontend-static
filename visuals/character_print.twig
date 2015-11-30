@@ -100,8 +100,8 @@
                         <td class="left">{{ advantage.name }}</td>
                         <td class="center">{{ advantage.level }}</td>
                         <td class="justified">
-                            {{ advantage.description }}
-                            {% if advantage.details %}<br><span class="note">{{ advantage.details }}</span>{% endif %}
+                            {{ advantage.description|nl2br }}
+                            {% if advantage.details %}<br><span class="note">{{ advantage.details|nl2br }}</span>{% endif %}
                         </td>
                     </tr>
                 {% endfor %}
@@ -125,8 +125,8 @@
                     <tr title="{{ stunt.description }}">
                         <td class="left">{{ stunt.name }}</td>
                         <td class="justified">
-                            {{ stunt.description }}
-                            {% if stunt.details %}<br><span class="note">{{ stunt.details }}</span>{% endif %}
+                            {{ stunt.description|nl2br }}
+                            {% if stunt.details %}<br><span class="note">{{ stunt.details|nl2br }}</span>{% endif %}
                         </td>
                     </tr>
                 {% endfor %}
@@ -186,12 +186,12 @@
                 {% for contact in characterData.contacts %}
                     <tr>
                         <td class="left">{{ contact.name }}</td>
-                        <td class="left">{{ contact.whoGenerally }}</td>
-                        <td class="left">{{ contact.whoToPerson }}</td>
-                        <td class="center">{{ contact.like }}</td>
-                        <td class="center">{{ contact.usefulness }}</td>
-                        <td class="center">{{ contact.knowledge }}</td>
-                        <td class="justified">{{ contact.details }}</td>
+                        <td class="left">{{ contact.whoGenerally|nl2br }}</td>
+                        <td class="left">{{ contact.whoToPerson|nl2br }}</td>
+                        <td class="center">{{ contact.like|nl2br }}</td>
+                        <td class="center">{{ contact.usefulness|nl2br }}</td>
+                        <td class="center">{{ contact.knowledge|nl2br }}</td>
+                        <td class="justified">{{ contact.details|nl2br }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -271,7 +271,7 @@
                     <tr>
                         <td class="left">{{ equipmentItem.name }}</td>
                         <td class="center">{{ equipmentItem.count }}</td>
-                        <td class="justified">{{ equipmentItem.details }}</td>
+                        <td class="justified">{{ equipmentItem.details|nl2br }}</td>
                     </tr>
                 {% endfor %}
             {% else %}
@@ -305,11 +305,11 @@
                     <tr>
                         <td class="left">{{ weapon.name }} &#215;{{ weapon.count }}</td>
                         <td class="center">{{ weapon.knack }}</td>
-                        <td class="center">{{ weapon.roll|raw }}</td>
-                        <td class="center">{{ weapon.damage|raw }}</td>
-                        <td class="center">{{ weapon.range|raw }}</td>
-                        <td class="center">{{ weapon.reload|raw }}</td>
-                        <td class="justified">{{ weapon.details|raw }}</td>
+                        <td class="center">{{ weapon.roll|nl2br }}</td>
+                        <td class="center">{{ weapon.damage|nl2br }}</td>
+                        <td class="center">{{ weapon.range|nl2br }}</td>
+                        <td class="center">{{ weapon.reload|nl2br }}</td>
+                        <td class="justified">{{ weapon.details|nl2br }}</td>
                     </tr>
                 {% endfor %}
             {% else %}
@@ -333,8 +333,8 @@
                         <td class="left">{{ catch.name }}</td>
                         <td class="center">{{ catch.level }}</td>
                         <td class="justified">
-                            {{ catch.description }}
-                            {% if catch.details %} <span class="note">{{ catch.details }}</span>{% endif %}
+                            {{ catch.description|nl2br }}<br>
+                            {% if catch.details %} <span class="note">{{ catch.details|nl2br }}</span>{% endif %}
                         </td>
                     </tr>
                 {% endfor %}
@@ -354,7 +354,7 @@
         <table>
             <tbody>
             {% for basic in characterData.basics %}
-                <tr title="{{ basic.description }}">
+                <tr title="{{ basic.description|nl2br }}">
                     <td class="left">{{ basic.name }}</td>
                     <td class="center">{{ basic.value }}</td>
                 </tr>
@@ -369,7 +369,7 @@
             <table>
                 <tbody>
                 {% for variable in characterData.variables %}
-                    <tr title="{{ variable.description }}">
+                    <tr title="{{ variable.description|nl2br }}">
                         <td class="left">{{ variable.name }}</td>
                         <td class="center">&nbsp;</td>
                     </tr>

@@ -51,12 +51,12 @@
             {% for contact in characterData.contacts %}
                 <tr>
                     <td class="left">{{ contact.name }}</td>
-                    <td class="left">{{ contact.whoGenerally }}</td>
-                    <td class="left">{{ contact.whoToPerson }}</td>
-                    <td class="center">{{ contact.like }}</td>
-                    <td class="center">{{ contact.usefulness }}</td>
-                    <td class="center">{{ contact.knowledge }}</td>
-                    <td class="justified">{{ contact.details }}</td>
+                    <td class="left">{{ contact.whoGenerally|nl2br }}</td>
+                    <td class="left">{{ contact.whoToPerson|nl2br }}</td>
+                    <td class="center">{{ contact.like|nl2br }}</td>
+                    <td class="center">{{ contact.usefulness|nl2br }}</td>
+                    <td class="center">{{ contact.knowledge|nl2br }}</td>
+                    <td class="justified">{{ contact.details|nl2br }}</td>
                 </tr>
             {% endfor %}
         {% else %}
@@ -87,8 +87,8 @@
                     <td class="left">{{ catch.name }}</td>
                     <td class="center">{{ catch.level }}</td>
                     <td class="justified">
-                        {{ catch.description }}
-                        {% if catch.details %} <span class="note">{{ catch.details }}</span>{% endif %}
+                        {{ catch.description|nl2br }}<br>
+                        {% if catch.details %} <span class="note">{{ catch.details|nl2br }}</span>{% endif %}
                     </td>
                 </tr>
             {% endfor %}

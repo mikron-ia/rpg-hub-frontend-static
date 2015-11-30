@@ -85,14 +85,13 @@ class Retriever
     }
 
     /**
-     * Formats JSON string - at the moment, replacing newlines with <br>s
-     * NOTE: few fields in the system accept raw HTML. Use newlines with caution
+     * Formats JSON string - at the moment, does nothing
      *
      * @param $input JSON string to format
      * @return string Formatted JSON string
      */
     private function formatInput($input)
     {
-        return str_replace(["\\n", "\\r"], "<br>", str_replace("\\n\\r", "<br>", $input));
+        return $input;
     }
 }
