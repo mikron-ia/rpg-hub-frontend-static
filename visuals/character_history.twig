@@ -49,7 +49,7 @@
                                 <td class="left">{{ xpItem.story }}</td>
                                 <td class="center">{{ xpItem.type }}</td>
                                 <td class="center">{{ xpItem.value }}</td>
-                                <td class="justified">{{ xpItem.notes }}</td>
+                                <td class="justified">{{ xpItem.notes|nl2br }}</td>
                             </tr>
                         {% endfor %}
                     {% else %}
@@ -84,8 +84,8 @@
                                 <td class="center">{{ reputationEvent.reputation }}</td>
                                 <td class="center">{{ reputationEvent.change }}</td>
                                 <td class="center">{{ reputationEvent.newValue }}</td>
-                                <td class="center">{{ reputationEvent.when }}</td>
-                                <td class="justified">{{ reputationEvent.notes }}</td>
+                                <td class="center">{{ reputationEvent.when|nl2br }}</td>
+                                <td class="justified">{{ reputationEvent.notes|nl2br }}</td>
                             </tr>
                         {% endfor %}
                     {% else %}
@@ -120,8 +120,8 @@
                                 <td class="center">{{ developmentItem.change }}</td>
                                 <td class="center">{{ developmentItem.newValue }}</td>
                                 <td class="center">{{ developmentItem.cost }}</td>
-                                <td class="center">{{ developmentItem.when }}</td>
-                                <td class="justified">{{ developmentItem.notes }}</td>
+                                <td class="center">{{ developmentItem.when|nl2br }}</td>
+                                <td class="justified">{{ developmentItem.notes|nl2br }}</td>
                             </tr>
                         {% endfor %}
                     {% else %}

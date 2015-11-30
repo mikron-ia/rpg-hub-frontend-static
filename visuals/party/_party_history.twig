@@ -20,8 +20,8 @@
                         <td class="center">{{ reputationEvent.reputation }}</td>
                         <td class="center">{{ reputationEvent.change }}</td>
                         <td class="center">{{ reputationEvent.newValue }}</td>
-                        <td class="center">{{ reputationEvent.when }}</td>
-                        <td class="justified">{{ reputationEvent.notes }}</td>
+                        <td class="center">{{ reputationEvent.when|nl2br }}</td>
+                        <td class="justified">{{ reputationEvent.notes|nl2br }}</td>
                     </tr>
                 {% endfor %}
             {% else %}
@@ -56,8 +56,8 @@
                 <tr title="{{ member.comment }}">
                     <td class="left">{{ member.name }}</td>
                     <td class="center">{{ member.short }}</td>
-                    <td class="center">{{ member.when }}</td>
-                    <td class="justified">{{ member.reason }}</td>
+                    <td class="center">{{ member.when|nl2br }}</td>
+                    <td class="justified">{{ member.reason|nl2br }}</td>
                 </tr>
             {% endfor %}
             </tbody>

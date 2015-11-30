@@ -20,8 +20,12 @@
         {% for reputation in characterData.reputations %}
             <tr title="{{ reputation.description }}">
                 <td class="left">{{ reputation.name }}</td>
-                <td class="center" title="{{ 'REPUTATION_LOWEST'|trans }}: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
-                <td class="center" title="{{ 'REPUTATION_HIGHEST'|trans }}: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
+                <td class="center" title="{{ 'REPUTATION_LOWEST'|trans }}: {{ reputation.negativeMin }}">
+                    {{ reputation.negative }}
+                </td>
+                <td class="center" title="{{ 'REPUTATION_HIGHEST'|trans }}: {{ reputation.positiveMax }}">
+                    {{ reputation.positive }}
+                </td>
                 <td class="center">{{ reputation.balance }}</td>
                 <td class="center">{{ reputation.dice }}</td>
             </tr>

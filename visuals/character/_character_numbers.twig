@@ -122,7 +122,8 @@
                     <td class="left">{{ advantage.name }}</td>
                     <td class="center">{{ advantage.level }}</td>
                     <td class="justified">
-                        {{ advantage.description }}{% if advantage.details %} <span class="note">{{ advantage.details }}</span>{% endif %}
+                        {{ advantage.description|nl2br }}<br>
+                        {% if advantage.details %} <span class="note">{{ advantage.details|nl2br }}</span>{% endif %}
                     </td>
                 </tr>
             {% endfor %}
@@ -149,10 +150,11 @@
             </thead>
             <tbody>
             {% for stunt in characterData.stunts %}
-                <tr title="{{ stunt.description }}">
+                <tr title="{{ stunt.description|nl2br }}">
                     <td class="left">{{ stunt.name }}</td>
                     <td class="justified">
-                        {{ stunt.description }}{% if stunt.details %} <span class="note">{{ stunt.details }}</span>{% endif %}
+                        {{ stunt.description|nl2br }}<br>
+                        {% if stunt.details %} <span class="note">{{ stunt.details|nl2br }}</span>{% endif %}
                     </td>
                 </tr>
             {% endfor %}

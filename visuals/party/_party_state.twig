@@ -20,8 +20,8 @@
             {% for member in partyData.members %}
                 <tr title="{{ member.comment }}">
                     <td class="left">{{ member.name }}</td>
-                    <td class="center">{{ member.short }}</td>
-                    <td class="justified">{{ member.appearance }}</td>
+                    <td class="center">{{ member.short|nl2br }}</td>
+                    <td class="justified">{{ member.appearance|nl2br }}</td>
                 </tr>
             {% endfor %}
         {% else %}
@@ -53,8 +53,8 @@
             {% for member in partyData.pastMembers %}
                 <tr title="{{ member.comment }}">
                     <td class="left">{{ member.name }}</td>
-                    <td class="center">{{ member.short }}</td>
-                    <td class="justified">{{ member.reason }}</td>
+                    <td class="center">{{ member.short|nl2br }}</td>
+                    <td class="justified">{{ member.reason|nl2br }}</td>
                 </tr>
             {% endfor %}
             </tbody>

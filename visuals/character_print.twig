@@ -101,7 +101,8 @@
                         <td class="center">{{ advantage.level }}</td>
                         <td class="justified">
                             {{ advantage.description|nl2br }}
-                            {% if advantage.details %}<br><span class="note">{{ advantage.details|nl2br }}</span>{% endif %}
+                            {% if advantage.details %}<br><span
+                                    class="note">{{ advantage.details|nl2br }}</span>{% endif %}
                         </td>
                     </tr>
                 {% endfor %}
@@ -276,7 +277,7 @@
                 {% endfor %}
             {% else %}
                 <tr>
-                    <td colspan="3" class="center note">No equipment found. This is likely an error.</td>
+                    <td colspan="5" class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR_LIKELY'|trans }}.</td>
                 </tr>
             {% endif %}
             </tbody>
@@ -285,26 +286,28 @@
 
     <div class="clear"></div>
 
-    <div class="block padded unbreakable">
-        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_EQUIPMENT'|trans }}</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>{{ 'LABEL_WEAPON'|trans }}</th>
-                <th>{{ 'LABEL_KNACK'|trans }}</th>
-                <th title="{{ 'LABEL_ROLL_ATTACK'|trans }}">{{ 'LABEL_ROLL'|trans }}</th>
-                <th title="Brawn included">{{ 'LABEL_DAMAGE'|trans }}</th>
-                <th>{{ 'LABEL_RANGE'|trans }}<br>[m]</th>
-                <th title="Knacks included, optional tricks not included">{{ 'CHARACTER_SPEC_RELOAD'|trans }}<br>[{{ 'LABEL_ACTIONS'|trans|lower }}]</th>
-                <th>{{ 'LABEL_DETAILS'|trans }}</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% if characterData.weapons %}
+    {% if characterData.weapons %}
+        <div class="block padded unbreakable">
+            <h2 class="center">{{ 'CHARACTER_CHART_HEADER_EQUIPMENT'|trans }}</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>{{ 'LABEL_WEAPON'|trans }}</th>
+                    <th>{{ 'LABEL_KNACK'|trans }}</th>
+                    <th title="{{ 'LABEL_ROLL_ATTACK'|trans }}">{{ 'LABEL_ROLL'|trans }}</th>
+                    <th title="Brawn included">{{ 'LABEL_DAMAGE'|trans }}</th>
+                    <th>{{ 'LABEL_RANGE'|trans }}<br>[m]</th>
+                    <th title="Knacks included, optional tricks not included">{{ 'CHARACTER_SPEC_RELOAD'|trans }}
+                        <br>[{{ 'LABEL_ACTIONS'|trans|lower }}]
+                    </th>
+                    <th>{{ 'LABEL_DETAILS'|trans }}</th>
+                </tr>
+                </thead>
+                <tbody>
                 {% for weapon in characterData.weapons %}
                     <tr>
                         <td class="left">{{ weapon.name }} &#215;{{ weapon.count }}</td>
-                        <td class="center">{{ weapon.knack }}</td>
+                        <td class="center">{{ weapon.knack|nl2br }}</td>
                         <td class="center">{{ weapon.roll|nl2br }}</td>
                         <td class="center">{{ weapon.damage|nl2br }}</td>
                         <td class="center">{{ weapon.range|nl2br }}</td>
@@ -312,14 +315,10 @@
                         <td class="justified">{{ weapon.details|nl2br }}</td>
                     </tr>
                 {% endfor %}
-            {% else %}
-                <tr>
-                    <td colspan="8" class="center note">No weapons found</td>
-                </tr>
-            {% endif %}
-            </tbody>
-        </table>
-    </div>
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
 
     <div class="clear"></div>
 
@@ -340,7 +339,7 @@
                 {% endfor %}
             {% else %}
                 <tr>
-                    <td colspan="3" class="center note">No backgrounds found</td>
+                    <td colspan="3" class="center note">{{ 'NO_DATA'|trans }}</td>
                 </tr>
             {% endif %}
             </tbody>
@@ -349,23 +348,26 @@
 
     <div class="clear"></div>
 
-    <div class="block padded twosplit">
-        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_BASICS'|trans }} ({{ 'CHARACTER_MAY_CONTAIN_SECRETS'|trans|lower }})</h2>
-        <table>
-            <tbody>
-            {% for basic in characterData.basics %}
-                <tr title="{{ basic.description|nl2br }}">
-                    <td class="left">{{ basic.name }}</td>
-                    <td class="center">{{ basic.value }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
+    {% if characterData.basics %}
+        <div class="block padded twosplit">
+            <h2 class="center">{{ 'CHARACTER_CHART_HEADER_BASICS'|trans }}
+                ({{ 'CHARACTER_MAY_CONTAIN_SECRETS'|trans|lower }})</h2>
+            <table>
+                <tbody>
+                {% for basic in characterData.basics %}
+                    <tr title="{{ basic.description|nl2br }}">
+                        <td class="left">{{ basic.name }}</td>
+                        <td class="center">{{ basic.value }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
 
-    <div class="block padded twosplit">
-        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_VARIABLES'|trans }}</h2>
-        {% if characterData.variables %}
+    {% if characterData.variables %}
+        <div class="block padded twosplit">
+            <h2 class="center">{{ 'CHARACTER_CHART_HEADER_VARIABLES'|trans }}</h2>
             <table>
                 <tbody>
                 {% for variable in characterData.variables %}
@@ -376,11 +378,8 @@
                 {% endfor %}
                 </tbody>
             </table>
-        {% else %}
-            <p class="center note">No variables found.</p>
-        {% endif %}
-    </div>
-
+        </div>
+    {% endif %}
 
     <div class="clear"></div>
 

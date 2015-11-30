@@ -22,7 +22,8 @@
                     <td class="center">{{ equipmentItem.count }}</td>
                     <td class="justified">
                         {{ equipmentItem.details }}{% if equipmentItem.value %}
-                            <br><span class="note">{{ 'CHARACTER_APPROXIMATE_VALUE'|trans }}: {{ equipmentItem.value }}</span>{% endif %}
+                            <br><span class="note">{{ 'CHARACTER_APPROXIMATE_VALUE'|trans }}
+                            : {{ equipmentItem.value }}</span>{% endif %}
                     </td>
                 </tr>
             {% endfor %}
@@ -48,7 +49,9 @@
             <th title="{{ 'LABEL_ROLL_ATTACK'|trans }}">{{ 'LABEL_ROLL'|trans }}</th>
             <th title="Brawn included">{{ 'LABEL_DAMAGE'|trans }}</th>
             <th>{{ 'LABEL_RANGE'|trans }}<br>[m]</th>
-            <th title="Knacks included, optional tricks not included">{{ 'CHARACTER_SPEC_RELOAD'|trans }}<br>[{{ 'LABEL_ACTIONS'|trans|lower }}]</th>
+            <th title="Knacks included, optional tricks not included">{{ 'CHARACTER_SPEC_RELOAD'|trans }}
+                <br>[{{ 'LABEL_ACTIONS'|trans|lower }}]
+            </th>
             <th>{{ 'LABEL_DETAILS'|trans }}</th>
         </tr>
         </thead>
@@ -58,7 +61,7 @@
                 <tr>
                     <td class="left">{{ weapon.name }}</td>
                     <td class="center">{{ weapon.count }}</td>
-                    <td class="center">{{ weapon.knack }}</td>
+                    <td class="center">{{ weapon.knack|nl2br }}</td>
                     <td class="center">{{ weapon.roll|nl2br }}</td>
                     <td class="center">{{ weapon.damage|nl2br }}</td>
                     <td class="center">{{ weapon.range|nl2br }}</td>
