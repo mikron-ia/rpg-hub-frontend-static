@@ -51,9 +51,9 @@
         <table>
             <thead>
             <tr>
-                <th>Situation</th>
-                <th>Passive</th>
-                <th>Active</th>
+                <th>{{ 'LABEL_TYPE'|trans }}</th>
+                <th>{{ 'LABEL_COUNT'|trans }}</th>
+                <th>{{ 'LABEL_DETAILS'|trans }}</th>
             </tr>
             </thead>
             <tbody>
@@ -171,13 +171,13 @@
             <table>
                 <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Who is this?</th>
-                    <th>Who is this to you?</th>
-                    <th>Attitude towards you</th>
-                    <th>Usefulness</th>
-                    <th>Your knowledge</th>
-                    <th>Details</th>
+                    <th>{{ 'CHARACTER_NAME'|trans }}</th>
+                    <th>{{ 'CHARACTER_WHO'|trans }}</th>
+                    <th>{{ 'CHARACTER_WHO_TO_YOU'|trans }}</th>
+                    <th>{{ 'CHARACTER_ATTITUDE_TO_YOU'|trans }}</th>
+                    <th>{{ 'LABEL_USEFULNESS'|trans }}</th>
+                    <th>{{ 'CHARACTER_KNOWLEDGE'|trans }}</th>
+                    <th>{{ 'LABEL_DETAILS'|trans }}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -201,14 +201,14 @@
 
     {% if characterData.income %}
         <div class="block padded unbreakable">
-            <h2 class="center">Income</h2>
+            <h2 class="center">{{ 'CHARACTER_CHART_HEADER_INCOME'|trans }}</h2>
             <table>
                 <thead>
                 <tr>
-                    <th>Source</th>
-                    <th>Frequency</th>
-                    <th>Value</th>
-                    <th>Currency</th>
+                    <th>{{ 'LABEL_SOURCE'|trans }}</th>
+                    <th>{{ 'LABEL_FREQUENCY'|trans }}</th>
+                    <th>{{ 'LABEL_VALUE'|trans }}</th>
+                    <th>{{ 'LABEL_CURRENCY'|trans }}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -227,14 +227,14 @@
 
     {% if characterData.expenses %}
         <div class="block padded unbreakable">
-            <h2 class="center">Expenses</h2>
+            <h2 class="center">{{ 'CHARACTER_CHART_HEADER_EXPENSES'|trans }}</h2>
             <table>
                 <thead>
                 <tr>
-                    <th>Source</th>
-                    <th>Frequency</th>
-                    <th>Value</th>
-                    <th>Currency</th>
+                    <th>{{ 'LABEL_SOURCE'|trans }}</th>
+                    <th>{{ 'LABEL_FREQUENCY'|trans }}</th>
+                    <th>{{ 'LABEL_VALUE'|trans }}</th>
+                    <th>{{ 'LABEL_CURRENCY'|trans }}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -258,9 +258,9 @@
         <table>
             <thead>
             <tr>
-                <th>Name / type</th>
-                <th>Count</th>
-                <th>Details</th>
+                <th>{{ 'LABEL_TYPE'|trans }}</th>
+                <th>{{ 'LABEL_COUNT'|trans }}</th>
+                <th>{{ 'LABEL_DETAILS'|trans }}</th>
             </tr>
             </thead>
             <tbody>
@@ -292,9 +292,12 @@
                     <th>{{ 'LABEL_WEAPON'|trans }}</th>
                     <th>{{ 'LABEL_KNACK'|trans }}</th>
                     <th title="{{ 'LABEL_ROLL_ATTACK'|trans }}">{{ 'LABEL_ROLL'|trans }}</th>
-                    <th title="Brawn included">{{ 'LABEL_DAMAGE'|trans }}</th>
-                    <th>{{ 'LABEL_RANGE'|trans }}<br>[m]</th>
-                    <th title="Knacks included, optional tricks not included">
+                    <th title="{{ 'CHARACTER_WEAPONS_BRAWN_INCLUDED'|trans }}">{{ 'LABEL_DAMAGE'|trans }}</th>
+                    <th>
+                        {{ 'LABEL_RANGE'|trans }}<br>
+                        [m]
+                    </th>
+                    <th title="{{ 'CHARACTER_WEAPONS_KNACK_INCLUDED'|trans }}">
                         {{ 'CHARACTER_SPEC_RELOAD'|trans }}<br>
                         [{{ 'LABEL_ACTIONS'|trans|lower }}]
                     </th>

@@ -128,6 +128,7 @@ PARTY_TITLE: Party
 PARTY_MEMBER: Party member
 PARTY_MEMBERS: Party members
 PARTY_MEMBERS_ABSENT: Absent members
+PARTY_MEMBERS_PAST: Past members
 PARTY_REPUTATION: Party reputation
 
 # Party page table headers
