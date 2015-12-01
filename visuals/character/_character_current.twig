@@ -12,7 +12,7 @@
             {% for basic in characterData.basics %}
                 <tr title="{{ basic.description|nl2br }}">
                     <td class="left">{{ basic.name }}</td>
-                    <td class="center">{{ basic.value }}</td>
+                    <td class="center">{{ basic.value|nl2br }}</td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -29,7 +29,7 @@
         {% for public in characterData.public %}
             <tr title="{{ public.description|nl2br }}">
                 <td class="left">{{ public.name }}</td>
-                <td class="center">{{ public.value }}</td>
+                <td class="center">{{ public.value|nl2br }}</td>
             </tr>
         {% endfor %}
         </tbody>
@@ -44,7 +44,7 @@
             {% for variable in characterData.variables %}
                 <tr title="{{ variable.description|nl2br }}">
                     <td class="left">{{ variable.name }}</td>
-                    <td class="center">{{ variable.value }}</td>
+                    <td class="center">{{ variable.value|nl2br }}</td>
                 </tr>
             {% endfor %}
             </tbody>

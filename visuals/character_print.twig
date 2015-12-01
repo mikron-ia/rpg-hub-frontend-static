@@ -26,7 +26,7 @@
                 </tbody>
             </table>
         {% else %}
-            <p class="center note">No attributes found. This is an error.</p>
+            <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
         {% endif %}
 
         <h2 class="center">{{ 'CHARACTER_CHART_HEADER_AUXILIARY'|trans }}</h2>
@@ -42,7 +42,7 @@
                 </tbody>
             </table>
         {% else %}
-            <p class="center note">No auxiliary stats found.</p>
+            <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR_LIKELY'|trans }}.</p>
         {% endif %}
     </div>
 
@@ -81,7 +81,7 @@
                 {% endfor %}
             {% else %}
                 <tr>
-                    <td colspan="2" class="center note">No languages found. This is likely an error.</td>
+                    <td colspan="2" class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR_LIKELY'|trans }}.</td>
                 </tr>
             {% endif %}
             </tbody>
@@ -90,11 +90,11 @@
 
     <div class="clear"></div>
 
-    <div class="block padded unbreakable">
-        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_ADVANTAGES_AND_DISADVANTAGES'|trans }}</h2>
-        <table>
-            <tbody>
-            {% if characterData.advantages %}
+    {% if characterData.advantages %}
+        <div class="block padded unbreakable">
+            <h2 class="center">{{ 'CHARACTER_CHART_HEADER_ADVANTAGES_AND_DISADVANTAGES'|trans }}</h2>
+            <table>
+                <tbody>
                 {% for advantage in characterData.advantages %}
                     <tr>
                         <td class="left">{{ advantage.name }}</td>
@@ -106,16 +106,13 @@
                         </td>
                     </tr>
                 {% endfor %}
-            {% else %}
-                <tr>
-                    <td colspan="3" class="center note">No advantages found</td>
-                </tr>
-            {% endif %}
-            </tbody>
-        </table>
-    </div>
 
-    <div class="clear"></div>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="clear"></div>
+    {% endif %}
 
     {% if characterData.stunts %}
         <div class="block padded unbreakable">
@@ -162,7 +159,7 @@
                 {% endif %}
             {% endfor %}
         {% else %}
-            <p class="center note">No abilities found. This is an error.</p>
+            <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
         {% endif %}
     </div>
 
@@ -297,8 +294,9 @@
                     <th title="{{ 'LABEL_ROLL_ATTACK'|trans }}">{{ 'LABEL_ROLL'|trans }}</th>
                     <th title="Brawn included">{{ 'LABEL_DAMAGE'|trans }}</th>
                     <th>{{ 'LABEL_RANGE'|trans }}<br>[m]</th>
-                    <th title="Knacks included, optional tricks not included">{{ 'CHARACTER_SPEC_RELOAD'|trans }}
-                        <br>[{{ 'LABEL_ACTIONS'|trans|lower }}]
+                    <th title="Knacks included, optional tricks not included">
+                        {{ 'CHARACTER_SPEC_RELOAD'|trans }}<br>
+                        [{{ 'LABEL_ACTIONS'|trans|lower }}]
                     </th>
                     <th>{{ 'LABEL_DETAILS'|trans }}</th>
                 </tr>
@@ -357,7 +355,7 @@
                 {% for basic in characterData.basics %}
                     <tr title="{{ basic.description|nl2br }}">
                         <td class="left">{{ basic.name }}</td>
-                        <td class="center">{{ basic.value }}</td>
+                        <td class="center">{{ basic.value|nl2br }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -372,7 +370,7 @@
                 <tbody>
                 {% for variable in characterData.variables %}
                     <tr title="{{ variable.description|nl2br }}">
-                        <td class="left">{{ variable.name }}</td>
+                        <td class="left">{{ variable.name|nl2br }}</td>
                         <td class="center">&nbsp;</td>
                     </tr>
                 {% endfor %}

@@ -14,9 +14,8 @@
                         <h2 class="center">{{ story.name }}</h2>
 
                         <div class="block padded twothirdsplit">
-                            <h3>{{ 'CAMPAING_RECAP'|trans }}</h3>
                             {% if story.short %}
-                                <p class="justified">{{ story.short|raw }}</p>
+                                <div class="justified">{{ story.short|raw }}</div>
                             {% else %}
                                 <p class="center note">{{ 'NO_DATA'|trans }}.</p>
                             {% endif %}
@@ -40,7 +39,7 @@
                                     {% for parameter in story.parameters %}
                                         <tr title="{{ parameter.description }}">
                                             <td class="left">{{ parameter.name }}</td>
-                                            <td class="center">{{ parameter.value }}</td>
+                                            <td class="center">{{ parameter.value|nl2br }}</td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
