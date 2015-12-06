@@ -119,7 +119,9 @@ REPUTATION_PARTY: Reputacja drużynowa
 REPUTATION_PARTY_MEMBERS: Osobista reputacja członków drużyny
 REPUTATION_LOWEST: Najniższa w historii
 REPUTATION_HIGHEST: Najwyższa w historii
-REPUTATION_PARTY_INFLUENCE_EXPLANATION: Wpływ na reputację drużynową wywierany przez członków drużyny
+REPUTATION_BALANCE: Aktualna<br>wartość
+REPUTATION_BALANCE_RANGE: Historyczny<br>zakres wartości
+REPUTATION_PARTY_INFLUENCE_EXPLANATION: Wpływ na reputację drużynową wywierany przez członków drużyny. Ze względu na swoją tymczasową naturę, nie wpływa na zakresy historyczne.
 REPUTATION_EVENTS: Wydarzenia wpływające na reputację
 REPUTATION_TABLE: Tabela reputacji
 

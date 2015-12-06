@@ -119,7 +119,9 @@ REPUTATION_PARTY: Party reputation
 REPUTATION_PARTY_MEMBERS: Personal reputation of party members
 REPUTATION_LOWEST: Lowest ever
 REPUTATION_HIGHEST: Highest ever
-REPUTATION_PARTY_INFLUENCE_EXPLANATION: Influence from party members
+REPUTATION_BALANCE: Current<br>balance
+REPUTATION_BALANCE_RANGE: Historical<br>balance range
+REPUTATION_PARTY_INFLUENCE_EXPLANATION: Influence from party members. Does not influence historical balance range.
 REPUTATION_EVENTS: Reputation events
 REPUTATION_TABLE: Reputation table
 
