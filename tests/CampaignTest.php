@@ -17,6 +17,7 @@ class CampaignTest extends PHPUnit_Framework_TestCase
 
         $expectation = [
             'name' => "Test Epic",
+            'current' => [],
             'stories' => [],
             'help' => [],
         ];

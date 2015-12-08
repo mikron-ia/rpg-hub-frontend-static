@@ -193,6 +193,7 @@ CAMPAING_COMPLETE_HISTORY: Pełna historia
 CAMPAIGN_STORY_PARTICIPANTS: Liczebność drużyny w czasie Historii
 CAMPAIGN_STORY_PARTICIPANTS_PCS: Liczba postaci graczy - jest to baza do wyliczania Dramy
 CAMPAIGN_STORY_PARTICIPANTS_COUNT: Liczba postaci w ogóle - na tę wartość będzie reagować otoczenie
+CAMPAIGN_STORY_CURRENT: Historia w toku
 
 # Front page
 FRONT_TITLE: Główna sala
