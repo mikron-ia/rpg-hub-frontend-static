@@ -59,17 +59,9 @@
                             {% else %}
                                 <p class="center note">{{ 'NO_DATA'|trans }}.</p>
                             {% endif %}
-                            {% if story.participants %}
-                                <p>
-                                    <strong>{{ 'CAMPAIGN_STORY_PARTICIPANTS'|trans }}: </strong>
-                                    <span title="{{ 'CAMPAIGN_STORY_PARTICIPANTS_PCS'|trans }}">
-                                        {{ story.participants.countPC }}
-                                    </span>
-                                    <span title="{{ 'CAMPAIGN_STORY_PARTICIPANTS_COUNT'|trans }}">
-                                        ({{ story.participants.countTotal }})
-                                    </span>
-                                </p>
-                            {% endif %}
+                            <p>
+                                <a href="story/{{ story.key }}/">Details</a>
+                            </p>
                         </div>
 
                         <div class="block padded threesplit">

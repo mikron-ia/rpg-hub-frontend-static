@@ -1,77 +1,58 @@
 {% extends "layout/page.twig" %}
 {% block content %}
 
-    <h1>{{ 'CAMPAING_TITLE'|trans }}</h1>
+    <h1>{{ 'STORY_TITLE'|trans }}: {{ storyData.name }}</h1>
     <div class="block padded">
-        {% if campaignData.help.stories %}
-            <p class="help">{{ campaignData.help.stories }}</p>
+        {% if storyData.help.stories %}
+            <p class="help">{{ storyData.help.top }}</p>
         {% endif %}
-        <div id="story-list">
-            {% if campaignData.stories %}
-                {% for story in campaignData.stories %}
+        <div id="story">
 
-                    <div id="story-{{ loop.index }}">
-                        <h2 class="center">{{ story.name }}</h2>
 
-                        <div class="block padded twothirdsplit">
-                            {% if story.short %}
-                                <div class="justified">{{ story.short|raw }}</div>
-                            {% else %}
-                                <p class="center note">{{ 'NO_DATA'|trans }}.</p>
-                            {% endif %}
-                            {% if story.participants %}
-                                <p>
-                                    <strong>{{ 'CAMPAIGN_STORY_PARTICIPANTS'|trans }}: </strong>
-                                    <span title="{{ 'CAMPAIGN_STORY_PARTICIPANTS_PCS'|trans }}">
-                                        {{ story.participants.countPC }}
-                                    </span>
-                                    <span title="{{ 'CAMPAIGN_STORY_PARTICIPANTS_COUNT'|trans }}">
-                                        ({{ story.participants.countTotal }})
-                                    </span>
-                                </p>
-                            {% endif %}
-                        </div>
+            <div id="story-{{ loop.index }}">
 
-                        <div class="block padded threesplit">
-                            {% if story.parameters %}
-                                <table>
-                                    <tbody>
-                                    {% for parameter in story.parameters %}
-                                        <tr title="{{ parameter.description }}">
-                                            <td class="left">{{ parameter.name }}</td>
-                                            <td class="center">{{ parameter.value|nl2br }}</td>
-                                        </tr>
-                                    {% endfor %}
-                                    </tbody>
-                                </table>
-                            {% else %}
-                                <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
-                            {% endif %}
-                        </div>
+                <div class="block padded twothirdsplit">
+                    {% if storyData.short %}
+                        <div class="justified">{{ storyData.short|raw }}</div>
+                    {% else %}
+                        <p class="center note">{{ 'NO_DATA'|trans }}.</p>
+                    {% endif %}
+                </div>
 
+                <div class="block padded threesplit">
+                    {% if storyData.parameters %}
+                        <table>
+                            <tbody>
+                            {% for parameter in storyData.parameters %}
+                                <tr title="{{ parameter.description }}">
+                                    <td class="left">{{ parameter.name }}</td>
+                                    <td class="center">{{ parameter.value|nl2br }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
+                    {% endif %}
+                </div>
+
+            </div>
+
+            <div class="clear"></div>
+
+            <div class="block padded">
+
+                <h3>{{ 'CAMPAING_COMPLETE_HISTORY'|trans }}</h3>
+                {% if storyData.long %}
+                    <div id="story-long-{{ loop.index }}" class="justified">
+                        {{ storyData.long|raw }}
                     </div>
+                {% else %}
+                    <p class="center note">{{ 'NO_DATA'|trans }}</p>
+                {% endif %}
 
-                    <div class="clear"></div>
+            </div>
 
-                    <div class="block padded">
-
-                        <h3>{{ 'CAMPAING_COMPLETE_HISTORY'|trans }}</h3>
-                        {% if story.long %}
-                            <div id="story-long-{{ loop.index }}" class="justified">
-                                {{ story.long|raw }}
-                            </div>
-                        {% else %}
-                            <p class="center note">{{ 'NO_DATA'|trans }}</p>
-                        {% endif %}
-
-                    </div>
-
-                {% endfor %}
-            {% else %}
-                <p class="center note">
-                    {{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR_LIKELY'|trans }}.
-                </p>
-            {% endif %}
         </div>
     </div>
 

@@ -37,17 +37,17 @@ $app->get('/campaign/story/{storyId}/', function (Silex\Application $app, $story
     $data = $retriever->getDataAsArray();
 
     if ($data === null) {
-        throw new \Exception("Campaign data not found", 404);
+        throw new \Exception("Story data not found", 404);
     }
 
-    $campaign = new \Mikron\HubFront\Domain\Entity\Campaign($data);
+    $story = new \Mikron\HubFront\Domain\Entity\Story($data);
 
     return $app['twig']->render(
         'story.twig',
         [
-            'title' => 'Campaign history',
+            'title' => 'Story data',
             'display' => $app['display'],
-            'campaignData' => $campaign->getData(),
+            'storyData' => $story->getData(),
         ]
     );
 });
