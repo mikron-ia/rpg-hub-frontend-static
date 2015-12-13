@@ -17,21 +17,27 @@
         </tr>
         </thead>
         <tbody>
-        {% for reputation in characterData.reputations %}
-            <tr title="{{ reputation.description }}">
-                <td class="left">{{ reputation.name }}</td>
-                <td class="center">
-                    {% if reputation.value.positiveMax == reputation.value.negativeMin %}
-                        {{ reputation.value.negativeMin }}
-                    {% else %}
-                        {{ reputation.value.negativeMin }} &ndash; {{ reputation.value.positiveMax }}
-                    {% endif %}
-                </td>
-                <td class="center">{{ reputation.value.balance }}</td>
-                <td class="center">{{ reputation.value.dice }}</td>
-                <td class="center">{{ reputation.value.recognitionDice }}</td>
+        {% if characterData.reputations %}
+            {% for reputation in characterData.reputations %}
+                <tr title="{{ reputation.description }}">
+                    <td class="left">{{ reputation.name }}</td>
+                    <td class="center">
+                        {% if reputation.value.positiveMax == reputation.value.negativeMin %}
+                            {{ reputation.value.negativeMin }}
+                        {% else %}
+                            {{ reputation.value.negativeMin }} &ndash; {{ reputation.value.positiveMax }}
+                        {% endif %}
+                    </td>
+                    <td class="center">{{ reputation.value.balance }}</td>
+                    <td class="center">{{ reputation.value.dice }}</td>
+                    <td class="center">{{ reputation.value.recognitionDice }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="7" class="center note">{{ 'NO_DATA'|trans }}</td>
             </tr>
-        {% endfor %}
+        {% endif %}
         </tbody>
     </table>
 </div>
