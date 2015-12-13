@@ -90,6 +90,7 @@ LABEL_SKILL: Skill
 LABEL_SKILLS: Skills
 LABEL_SOURCE: Source
 LABEL_SOURCES: Sources
+LABEL_STATUS: Status
 LABEL_STORY: Story
 LABEL_STORIES: Stories
 LABEL_SUBJECT: Subject
@@ -211,6 +212,7 @@ MENU_LOGOUT: Logout
 # No data messages
 NO_DATA: No data available
 NO_DATA_FOR_PERSON: No data for the person given
+NO_DATA_FOR_STATUS: No data on status
 NO_DATA_LIST: No data lists found
 NO_DATA_LIST_FULL: No data lists found - please contact the GM or verify data source
 NO_DATA_ERROR: This is an error

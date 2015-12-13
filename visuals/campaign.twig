@@ -9,7 +9,7 @@
 
         {% if campaignData.current %}
             <div id="story-current">
-                <h2 class="center">{{ 'CAMPAIGN_STORY_CURRENT' }}: {{ campaignData.current.name }}</h2>
+                <h2 class="center">{{ campaignData.current.name }}</h2>
 
                 <div class="block padded twothirdsplit">
                     {% if campaignData.current.short %}
@@ -38,8 +38,9 @@
 
             </div>
         {% else %}
+            <h2 class="center">{{ 'CAMPAIGN_STORY_CURRENT'|trans }}: ?</h2>
             <p class="center note">
-                {{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR_LIKELY'|trans }}.
+                {{ 'NO_DATA'|trans }}
             </p>
         {% endif %}
 
