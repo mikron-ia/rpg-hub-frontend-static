@@ -122,9 +122,13 @@ REPUTATION_LOWEST: Najniższa w historii
 REPUTATION_HIGHEST: Najwyższa w historii
 REPUTATION_BALANCE: Aktualna<br>wartość
 REPUTATION_BALANCE_RANGE: Historyczny<br>zakres wartości
+REPUTATION_DICE: Kości
+REPUTATION_REPUTATION_DICE_TITLE: Kości do użytku gracza i MG do wspierania bądź zakłócania interakcji społecznych
 REPUTATION_PARTY_INFLUENCE_EXPLANATION: Wpływ na reputację drużynową wywierany przez członków drużyny. Ze względu na swoją tymczasową naturę, nie wpływa na zakresy historyczne.
 REPUTATION_EVENTS: Wydarzenia wpływające na reputację
 REPUTATION_TABLE: Tabela reputacji
+REPUTATION_RECOGNITION_DICE: Sława
+REPUTATION_RECOGNITION_DICE_TITLE: Liczba kości rzucana przy próbie rozpoznania postaci przez osobę powiązaną z daną Reputacją
 
 # Party
 PARTY_TITLE: Drużyna

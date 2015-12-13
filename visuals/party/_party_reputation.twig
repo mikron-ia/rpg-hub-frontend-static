@@ -7,12 +7,11 @@
         <thead>
         <tr>
             <th title="{{ 'REPUTATION_NAME'|trans }}">{{ 'LABEL_REPUTATION'|trans }}</th>
-            <th>{{ 'LABEL_NEGATIVE_F'|trans }}</th>
-            <th>{{ 'LABEL_POSITIVE_F'|trans }}</th>
+            <th>{{ 'REPUTATION_BALANCE_RANGE'|trans|raw }}</th>
             <th title="{{ 'REPUTATION_PARTY_INFLUENCE_EXPLANATION'|trans }}">{{ 'LABEL_INFLUENCE'|trans }}</th>
-                        <th>{{ 'REPUTATION_BALANCE_RANGE'|trans|raw }}</th>
             <th>{{ 'REPUTATION_BALANCE'|trans|raw }}</th>
-            <th>{{ 'LABEL_DICE'|trans }}</th>
+            <th title="{{ 'REPUTATION_REPUTATION_DICE_TITLE'|trans|raw }}">{{ 'REPUTATION_DICE'|trans }}</th>
+            <th title="{{ 'REPUTATION_RECOGNITION_DICE_TITLE'|trans|raw }}">{{ 'REPUTATION_RECOGNITION_DICE'|trans|raw }}</th>
         </tr>
         </thead>
         <tbody>
@@ -20,12 +19,17 @@
             {% for reputation in partyData.reputation %}
                 <tr title="{{ reputation.description }}">
                     <td class="left">{{ reputation.name }}</td>
-                    <td class="center">{{ reputation.negative }}</td>
-                    <td class="center">{{ reputation.positive }}</td>
+                    <td class="center">
+                        {% if reputation.positiveMax == reputation.negativeMin %}
+                            {{ reputation.negativeMin }}
+                        {% else %}
+                            {{ reputation.negativeMin }} &ndash; {{ reputation.positiveMax }}
+                        {% endif %}
+                    </td>
                     <td class="center">{{ reputation.influence }}</td>
-                    <td class="center">{{ reputation.negativeMin }} - {{ reputation.positiveMax }}</td>
                     <td class="center">{{ reputation.balance }}</td>
                     <td class="center">{{ reputation.dice }}</td>
+                    <td class="center">{{ reputation.recognitionDice }}</td>
                 </tr>
             {% endfor %}
         {% else %}

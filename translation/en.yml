@@ -122,9 +122,13 @@ REPUTATION_LOWEST: Lowest ever
 REPUTATION_HIGHEST: Highest ever
 REPUTATION_BALANCE: Current<br>balance
 REPUTATION_BALANCE_RANGE: Historical<br>balance range
+REPUTATION_DICE: Dice
+REPUTATION_REPUTATION_DICE_TITLE: Dice available for player and GM use for improving or disrupting social situations
 REPUTATION_PARTY_INFLUENCE_EXPLANATION: Influence from party members. Does not influence historical balance range.
 REPUTATION_EVENTS: Reputation events
 REPUTATION_TABLE: Reputation table
+REPUTATION_RECOGNITION_DICE: Recognition
+REPUTATION_RECOGNITION_DICE_TITLE: Number of dice used in recognition attempt rolled by person associated with the reputation
 
 # Party page headers
 PARTY_TITLE: Party
