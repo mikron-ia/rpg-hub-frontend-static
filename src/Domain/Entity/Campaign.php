@@ -15,6 +15,7 @@ class Campaign extends BagOfAttributes
     {
         return [
             "name" => "", // epic name
+            "current" => [], // current story
             "stories" => [], // stories description
             "help" => [], // help boxes
         ];

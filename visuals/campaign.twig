@@ -6,29 +6,58 @@
         {% if campaignData.help.stories %}
             <p class="help">{{ campaignData.help.stories }}</p>
         {% endif %}
+
+        {% if campaignData.current %}
+            <div id="story-current">
+                <h2 class="center">{{ campaignData.current.name }}</h2>
+
+                <div class="block padded twothirdsplit">
+                    {% if campaignData.current.short %}
+                        <div class="justified">{{ campaignData.current.short|raw }}</div>
+                    {% else %}
+                        <p class="center note">{{ 'NO_DATA'|trans }}.</p>
+                    {% endif %}
+                </div>
+
+                <div class="block padded threesplit">
+                    {% if campaignData.current.parameters %}
+                        <table>
+                            <tbody>
+                            {% for parameter in campaignData.current.parameters %}
+                                <tr title="{{ parameter.description }}">
+                                    <td class="left">{{ parameter.name }}</td>
+                                    <td class="center">{{ parameter.value|nl2br }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
+                    {% endif %}
+                </div>
+
+            </div>
+        {% else %}
+            <h2 class="center">{{ 'CAMPAIGN_STORY_CURRENT'|trans }}: ?</h2>
+            <p class="center note">
+                {{ 'NO_DATA'|trans }}
+            </p>
+        {% endif %}
+
+        <div class="clear"></div>
+
         <div id="story-list">
             {% if campaignData.stories %}
                 {% for story in campaignData.stories %}
 
                     <div id="story-{{ loop.index }}">
-                        <h2 class="center">{{ story.name }}</h2>
+                        <h2 class="center"><a href="story/{{ story.key }}/">{{ story.name }}</a></h2>
 
                         <div class="block padded twothirdsplit">
                             {% if story.short %}
                                 <div class="justified">{{ story.short|raw }}</div>
                             {% else %}
                                 <p class="center note">{{ 'NO_DATA'|trans }}.</p>
-                            {% endif %}
-                            {% if story.participants %}
-                                <p>
-                                    <strong>{{ 'CAMPAIGN_STORY_PARTICIPANTS'|trans }}: </strong>
-                                    <span title="{{ 'CAMPAIGN_STORY_PARTICIPANTS_PCS'|trans }}">
-                                        {{ story.participants.countPC }}
-                                    </span>
-                                    <span title="{{ 'CAMPAIGN_STORY_PARTICIPANTS_COUNT'|trans }}">
-                                        ({{ story.participants.countTotal }})
-                                    </span>
-                                </p>
                             {% endif %}
                         </div>
 
@@ -48,21 +77,6 @@
                                 <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
                             {% endif %}
                         </div>
-
-                    </div>
-
-                    <div class="clear"></div>
-
-                    <div class="block padded">
-
-                        <h3>{{ 'CAMPAING_COMPLETE_HISTORY'|trans }}</h3>
-                        {% if story.long %}
-                            <div id="story-long-{{ loop.index }}" class="justified">
-                                {{ story.long|raw }}
-                            </div>
-                        {% else %}
-                            <p class="center note">{{ 'NO_DATA'|trans }}</p>
-                        {% endif %}
 
                     </div>
 

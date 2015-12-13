@@ -90,6 +90,7 @@ LABEL_SKILL: Umiejętność
 LABEL_SKILLS: Umiejętności
 LABEL_SOURCE: Źródło
 LABEL_SOURCES: Źródła
+LABEL_STATUS: Status
 LABEL_STORY: Historia
 LABEL_STORIES: Historie
 LABEL_SUBJECT: Podmiot
@@ -193,6 +194,8 @@ CAMPAING_COMPLETE_HISTORY: Pełna historia
 CAMPAIGN_STORY_PARTICIPANTS: Liczebność drużyny w czasie Historii
 CAMPAIGN_STORY_PARTICIPANTS_PCS: Liczba postaci graczy - jest to baza do wyliczania Dramy
 CAMPAIGN_STORY_PARTICIPANTS_COUNT: Liczba postaci w ogóle - na tę wartość będzie reagować otoczenie
+CAMPAIGN_STORY_CURRENT: Historia w toku
+CAMPAIGN_STORY_HEADER: Historia
 
 # Front page
 FRONT_TITLE: Główna sala
@@ -211,6 +214,7 @@ MENU_LOGOUT: Wyloguj
 # No data messages
 NO_DATA: Brak danych
 NO_DATA_FOR_PERSON: Brak danych dla osoby
+NO_DATA_FOR_STATUS: Brak danych o statusie
 NO_DATA_LIST: Brak list danych
 NO_DATA_LIST_FULL: Brak list danych - prosimy skontaktować się z MG lub sprawdzić źródło danych
 NO_DATA_ERROR: Jest to błąd systemu

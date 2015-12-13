@@ -25,3 +25,29 @@ $app->get('/campaign/', function (Silex\Application $app) {
         ]
     );
 });
+
+/**
+ * Display specific story data
+ */
+$app->get('/campaign/story/{storyId}/', function (Silex\Application $app, $storyId) {
+    $uri = $app['config']['dataSource'] . '?id='.$storyId.'&key=' . $app['config']['key'];
+
+    $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
+
+    $data = $retriever->getDataAsArray();
+
+    if ($data === null) {
+        throw new \Exception("Story data not found", 404);
+    }
+
+    $story = new \Mikron\HubFront\Domain\Entity\Story($data);
+
+    return $app['twig']->render(
+        'story.twig',
+        [
+            'title' => 'Story data',
+            'display' => $app['display'],
+            'storyData' => $story->getData(),
+        ]
+    );
+});

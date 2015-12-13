@@ -1,0 +1,61 @@
+{% extends "layout/page.twig" %}
+{% block content %}
+
+    <h1>{{ 'CAMPAIGN_STORY_HEADER'|trans }}: {{ storyData.name }}</h1>
+    <div class="block padded">
+        {% if storyData.help.stories %}
+            <p class="help">{{ storyData.help.top }}</p>
+        {% endif %}
+        <div id="story">
+
+
+            <div id="story-{{ loop.index }}">
+
+                <div class="block padded twothirdsplit">
+                    {% if storyData.short %}
+                        <div class="justified">{{ storyData.short|raw }}</div>
+                    {% else %}
+                        <p class="center note">{{ 'NO_DATA'|trans }}.</p>
+                    {% endif %}
+                </div>
+
+                <div class="block padded threesplit">
+                    {% if storyData.parameters %}
+                        <table>
+                            <tbody>
+                            {% for parameter in storyData.parameters %}
+                                <tr title="{{ parameter.description }}">
+                                    <td class="left">{{ parameter.name }}</td>
+                                    <td class="center">{{ parameter.value|nl2br }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
+                    {% endif %}
+                </div>
+
+            </div>
+
+            <div class="clear"></div>
+
+            <div class="block padded">
+
+                <h3>{{ 'CAMPAING_COMPLETE_HISTORY'|trans }}</h3>
+                {% if storyData.long %}
+                    <div id="story-long-{{ loop.index }}" class="justified">
+                        {{ storyData.long|raw }}
+                    </div>
+                {% else %}
+                    <p class="center note">{{ 'NO_DATA'|trans }}</p>
+                {% endif %}
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+{% endblock %}
