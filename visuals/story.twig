@@ -1,7 +1,7 @@
 {% extends "layout/page.twig" %}
 {% block content %}
 
-    <h1>{{ 'STORY_TITLE'|trans }}: {{ storyData.name }}</h1>
+    <h1>{{ 'CAMPAIGN_STORY_HEADER'|trans }}: {{ storyData.name }}</h1>
     <div class="block padded">
         {% if storyData.help.stories %}
             <p class="help">{{ storyData.help.top }}</p>

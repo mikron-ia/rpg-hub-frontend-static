@@ -51,7 +51,7 @@
                 {% for story in campaignData.stories %}
 
                     <div id="story-{{ loop.index }}">
-                        <h2 class="center">{{ story.name }}</h2>
+                        <h2 class="center"><a href="story/{{ story.key }}/">{{ story.name }}</a></h2>
 
                         <div class="block padded twothirdsplit">
                             {% if story.short %}
@@ -59,9 +59,6 @@
                             {% else %}
                                 <p class="center note">{{ 'NO_DATA'|trans }}.</p>
                             {% endif %}
-                            <p>
-                                <a href="story/{{ story.key }}/">Details</a>
-                            </p>
                         </div>
 
                         <div class="block padded threesplit">

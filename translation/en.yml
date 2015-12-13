@@ -194,7 +194,7 @@ CAMPAIGN_STORY_PARTICIPANTS: Numbers of the party during the story
 CAMPAIGN_STORY_PARTICIPANTS_PCS: Number of PCs - this is the base value for Drama calculations
 CAMPAIGN_STORY_PARTICIPANTS_COUNT: Number of all characters - this is the value other NPCs will be reacting to
 CAMPAIGN_STORY_CURRENT: Story in progress
-STORY_TITLE: Story
+CAMPAIGN_STORY_HEADER: Story
 
 # Front page
 FRONT_TITLE: Main hall
