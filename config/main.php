@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'version' => '0.6.1',
+    'version' => '0.7.0',
     'interface' => [
         'titleSuffix' => 'Epic Information Centre',
         'welcome' => 'Welcome to Epic Information Centre',
