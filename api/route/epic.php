@@ -1,41 +1,37 @@
 <?php
 
 /**
- * Display story data
+ * Display epic data
  */
-$app->get('/campaign/', function (Silex\Application $app) {
-    $uri = $app['config']['dataSource'] . '?id=campaign&key=' . $app['config']['key'];
-
+$app->get('/epic/', function (Silex\Application $app) {
+    $uri = $app['config']['dataSource'] . '?id=epic&key=' . $app['config']['key'];
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 
     $data = $retriever->getDataAsArray();
-
     if ($data === null) {
-        throw new \Exception("Campaign data not found", 404);
+        throw new \Exception("Epic data not found", 404);
     }
 
-    $campaign = new \Mikron\HubFront\Domain\Entity\Campaign($data);
+    $epic = new \Mikron\HubFront\Domain\Entity\Epic($data);
 
     return $app['twig']->render(
-        'campaign.twig',
+        'epic.twig',
         [
-            'title' => 'Campaign history',
+            'title' => 'Epic history',
             'display' => $app['display'],
-            'campaignData' => $campaign->getData(),
+            'epicData' => $epic->getData(),
         ]
     );
-});
+})->bind('epicMain');
 
 /**
  * Display specific story data
  */
-$app->get('/campaign/story/{storyId}/', function (Silex\Application $app, $storyId) {
-    $uri = $app['config']['dataSource'] . '?id='.$storyId.'&key=' . $app['config']['key'];
-
+$app->get('/epic/story/{storyId}/', function (Silex\Application $app, $storyId) {
+    $uri = $app['config']['dataSource'] . '?id=' . $storyId . '&key=' . $app['config']['key'];
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 
     $data = $retriever->getDataAsArray();
-
     if ($data === null) {
         throw new \Exception("Story data not found", 404);
     }
@@ -50,4 +46,9 @@ $app->get('/campaign/story/{storyId}/', function (Silex\Application $app, $story
             'storyData' => $story->getData(),
         ]
     );
+});
+
+/* Legacy redirect */
+$app->get('/campaign/', function () use ($app) {
+    return $app->redirect($app["url_generator"]->generate("epicMain"), 307);
 });

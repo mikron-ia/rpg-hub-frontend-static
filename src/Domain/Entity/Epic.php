@@ -6,7 +6,7 @@ namespace Mikron\HubFront\Domain\Entity;
  * Class Epic - contains data regarding entire campaign / epic
  * @package Mikron\HubFront\Domain\Entity
  */
-class Campaign extends BagOfAttributes
+class Epic extends BagOfAttributes
 {
     /**
      * @return array Attribute labels with their default values

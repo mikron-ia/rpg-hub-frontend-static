@@ -1,8 +1,8 @@
 <?php
 
-use Mikron\HubFront\Domain\Entity\Campaign;
+use Mikron\HubFront\Domain\Entity\Epic;
 
-class CampaignTest extends PHPUnit_Framework_TestCase
+class EpicTest extends PHPUnit_Framework_TestCase
 {
     /**
      * @test
@@ -12,7 +12,7 @@ class CampaignTest extends PHPUnit_Framework_TestCase
         $json = '{"name":"Test Epic"}';
         $data = json_decode($json, true);
 
-        $party = new Campaign($data);
+        $party = new Epic($data);
         $result = $party->getData();
 
         $expectation = [

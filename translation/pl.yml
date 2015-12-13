@@ -187,15 +187,15 @@ CHARACTER_WEAPONS_KNACK_INCLUDED: >
 CHARACTER_MAY_CONTAIN_SECRETS: Może zawierać dane niejawne
 CHARACTER_APPROXIMATE_VALUE: Przybliżona wartość
 
-# Campaign
-CAMPAING_TITLE: Historia kampanii
-CAMPAING_RECAP: Podsumowanie
-CAMPAING_COMPLETE_HISTORY: Pełna historia
-CAMPAIGN_STORY_PARTICIPANTS: Liczebność drużyny w czasie Historii
-CAMPAIGN_STORY_PARTICIPANTS_PCS: Liczba postaci graczy - jest to baza do wyliczania Dramy
-CAMPAIGN_STORY_PARTICIPANTS_COUNT: Liczba postaci w ogóle - na tę wartość będzie reagować otoczenie
-CAMPAIGN_STORY_CURRENT: Historia w toku
-CAMPAIGN_STORY_HEADER: Historia
+# Epic
+EPIC_TITLE: Historia kampanii
+EPIC_RECAP: Podsumowanie
+EPIC_COMPLETE_HISTORY: Pełna historia
+EPIC_STORY_PARTICIPANTS: Liczebność drużyny w czasie Historii
+EPIC_STORY_PARTICIPANTS_PCS: Liczba postaci graczy - jest to baza do wyliczania Dramy
+EPIC_STORY_PARTICIPANTS_COUNT: Liczba postaci w ogóle - na tę wartość będzie reagować otoczenie
+EPIC_STORY_CURRENT: Historia w toku
+EPIC_STORY_HEADER: Historia
 
 # Front page
 FRONT_TITLE: Główna sala
@@ -207,7 +207,7 @@ FRONT_EXPLANATION: >
 # Menu labels
 MENU_MAIN: Główna
 MENU_PARTY: Drużyna
-MENU_CAMPAIGN: Kampania
+MENU_EPIC: Kampania
 MENU_LOGIN: Zaloguj
 MENU_LOGOUT: Wyloguj
 

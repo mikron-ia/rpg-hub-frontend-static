@@ -186,15 +186,15 @@ CHARACTER_WEAPONS_KNACK_INCLUDED: Knacks included, optional tricks not included 
 CHARACTER_MAY_CONTAIN_SECRETS: May contain secrets
 CHARACTER_APPROXIMATE_VALUE: Approximate value
 
-# Campaign
-CAMPAING_TITLE: Campaign history
-CAMPAING_RECAP: Recap
-CAMPAING_COMPLETE_HISTORY: Complete history
-CAMPAIGN_STORY_PARTICIPANTS: Numbers of the party during the story
-CAMPAIGN_STORY_PARTICIPANTS_PCS: Number of PCs - this is the base value for Drama calculations
-CAMPAIGN_STORY_PARTICIPANTS_COUNT: Number of all characters - this is the value other NPCs will be reacting to
-CAMPAIGN_STORY_CURRENT: Story in progress
-CAMPAIGN_STORY_HEADER: Story
+# Epic
+EPIC_TITLE: Epic history
+EPIC_RECAP: Recap
+EPIC_COMPLETE_HISTORY: Complete history
+EPIC_STORY_PARTICIPANTS: Numbers of the party during the story
+EPIC_STORY_PARTICIPANTS_PCS: Number of PCs - this is the base value for Drama calculations
+EPIC_STORY_PARTICIPANTS_COUNT: Number of all characters - this is the value other NPCs will be reacting to
+EPIC_STORY_CURRENT: Story in progress
+EPIC_STORY_HEADER: Story
 
 # Front page
 FRONT_TITLE: Main hall
@@ -206,7 +206,7 @@ FRONT_EXPLANATION: >
 # Menu labels
 MENU_MAIN: Main
 MENU_PARTY: Party
-MENU_CAMPAIGN: Campaign
+MENU_EPIC: Epic
 MENU_LOGIN: Login
 MENU_LOGOUT: Logout
 

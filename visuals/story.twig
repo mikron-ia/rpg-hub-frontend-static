@@ -1,7 +1,7 @@
 {% extends "layout/page.twig" %}
 {% block content %}
 
-    <h1>{{ 'CAMPAIGN_STORY_HEADER'|trans }}: {{ storyData.name }}</h1>
+    <h1>{{ 'EPIC_STORY_HEADER'|trans }}: {{ storyData.name }}</h1>
     <div class="block padded">
         {% if storyData.help.stories %}
             <p class="help">{{ storyData.help.top }}</p>
@@ -42,7 +42,7 @@
 
             <div class="block padded">
 
-                <h3>{{ 'CAMPAING_COMPLETE_HISTORY'|trans }}</h3>
+                <h3>{{ 'EPIC_COMPLETE_HISTORY'|trans }}</h3>
                 {% if storyData.long %}
                     <div id="story-long-{{ loop.index }}" class="justified">
                         {{ storyData.long|raw }}

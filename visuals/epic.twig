@@ -1,29 +1,29 @@
 {% extends "layout/page.twig" %}
 {% block content %}
 
-    <h1>{{ 'CAMPAING_TITLE'|trans }}</h1>
+    <h1>{{ 'EPIC_TITLE'|trans }}</h1>
     <div class="block padded">
-        {% if campaignData.help.stories %}
-            <p class="help">{{ campaignData.help.stories }}</p>
+        {% if epicData.help.stories %}
+            <p class="help">{{ epicData.help.stories }}</p>
         {% endif %}
 
-        {% if campaignData.current %}
+        {% if epicData.current %}
             <div id="story-current">
-                <h2 class="center">{{ campaignData.current.name }}</h2>
+                <h2 class="center">{{ epicData.current.name }}</h2>
 
                 <div class="block padded twothirdsplit">
-                    {% if campaignData.current.short %}
-                        <div class="justified">{{ campaignData.current.short|raw }}</div>
+                    {% if epicData.current.short %}
+                        <div class="justified">{{ epicData.current.short|raw }}</div>
                     {% else %}
                         <p class="center note">{{ 'NO_DATA'|trans }}.</p>
                     {% endif %}
                 </div>
 
                 <div class="block padded threesplit">
-                    {% if campaignData.current.parameters %}
+                    {% if epicData.current.parameters %}
                         <table>
                             <tbody>
-                            {% for parameter in campaignData.current.parameters %}
+                            {% for parameter in epicData.current.parameters %}
                                 <tr title="{{ parameter.description }}">
                                     <td class="left">{{ parameter.name }}</td>
                                     <td class="center">{{ parameter.value|nl2br }}</td>
@@ -38,7 +38,7 @@
 
             </div>
         {% else %}
-            <h2 class="center">{{ 'CAMPAIGN_STORY_CURRENT'|trans }}: ?</h2>
+            <h2 class="center">{{ 'EPIC_STORY_CURRENT'|trans }}: ?</h2>
             <p class="center note">
                 {{ 'NO_DATA'|trans }}
             </p>
@@ -47,8 +47,8 @@
         <div class="clear"></div>
 
         <div id="story-list">
-            {% if campaignData.stories %}
-                {% for story in campaignData.stories %}
+            {% if epicData.stories %}
+                {% for story in epicData.stories %}
 
                     <div id="story-{{ loop.index }}">
                         <h2 class="center"><a href="story/{{ story.key }}/">{{ story.name }}</a></h2>
