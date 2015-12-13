@@ -76,14 +76,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% if characterData.reputationHistory %}
-                        {% for reputationEvent in characterData.reputationHistory %}
+                    {% if characterData.reputationEvents %}
+                        {% for reputationEvent in characterData.reputationEvents %}
                             <tr>
-                                <td class="left">{{ reputationEvent.name }}</td>
-                                <td class="center">{{ reputationEvent.reputation }}</td>
-                                <td class="center">{{ reputationEvent.change }}</td>
-                                <td class="center">{{ reputationEvent.when|nl2br }}</td>
-                                <td class="justified">{{ reputationEvent.notes|nl2br }}</td>
+                                <td class="left">{{ reputationEvent.event.name|default('?')|raw|nl2br }}</td>
+                                <td class="center">{{ reputationEvent.name|nl2br }}</td>
+                                <td class="center">{{ reputationEvent.value }}</td>
+                                <td class="center">{{ reputationEvent.when|default('?')|raw|nl2br }}</td>
+                                <td class="justified">{{ reputationEvent.event.description|nl2br }}</td>
                             </tr>
                         {% endfor %}
                     {% else %}
