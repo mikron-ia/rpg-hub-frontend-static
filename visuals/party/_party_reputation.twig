@@ -50,16 +50,15 @@
     {% endif %}
     {% if partyData.membersReputations %}
         {% for memberReputation in partyData.membersReputations %}
-            <div class="block padded twosplit">
+            <div class="block padded threesplit">
                 <table>
                     <caption>{{ memberReputation.name }}</caption>
                     <thead>
-                    <tr>
+                    <tr>s
                         <th title="{{ 'REPUTATION_NAME'|trans }}">{{ 'LABEL_REPUTATION'|trans }}</th>
-                        <th>{{ 'LABEL_NEGATIVE_F'|trans }}</th>
-                        <th>{{ 'LABEL_POSITIVE_F'|trans }}</th>
                         <th>{{ 'LABEL_BALANCE'|trans }}</th>
                         <th>{{ 'LABEL_DICE'|trans }}</th>
+                        <th>{{ 'LABEL_INFLUENCE'|trans }}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -67,10 +66,9 @@
                         {% for reputation in memberReputation.reputations %}
                             <tr title="{{ reputation.description }}">
                                 <td class="left">{{ reputation.name }}</td>
-                                <td class="center" title="{{ 'REPUTATION_LOWEST'|trans }}: {{ reputation.negativeMin }}">{{ reputation.negative }}</td>
-                                <td class="center" title="{{ 'REPUTATION_HIGHEST'|trans }}: {{ reputation.positiveMax }}">{{ reputation.positive }}</td>
                                 <td class="center">{{ reputation.balance }}</td>
                                 <td class="center">{{ reputation.dice }}</td>
+                                <td class="center">{{ reputation.influence }}</td>
                             </tr>
                         {% endfor %}
                     {% else %}
