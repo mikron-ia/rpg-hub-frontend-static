@@ -5,7 +5,6 @@ namespace Mikron\HubFront\Domain\Entity;
 /**
  * Class Party
  * @package Mikron\HubFront\Domain\Entity
- * @todo Split it into correct and neat universal domain
  */
 class Party extends BagOfAttributes
 {
@@ -14,7 +13,7 @@ class Party extends BagOfAttributes
         return [
             'members' => [], // list of party members
             'reputation' => [], // listing of party reputation
-            'reputationHistory' => [], // listing of party reputation history
+            'reputationEvents' => [], // listing of party reputation history
             'membersReputations' => [], // list of party members' reputation
             'pastMembers' => [], // retired or dead members
             'absentMembers' => [], // suspended or currently absent members
