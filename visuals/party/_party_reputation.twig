@@ -8,7 +8,8 @@
         <tr>
             <th title="{{ 'REPUTATION_NAME'|trans }}">{{ 'LABEL_REPUTATION'|trans }}</th>
             <th>{{ 'REPUTATION_BALANCE_RANGE'|trans|raw }}</th>
-            <th title="{{ 'REPUTATION_PARTY_INFLUENCE_EXPLANATION'|trans }}">{{ 'LABEL_INFLUENCE'|trans }}</th>
+            <th>{{ 'REPUTATION_BALANCE_UNINFLUENCED'|trans|raw }}</th>
+            <th title="{{ 'REPUTATION_PARTY_INFLUENCE_EXPLANATION'|trans }}">{{ 'REPUTATION_INFLUENCE'|trans }}</th>
             <th>{{ 'REPUTATION_BALANCE'|trans|raw }}</th>
             <th title="{{ 'REPUTATION_REPUTATION_DICE_TITLE'|trans|raw }}">{{ 'REPUTATION_DICE'|trans }}</th>
             <th title="{{ 'REPUTATION_RECOGNITION_DICE_TITLE'|trans|raw }}">{{ 'REPUTATION_RECOGNITION_DICE'|trans|raw }}</th>
@@ -26,6 +27,7 @@
                             {{ reputation.negativeMin }} &ndash; {{ reputation.positiveMax }}
                         {% endif %}
                     </td>
+                    <td class="center">{{ reputation.uninfluenced }}</td>
                     <td class="center">{{ reputation.influence }}</td>
                     <td class="center">{{ reputation.balance }}</td>
                     <td class="center">{{ reputation.dice }}</td>
