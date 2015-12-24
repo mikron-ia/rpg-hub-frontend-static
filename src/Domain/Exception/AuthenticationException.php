@@ -3,9 +3,9 @@
 namespace Mikron\HubFront\Domain\Exception;
 
 /**
- * Class InvalidDataException
+ * Class AuthenticationException
  * @package Mikron\HubFront\Domain\Exception
  */
-class InvalidDataException extends ExceptionWithSafeMessage
+final class AuthenticationException extends ExceptionWithSafeMessage
 {
 }
