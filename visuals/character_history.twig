@@ -76,8 +76,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% if characterData.reputationEvents %}
-                        {% for reputationEvent in characterData.reputationEvents %}
+                    {% if characterData.person.reputationEvents %}
+                        {% for reputationEvent in characterData.person.reputationEvents %}
                             <tr>
                                 <td class="left">{{ reputationEvent.event.name|default('?')|nl2br }}</td>
                                 <td class="center">{{ reputationEvent.name|nl2br }}</td>

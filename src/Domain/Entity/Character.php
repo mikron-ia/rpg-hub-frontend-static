@@ -27,10 +27,9 @@ class Character extends BagOfAttributes
             'languages' => [], // languages known
             'money' => [], // cash at hand
             'name' => "", // used name
+            'person' => [], //person data
             'public' => [], // public information
             'professions' => [], // used together skill groups with skills
-            'reputations' => [], // reputation values
-            'reputationEvents' => [], // reputation history
             'rolls' => [], // most commonly used rolls
             'skillGroups' => [], // thematic skill groups
             'skills' => [], // skills

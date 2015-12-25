@@ -17,8 +17,8 @@
         </tr>
         </thead>
         <tbody>
-        {% if characterData.reputations %}
-            {% for reputation in characterData.reputations %}
+        {% if characterData.person.reputations %}
+            {% for reputation in characterData.person.reputations %}
                 <tr title="{{ reputation.description }}">
                     <td class="left">{{ reputation.name }}</td>
                     <td class="center">
