@@ -17,11 +17,6 @@ class Authentication
     private $token;
 
     /**
-     * @var string Key that was provided from outside
-     */
-    private $authenticationKey;
-
-    /**
      * @param array $config Configuration segment responsible for authentication
      * @param string $direction Who is trying to talk to us and which keyset is used?
      * @param string $authenticationMethodUsed What method are they trying to use?
@@ -80,7 +75,7 @@ class Authentication
      */
     public function isAuthenticated($authenticationKey)
     {
-        return $this->token->checksOut($this->authenticationKey);
+        return $this->token->checksOut($authenticationKey);
     }
 
     /**
