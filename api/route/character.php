@@ -4,6 +4,8 @@
  * Directs to character list
  * @todo Redirect to character specific to user logged in
  */
+use Mikron\HubFront\Infrastructure\Security\Authentication;
+
 $app->get('/character/', function (Silex\Application $app) {
     return $app['twig']->render(
         'characters.twig',
@@ -19,7 +21,26 @@ $app->get('/character/', function (Silex\Application $app) {
  * Display character with given ID
  */
 $app->get('/character/{id}/', function (Silex\Application $app, $id) {
-    $uri = $app['config']['dataSource'] . '?id=' . $id . '&key=' . $app['config']['key'];
+    $authentication = new Authentication(
+        $app['config']['authentication'],
+        'hub',
+        $app['config']['dataSource']['authStrategy']
+    );
+
+    $accessMethod = 'key';
+    $accessId = $id;
+    $authMethod = $authentication->provideAuthenticationMethod();
+    $authKey = $authentication->provideAuthenticationKey();
+
+    if ($app['config']['dataSource']['queryUri']) {
+        $uri = $app['config']['dataSource']['uri']
+            . '?access-method=' . $accessMethod . '&id=' . $accessId
+            . '&auth-method=' . $authMethod . '&key=' . $authKey;
+    } else {
+        $uri = $app['config']['dataSource']['uri']
+            . $accessMethod . '/' . $accessId . '/'
+            . $authMethod . '/' . $authKey . '/';
+    }
 
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 
@@ -29,7 +50,7 @@ $app->get('/character/{id}/', function (Silex\Application $app, $id) {
         throw new \Exception("Character not found", 404);
     }
 
-    $character = new \Mikron\HubFront\Domain\Entity\Character($data);
+    $character = new \Mikron\HubFront\Domain\Entity\Character($data['content']);
 
     return $app['twig']->render(
         'character.twig',
@@ -47,7 +68,26 @@ $app->get('/character/{id}/', function (Silex\Application $app, $id) {
  * Display printable sheet for character with given ID
  */
 $app->get('/character/{id}/print/', function (Silex\Application $app, $id) {
-    $uri = $app['config']['dataSource'] . '?id=' . $id . '&key=' . $app['config']['key'];
+    $authentication = new Authentication(
+        $app['config']['authentication'],
+        'hub',
+        $app['config']['dataSource']['authStrategy']
+    );
+
+    $accessMethod = 'key';
+    $accessId = $id;
+    $authMethod = $authentication->provideAuthenticationMethod();
+    $authKey = $authentication->provideAuthenticationKey();
+
+    if ($app['config']['dataSource']['queryUri']) {
+        $uri = $app['config']['dataSource']['uri']
+            . '?access-method=' . $accessMethod . '&id=' . $accessId
+            . '&auth-method=' . $authMethod . '&key=' . $authKey;
+    } else {
+        $uri = $app['config']['dataSource']['uri']
+            . $accessMethod . '/' . $accessId . '/'
+            . $authMethod . '/' . $authKey . '/';
+    }
 
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 
@@ -57,7 +97,7 @@ $app->get('/character/{id}/print/', function (Silex\Application $app, $id) {
         throw new \Exception("Character not found", 404);
     }
 
-    $character = new \Mikron\HubFront\Domain\Entity\Character($data);
+    $character = new \Mikron\HubFront\Domain\Entity\Character($data['content']);
 
     return $app['twig']->render(
         'character_print.twig',
@@ -74,7 +114,26 @@ $app->get('/character/{id}/print/', function (Silex\Application $app, $id) {
  * Display history for character with given ID
  */
 $app->get('/character/{id}/history/', function (Silex\Application $app, $id) {
-    $uri = $app['config']['dataSource'] . '?id=' . $id . '&key=' . $app['config']['key'];
+    $authentication = new Authentication(
+        $app['config']['authentication'],
+        'hub',
+        $app['config']['dataSource']['authStrategy']
+    );
+
+    $accessMethod = 'key';
+    $accessId = $id;
+    $authMethod = $authentication->provideAuthenticationMethod();
+    $authKey = $authentication->provideAuthenticationKey();
+
+    if ($app['config']['dataSource']['queryUri']) {
+        $uri = $app['config']['dataSource']['uri']
+            . '?access-method=' . $accessMethod . '&id=' . $accessId
+            . '&auth-method=' . $authMethod . '&key=' . $authKey;
+    } else {
+        $uri = $app['config']['dataSource']['uri']
+            . $accessMethod . '/' . $accessId . '/'
+            . $authMethod . '/' . $authKey . '/';
+    }
 
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 
@@ -84,7 +143,7 @@ $app->get('/character/{id}/history/', function (Silex\Application $app, $id) {
         throw new \Exception("Character not found", 404);
     }
 
-    $character = new \Mikron\HubFront\Domain\Entity\Character($data);
+    $character = new \Mikron\HubFront\Domain\Entity\Character($data['content']);
 
     return $app['twig']->render(
         'character_history.twig',

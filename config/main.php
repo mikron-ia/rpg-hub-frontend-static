@@ -10,6 +10,28 @@ return [
             'end' => date('Y'),
         ],
     ],
+
     'lang' => 'en',
     'availableTranslations' => ['en','pl'],
+
+    'authentication' => [
+        'hub' => [
+            'allowedStrategies' => [],
+            'settingsByStrategy' => []
+        ],
+        /*
+         * This describes list of authentication ways, along with their class suffixes
+         *
+         * THIS PART SHOULD NOT BE CHANGED BY OTHER CONFIG FILES
+         */
+        'authenticationMethodReference' => [
+            'auth-simple' => 'simple',
+            'simple' => 'simple',
+        ],
+    ],
+
+    'dataSource' => [
+        'uri' => '',
+        'authStrategy' => '',
+    ]
 ];
