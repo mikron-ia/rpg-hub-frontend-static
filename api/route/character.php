@@ -33,11 +33,11 @@ $app->get('/character/{id}/', function (Silex\Application $app, $id) {
     $authKey = $authentication->provideAuthenticationKey();
 
     if ($app['config']['dataSource']['queryUri']) {
-        $uri = $app['config']['dataSource']['uri']
-            . '?access-method=' . $accessMethod . '&id=' . $accessId
+        $uri = $app['config']['dataSource']['uri'] . '?object=character'
+            . '&access-method=' . $accessMethod . '&id=' . $accessId
             . '&auth-method=' . $authMethod . '&key=' . $authKey;
     } else {
-        $uri = $app['config']['dataSource']['uri']
+        $uri = $app['config']['dataSource']['uri'] . 'character/'
             . $accessMethod . '/' . $accessId . '/'
             . $authMethod . '/' . $authKey . '/';
     }
@@ -80,11 +80,11 @@ $app->get('/character/{id}/print/', function (Silex\Application $app, $id) {
     $authKey = $authentication->provideAuthenticationKey();
 
     if ($app['config']['dataSource']['queryUri']) {
-        $uri = $app['config']['dataSource']['uri']
-            . '?access-method=' . $accessMethod . '&id=' . $accessId
+        $uri = $app['config']['dataSource']['uri'] . '?object=character'
+            . '&access-method=' . $accessMethod . '&id=' . $accessId
             . '&auth-method=' . $authMethod . '&key=' . $authKey;
     } else {
-        $uri = $app['config']['dataSource']['uri']
+        $uri = $app['config']['dataSource']['uri'] . 'character/'
             . $accessMethod . '/' . $accessId . '/'
             . $authMethod . '/' . $authKey . '/';
     }
@@ -126,11 +126,11 @@ $app->get('/character/{id}/history/', function (Silex\Application $app, $id) {
     $authKey = $authentication->provideAuthenticationKey();
 
     if ($app['config']['dataSource']['queryUri']) {
-        $uri = $app['config']['dataSource']['uri']
-            . '?access-method=' . $accessMethod . '&id=' . $accessId
+        $uri = $app['config']['dataSource']['uri'] . '?object=character'
+            . '&access-method=' . $accessMethod . '&id=' . $accessId
             . '&auth-method=' . $authMethod . '&key=' . $authKey;
     } else {
-        $uri = $app['config']['dataSource']['uri']
+        $uri = $app['config']['dataSource']['uri'] . 'character/'
             . $accessMethod . '/' . $accessId . '/'
             . $authMethod . '/' . $authKey . '/';
     }
