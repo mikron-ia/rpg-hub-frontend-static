@@ -1,11 +1,11 @@
 <?php
 
+use Mikron\HubFront\Infrastructure\Security\Authentication;
+
 /**
  * Directs to character list
  * @todo Redirect to character specific to user logged in
  */
-use Mikron\HubFront\Infrastructure\Security\Authentication;
-
 $app->get('/character/', function (Silex\Application $app) {
     return $app['twig']->render(
         'characters.twig',

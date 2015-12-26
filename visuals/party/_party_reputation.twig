@@ -1,7 +1,7 @@
 <div class="block full-width">
     <h2 class="center">{{ 'PARTY_REPUTATION'|trans }}</h2>
-    {% if partyData.help.reputation %}
-        <p class="help">{{ partyData.help.reputation }}</p>
+    {% if partyData.help.reputations %}
+        <p class="help">{{ partyData.help.reputations }}</p>
     {% endif %}
     <table>
         <thead>
@@ -16,8 +16,8 @@
         </tr>
         </thead>
         <tbody>
-        {% if partyData.reputation %}
-            {% for reputation in partyData.reputation %}
+        {% if partyData.reputations %}
+            {% for reputation in partyData.reputations %}
                 <tr title="{{ reputation.description }}">
                     <td class="left">{{ reputation.name }}</td>
                     <td class="center">
@@ -36,7 +36,7 @@
             {% endfor %}
         {% else %}
             <tr>
-                <td colspan="6" class="center note">{{ 'NO_DATA'|trans }}</td>
+                <td colspan="7" class="center note">{{ 'NO_DATA'|trans }}</td>
             </tr>
         {% endif %}
         </tbody>

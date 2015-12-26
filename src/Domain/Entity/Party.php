@@ -12,7 +12,7 @@ class Party extends BagOfAttributes
     {
         return [
             'members' => [], // list of party members
-            'reputation' => [], // listing of party reputation
+            'reputations' => [], // listing of party reputation
             'reputationEvents' => [], // listing of party reputation history
             'membersReputations' => [], // list of party members' reputation
             'pastMembers' => [], // retired or dead members
