@@ -5,6 +5,9 @@ return [
         'titleSuffix' => '',
         'GMdBy' => '',
     ],
-    'system' => "",
+    'system' => '',
     'lang' => 'en',
+    'party' => [
+        'groupKey' => 'example-key'
+    ]
 ];
