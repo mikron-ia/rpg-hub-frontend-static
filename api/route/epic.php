@@ -46,7 +46,27 @@ $app->get('/epic/', function (Silex\Application $app) {
  * Display specific story data
  */
 $app->get('/epic/story/{storyId}/', function (Silex\Application $app, $storyId) {
-    $uri = $app['config']['dataSource'] . '?id=' . $storyId . '&key=' . $app['config']['key'];
+    $authentication = new Authentication(
+        $app['config']['authentication'],
+        'hub',
+        $app['config']['dataSource']['authStrategy']
+    );
+
+    $accessMethod = 'key';
+    $accessId = $storyId;
+    $authMethod = $authentication->provideAuthenticationMethod();
+    $authKey = $authentication->provideAuthenticationKey();
+
+    if ($app['config']['dataSource']['queryUri']) {
+        $uri = $app['config']['dataSource']['uri'] . '?object=story'
+            . '&access-method=' . $accessMethod . '&id=' . $accessId
+            . '&auth-method=' . $authMethod . '&key=' . $authKey;
+    } else {
+        $uri = $app['config']['dataSource']['uri'] . 'story/'
+            . $accessMethod . '/' . $accessId . '/'
+            . $authMethod . '/' . $authKey . '/';
+    }
+
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 
     $data = $retriever->getDataAsArray();
@@ -54,7 +74,7 @@ $app->get('/epic/story/{storyId}/', function (Silex\Application $app, $storyId) 
         throw new \Exception("Story data not found", 404);
     }
 
-    $story = new \Mikron\HubFront\Domain\Entity\Story($data);
+    $story = new \Mikron\HubFront\Domain\Entity\Story($data['content']);
 
     return $app['twig']->render(
         'story.twig',
