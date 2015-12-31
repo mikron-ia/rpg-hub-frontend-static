@@ -1,10 +1,28 @@
 <?php
 
+use Mikron\HubFront\Infrastructure\Security\Authentication;
+
 /**
  * Display epic data
  */
 $app->get('/epic/', function (Silex\Application $app) {
-    $uri = $app['config']['dataSource'] . '?id=epic&key=' . $app['config']['key'];
+    $authentication = new Authentication(
+        $app['config']['authentication'],
+        'hub',
+        $app['config']['dataSource']['authStrategy']
+    );
+
+    $authMethod = $authentication->provideAuthenticationMethod();
+    $authKey = $authentication->provideAuthenticationKey();
+
+    if ($app['config']['dataSource']['queryUri']) {
+        $uri = $app['config']['dataSource']['uri'] . '?object=epic'
+            . '&auth-method=' . $authMethod . '&key=' . $authKey;
+    } else {
+        $uri = $app['config']['dataSource']['uri'] . 'epic/'
+            . $authMethod . '/' . $authKey . '/';
+    }
+
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 
     $data = $retriever->getDataAsArray();
@@ -12,7 +30,7 @@ $app->get('/epic/', function (Silex\Application $app) {
         throw new \Exception("Epic data not found", 404);
     }
 
-    $epic = new \Mikron\HubFront\Domain\Entity\Epic($data);
+    $epic = new \Mikron\HubFront\Domain\Entity\Epic($data['content']);
 
     return $app['twig']->render(
         'epic.twig',
