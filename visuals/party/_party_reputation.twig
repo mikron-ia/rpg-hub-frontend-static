@@ -21,17 +21,17 @@
                 <tr title="{{ reputation.description }}">
                     <td class="left">{{ reputation.name }}</td>
                     <td class="center">
-                        {% if reputation.positiveMax == reputation.negativeMin %}
-                            {{ reputation.negativeMin }}
+                        {% if reputation.value.positiveMax == reputation.value.negativeMin %}
+                            {{ reputation.value.negativeMin }}
                         {% else %}
-                            {{ reputation.negativeMin }} &ndash; {{ reputation.positiveMax }}
+                            {{ reputation.value.negativeMin }} &ndash; {{ reputation.value.positiveMax }}
                         {% endif %}
                     </td>
-                    <td class="center">{{ reputation.uninfluenced }}</td>
-                    <td class="center">{{ reputation.influence }}</td>
-                    <td class="center">{{ reputation.balance }}</td>
-                    <td class="center">{{ reputation.dice }}</td>
-                    <td class="center">{{ reputation.recognitionDice }}</td>
+                    <td class="center">{{ reputation.value.uninfluenced }}</td>
+                    <td class="center">{{ reputation.value.influence }}</td>
+                    <td class="center">{{ reputation.value.balance }}</td>
+                    <td class="center">{{ reputation.value.dice }}</td>
+                    <td class="center">{{ reputation.value.recognitionDice }}</td>
                 </tr>
             {% endfor %}
         {% else %}
@@ -68,9 +68,9 @@
                         {% for reputation in memberReputation.reputations %}
                             <tr title="{{ reputation.description }}">
                                 <td class="left">{{ reputation.name }}</td>
-                                <td class="center">{{ reputation.balance }}</td>
-                                <td class="center">{{ reputation.dice }}</td>
-                                <td class="center">{{ reputation.influence }}</td>
+                                <td class="center">{{ reputation.value.balance }}</td>
+                                <td class="center">{{ reputation.value.dice }}</td>
+                                <td class="center">{{ reputation.value.influence }}</td>
                             </tr>
                         {% endfor %}
                     {% else %}
