@@ -17,8 +17,8 @@ Due to current need that is driving this development, architecture is heavily bi
 ## Installation guide
 1. Clone the project via `git clone` with correct address to a desired directory of a web server
 2. Run `composer install` in the project directory
-3. Copy or rename the `deployment.php.example` file into `deployment.php`
-4. Copy or rename the `epic.php.example` file into `epic.php`
+3. Copy or rename the `deployment.example.php` file into `deployment.php`
+4. Copy or rename the `epic.example.php` file into `epic.php`
 5. Enter desired configuration, ie.:
     * Data source in `deployment.php`
     * System code and basic interface in `epic.php`
