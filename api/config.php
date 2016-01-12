@@ -20,6 +20,8 @@ if (isset($configEpic['system'])) {
     } else {
         throw new MissingComponentException('Data file for system coded "' . $configEpic['system'] . '" not found"');
     }
+} else {
+    throw new MissingComponentException("System not set. Unable to proceed. Please set system in configuration file.");
 }
 
 /* Level 3: DB connectivity and other per-deployment issues */
