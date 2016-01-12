@@ -1,0 +1,71 @@
+{% if characterData.help.current %}
+    <p class="help">{{ characterData.help.current }}</p>
+{% endif %}
+
+<div class="clear"></div>
+
+<div class="block padded threesplit">
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_BASICS'|trans }}</h2>
+    {% if characterData.basics %}
+        <table>
+            <tbody>
+            {% for basic in characterData.basics %}
+                <tr title="{{ basic.description|nl2br }}">
+                    <td class="left">{{ basic.name }}</td>
+                    <td class="center">{{ basic.value|nl2br }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
+    {% endif %}
+</div>
+
+<div class="block padded threesplit">
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_PUBLIC'|trans }}</h2>
+    <table>
+        <tbody>
+        {% for public in characterData.public %}
+            <tr title="{{ public.description|nl2br }}">
+                <td class="left">{{ public.name }}</td>
+                <td class="center">{{ public.value|nl2br }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="block padded threesplit">
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_VARIABLES'|trans }}</h2>
+    {% if characterData.variables %}
+        <table>
+            <tbody>
+            {% for variable in characterData.variables %}
+                <tr title="{{ variable.description|nl2br }}">
+                    <td class="left">{{ variable.name }}</td>
+                    <td class="center">{{ variable.value|nl2br }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="center note">{{ 'NO_DATA'|trans }}</p>
+    {% endif %}
+</div>
+
+<div class="block padded threesplit">
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_USEFUL_LINKS'|trans }}</h2>
+    <p class="center">
+        <a href="{{ app.request.basepath }}/character/{{ characterKey }}/print/">
+            {{ 'CHARACTER_LINK_PRINTABLE'|trans }}
+        </a>
+    </p>
+    <p class="center">
+        <a href="{{ app.request.basepath }}/character/{{ characterKey }}/history/">
+            {{ 'CHARACTER_LINK_HISTORY'|trans }}
+        </a>
+    </p>
+</div>
+
+<div class="clear"></div>

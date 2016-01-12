@@ -1,0 +1,66 @@
+<div id="reputation">
+    <div class="block full-width">
+        <h2 class="center">{{ 'REPUTATION_EVENTS'|trans }}</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>{{ 'LABEL_EVENT'|trans }}</th>
+                <th>{{ 'LABEL_REPUTATION'|trans }}</th>
+                <th>{{ 'LABEL_CHANGE'|trans }}</th>
+                <th>{{ 'LABEL_WHEN'|trans }}</th>
+                <th>{{ 'LABEL_NOTES'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if partyData.reputationEvents %}
+                {% for reputationEvent in partyData.reputationEvents %}
+                    <tr>
+                        <td class="left">{{ reputationEvent.event.name|default('?')|nl2br }}</td>
+                        <td class="center">{{ reputationEvent.name|nl2br }}</td>
+                        <td class="center">{{ reputationEvent.value }}</td>
+                        <td class="center">{{ reputationEvent.when|default('?')|nl2br }}</td>
+                        <td class="justified">{{ reputationEvent.event.description|nl2br }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="5" class="center note">{{ 'NO_DATA'|trans }}</td>
+                </tr>
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="clear"></div>
+
+{% if partyData.pastMembers %}
+    <div class="block">
+        <h2 class="center">{{ 'PARTY_MEMBERS_PAST'|trans }}</h2>
+        {% if partyData.help.pastMembers %}
+            <p class="help">{{ partyData.help.pastMembers }}</p>
+        {% endif %}
+        <table>
+            <thead>
+            <tr>
+                <th>{{ 'CHARACTER_NAME'|trans }}</th>
+                <th title="{{ 'CHARACTER_WHO_EXPLANATION'|trans }}">{{ 'CHARACTER_WHO'|trans }}</th>
+                <th>{{ 'CHARACTER_TIME_OF_DEPARTURE'|trans }}</th>
+                <th>{{ 'CHARACTER_REASON_OF_DEPARTURE'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for member in partyData.pastMembers %}
+                <tr title="{{ member.comment }}">
+                    <td class="left">{{ member.name }}</td>
+                    <td class="center">{{ member.short }}</td>
+                    <td class="center">{{ member.when|nl2br }}</td>
+                    <td class="justified">{{ member.reason|nl2br }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="clear"></div>
+{% endif %}
