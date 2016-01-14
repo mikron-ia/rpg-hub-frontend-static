@@ -1,0 +1,40 @@
+{% extends "layout/page.twig" %}
+{% block content %}
+
+    <h1>{{ 'PARTY_TITLE'|trans }}</h1>
+
+    <div id="party-display">
+
+        <div class="ui-tabs-container">
+            <ul>
+                <li><a href="{{ app.request.basepath }}/party/#state">{{ 'LABEL_CURRENT_STATE'|trans }}</a></li>
+                <li><a href="{{ app.request.basepath }}/party/#reputation">{{ 'LABEL_REPUTATION'|trans }}</a></li>
+                <li><a href="{{ app.request.basepath }}/party/#history">{{ 'LABEL_HISTORY'|trans }}</a></li>
+            </ul>
+        </div>
+
+        <div class="clear"></div>
+
+        <div id="state">
+            {% include "party/_party_state.twig" %}
+        </div>
+
+        <div id="reputation">
+            {% include "party/_party_reputation.twig" %}
+        </div>
+
+        <div id="history">
+            {% include "party/_party_history.twig" %}
+        </div>
+
+    </div>
+
+    <script>
+        $(function () {
+            $("#party-display").tabs({
+                active: 0
+            });
+        });
+    </script>
+
+{% endblock %}

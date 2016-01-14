@@ -1,0 +1,11 @@
+<p class="footer">
+    Webpage is part of RPG Hub project by Mikron on GNU GPL v2 license, copyleft
+    {% if display.interface.copyright.start == display.interface.copyright.end %}
+        {{ display.interface.copyright.start }}.
+    {% else %}
+        {{ display.interface.copyright.start }} - {{ display.interface.copyright.end }}.
+    {% endif %}
+    {% if display.interface.GMdBy %}
+        Epic by {{ display.interface.GMdBy }}.
+    {% endif %}
+</p>

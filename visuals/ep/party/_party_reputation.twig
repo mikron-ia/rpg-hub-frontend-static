@@ -1,0 +1,93 @@
+<div class="block full-width">
+    <h2 class="center">{{ 'PARTY_REPUTATION'|trans }}</h2>
+    {% if partyData.help.reputations %}
+        <p class="help">{{ partyData.help.reputations }}</p>
+    {% endif %}
+    <table>
+        <thead>
+        <tr>
+            <th title="{{ 'REPUTATION_NAME'|trans }}">{{ 'LABEL_REPUTATION'|trans }}</th>
+            <th>{{ 'REPUTATION_BALANCE_RANGE'|trans|raw }}</th>
+            <th>{{ 'REPUTATION_BALANCE_UNINFLUENCED'|trans|raw }}</th>
+            <th title="{{ 'REPUTATION_PARTY_INFLUENCE_EXPLANATION'|trans }}">{{ 'REPUTATION_INFLUENCE'|trans }}</th>
+            <th>{{ 'REPUTATION_BALANCE'|trans|raw }}</th>
+            <th title="{{ 'REPUTATION_REPUTATION_DICE_TITLE'|trans|raw }}">{{ 'REPUTATION_DICE'|trans }}</th>
+            <th title="{{ 'REPUTATION_RECOGNITION_DICE_TITLE'|trans|raw }}">{{ 'REPUTATION_RECOGNITION_DICE'|trans|raw }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if partyData.reputations %}
+            {% for reputation in partyData.reputations %}
+                <tr title="{{ reputation.description }}">
+                    <td class="left">{{ reputation.name }}</td>
+                    <td class="center">
+                        {% if reputation.value.positiveMax == reputation.value.negativeMin %}
+                            {{ reputation.value.negativeMin }}
+                        {% else %}
+                            {{ reputation.value.negativeMin }} &ndash; {{ reputation.value.positiveMax }}
+                        {% endif %}
+                    </td>
+                    <td class="center">{{ reputation.value.uninfluenced }}</td>
+                    <td class="center">{{ reputation.value.influence }}</td>
+                    <td class="center">{{ reputation.value.balance }}</td>
+                    <td class="center">{{ reputation.value.dice }}</td>
+                    <td class="center">{{ reputation.value.recognitionDice }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="7" class="center note">{{ 'NO_DATA'|trans }}</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="clear"></div>
+
+<div class="block full-width">
+    <h2 class="center">{{ 'REPUTATION_PARTY_MEMBERS'|trans }}</h2>
+    {% if partyData.help.membersReputations %}
+        <p class="help">{{ partyData.help.membersReputations }}</p>
+    {% endif %}
+    {% if partyData.membersReputations %}
+        {% for memberReputation in partyData.membersReputations %}
+            <div class="block padded threesplit">
+                <table>
+                    <caption>{{ memberReputation.name }}</caption>
+                    <thead>
+                    <tr>
+                        <th title="{{ 'REPUTATION_NAME'|trans }}">{{ 'LABEL_REPUTATION'|trans }}</th>
+                        <th>{{ 'LABEL_BALANCE'|trans }}</th>
+                        <th>{{ 'LABEL_DICE'|trans }}</th>
+                        <th>{{ 'LABEL_INFLUENCE'|trans }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if memberReputation.reputations %}
+                        {% for reputation in memberReputation.reputations %}
+                            <tr title="{{ reputation.description }}">
+                                <td class="left">{{ reputation.name }}</td>
+                                <td class="center">{{ reputation.value.balance }}</td>
+                                <td class="center">{{ reputation.value.dice }}</td>
+                                <td class="center">{{ reputation.value.influence }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="5" class="center note">{{ "NO_DATA_FOR_PERSON"|trans }}</td>
+                        </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
+        <div class="clear"></div>
+    {% else %}
+        <p class="note">
+            {{ 'NO_DATA_LIST_FULL'|trans }}
+        </p>
+    {% endif %}
+</div>
+
+<div class="clear"></div>

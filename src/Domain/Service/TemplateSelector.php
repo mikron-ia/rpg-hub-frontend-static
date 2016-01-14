@@ -11,26 +11,18 @@ use Mikron\HubFront\Domain\Exception\MissingComponentException;
 class TemplateSelector
 {
     /**
-     * @var
+     * @param string $system System code
+     * @param string $filename Name of the file to be located
+     * @return string
+     * @throws MissingComponentException
      */
-    private $system;
-
-    /**
-     * TemplateSelector constructor
-     * @param $system
-     */
-    public function __construct($system)
+    public static function getPathForTwigFile($system, $filename)
     {
-        $this->system = $system;
-    }
+        $primaryChoiceFilename = $system . '/';
+        $secondaryChoiceFilename = 'generic/';
 
-    public function getPathForTwigFile($filename)
-    {
-        $primaryChoiceFilename = $this->system . '/' . $filename;
-        $secondaryChoiceFilename = 'general/' . $filename;
-
-        $primaryChoiceExists = file_exists($primaryChoiceFilename);
-        $secondaryChoiceExists = file_exists($secondaryChoiceFilename);
+        $primaryChoiceExists = file_exists('../visuals/' . $primaryChoiceFilename . $filename);
+        $secondaryChoiceExists = file_exists('../visuals/' . $secondaryChoiceFilename . $filename);
 
         if ($primaryChoiceExists) {
             return $primaryChoiceFilename;
@@ -42,7 +34,7 @@ class TemplateSelector
 
         throw new MissingComponentException(
             'Missing template. Please excuse the inconvenience',
-            'Missing template ' . $filename . ' for system ' . $this->system . '. Unable to use generic.'
+            'Missing template ' . $filename . ' for system ' . $system . '. Unable to use generic.'
         );
     }
 }

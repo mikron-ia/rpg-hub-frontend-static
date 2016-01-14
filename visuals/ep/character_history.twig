@@ -1,0 +1,144 @@
+{% extends "layout/page.twig" %}
+{% block content %}
+    <h1 class="center">{{ 'CHARACTER_CHART_TITLE_HISTORY'|trans }} - {{ characterData.name }}</h1>
+
+    {% if characterData.help.top %}
+        <p class="help">{{ characterData.help.history }}</p>
+    {% endif %}
+
+    <div id="character-display">
+
+        <div class="ui-tabs-container">
+            <ul>
+                <li>
+                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/history/#experience">
+                        {{ 'LABEL_EXPERIENCE'|trans }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/history/#reputation">
+                        {{ 'LABEL_REPUTATION'|trans }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/history/#developments">
+                        {{ 'LABEL_DEVELOPMENTS'|trans }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="clear"></div>
+
+        <div id="experience">
+            <div class="block padded full-width">
+                <h2 class="center">{{ 'CHARACTER_CHART_HEADER_EXPERIENCE_HISTORY'|trans }}</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>{{ 'LABEL_STORY'|trans }}</th>
+                        <th>{{ 'LABEL_TYPE'|trans }}</th>
+                        <th>{{ 'LABEL_XP'|trans }}</th>
+                        <th>{{ 'LABEL_NOTES'|trans }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if characterData.xp %}
+                        {% for xpItem in characterData.xp %}
+                            <tr>
+                                <td class="left">{{ xpItem.story }}</td>
+                                <td class="center">{{ xpItem.type }}</td>
+                                <td class="center">{{ xpItem.value }}</td>
+                                <td class="justified">{{ xpItem.notes|nl2br }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="4" class="center note">{{ 'NO_DATA'|trans }}</td>
+                        </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="reputation">
+            <div class="block padded full-width">
+                <h2 class="center">{{ 'CHARACTER_CHART_HEADER_REPUTATION_EVENTS'|trans }}</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>{{ 'LABEL_EVENT'|trans }}</th>
+                        <th title="{{ 'REPUTATION_NAME'|trans }}">{{ 'LABEL_REPUTATION'|trans }}</th>
+                        <th>{{ 'LABEL_CHANGE'|trans }}</th>
+                        <th>{{ 'LABEL_WHEN'|trans }}</th>
+                        <th>{{ 'LABEL_NOTES'|trans }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if characterData.person.reputationEvents %}
+                        {% for reputationEvent in characterData.person.reputationEvents %}
+                            <tr>
+                                <td class="left">{{ reputationEvent.event.name|default('?')|nl2br }}</td>
+                                <td class="center">{{ reputationEvent.name|nl2br }}</td>
+                                <td class="center">{{ reputationEvent.value }}</td>
+                                <td class="center">{{ reputationEvent.event.time|default('?')|nl2br }}</td>
+                                <td class="justified">{{ reputationEvent.event.description|nl2br }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="5" class="center note">{{ 'NO_DATA'|trans }}</td>
+                        </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="developments">
+            <div class="block padded full-width">
+                <h2 class="center">{{ 'CHARACTER_CHART_HEADER_DEVELOPMENTS'|trans }}</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>{{ 'LABEL_SUBJECT'|trans }}</th>
+                        <th>{{ 'LABEL_CHANGE'|trans }}</th>
+                        <th>{{ 'LABEL_NEW_VALUE'|trans }}</th>
+                        <th>{{ 'LABEL_COST'|trans }}<br>[{{ 'LABEL_XP'|trans }}]</th>
+                        <th>{{ 'LABEL_WHEN'|trans }}</th>
+                        <th>{{ 'LABEL_NOTES'|trans }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if characterData.development %}
+                        {% for developmentItem in characterData.development %}
+                            <tr>
+                                <td class="left">{{ developmentItem.subject }}</td>
+                                <td class="center">{{ developmentItem.change }}</td>
+                                <td class="center">{{ developmentItem.newValue }}</td>
+                                <td class="center">{{ developmentItem.cost }}</td>
+                                <td class="center">{{ developmentItem.when|nl2br }}</td>
+                                <td class="justified">{{ developmentItem.notes|nl2br }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="6" class="center note">{{ 'NO_DATA'|trans }}</td>
+                        </tr>
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $("#character-display").tabs({
+                active: 0
+            });
+        });
+    </script>
+
+{% endblock %}

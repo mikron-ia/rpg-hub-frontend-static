@@ -1,0 +1,18 @@
+<h2 class="center">{{ 'LABEL_DESCRIPTIONS'|trans }}</h2>
+
+{% if characterData.help.descriptions %}
+    <p class="help">{{ characterData.help.descriptions }}</p>
+{% endif %}
+
+<div class="clear"></div>
+
+{% if characterData.descriptions %}
+    {% for description in characterData.descriptions %}
+        <div class="block padded twosplit">
+            <h3 class="center">{{ description.title }}</h3>
+            <div class="justified">
+                {{ description.text|raw }}
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}

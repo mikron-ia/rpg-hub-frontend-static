@@ -1,0 +1,181 @@
+{% if characterData.help.equipment %}
+    <p class="help">{{ characterData.help.equipment }}</p>
+{% endif %}
+
+<div class="clear"></div>
+
+<div class="block padded full-width">
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_EQUIPMENT'|trans }}</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>{{ 'LABEL_TYPE'|trans }}</th>
+            <th>{{ 'LABEL_COUNT'|trans }}</th>
+            <th>{{ 'LABEL_DETAILS'|trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.equipment %}
+            {% for equipmentItem in characterData.equipment %}
+                <tr>
+                    <td class="left">{{ equipmentItem.name }}</td>
+                    <td class="center">{{ equipmentItem.count }}</td>
+                    <td class="justified">
+                        {{ equipmentItem.details }}{% if equipmentItem.value %}
+                            <br><span class="note">{{ 'CHARACTER_APPROXIMATE_VALUE'|trans }}
+                            : {{ equipmentItem.value }}</span>{% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3" class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR_LIKELY'|trans }}.</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="clear"></div>
+
+<div class="block padded full-width">
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_WEAPONS'|trans }}</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>{{ 'LABEL_WEAPON'|trans }}</th>
+            <th>{{ 'LABEL_COUNT'|trans }}</th>
+            <th>{{ 'LABEL_KNACK'|trans }}</th>
+            <th title="{{ 'LABEL_ROLL_ATTACK'|trans }}">{{ 'LABEL_ROLL'|trans }}</th>
+            <th title="{{ 'CHARACTER_WEAPONS_BRAWN_INCLUDED'|trans }}">{{ 'LABEL_DAMAGE'|trans }}</th>
+            <th>
+                {{ 'LABEL_RANGE'|trans }}<br>
+                [m]
+            </th>
+            <th title="{{ 'CHARACTER_WEAPONS_KNACK_INCLUDED'|trans }}">
+                {{ 'CHARACTER_SPEC_RELOAD'|trans }}<br>
+                [{{ 'LABEL_ACTIONS'|trans|lower }}]
+            </th>
+            <th>{{ 'LABEL_DETAILS'|trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.weapons %}
+            {% for weapon in characterData.weapons %}
+                <tr>
+                    <td class="left">{{ weapon.name }}</td>
+                    <td class="center">{{ weapon.count }}</td>
+                    <td class="center">{{ weapon.knack|nl2br }}</td>
+                    <td class="center">{{ weapon.roll|nl2br }}</td>
+                    <td class="center">{{ weapon.damage|nl2br }}</td>
+                    <td class="center">{{ weapon.range|nl2br }}</td>
+                    <td class="center">{{ weapon.reload|nl2br }}</td>
+                    <td class="justified">{{ weapon.details|nl2br }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="8" class="center note">{{ 'NO_DATA'|trans }}</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="clear"></div>
+
+<div class="block padded">
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_INCOME'|trans }}</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>{{ 'LABEL_SOURCE'|trans }}</th>
+            <th>{{ 'LABEL_FREQUENCY'|trans }}</th>
+            <th>{{ 'LABEL_VALUE'|trans }}</th>
+            <th>{{ 'LABEL_CURRENCY'|trans }}</th>
+            <th>{{ 'LABEL_DETAILS'|trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.income %}
+            {% for incomeSource in characterData.income %}
+                <tr>
+                    <td class="left">{{ incomeSource.name }}</td>
+                    <td class="center">{{ incomeSource.frequency|nl2br }}</td>
+                    <td class="center">{{ incomeSource.value|nl2br }}</td>
+                    <td class="center">{{ incomeSource.currency|nl2br }}</td>
+                    <td class="justified">{{ incomeSource.details|nl2br }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="5" class="center note">{{ 'NO_DATA'|trans }}</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="block padded">
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_EXPENSES'|trans }}</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>{{ 'LABEL_SOURCE'|trans }}</th>
+            <th>{{ 'LABEL_FREQUENCY'|trans }}</th>
+            <th>{{ 'LABEL_VALUE'|trans }}</th>
+            <th>{{ 'LABEL_CURRENCY'|trans }}</th>
+            <th>{{ 'LABEL_DETAILS'|trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.expenses %}
+            {% for expenseGoal in characterData.expenses %}
+                <tr>
+                    <td class="left">{{ expenseGoal.name }}</td>
+                    <td class="center">{{ expenseGoal.frequency }}</td>
+                    <td class="center">{{ expenseGoal.value }}</td>
+                    <td class="center">{{ expenseGoal.currency }}</td>
+                    <td class="justified">{{ expenseGoal.details|nl2br }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="5" class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR_LIKELY'|trans }}.</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="block threesplit">
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_MONEY'|trans }}</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>{{ 'LABEL_CURRENCY'|trans }}</th>
+            <th>{{ 'LABEL_COUNT'|trans }}</th>
+            <th>{{ 'LABEL_DETAILS'|trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.money %}
+            {% for moneyItem in characterData.money %}
+                <tr>
+                    <td class="left">{{ moneyItem.currency }}</td>
+                    <td class="center">{{ moneyItem.count }}</td>
+                    <td class="justified">{{ moneyItem.location|nl2br }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3" class="center note">
+                    {{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR_LIKELY_PROBLEM'|trans }}.
+                </td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="clear"></div>

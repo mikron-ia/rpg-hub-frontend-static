@@ -1,0 +1,156 @@
+{% if characterData.help.numbers %}
+    <p class="help">{{ characterData.help.numbers }}</p>
+{% endif %}
+
+<div class="clear"></div>
+
+<div class="block padded threesplit">
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_ATTRIBUTES'|trans }}</h2>
+    {% if characterData.attributes %}
+        <table>
+            <thead>
+            <tr>
+                <th>{{ 'LABEL_ATTRIBUTE'|trans }}</th>
+                <th>{{ 'LABEL_LEVEL'|trans }}</th>
+                <th>{{ 'LABEL_BONUS'|trans }}</th>
+                <th>{{ 'LABEL_TOTAL'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for attribute in characterData.attributes %}
+                <tr>
+                    <td class="left">{{ attribute.name }}</td>
+                    <td class="center">
+                        {% if attribute.rank %}{{ attribute.rank }}{% else %}{{ attribute.value }}{% endif %}
+                    </td>
+                    <td class="center">
+                        {% if attribute.bonus %}{{ attribute.bonus }}{% else %}0{% endif %}
+                    </td>
+                    <td class="center total">{{ attribute.value }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
+    {% endif %}
+</div>
+
+<div class="block padded threesplit">
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_AUXILIARY'|trans }}</h2>
+    {% if characterData.rolls %}
+        <table>
+            <tbody>
+            {% for roll in characterData.rolls %}
+                <tr>
+                    <td class="left">{{ roll.label }}</td>
+                    <td class="center">{{ roll.value }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="center note">{{ 'NO_DATA'|trans }}.</p>
+    {% endif %}
+</div>
+
+<div class="clear"></div>
+
+<div class="block padded">
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_ADVANTAGES_AND_DISADVANTAGES'|trans }}</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>{{ 'LABEL_ADVANTAGE'|trans }} / {{ 'LABEL_DISADVANTAGE'|trans|lower }}</th>
+            <th>{{ 'LABEL_LEVEL'|trans }}</th>
+            <th>{{ 'LABEL_DESCRIPTION'|trans }} / <span class="note">{{ 'LABEL_DETAILS'|trans|lower }}</span></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.advantages %}
+            {% for advantage in characterData.advantages %}
+                <tr title="{{ advantage.description }}">
+                    <td class="left">{{ advantage.name }}</td>
+                    <td class="center">{{ advantage.level }}</td>
+                    <td class="justified">
+                        {{ advantage.description|nl2br }}<br>
+                        {% if advantage.details %} <span class="note">{{ advantage.details|nl2br }}</span>{% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3" class="center note">{{ 'NO_DATA'|trans }}</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="clear"></div>
+
+{% if characterData.stunts %}
+    <div class="block padded">
+        <h2 class="center">{{ 'CHARACTER_CHART_HEADER_TECHNIQUES'|trans }}</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>{{ 'LABEL_TECHNIQUE'|trans }}</th>
+                <th>{{ 'LABEL_DESCRIPTION'|trans }} / <span class="note">{{ 'LABEL_DETAILS'|trans }}</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for stunt in characterData.stunts %}
+                <tr title="{{ stunt.description|nl2br }}">
+                    <td class="left">{{ stunt.name }}</td>
+                    <td class="justified">
+                        {{ stunt.description|nl2br }}<br>
+                        {% if stunt.details %} <span class="note">{{ stunt.details|nl2br }}</span>{% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="clear"></div>
+
+{% endif %}
+
+<div>
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_SKILLS'|trans }}</h2>
+    {% if characterData.skills %}
+        <table>
+            <thead>
+            <tr>
+                <th>{{ 'LABEL_SKILL'|trans }}</th>
+                <th>Total</th>
+                <th title="Total without<br>morph &amp; gear bonus">Base total</th>
+                <th>{{ 'LABEL_ATTRIBUTE'|trans }}</th>
+                <th>Attribute<br>value</th>
+                <th>Developed<br>value</th>
+                <th>Gear<br>added<br>value</th>
+                <th>Skill-soft<br>added<br>value</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for skill in characterData.skills %}
+                <tr class="{{ skill.class }}">
+                    <td class="left">{{ skill.name }}</td>
+                    <td class="center total">{{ skill.value }}</td>
+                    <td class="center">{{ skill.valueBase }}</td>
+                    <td class="center">{{ skill.attribute }}</td>
+                    <td class="center">{{ skill.valueFromAttribute }}</td>
+                    <td class="center">{{ skill.valueFromDevelopment }}</td>
+                    <td class="center">{{ skill.valueFromGear }}</td>
+                    <td class="center">{{ skill.valueFromSoftware }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
+    {% endif %}
+</div>
+
+<div class="clear"></div>

@@ -14,7 +14,7 @@ $app['display'] = [
  * Registration of external tools
  */
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__ . '/../visuals'
+    'twig.path' => __DIR__ . '/../visuals/'.(empty($app['config']['system'])?'generic':$app['config']['system'])
 ));
 
 /* URL management system */

@@ -1,0 +1,114 @@
+{% if characterData.help.interactions %}
+    <p class="help">{{ characterData.help.interactions }}</p>
+{% endif %}
+
+<div class="clear"></div>
+
+<div class="block padded full-width">
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_REPUTATION_TABLE'|trans }}</h2>
+    <table>
+        <thead>
+        <tr>
+            <th title="{{ 'REPUTATION_NAME'|trans }}">{{ 'LABEL_REPUTATION'|trans }}</th>
+            <th>{{ 'REPUTATION_BALANCE_RANGE'|trans|raw }}</th>
+            <th>{{ 'REPUTATION_BALANCE'|trans|raw }}</th>
+            <th title="{{ 'REPUTATION_REPUTATION_DICE_TITLE'|trans|raw }}">{{ 'REPUTATION_DICE'|trans }}</th>
+            <th title="{{ 'REPUTATION_RECOGNITION_DICE_TITLE'|trans|raw }}">{{ 'REPUTATION_RECOGNITION_DICE'|trans|raw }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.person.reputations %}
+            {% for reputation in characterData.person.reputations %}
+                <tr title="{{ reputation.description }}">
+                    <td class="left">{{ reputation.name }}</td>
+                    <td class="center">
+                        {% if reputation.value.positiveMax == reputation.value.negativeMin %}
+                            {{ reputation.value.negativeMin }}
+                        {% else %}
+                            {{ reputation.value.negativeMin }} &ndash; {{ reputation.value.positiveMax }}
+                        {% endif %}
+                    </td>
+                    <td class="center">{{ reputation.value.balance }}</td>
+                    <td class="center">{{ reputation.value.dice }}</td>
+                    <td class="center">{{ reputation.value.recognitionDice }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="5" class="center note">{{ 'NO_DATA'|trans }}</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="clear"></div>
+
+<div class="block padded full-width">
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_CONTACTS'|trans }}</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>{{ 'CHARACTER_NAME'|trans }}</th>
+            <th>{{ 'CHARACTER_WHO'|trans }}</th>
+            <th>{{ 'CHARACTER_WHO_TO_YOU'|trans }}</th>
+            <th>{{ 'CHARACTER_ATTITUDE_TO_YOU'|trans }}</th>
+            <th>{{ 'LABEL_USEFULNESS'|trans }}</th>
+            <th>{{ 'CHARACTER_KNOWLEDGE'|trans }}</th>
+            <th>{{ 'LABEL_DETAILS'|trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.contacts %}
+            {% for contact in characterData.contacts %}
+                <tr>
+                    <td class="left">{{ contact.name }}</td>
+                    <td class="left">{{ contact.whoGenerally|nl2br }}</td>
+                    <td class="left">{{ contact.whoToPerson|nl2br }}</td>
+                    <td class="center">{{ contact.like|nl2br }}</td>
+                    <td class="center">{{ contact.usefulness|nl2br }}</td>
+                    <td class="center">{{ contact.knowledge|nl2br }}</td>
+                    <td class="justified">{{ contact.details|nl2br }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="7" class="center note">{{ 'NO_DATA'|trans }}</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="clear"></div>
+
+<div class="block padded">
+    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_MOTIVATIONS'|trans }}</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>{{ 'LABEL_MOTIVATION'|trans }}</th>
+            <th>{{ 'LABEL_DETAILS'|trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if characterData.motivations %}
+            {% for motivation in characterData.motivations %}
+                <tr>
+                    <td class="left">{{ motivation.direction }} {{ motivation.name }}</td>
+                    <td class="justified">
+                        {{ motivation.description|nl2br }}<br>
+                        {% if motivation.details %} <span class="note">{{ motivation.details|nl2br }}</span>{% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="2" class="center note">{{ 'NO_DATA'|trans }}</td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<div class="clear"></div>
