@@ -40,7 +40,12 @@ return [
             'variables' => [], // often changing values, like counters
             'xp' => [], // experience
         ],
-        'person' => [],
+        'person' => [
+            "name" => "", // epic name
+            'reputations' => [], // listing of party reputation
+            'reputationEvents' => [], // listing of party reputation history
+            'help' => [], // helpful information to display on page
+        ],
         'group' => [
             'members' => [], // list of party members
             'reputations' => [], // listing of party reputation
@@ -63,6 +68,7 @@ return [
             "parameters" => [], // details
             "short" => "", // recap
             "long" => "", // full
+            "help" => [], // help boxes
         ]
     ],
 ];

@@ -4,7 +4,7 @@ namespace Mikron\HubFront\Domain\Entity;
 
 /**
  * Class BagOfAttributes - base class for all bag-like resources that are extras for model
- * This should not be used for things that have their own entity models
+ * 
  * @package Mikron\HubFront\Domain\Entity
  */
 abstract class BagOfAttributes
@@ -64,7 +64,7 @@ abstract class BagOfAttributes
     }
 
     /**
-     * @return array Attribute labels with their default values
+     * @return string Pattern key
      */
     abstract function choosePattern();
 }
