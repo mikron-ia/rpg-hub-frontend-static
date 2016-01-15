@@ -3,21 +3,13 @@
 namespace Mikron\HubFront\Domain\Entity;
 
 /**
- * Class Party
+ * Party is the group of adventurers. It follows group pattern.
  * @package Mikron\HubFront\Domain\Entity
  */
 class Party extends BagOfAttributes
 {
-    function createData()
+    function choosePattern()
     {
-        return [
-            'members' => [], // list of party members
-            'reputations' => [], // listing of party reputation
-            'reputationEvents' => [], // listing of party reputation history
-            'membersReputations' => [], // list of party members' reputation
-            'pastMembers' => [], // retired or dead members
-            'absentMembers' => [], // suspended or currently absent members
-            'help' => [], // helpful information to display on page
-        ];
+        return 'group';
     }
 }

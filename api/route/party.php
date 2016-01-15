@@ -35,7 +35,7 @@ $app->get('/party/', function (Silex\Application $app) {
         throw new \Exception("Party data not found", 404);
     }
 
-    $party = new \Mikron\HubFront\Domain\Entity\Party($data['content']);
+    $party = new \Mikron\HubFront\Domain\Entity\Party($app['config']['dataPatterns'], $data['content']);
 
     return $app['twig']->render(
         'party.twig',

@@ -9,15 +9,26 @@ namespace Mikron\HubFront\Domain\Entity;
  */
 abstract class BagOfAttributes
 {
+    /**
+     * @var array Data for the object
+     */
     protected $data;
 
     /**
-     * Character constructor.
-     * @param $inputData
+     * @var array Pattern to be used
      */
-    public function __construct($inputData)
+    private $dataPattern;
+
+    /**
+     * Character constructor.
+     * @param array $dataPattern
+     * @param array $inputData
+     */
+    public function __construct($dataPattern, $inputData)
     {
-        $this->data = $this->createData();
+        $this->dataPattern = $dataPattern[$this->choosePattern()];
+
+        $this->data = $this->dataPattern;
 
         $attributeNamesList = $this->getProperties();
 
@@ -55,5 +66,5 @@ abstract class BagOfAttributes
     /**
      * @return array Attribute labels with their default values
      */
-    abstract function createData();
+    abstract function choosePattern();
 }

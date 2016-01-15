@@ -50,7 +50,7 @@ $app->get('/character/{id}/', function (Silex\Application $app, $id) {
         throw new \Exception("Character not found", 404);
     }
 
-    $character = new \Mikron\HubFront\Domain\Entity\Character($data['content']);
+    $character = new \Mikron\HubFront\Domain\Entity\Character($app['config']['dataPatterns'], $data['content']);
 
     return $app['twig']->render(
         'character.twig',
@@ -97,7 +97,7 @@ $app->get('/character/{id}/print/', function (Silex\Application $app, $id) {
         throw new \Exception("Character not found", 404);
     }
 
-    $character = new \Mikron\HubFront\Domain\Entity\Character($data['content']);
+    $character = new \Mikron\HubFront\Domain\Entity\Character($app['config']['dataPatterns'], $data['content']);
 
     return $app['twig']->render(
         'character_print.twig',
@@ -143,7 +143,7 @@ $app->get('/character/{id}/history/', function (Silex\Application $app, $id) {
         throw new \Exception("Character not found", 404);
     }
 
-    $character = new \Mikron\HubFront\Domain\Entity\Character($data['content']);
+    $character = new \Mikron\HubFront\Domain\Entity\Character($app['config']['dataPatterns'], $data['content']);
 
     return $app['twig']->render(
         'character_history.twig',

@@ -30,7 +30,7 @@ $app->get('/epic/', function (Silex\Application $app) {
         throw new \Exception("Epic data not found", 404);
     }
 
-    $epic = new \Mikron\HubFront\Domain\Entity\Epic($data['content']);
+    $epic = new \Mikron\HubFront\Domain\Entity\Epic($app['config']['dataPatterns'], $data['content']);
 
     return $app['twig']->render(
         'epic.twig',
@@ -74,7 +74,7 @@ $app->get('/epic/story/{storyId}/', function (Silex\Application $app, $storyId) 
         throw new \Exception("Story data not found", 404);
     }
 
-    $story = new \Mikron\HubFront\Domain\Entity\Story($data['content']);
+    $story = new \Mikron\HubFront\Domain\Entity\Story($app['config']['dataPatterns'], $data['content']);
 
     return $app['twig']->render(
         'story.twig',
