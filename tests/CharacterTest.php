@@ -12,7 +12,38 @@ class CharacterTest extends PHPUnit_Framework_TestCase
         $json = '{"name":"Tress","attributes":[],"advantages":[],"skillGroups":[]}';
         $data = json_decode($json, true);
 
-        $character = new Character($data);
+        $pattern = [
+            'character' => [
+                'advantages' => [],
+                'attributes' => [],
+                'basics' => [],
+                'catches' => [],
+                'contacts' => [],
+                'damage' => [],
+                'defences' => [],
+                'descriptions' => [],
+                'development' => [],
+                'equipment' => [],
+                'expenses' => [],
+                'help' => [],
+                'income' => [],
+                'languages' => [],
+                'money' => [],
+                'person' => [],
+                'public' => [],
+                'name' => "Tress",
+                'professions' => [],
+                'rolls' => [],
+                'skillGroups' => [],
+                'skills' => [],
+                'stunts' => [],
+                'weapons' => [],
+                'variables' => [],
+                'xp' => [],
+            ]
+        ];
+
+        $character = new Character($pattern, $data);
         $result = $character->getData();
 
         $expectation = [

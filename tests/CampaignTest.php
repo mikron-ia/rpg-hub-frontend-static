@@ -11,8 +11,16 @@ class EpicTest extends PHPUnit_Framework_TestCase
     {
         $json = '{"name":"Test Epic"}';
         $data = json_decode($json, true);
+        $pattern = [
+            'epic' => [
+                'name' => "",
+                'current' => [],
+                'stories' => [],
+                'help' => [],
+            ]
+        ];
 
-        $party = new Epic($data);
+        $party = new Epic($pattern, $data);
         $result = $party->getData();
 
         $expectation = [

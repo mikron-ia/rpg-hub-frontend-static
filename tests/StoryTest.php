@@ -12,7 +12,17 @@ class StoryTest extends PHPUnit_Framework_TestCase
         $json = '{"name":"Test Story"}';
         $data = json_decode($json, true);
 
-        $party = new Story($data);
+        $pattern = [
+            'story' => [
+                'name' => "",
+                "key" => "",
+                "parameters" => [],
+                "short" => "",
+                "long" => "",
+            ]
+        ];
+
+        $party = new Story($pattern, $data);
         $result = $party->getData();
 
         $expectation = [
