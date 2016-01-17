@@ -217,6 +217,10 @@ FRONT_WELCOME: Welcome to our tavern! Main hall is mostly empty for now, please 
 FRONT_EXPLANATION: >
   Due character sheets being handed out as individual links, they cannot be linked on the website.
   Please use your access link to view your character. For all other purposes, please use the top menu.
+FRONT_OPTIONS: Available options
+FRONT_OPTION_EPIC: Details on the epic
+FRONT_OPTION_PARTY: Party details
+FRONT_OPTION_PEOPLE: List of encountered people
 
 # Menu labels
 MENU_MAIN: Main

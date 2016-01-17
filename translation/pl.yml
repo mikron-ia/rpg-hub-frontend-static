@@ -218,6 +218,10 @@ FRONT_WELCOME: Witamy w naszej tawernie! Sala główna wymaga jeszcze dekoracji,
 FRONT_EXPLANATION: >
   Ze względu na fakt iż karty postaci są obecnie wystawiane jako indywidualne linki, nie mogą one być linkowane
   na stronie. Karta postaci jest dostępna jedynie przez link. Do wszelkich innych stron można wejść przez menu.
+FRONT_OPTIONS: Dostępne zasoby
+FRONT_OPTION_EPIC: Opis historii
+FRONT_OPTION_PARTY: Opis drużyny
+FRONT_OPTION_PEOPLE: Osoby z którymi drużyna miała do czynienia
 
 # Menu labels
 MENU_MAIN: Główna
