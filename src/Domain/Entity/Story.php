@@ -8,7 +8,7 @@ namespace Mikron\HubFront\Domain\Entity;
  */
 class Story extends BagOfAttributes
 {
-    function choosePattern()
+    protected function choosePattern()
     {
         return 'story';
     }

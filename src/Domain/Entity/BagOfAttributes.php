@@ -66,5 +66,5 @@ abstract class BagOfAttributes
     /**
      * @return string Pattern key
      */
-    abstract function choosePattern();
+    abstract protected function choosePattern();
 }

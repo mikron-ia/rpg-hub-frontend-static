@@ -44,7 +44,7 @@ final class AuthenticationTokenSimple implements AuthenticationToken
      * @return bool
      * @throws AuthenticationException
      */
-    static public function isValid($key, $identificationForErrors)
+    public static function isValid($key, $identificationForErrors)
     {
         if (empty($key)) {
             throw new AuthenticationException(
