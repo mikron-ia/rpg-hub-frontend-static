@@ -240,5 +240,11 @@ NO_DATA_ERROR: Jest to błąd systemu
 NO_DATA_ERROR_LIKELY: Jest to prawdopodobnie błąd systemu
 NO_DATA_ERROR_LIKELY_PROBLEM: Jest to prawdopodobnie błąd systemu, lub postać ma problem
 
+# Person chart
+PERSON_CHART_TITLE: Postać
+PERSON_CHART_NOTE: Karta postaci zawiera głównie opisy i reputacje
+PEOPLE_CHART_TITLE: Znane postacie
+PEOPLE_CHART_NOTE: Lista postaci z którymi drużyna się zetknęła
+
 # Printable
 PRINT_PRINTED_FROM: Wydrukowano z
