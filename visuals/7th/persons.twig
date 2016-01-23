@@ -2,4 +2,15 @@
 {% block content %}
     <h1 class="center">{{ 'PEOPLE_CHART_TITLE'|trans }}</h1>
     <p class="note">{{ 'PEOPLE_CHART_NOTE'|trans }}</p>
+
+    {% if peopleData %}
+        {% for personData in peopleData %}
+            <div class="index-box">
+                <h4>{{ personData.name }}</h4>
+                <p>[short description placeholder]</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR_LIKELY'|trans }}.</p>
+    {% endif %}
 {% endblock %}

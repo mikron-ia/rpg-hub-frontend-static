@@ -76,3 +76,32 @@ th, td {
     font-size: 0.8em;
     font-style: italic;
 }
+
+div.index-box {
+    padding: 0.5%;
+    margin: 0.5%;
+    border: 2px solid saddlebrown;
+    float: left;
+    min-height: 200px;
+    width: 22.5%;
+    cursor: pointer;
+}
+
+div.index-box-wide {
+    width: 550px;
+}
+
+div.index-box-narrow {
+    width: 250px;
+}
+
+div.index-box-low {
+    min-height: 100px;
+}
+
+div.index-box > noscript > p {
+    float: right;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0;
+}
