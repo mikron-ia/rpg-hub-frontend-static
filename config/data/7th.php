@@ -41,10 +41,12 @@ return [
             'xp' => [], // experience
         ],
         'person' => [
-            "name" => "", // epic name
-            'reputations' => [], // listing of party reputation
-            'reputationEvents' => [], // listing of party reputation history
+            "name" => "", // person's name
+            'reputations' => [], // listing of reputation
+            'reputationEvents' => [], // listing of reputation history
+            'indexText' => "", // helpful information to display on page
             'help' => [], // helpful information to display on page
+            'tags' => [], // tags for grouping
         ],
         'group' => [
             'members' => [], // list of party members

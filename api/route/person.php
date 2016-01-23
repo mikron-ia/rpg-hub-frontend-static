@@ -27,10 +27,6 @@ $app->get('/people/', function (Silex\Application $app) {
 
     $data = $retriever->getDataAsArray();
 
-    if ($data === null) {
-        throw new \Exception("Character not found", 404);
-    }
-
     $peopleData = [];
 
     foreach($data['content'] as $person) {

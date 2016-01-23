@@ -105,3 +105,11 @@ div.index-box > noscript > p {
     font-size: 1.5em;
     margin: 0;
 }
+
+div.index-box > h3 {
+    margin: 4px;
+}
+
+div.index-box > p.tag-box {
+    text-align: right;
+}

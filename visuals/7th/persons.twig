@@ -6,8 +6,15 @@
     {% if peopleData %}
         {% for personData in peopleData %}
             <div class="index-box">
-                <h4>{{ personData.name }}</h4>
-                <p>[short description placeholder]</p>
+                <h3>{{ personData.name }}</h3>
+                <p>{{ personData.indexText }}</p>
+                {% if personData.tags %}
+                <p class="tag-box">
+                    {% for tag in personData.tags %}
+                        #{{ tag.tag }}
+                    {% endfor %}
+                </p>
+                {% endif %}
             </div>
         {% endfor %}
     {% else %}
