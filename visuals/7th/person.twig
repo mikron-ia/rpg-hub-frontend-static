@@ -1,38 +1,23 @@
 {% extends "layout/page.twig" %}
 {% block content %}
-    <h1 class="center">{{ 'PERSON_CHART_TITLE'|trans }} - {{ characterData.name }}</h1>
+    <h1 class="center">{{ 'PERSON_CHART_TITLE'|trans }} - {{ personData.name }}</h1>
 
-    {% if characterData.help.top %}
-        <p class="help">{{ characterData.help.top }}</p>
+    {% if personData.help.top %}
+        <p class="help">{{ personData.help.top }}</p>
     {% endif %}
 
-    <div id="character-display">
+    <div id="person-display">
 
         <div class="ui-tabs-container">
             <ul>
                 <li>
-                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/#current">
-                        {{ 'LABEL_CURRENT_STATE'|trans }}
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/#numbers">
-                        {{ 'LABEL_NUMBERS'|trans }}
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/#equipment">
-                        {{ 'LABEL_EQUIPMENT'|trans }}
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/#interactions">
-                        {{ 'LABEL_INTERACTIONS'|trans }}
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ app.request.basepath }}/character/{{ characterKey }}/#descriptions">
+                    <a href="{{ app.request.basepath }}/person/{{ personKey }}/#descriptions">
                         {{ 'LABEL_DESCRIPTIONS'|trans }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ app.request.basepath }}/person/{{ personKey }}/#interactions">
+                        {{ 'LABEL_INTERACTIONS'|trans }}
                     </a>
                 </li>
             </ul>
@@ -40,31 +25,19 @@
 
         <div class="clear"></div>
 
-        <div id="current">
-            {% include "character/_character_current.twig" %}
-        </div>
-
-        <div id="numbers">
-            {% include "character/_character_numbers.twig" %}
-        </div>
-
-        <div id="equipment">
-            {% include "character/_character_equipment.twig" %}
+        <div id="descriptions">
+            {% include "person/_person_description.twig" %}
         </div>
 
         <div id="interactions">
-            {% include "character/_character_interactions.twig" %}
-        </div>
-
-        <div id="descriptions">
-            {% include "character/_character_description.twig" %}
+            {% include "person/_person_interactions.twig" %}
         </div>
 
     </div>
 
     <script>
         $(function () {
-            $("#character-display").tabs({
+            $("#person-display").tabs({
                 active: 0
             });
         });
