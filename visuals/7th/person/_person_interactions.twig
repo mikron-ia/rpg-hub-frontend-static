@@ -1,5 +1,5 @@
-{% if characterData.help.interactions %}
-    <p class="help">{{ characterData.help.interactions }}</p>
+{% if personData.help.interactions %}
+    <p class="help">{{ personData.help.interactions }}</p>
 {% endif %}
 
 <div class="clear"></div>
@@ -17,8 +17,8 @@
         </tr>
         </thead>
         <tbody>
-        {% if characterData.person.reputations %}
-            {% for reputation in characterData.person.reputations %}
+        {% if personData.person.reputations %}
+            {% for reputation in personData.person.reputations %}
                 <tr title="{{ reputation.description }}">
                     <td class="left">{{ reputation.name }}</td>
                     <td class="center">
@@ -36,77 +36,6 @@
         {% else %}
             <tr>
                 <td colspan="5" class="center note">{{ 'NO_DATA'|trans }}</td>
-            </tr>
-        {% endif %}
-        </tbody>
-    </table>
-</div>
-
-<div class="clear"></div>
-
-<div class="block padded full-width">
-    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_CONTACTS'|trans }}</h2>
-    <table>
-        <thead>
-        <tr>
-            <th>{{ 'CHARACTER_NAME'|trans }}</th>
-            <th>{{ 'CHARACTER_WHO'|trans }}</th>
-            <th>{{ 'CHARACTER_WHO_TO_YOU'|trans }}</th>
-            <th>{{ 'CHARACTER_ATTITUDE_TO_YOU'|trans }}</th>
-            <th>{{ 'LABEL_USEFULNESS'|trans }}</th>
-            <th>{{ 'CHARACTER_KNOWLEDGE'|trans }}</th>
-            <th>{{ 'LABEL_DETAILS'|trans }}</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% if characterData.contacts %}
-            {% for contact in characterData.contacts %}
-                <tr>
-                    <td class="left">{{ contact.name }}</td>
-                    <td class="left">{{ contact.whoGenerally|nl2br }}</td>
-                    <td class="left">{{ contact.whoToPerson|nl2br }}</td>
-                    <td class="center">{{ contact.like|nl2br }}</td>
-                    <td class="center">{{ contact.usefulness|nl2br }}</td>
-                    <td class="center">{{ contact.knowledge|nl2br }}</td>
-                    <td class="justified">{{ contact.details|nl2br }}</td>
-                </tr>
-            {% endfor %}
-        {% else %}
-            <tr>
-                <td colspan="7" class="center note">{{ 'NO_DATA'|trans }}</td>
-            </tr>
-        {% endif %}
-        </tbody>
-    </table>
-</div>
-
-<div class="clear"></div>
-
-<div class="block padded">
-    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_BACKGROUNDS'|trans }}</h2>
-    <table>
-        <thead>
-        <tr>
-            <th>{{ 'LABEL_BACKGROUND'|trans }}</th>
-            <th>{{ 'LABEL_LEVEL'|trans }}</th>
-            <th>{{ 'LABEL_DETAILS'|trans }}</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% if characterData.catches %}
-            {% for catch in characterData.catches %}
-                <tr>
-                    <td class="left">{{ catch.name }}</td>
-                    <td class="center">{{ catch.level }}</td>
-                    <td class="justified">
-                        {{ catch.description|nl2br }}<br>
-                        {% if catch.details %} <span class="note">{{ catch.details|nl2br }}</span>{% endif %}
-                    </td>
-                </tr>
-            {% endfor %}
-        {% else %}
-            <tr>
-                <td colspan="3" class="center note">{{ 'NO_DATA'|trans }}</td>
             </tr>
         {% endif %}
         </tbody>
