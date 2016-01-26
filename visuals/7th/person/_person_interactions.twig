@@ -5,7 +5,7 @@
 <div class="clear"></div>
 
 <div class="block padded full-width">
-    <h2 class="center">{{ 'CHARACTER_CHART_HEADER_REPUTATION_TABLE'|trans }}</h2>
+    <h2 class="center">{{ 'PERSON_CHART_HEADER_REPUTATION_TABLE'|trans }}</h2>
     <table>
         <thead>
         <tr>
@@ -17,8 +17,8 @@
         </tr>
         </thead>
         <tbody>
-        {% if personData.person.reputations %}
-            {% for reputation in personData.person.reputations %}
+        {% if personData.reputations %}
+            {% for reputation in personData.reputations %}
                 <tr title="{{ reputation.description }}">
                     <td class="left">{{ reputation.name }}</td>
                     <td class="center">

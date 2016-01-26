@@ -129,14 +129,14 @@ $app->get('/person/{id}/', function (Silex\Application $app, $id) {
 
     $data = $retriever->getDataAsArray();
 
-    $person = new \Mikron\HubFront\Domain\Entity\Person($app['config']['dataPatterns'], $data);
+    $person = new \Mikron\HubFront\Domain\Entity\Person($app['config']['dataPatterns'], $data['content']);
 
     return $app['twig']->render(
         'person.twig',
         [
             'title' => 'People',
             'display' => $app['display'],
-            'personData' => $person,
+            'personData' => $person->getData(),
             'personKey' => $id
         ]
     );

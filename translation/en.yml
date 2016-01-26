@@ -244,6 +244,7 @@ PERSON_CHART_TITLE: Person
 PERSON_CHART_NOTE: This is a person chart. It contains mainly descriptions and reputations.
 PEOPLE_CHART_TITLE: Known people
 PEOPLE_CHART_NOTE: This is a list of people the party encountered.
+PERSON_CHART_HEADER_REPUTATION_TABLE: Reputations
 
 # Printable
 PRINT_PRINTED_FROM: Printed from
