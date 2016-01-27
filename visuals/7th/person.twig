@@ -11,8 +11,8 @@
         <div class="ui-tabs-container">
             <ul>
                 <li>
-                    <a href="{{ app.request.basepath }}/person/{{ personKey }}/#descriptions">
-                        {{ 'LABEL_DESCRIPTIONS'|trans }}
+                    <a href="{{ app.request.basepath }}/person/{{ personKey }}/#basic">
+                        {{ 'LABEL_BASIC'|trans }}
                     </a>
                 </li>
                 <li>
@@ -25,8 +25,8 @@
 
         <div class="clear"></div>
 
-        <div id="descriptions">
-            {% include "person/_person_description.twig" %}
+        <div id="basic">
+            {% include "person/_person_basic.twig" %}
         </div>
 
         <div id="interactions">

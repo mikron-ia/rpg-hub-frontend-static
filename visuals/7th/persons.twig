@@ -11,7 +11,7 @@
                 {% if personData.tags %}
                 <p class="tag-box">
                     {% for tag in personData.tags %}
-                        <a href="../people/tag/{{ tag.tag }}/">#{{ tag.tag }}</a>
+                        <a href="../people/tag/{{ tag.tag }}/" title="{{ tag.title }}">#{{ tag.tag }}</a>
                     {% endfor %}
                 </p>
                 {% endif %}
