@@ -4,7 +4,7 @@ namespace Mikron\HubFront\Domain\Entity;
 
 /**
  * Class BagOfAttributes - base class for all bag-like resources that are extras for model
- * 
+ *
  * @package Mikron\HubFront\Domain\Entity
  */
 abstract class BagOfAttributes
