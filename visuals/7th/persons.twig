@@ -1,7 +1,9 @@
 {% extends "layout/page.twig" %}
 {% block content %}
     <h1 class="center">{{ 'PEOPLE_CHART_TITLE'|trans }}</h1>
-    <p class="note">{{ 'PEOPLE_CHART_NOTE'|trans }}</p>
+    {% if personData.help.top %}
+        <p class="help">{{ personData.help.top }}</p>
+    {% endif %}
 
     {% if peopleData %}
         {% for personData in peopleData %}

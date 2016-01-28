@@ -242,9 +242,8 @@ NO_DATA_ERROR_LIKELY_PROBLEM: Jest to prawdopodobnie błąd systemu, lub postać
 
 # Person chart
 PERSON_CHART_TITLE: Postać
-PERSON_CHART_NOTE: Karta postaci zawiera głównie opisy i reputacje
-PEOPLE_CHART_TITLE: Znane postacie
-PEOPLE_CHART_NOTE: Lista postaci z którymi drużyna się zetknęła
+PEOPLE_CHART_TITLE: Postacie znane drużynie
+PERSON_CHART_HEADER_BASICS: Podstawy
 PERSON_CHART_HEADER_REPUTATION_TABLE: Reputacje
 
 # Printable
