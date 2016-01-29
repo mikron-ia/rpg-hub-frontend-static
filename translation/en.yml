@@ -225,6 +225,7 @@ FRONT_OPTION_PEOPLE: List of encountered people
 # Menu labels
 MENU_MAIN: Main
 MENU_PARTY: Party
+MENU_PEOPLE: People
 MENU_EPIC: Epic
 MENU_LOGIN: Login
 MENU_LOGOUT: Logout

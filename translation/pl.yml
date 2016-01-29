@@ -226,6 +226,7 @@ FRONT_OPTION_PEOPLE: Osoby z którymi drużyna miała do czynienia
 # Menu labels
 MENU_MAIN: Główna
 MENU_PARTY: Drużyna
+MENU_PEOPLE: Ludzie
 MENU_EPIC: Kampania
 MENU_LOGIN: Zaloguj
 MENU_LOGOUT: Wyloguj
