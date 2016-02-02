@@ -38,7 +38,8 @@ return [
             'xp' => [], // experience
         ],
         'person' => [
-            "name" => "", // epic name
+            "name" => "", // name
+            'descriptions' => [], // listing of descriptions
             'reputations' => [], // listing of party reputation
             'reputationEvents' => [], // listing of party reputation history
             'help' => [], // helpful information to display on page
