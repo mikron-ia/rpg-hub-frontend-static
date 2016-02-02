@@ -84,7 +84,6 @@ div.index-box {
     float: left;
     min-height: 200px;
     width: 22.5%;
-    cursor: pointer;
 }
 
 div.index-box-wide {
@@ -97,6 +96,10 @@ div.index-box-narrow {
 
 div.index-box-low {
     min-height: 100px;
+}
+
+div.index-box-lowest {
+    min-height: 50px;
 }
 
 div.index-box > noscript > p {

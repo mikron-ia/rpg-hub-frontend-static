@@ -42,6 +42,7 @@ return [
         ],
         'person' => [
             "name" => "", // person's name
+            "key" => "", // DB key
             'descriptions' => [], // listing of descriptions
             'reputations' => [], // listing of reputation
             'reputationEvents' => [], // listing of reputation history
