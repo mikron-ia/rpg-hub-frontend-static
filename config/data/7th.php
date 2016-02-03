@@ -46,9 +46,9 @@ return [
             'descriptions' => [], // listing of descriptions
             'reputations' => [], // listing of reputation
             'reputationEvents' => [], // listing of reputation history
-            'indexText' => "", // helpful information to display on page
             'help' => [], // helpful information to display on page
             'tags' => [], // tags for grouping
+            'tagline' => "", // helpful information to display on page
         ],
         'group' => [
             'members' => [], // list of party members

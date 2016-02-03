@@ -7,9 +7,9 @@
 
     {% if peopleData %}
         {% for personData in peopleData %}
-            <div class="index-box index-box-lowest">
+            <div class="index-box index-box-low">
                 <h3><a href="../person/{{ personData.key }}/">{{ personData.name }}</a></h3>
-                <p>{{ personData.indexText }}</p>
+                <p>{{ personData.tagline }}</p>
                 {% if personData.tags %}
                 <p class="tag-box">
                     {% for tag in personData.tags %}

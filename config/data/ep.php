@@ -43,6 +43,7 @@ return [
             'reputations' => [], // listing of party reputation
             'reputationEvents' => [], // listing of party reputation history
             'help' => [], // helpful information to display on page
+            'tagline' => "", // helpful information to display on page
         ],
         'group' => [
             'members' => [], // list of party members
