@@ -72,17 +72,17 @@ th, td {
 
 .footer {
     display: none;
-    text-align: center;
     font-size: 0.8em;
     font-style: italic;
+    text-align: center;
 }
 
 div.index-box {
-    padding: 0.5%;
-    margin: 0.5%;
     border: 2px solid saddlebrown;
     float: left;
+    margin: 0.5%;
     min-height: 200px;
+    padding: 0.5%;
     width: 22.5%;
 }
 
@@ -111,6 +111,10 @@ div.index-box > noscript > p {
 
 div.index-box > h3 {
     margin: 4px;
+}
+
+div.index-box > h3 > a {
+    color: saddlebrown;
 }
 
 div.index-box > p.tag-box {
