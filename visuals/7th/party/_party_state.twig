@@ -5,7 +5,7 @@
 <div class="block">
     <h2 class="center">{{ 'PARTY_MEMBERS'|trans }}</h2>
     {% if partyData.help.members %}
-        <p class="help">{{ partyData.help.members }}</p>
+        <p class="help">{{ partyData.help.members|raw }}</p>
     {% endif %}
     <table>
         <thead>
