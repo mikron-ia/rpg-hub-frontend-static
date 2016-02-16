@@ -50,7 +50,7 @@
             </tr>
             </thead>
             <tbody>
-            {% for member in partyData.pastMembers %}
+            {% for member in partyData.absentMembers %}
                 <tr title="{{ member.comment }}">
                     <td class="left">{{ member.name }}</td>
                     <td class="center">{{ member.short|nl2br }}</td>

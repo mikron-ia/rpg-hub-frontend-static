@@ -1,0 +1,30 @@
+{% extends "layout/page.twig" %}
+{% block content %}
+
+    <h1 class="center">{{ 'PEOPLE_CHART_TITLE'|trans }}</h1>
+    {% if personData.help.top %}
+        <p class="help">{{ personData.help.top }}</p>
+    {% endif %}
+
+    {% if peopleData %}
+        {% for personData in peopleData %}
+            <div class="index-box index-box-low">
+
+                <h3><a href="../person/{{ personData.key }}/">{{ personData.name }}</a></h3>
+
+                <p class="note">{{ personData.tagline }}</p>
+                {% if personData.tags %}
+                    <p class="tag-box">
+                        {% for tag in personData.tags %}
+                            <a href="../people/tag/{{ tag.tag }}/" title="{{ tag.title }}">#{{ tag.tag }}</a>
+                        {% endfor %}
+                    </p>
+                {% endif %}
+
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR_LIKELY'|trans }}.</p>
+    {% endif %}
+
+{% endblock %}

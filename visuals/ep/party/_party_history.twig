@@ -1,6 +1,9 @@
 <div id="reputation">
     <div class="block full-width">
         <h2 class="center">{{ 'REPUTATION_EVENTS'|trans }}</h2>
+        {% if partyData.help.reputationHistory %}
+            <p class="help">{{ partyData.help.reputationHistory|raw }}</p>
+        {% endif %}
         <table>
             <thead>
             <tr>
@@ -38,7 +41,7 @@
     <div class="block">
         <h2 class="center">{{ 'PARTY_MEMBERS_PAST'|trans }}</h2>
         {% if partyData.help.pastMembers %}
-            <p class="help">{{ partyData.help.pastMembers }}</p>
+            <p class="help">{{ partyData.help.pastMembers|raw }}</p>
         {% endif %}
         <table>
             <thead>

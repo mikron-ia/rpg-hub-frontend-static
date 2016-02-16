@@ -1,0 +1,18 @@
+<h2 class="center">{{ 'PERSON_CHART_HEADER_BASICS'|trans }}</h2>
+
+{% if personData.help.descriptions %}
+    <p class="help">{{ personData.help.descriptions }}</p>
+{% endif %}
+
+<div class="clear"></div>
+
+{% if personData.descriptions %}
+    {% for description in personData.descriptions %}
+        <div class="block padded twosplit">
+            <h3 class="center">{{ description.title }}</h3>
+            <div class="justified">
+                {{ description.text|raw }}
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}

@@ -1,0 +1,46 @@
+{% extends "layout/page.twig" %}
+{% block content %}
+    <h1 class="center">{{ 'PERSON_CHART_TITLE'|trans }} - {{ personData.name }}</h1>
+
+    {% if personData.help.top %}
+        <p class="help">{{ personData.help.top }}</p>
+    {% endif %}
+
+    <div id="person-display">
+
+        <div class="ui-tabs-container">
+            <ul>
+                <li>
+                    <a href="{{ app.request.basepath }}/person/{{ personKey }}/#basic">
+                        {{ 'LABEL_BASICS'|trans }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ app.request.basepath }}/person/{{ personKey }}/#interactions">
+                        {{ 'LABEL_INTERACTIONS'|trans }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="clear"></div>
+
+        <div id="basic">
+            {% include "person/_person_basic.twig" %}
+        </div>
+
+        <div id="interactions">
+            {% include "person/_person_interactions.twig" %}
+        </div>
+
+    </div>
+
+    <script>
+        $(function () {
+            $("#person-display").tabs({
+                active: 0
+            });
+        });
+    </script>
+
+{% endblock %}
