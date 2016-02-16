@@ -87,7 +87,7 @@ class Retriever
     /**
      * Formats JSON string - at the moment, does nothing
      *
-     * @param $input JSON string to format
+     * @param string $input JSON string to format
      * @return string Formatted JSON string
      */
     private function formatInput($input)
