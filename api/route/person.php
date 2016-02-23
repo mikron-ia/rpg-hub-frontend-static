@@ -44,7 +44,7 @@ $app->get('/people/', function (Silex\Application $app) {
         [
             'title' => 'People',
             'display' => $app['display'],
-            'peopleData' => $peopleArray
+            'peopleData' => array_reverse($peopleArray)
         ]
     );
 });

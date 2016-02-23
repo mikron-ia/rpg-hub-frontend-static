@@ -81,7 +81,7 @@ div.index-box {
     border: 2px solid saddlebrown;
     float: left;
     margin: 0.5%;
-    min-height: 200px;
+    min-height: 228px;
     padding: 0.5%;
     width: 22.5%;
 }
@@ -95,11 +95,11 @@ div.index-box-narrow {
 }
 
 div.index-box-low {
-    min-height: 100px;
+    min-height: 128px;
 }
 
 div.index-box-lowest {
-    min-height: 50px;
+    min-height: 64px;
 }
 
 div.index-box > noscript > p {
@@ -115,6 +115,7 @@ div.index-box > h3 {
 
 div.index-box > h3 > a {
     color: saddlebrown;
+    text-decoration: none;
 }
 
 div.index-box > p.tag-box {
