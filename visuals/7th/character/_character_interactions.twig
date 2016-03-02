@@ -19,8 +19,8 @@
         <tbody>
         {% if characterData.person.reputations %}
             {% for reputation in characterData.person.reputations %}
-                <tr title="{{ reputation.description }}">
-                    <td class="left">{{ reputation.name }}</td>
+                <tr>
+                    <td class="left" title="{{ reputation.description }}">{{ reputation.name }}</td>
                     <td class="center">
                         {% if reputation.value.positiveMax == reputation.value.negativeMin %}
                             {{ reputation.value.negativeMin }}

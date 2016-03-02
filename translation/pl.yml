@@ -123,9 +123,10 @@ REPUTATION_PARTY: Reputacja drużynowa
 REPUTATION_PARTY_MEMBERS: Osobista reputacja członków drużyny
 REPUTATION_LOWEST: Najniższa w historii
 REPUTATION_HIGHEST: Najwyższa w historii
-REPUTATION_BALANCE: Aktualna<br>wartość
-REPUTATION_BALANCE_RANGE: Historyczny<br>zakres wartości
-REPUTATION_BALANCE_UNINFLUENCED: Aktualna<br>wartość<br>bez wpływu
+REPUTATION_BALANCE: Wartość<br>bieżąca
+REPUTATION_BALANCE_RANGE: Zakres<br>wartości
+REPUTATION_BALANCE_RANGE_TITLE: Historyczny zakres wartości
+REPUTATION_BALANCE_UNINFLUENCED: Wartość<br>bieżąca<br>bez wpływu
 REPUTATION_DICE: Kości
 REPUTATION_REPUTATION_DICE_TITLE: Kości do użytku gracza i MG do wspierania bądź zakłócania interakcji społecznych
 REPUTATION_PARTY_INFLUENCE_EXPLANATION: Wpływ na reputację drużynową wywierany przez członków drużyny. Ze względu na swoją tymczasową naturę, nie wpływa na zakresy historyczne.
@@ -135,6 +136,16 @@ REPUTATION_RECOGNITION_DICE: Sława
 REPUTATION_RECOGNITION_DICE_TITLE: Liczba kości rzucana przy próbie rozpoznania postaci przez osobę powiązaną z daną Reputacją
 REPUTATION_INFLUENCE: Wpływ
 REPUTATION_INFLUENCE_INCLUDED: W tym wpływ
+
+# Reputation event types
+REPUTATION_PARTICIPATION_TYPE_COMMAND: Rola dowódcza
+REPUTATION_PARTICIPATION_TYPE_ACTION: Aktywne działanie
+REPUTATION_PARTICIPATION_TYPE_ASSISTANCE: Wsparcie czynu
+REPUTATION_PARTICIPATION_TYPE_PRESENCE: Obecność w działającej grupie
+REPUTATION_PARTICIPATION_TYPE_INACTION: Brak reakcji
+REPUTATION_PARTICIPATION_TYPE_PROTEST: Pasywne przeciwdziałanie
+REPUTATION_PARTICIPATION_TYPE_COUNTERACTION: Aktywne przeciwdziałanie
+REPUTATION_PARTICIPATION_TYPE_COUNTERCOMMAND: Rola dowódcza w przeciwdziałaniu
 
 # Party
 PARTY_TITLE: Drużyna

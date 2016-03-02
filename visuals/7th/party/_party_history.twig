@@ -8,8 +8,7 @@
             <thead>
             <tr>
                 <th>{{ 'LABEL_EVENT'|trans }}</th>
-                <th>{{ 'LABEL_REPUTATION'|trans }}</th>
-                <th>{{ 'LABEL_CHANGE'|trans }}</th>
+                <th colspan="2">{{ 'LABEL_CHANGE'|trans }}</th>
                 <th>{{ 'LABEL_WHEN'|trans }}</th>
                 <th>{{ 'LABEL_NOTES'|trans }}</th>
             </tr>
@@ -20,7 +19,7 @@
                     <tr>
                         <td class="left">{{ reputationEvent.event.name|default('?')|nl2br }}</td>
                         <td class="center">{{ reputationEvent.name|nl2br }}</td>
-                        <td class="center">{{ reputationEvent.value }}</td>
+                        <td class="center">{% if reputationEvent.value >= 0 %}+{% endif %}{{ reputationEvent.value }}</td>
                         <td class="center">{{ reputationEvent.event.time|default('?')|nl2br }}</td>
                         <td class="justified">{{ reputationEvent.event.description|nl2br }}</td>
                     </tr>

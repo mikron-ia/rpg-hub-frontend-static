@@ -124,7 +124,8 @@ REPUTATION_PARTY_MEMBERS: Personal reputation of party members
 REPUTATION_LOWEST: Lowest ever
 REPUTATION_HIGHEST: Highest ever
 REPUTATION_BALANCE: Current<br>balance
-REPUTATION_BALANCE_RANGE: Historical<br>balance range
+REPUTATION_BALANCE_RANGE: Balance<br>range
+REPUTATION_BALANCE_RANGE_TITLE: Historical balance range
 REPUTATION_BALANCE_UNINFLUENCED: Current<br>balance<br>w/o influence
 REPUTATION_DICE: Dice
 REPUTATION_REPUTATION_DICE_TITLE: Dice available for player and GM use for improving or disrupting social situations
@@ -135,6 +136,16 @@ REPUTATION_RECOGNITION_DICE: Recognition
 REPUTATION_RECOGNITION_DICE_TITLE: Number of dice used in recognition attempt rolled by person associated with the reputation
 REPUTATION_INFLUENCE: Influence
 REPUTATION_INFLUENCE_INCLUDED: Influence included
+
+# Reputation event types
+REPUTATION_PARTICIPATION_TYPE_COMMAND: Command role
+REPUTATION_PARTICIPATION_TYPE_ACTION: Active participation
+REPUTATION_PARTICIPATION_TYPE_ASSISTANCE: Assistance
+REPUTATION_PARTICIPATION_TYPE_PRESENCE: Presence in acting group
+REPUTATION_PARTICIPATION_TYPE_INACTION: Inaction
+REPUTATION_PARTICIPATION_TYPE_PROTEST: Passive protest
+REPUTATION_PARTICIPATION_TYPE_COUNTERACTION: Active counteraction
+REPUTATION_PARTICIPATION_TYPE_COUNTERCOMMAND: Commanding counteraction
 
 # Party page headers
 PARTY_TITLE: Party
