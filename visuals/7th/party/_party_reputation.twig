@@ -28,7 +28,13 @@
                         {% endif %}
                     </td>
                     <td class="center">{{ reputation.value.uninfluenced }}</td>
-                    <td class="center">{{ reputation.value.influence }}</td>
+                    <td class="center">
+                        {% if partyData.reputation.value.influence %}
+                            {{ reputation.value.influence }}
+                        {% else %}
+                            {{ reputation.value.balance - reputation.value.uninfluenced }}
+                        {% endif %}
+                    </td>
                     <td class="center">{{ reputation.value.balance }}</td>
                     <td class="center">{{ reputation.value.dice }}</td>
                     <td class="center">{{ reputation.value.recognitionDice }}</td>
@@ -52,15 +58,16 @@
     {% endif %}
     {% if partyData.membersReputations %}
         {% for memberReputation in partyData.membersReputations %}
-            <div class="block padded threesplit">
-                <table>
+            <div class="block padded twosplit">
+                <table class="semi-full-width">
                     <caption>{{ memberReputation.name }}</caption>
                     <thead>
                     <tr>
                         <th title="{{ 'REPUTATION_NAME'|trans }}">{{ 'LABEL_REPUTATION'|trans }}</th>
-                        <th>{{ 'LABEL_BALANCE'|trans }}</th>
-                        <th>{{ 'LABEL_DICE'|trans }}</th>
-                        <th>{{ 'LABEL_INFLUENCE'|trans }}</th>
+                        <th>{{ 'REPUTATION_BALANCE_RANGE'|trans|raw }}</th>
+                        <th>{{ 'REPUTATION_BALANCE'|trans|raw }}</th>
+                        <th title="{{ 'REPUTATION_REPUTATION_DICE_TITLE'|trans|raw }}">{{ 'REPUTATION_DICE'|trans }}</th>
+                        <th title="{{ 'REPUTATION_RECOGNITION_DICE_TITLE'|trans|raw }}">{{ 'REPUTATION_RECOGNITION_DICE'|trans|raw }}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -68,9 +75,16 @@
                         {% for reputation in memberReputation.reputations %}
                             <tr title="{{ reputation.description }}">
                                 <td class="left">{{ reputation.name }}</td>
+                                <td class="center">
+                                    {% if reputation.value.positiveMax == reputation.value.negativeMin %}
+                                        {{ reputation.value.negativeMin }}
+                                    {% else %}
+                                        {{ reputation.value.negativeMin }} &ndash; {{ reputation.value.positiveMax }}
+                                    {% endif %}
+                                </td>
                                 <td class="center">{{ reputation.value.balance }}</td>
                                 <td class="center">{{ reputation.value.dice }}</td>
-                                <td class="center">{{ reputation.value.influence }}</td>
+                                <td class="center">{{ reputation.value.recognitionDice }}</td>
                             </tr>
                         {% endfor %}
                     {% else %}
@@ -81,6 +95,9 @@
                     </tbody>
                 </table>
             </div>
+            {% if (loop.index%2) == 0 %}
+                <div class="clear"></div>
+            {% endif %}
         {% endfor %}
         <div class="clear"></div>
     {% else %}

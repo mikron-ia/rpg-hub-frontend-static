@@ -21,7 +21,7 @@
                         <td class="left">{{ reputationEvent.event.name|default('?')|nl2br }}</td>
                         <td class="center">{{ reputationEvent.name|nl2br }}</td>
                         <td class="center">{{ reputationEvent.value }}</td>
-                        <td class="center">{{ reputationEvent.when|default('?')|nl2br }}</td>
+                        <td class="center">{{ reputationEvent.event.time|default('?')|nl2br }}</td>
                         <td class="justified">{{ reputationEvent.event.description|nl2br }}</td>
                     </tr>
                 {% endfor %}
