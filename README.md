@@ -8,7 +8,7 @@ A system for role-playing game story/campaign/epic management. This repository c
 ## Background
 [Role-playing games](https://en.wikipedia.org/wiki/Role-playing_game) are a very wide category, ranging from very simplistic systems to extremely complex mechanical solutions. What they do have in common, though, is the story - you can play a game without mechanics, but even a primitive dungeon crawl is going to have some story. Managing this story, its cast, threads, and - if present - mechanical components - is the role of this project.
 
-This project is a part of a larger whole. It is supposed to draw data from [backend](https://github.com/mikron-ia/rpg-hub-backend) - once it is completed. Originally, this page was supposed to be writen in AngularJS; at the moment, this is the only front, and AngularJS is not developed - [its skeleton is to be found here](https://github.com/mikron-ia/rpg-hub-frontend). Reason for twofold version of frontend is simple: I need a functional page ASAP, and have too little time to write AngularJS code with any decency. 
+This project is a part of a larger whole. It is supposed to draw data from sources lile [Silex-based backend](https://github.com/mikron-ia/rpg-hub-backend) or [Yii-based backend](https://github.com/mikron-ia/rpg-hub) - assuming they have compatible APIs. Originally, this page was supposed to be writen in AngularJS; at the moment, this is the only front, and AngularJS is not developed - [its skeleton is to be found here](https://github.com/mikron-ia/rpg-hub-frontend).
 
 The project is written in PHP with Silex. Data to display is retrieved in JSON from API provided by backend.
 
