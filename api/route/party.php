@@ -17,15 +17,10 @@ $app->get('/party/', function (Silex\Application $app) {
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    if ($app['config']['dataSource']['queryUri']) {
-        $uri = $app['config']['dataSource']['uri'] . '?object=group'
-            . '&access-method=' . $accessMethod . '&id=' . $accessId
-            . '&auth-method=' . $authMethod . '&key=' . $authKey;
-    } else {
-        $uri = $app['config']['dataSource']['uri'] . 'group/'
-            . $accessMethod . '/' . $accessId . '/'
-            . $authMethod . '/' . $authKey . '/';
-    }
+    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}'];
+    $values = ['group', $accessMethod, $accessId, $authMethod, $authKey];
+
+    $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForView']);
 
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 

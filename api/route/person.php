@@ -15,13 +15,10 @@ $app->get('/people/', function (Silex\Application $app) {
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    if ($app['config']['dataSource']['queryUri']) {
-        $uri = $app['config']['dataSource']['uri'] . '?object=people'
-            . '&auth-method=' . $authMethod . '&key=' . $authKey;
-    } else {
-        $uri = $app['config']['dataSource']['uri'] . 'people/'
-            . $authMethod . '/' . $authKey . '/';
-    }
+    $tokens = ['{object}', '{authMethod}', '{authKey}'];
+    $values = ['people', $authMethod, $authKey];
+
+    $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForIndex']);
 
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 
@@ -64,15 +61,10 @@ $app->get('/people/tag/{id}/', function (Silex\Application $app, $id) {
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    if ($app['config']['dataSource']['queryUri']) {
-        $uri = $app['config']['dataSource']['uri'] . '?object=people'
-            . '&access-method=' . $accessMethod . '&id=' . $accessId
-            . '&auth-method=' . $authMethod . '&key=' . $authKey;
-    } else {
-        $uri = $app['config']['dataSource']['uri'] . 'people/'
-            . $accessMethod . '/' . $accessId . '/'
-            . $authMethod . '/' . $authKey . '/';
-    }
+    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}'];
+    $values = ['person', $accessMethod, $accessId, $authMethod, $authKey];
+
+    $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForView']);
 
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 
@@ -115,15 +107,10 @@ $app->get('/person/{id}/', function (Silex\Application $app, $id) {
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    if ($app['config']['dataSource']['queryUri']) {
-        $uri = $app['config']['dataSource']['uri'] . '?object=person'
-            . '&access-method=' . $accessMethod . '&id=' . $accessId
-            . '&auth-method=' . $authMethod . '&key=' . $authKey;
-    } else {
-        $uri = $app['config']['dataSource']['uri'] . 'person/'
-            . $accessMethod . '/' . $accessId . '/'
-            . $authMethod . '/' . $authKey . '/';
-    }
+    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}'];
+    $values = ['person', $accessMethod, $accessId, $authMethod, $authKey];
+
+    $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForView']);
 
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 

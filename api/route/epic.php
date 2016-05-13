@@ -15,13 +15,10 @@ $app->get('/epic/', function (Silex\Application $app) {
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    if ($app['config']['dataSource']['queryUri']) {
-        $uri = $app['config']['dataSource']['uri'] . '?object=epic'
-            . '&auth-method=' . $authMethod . '&key=' . $authKey;
-    } else {
-        $uri = $app['config']['dataSource']['uri'] . 'epic/'
-            . $authMethod . '/' . $authKey . '/';
-    }
+    $tokens = ['{object}', '{authMethod}', '{authKey}'];
+    $values = ['epic', $authMethod, $authKey];
+
+    $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForIndex']);
 
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 
@@ -57,15 +54,10 @@ $app->get('/epic/story/{storyId}/', function (Silex\Application $app, $storyId) 
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    if ($app['config']['dataSource']['queryUri']) {
-        $uri = $app['config']['dataSource']['uri'] . '?object=story'
-            . '&access-method=' . $accessMethod . '&id=' . $accessId
-            . '&auth-method=' . $authMethod . '&key=' . $authKey;
-    } else {
-        $uri = $app['config']['dataSource']['uri'] . 'story/'
-            . $accessMethod . '/' . $accessId . '/'
-            . $authMethod . '/' . $authKey . '/';
-    }
+    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}'];
+    $values = ['story', $accessMethod, $accessId, $authMethod, $authKey];
+
+    $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForView']);
 
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 
