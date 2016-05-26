@@ -15,10 +15,10 @@ $app->get('/epic/', function (Silex\Application $app) {
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    $tokens = ['{object}', '{authMethod}', '{authKey}'];
-    $values = ['epic', $authMethod, $authKey];
+    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}'];
+    $values = ['epic', 'key', $app['config']['epicDetails']['epicKey'], $authMethod, $authKey];
 
-    $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForIndex']);
+    $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForView']);
 
     $retriever = new \Mikron\HubFront\Domain\Service\Retriever($uri);
 

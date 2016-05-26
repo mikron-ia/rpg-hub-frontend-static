@@ -9,30 +9,13 @@
 
         {% if epicData.current %}
             <div id="story-current">
-                <h2 class="center">{{ epicData.current.name }}</h2>
+                <h2 class="center">{{ 'EPIC_STORY_CURRENT'|trans }}: {{ epicData.current.name }}</h2>
 
-                <div class="block padded twothirdsplit">
+                <div class="block padded">
                     {% if epicData.current.short %}
                         <div class="justified">{{ epicData.current.short|raw }}</div>
                     {% else %}
                         <p class="center note">{{ 'NO_DATA'|trans }}.</p>
-                    {% endif %}
-                </div>
-
-                <div class="block padded threesplit">
-                    {% if epicData.current.parameters %}
-                        <table>
-                            <tbody>
-                            {% for parameter in epicData.current.parameters %}
-                                <tr title="{{ parameter.description }}">
-                                    <td class="left">{{ parameter.name }}</td>
-                                    <td class="center">{{ parameter.value|nl2br }}</td>
-                                </tr>
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                    {% else %}
-                        <p class="center note">{{ 'NO_DATA'|trans }}. {{ 'NO_DATA_ERROR'|trans }}.</p>
                     {% endif %}
                 </div>
 
@@ -51,6 +34,7 @@
                 {% for story in epicData.stories %}
 
                     <div id="story-{{ loop.index }}">
+
                         <h2 class="center"><a href="story/{{ story.key }}/">{{ story.name }}</a></h2>
 
                         <div class="block padded twothirdsplit">
@@ -79,6 +63,8 @@
                         </div>
 
                     </div>
+
+                    <div class="clear"></div>
 
                 {% endfor %}
             {% else %}

@@ -8,6 +8,9 @@ return [
     'system' => '',
     'lang' => 'en',
     'party' => [
-        'groupKey' => 'example-key'
+        'groupKey' => 'enter-group-key'
+    ],
+    'epicDetails' => [
+        'epicKey' => 'enter-epic-key'
     ]
 ];
