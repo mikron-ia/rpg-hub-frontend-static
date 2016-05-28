@@ -15,8 +15,8 @@ $app->get('/people/', function (Silex\Application $app) {
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    $tokens = ['{object}', '{authMethod}', '{authKey}'];
-    $values = ['people', $authMethod, $authKey];
+    $tokens = ['{object}', '{authMethod}', '{authKey}', '{language}'];
+    $values = ['people', $authMethod, $authKey, $app['config']['lang']];
 
     $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForIndex']);
 
@@ -61,8 +61,8 @@ $app->get('/people/tag/{id}/', function (Silex\Application $app, $id) {
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}'];
-    $values = ['person', $accessMethod, $accessId, $authMethod, $authKey];
+    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}', '{language}'];
+    $values = ['person', $accessMethod, $accessId, $authMethod, $authKey, $app['config']['lang']];
 
     $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForView']);
 
@@ -107,8 +107,8 @@ $app->get('/person/{id}/', function (Silex\Application $app, $id) {
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}'];
-    $values = ['person', $accessMethod, $accessId, $authMethod, $authKey];
+    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}', '{language}'];
+    $values = ['person', $accessMethod, $accessId, $authMethod, $authKey, $app['config']['lang']];
 
     $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForView']);
 

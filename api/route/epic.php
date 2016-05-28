@@ -15,8 +15,8 @@ $app->get('/epic/', function (Silex\Application $app) {
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}'];
-    $values = ['epic', 'key', $app['config']['epicDetails']['epicKey'], $authMethod, $authKey];
+    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}', '{language}'];
+    $values = ['epic', 'key', $app['config']['epicDetails']['epicKey'], $authMethod, $authKey, $app['config']['lang']];
 
     $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForView']);
 
@@ -54,8 +54,8 @@ $app->get('/epic/story/{storyId}/', function (Silex\Application $app, $storyId) 
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}'];
-    $values = ['story', $accessMethod, $accessId, $authMethod, $authKey];
+    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}', '{language}'];
+    $values = ['story', $accessMethod, $accessId, $authMethod, $authKey, $app['config']['lang']];
 
     $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForView']);
 

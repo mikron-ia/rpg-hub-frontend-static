@@ -32,8 +32,8 @@ $app->get('/character/{id}/', function (Silex\Application $app, $id) {
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}'];
-    $values = ['character', $accessMethod, $accessId, $authMethod, $authKey];
+    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}', '{language}'];
+    $values = ['character', $accessMethod, $accessId, $authMethod, $authKey, $app['config']['lang']];
 
     $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForView']);
 
@@ -74,8 +74,8 @@ $app->get('/character/{id}/print/', function (Silex\Application $app, $id) {
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}'];
-    $values = ['character', $accessMethod, $accessId, $authMethod, $authKey];
+    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}', '{language}'];
+    $values = ['character', $accessMethod, $accessId, $authMethod, $authKey, $app['config']['lang']];
 
     $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForView']);
 
@@ -115,8 +115,8 @@ $app->get('/character/{id}/history/', function (Silex\Application $app, $id) {
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}'];
-    $values = ['character', $accessMethod, $accessId, $authMethod, $authKey];
+    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}', '{language}'];
+    $values = ['character', $accessMethod, $accessId, $authMethod, $authKey, $app['config']['lang']];
 
     $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForView']);
 

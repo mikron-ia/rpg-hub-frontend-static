@@ -17,8 +17,8 @@ $app->get('/party/', function (Silex\Application $app) {
     $authMethod = $authentication->provideAuthenticationMethod();
     $authKey = $authentication->provideAuthenticationKey();
 
-    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}'];
-    $values = ['group', $accessMethod, $accessId, $authMethod, $authKey];
+    $tokens = ['{object}', '{accessMethod}', '{accessId}', '{authMethod}', '{authKey}', '{language}'];
+    $values = ['group', $accessMethod, $accessId, $authMethod, $authKey, $app['config']['lang']];
 
     $uri = str_replace($tokens, $values, $app['config']['dataSource']['uriForView']);
 
